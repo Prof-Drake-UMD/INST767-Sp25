@@ -6,7 +6,7 @@ My project aims to implement a data pipeline that ingests, transforms, and analy
 
 ## Data Sources
 
-The pipeline integrates the following APIs:
+The pipeline will utilize the following APIs:
 
 ### 1. Carbon Interface API
 
