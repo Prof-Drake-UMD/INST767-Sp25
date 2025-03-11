@@ -14,6 +14,7 @@ This system is useful for the following types of people. International travelers
 Selected APIs and Justification
 
 To achieve this goal, the system will leverage three external APIs:
+
 Uber API – Fetches real-time ride estimates and ETAs from the user’s location to one of Washington, D.C.'s two metro-accessible airports, providing a private transport option.
 
 Transport for Washington API – Retrieves real-time public transit data, enabling comparison with Uber to determine the fastest route to either DCA or IAD. 
