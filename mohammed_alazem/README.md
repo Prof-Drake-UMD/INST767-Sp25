@@ -11,6 +11,7 @@ A user in downtown D.C. wants to fly to France. The system fetches Uber and metr
 Potential User Base
 
 This system is useful for the following types of people. International travelers who need fast airport transport and visa verification,  business professionals who frequently travel abroad and tourists navigating Washington, D.C. for the first time.
+
 Selected APIs and Justification
 
 To achieve this goal, the system will leverage three external APIs:
