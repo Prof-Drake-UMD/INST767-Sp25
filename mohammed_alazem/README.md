@@ -11,6 +11,7 @@ A user in downtown D.C. wants to fly to France. The system fetches Uber and metr
 Potential User Base
 
 This system is useful for the following types of people. International travelers who need fast airport transport and visa verification,  business professionals who frequently travel abroad and tourists navigating Washington, D.C. for the first time.
+
 Selected APIs and Justification
 
 To achieve this goal, the system will leverage three external APIs:
@@ -31,4 +32,5 @@ https://visafreelist.com
 
 Conclusion
 
-This project will demonstrate effective API integration, real-time data processing, and cloud storage solutions using Google Cloud Platform. The final system will be an automated travel assistant, ensuring users can reach the airport efficiently, confirm visa eligibility before departure, and plan trips seamlessly with real-time insights. This solution enhances travel efficiency, preparedness, and decision-making, reducing uncertainty and last-minute travel disruptions.
+This project will demonstrate effective API integration, real-time data processing, and cloud storage solutions using Google Cloud Platform. The final system will be an automated travel assistant, ensuring users can reach the airport efficiently, confirm visa eligibility before departure and plan trips seamlessly with real-time insights. This solution enhances travel efficiency, preparedness, and decision-making, reducing uncertainty and last-minute travel disruptions.
+
