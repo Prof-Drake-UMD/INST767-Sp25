@@ -1,0 +1,50 @@
+{
+    "zone": "US-MIDA-PJM",
+    "datetime": "2025-03-19T00:00:00.000Z",
+    "updatedAt": "2025-03-18T23:42:36.352Z",
+    "createdAt": "2025-03-16T00:45:26.431Z",
+    "powerConsumptionBreakdown": {
+        "nuclear": 27269,
+        "geothermal": 0,
+        "biomass": 0,
+        "coal": 11989,
+        "wind": 6134,
+        "solar": 0,
+        "hydro": 3305,
+        "gas": 32913,
+        "oil": 291,
+        "unknown": 634,
+        "hydro discharge": 0,
+        "battery discharge": 6
+    },
+    "powerProductionBreakdown": {
+        "nuclear": 29271,
+        "geothermal": null,
+        "biomass": null,
+        "coal": 12869,
+        "wind": 6584,
+        "solar": 0,
+        "hydro": 3547,
+        "gas": 35329,
+        "oil": 313,
+        "unknown": 680,
+        "hydro discharge": null,
+        "battery discharge": 6
+    },
+    "powerImportBreakdown": {
+        "US-NY-NYIS": 0,
+        "US-MIDW-MISO": 0
+    },
+    "powerExportBreakdown": {
+        "US-NY-NYIS": 3042,
+        "US-MIDW-MISO": 3017
+    },
+    "fossilFreePercentage": 44,
+    "renewablePercentage": 11,
+    "powerConsumptionTotal": 82541,
+    "powerProductionTotal": 88600,
+    "powerImportTotal": 0,
+    "powerExportTotal": 6059,
+    "isEstimated": true,
+    "estimationMethod": "TIME_SLICER_AVERAGE"
+}

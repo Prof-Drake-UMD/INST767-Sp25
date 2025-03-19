@@ -1,0 +1,29 @@
+{
+    "DC": {
+        "error": "{\"data\":{\"id\":\"346d6fbc-2f7f-481f-ab29-ab3cab1fb6db\",\"type\":\"estimate\",\"attributes\":{\"country\":\"us\",\"state\":\"dc\",\"electricity_unit\":\"mwh\",\"electricity_value\":42.0,\"estimated_at\":\"2025-03-19T00:40:50.674Z\",\"carbon_g\":15194285,\"carbon_lb\":33497.67,\"carbon_kg\":15194.29,\"carbon_mt\":15.19}}}"
+    },
+    "MD": {
+        "error": "{\"data\":{\"id\":\"2272718e-8342-4f9b-b179-b6f8169c275d\",\"type\":\"estimate\",\"attributes\":{\"country\":\"us\",\"state\":\"md\",\"electricity_unit\":\"mwh\",\"electricity_value\":42.0,\"estimated_at\":\"2025-03-19T00:40:50.774Z\",\"carbon_g\":14070476,\"carbon_lb\":31020.09,\"carbon_kg\":14070.48,\"carbon_mt\":14.07}}}"
+    },
+    "VA": {
+        "error": "{\"data\":{\"id\":\"87c47a67-d755-4f31-bedf-6c16d1225b7f\",\"type\":\"estimate\",\"attributes\":{\"country\":\"us\",\"state\":\"va\",\"electricity_unit\":\"mwh\",\"electricity_value\":42.0,\"estimated_at\":\"2025-03-19T00:40:50.887Z\",\"carbon_g\":12110476,\"carbon_lb\":26699.03,\"carbon_kg\":12110.48,\"carbon_mt\":12.11}}}"
+    },
+    "WV": {
+        "error": "{\"data\":{\"id\":\"076e56ec-22da-4659-8c79-8594ff0cc134\",\"type\":\"estimate\",\"attributes\":{\"country\":\"us\",\"state\":\"wv\",\"electricity_unit\":\"mwh\",\"electricity_value\":42.0,\"estimated_at\":\"2025-03-19T00:40:50.985Z\",\"carbon_g\":37051428,\"carbon_lb\":81684.42,\"carbon_kg\":37051.43,\"carbon_mt\":37.05}}}"
+    },
+    "PA": {
+        "error": "{\"data\":{\"id\":\"0de0c158-056f-48ec-a7e9-5606b78ac12f\",\"type\":\"estimate\",\"attributes\":{\"country\":\"us\",\"state\":\"pa\",\"electricity_unit\":\"mwh\",\"electricity_value\":42.0,\"estimated_at\":\"2025-03-19T00:40:51.091Z\",\"carbon_g\":14453333,\"carbon_lb\":31864.15,\"carbon_kg\":14453.33,\"carbon_mt\":14.45}}}"
+    },
+    "NJ": {
+        "error": "{\"data\":{\"id\":\"ba186b7c-b216-48dd-8cbb-ee447f35cd49\",\"type\":\"estimate\",\"attributes\":{\"country\":\"us\",\"state\":\"nj\",\"electricity_unit\":\"mwh\",\"electricity_value\":42.0,\"estimated_at\":\"2025-03-19T00:40:51.231Z\",\"carbon_g\":10384761,\"carbon_lb\":22894.48,\"carbon_kg\":10384.76,\"carbon_mt\":10.38}}}"
+    },
+    "DE": {
+        "error": "{\"data\":{\"id\":\"9a53b4eb-8f86-4ba0-99ef-2a17d7af0e1e\",\"type\":\"estimate\",\"attributes\":{\"country\":\"us\",\"state\":\"de\",\"electricity_unit\":\"mwh\",\"electricity_value\":42.0,\"estimated_at\":\"2025-03-19T00:40:51.321Z\",\"carbon_g\":13552380,\"carbon_lb\":29877.89,\"carbon_kg\":13552.38,\"carbon_mt\":13.55}}}"
+    },
+    "OH": {
+        "error": "{\"data\":{\"id\":\"15868614-2ac0-425e-b798-5451a7f0d087\",\"type\":\"estimate\",\"attributes\":{\"country\":\"us\",\"state\":\"oh\",\"electricity_unit\":\"mwh\",\"electricity_value\":42.0,\"estimated_at\":\"2025-03-19T00:40:51.433Z\",\"carbon_g\":23666666,\"carbon_lb\":52176.07,\"carbon_kg\":23666.67,\"carbon_mt\":23.67}}}"
+    },
+    "KY": {
+        "error": "{\"data\":{\"id\":\"03e249f0-aee1-43bc-a065-d2eebd8d021a\",\"type\":\"estimate\",\"attributes\":{\"country\":\"us\",\"state\":\"ky\",\"electricity_unit\":\"mwh\",\"electricity_value\":42.0,\"estimated_at\":\"2025-03-19T00:40:51.525Z\",\"carbon_g\":33916190,\"carbon_lb\":74772.4,\"carbon_kg\":33916.19,\"carbon_mt\":33.92}}}"
+    }
+}
