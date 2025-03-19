@@ -1,50 +1,50 @@
 {
     "zone": "US-MIDA-PJM",
-    "datetime": "2025-03-19T00:00:00.000Z",
-    "updatedAt": "2025-03-18T23:42:36.352Z",
-    "createdAt": "2025-03-16T00:45:26.431Z",
+    "datetime": "2025-03-19T02:00:00.000Z",
+    "updatedAt": "2025-03-19T01:45:40.372Z",
+    "createdAt": "2025-03-16T02:42:49.472Z",
     "powerConsumptionBreakdown": {
-        "nuclear": 27269,
+        "nuclear": 24352,
         "geothermal": 0,
         "biomass": 0,
-        "coal": 11989,
-        "wind": 6134,
+        "coal": 8696,
+        "wind": 8332,
         "solar": 0,
-        "hydro": 3305,
-        "gas": 32913,
-        "oil": 291,
-        "unknown": 634,
+        "hydro": 1547,
+        "gas": 25376,
+        "oil": 0,
+        "unknown": 499,
         "hydro discharge": 0,
-        "battery discharge": 6
+        "battery discharge": 11
     },
     "powerProductionBreakdown": {
-        "nuclear": 29271,
+        "nuclear": 26256,
         "geothermal": null,
         "biomass": null,
-        "coal": 12869,
-        "wind": 6584,
+        "coal": 9376,
+        "wind": 8984,
         "solar": 0,
-        "hydro": 3547,
-        "gas": 35329,
-        "oil": 313,
-        "unknown": 680,
+        "hydro": 1668,
+        "gas": 27360,
+        "oil": 0,
+        "unknown": 538,
         "hydro discharge": null,
-        "battery discharge": 6
+        "battery discharge": 11
     },
     "powerImportBreakdown": {
         "US-NY-NYIS": 0,
         "US-MIDW-MISO": 0
     },
     "powerExportBreakdown": {
-        "US-NY-NYIS": 3042,
-        "US-MIDW-MISO": 3017
+        "US-NY-NYIS": 3187,
+        "US-MIDW-MISO": 2194
     },
-    "fossilFreePercentage": 44,
-    "renewablePercentage": 11,
-    "powerConsumptionTotal": 82541,
-    "powerProductionTotal": 88600,
+    "fossilFreePercentage": 50,
+    "renewablePercentage": 14,
+    "powerConsumptionTotal": 68812,
+    "powerProductionTotal": 74193,
     "powerImportTotal": 0,
-    "powerExportTotal": 6059,
+    "powerExportTotal": 5381,
     "isEstimated": true,
     "estimationMethod": "TIME_SLICER_AVERAGE"
 }

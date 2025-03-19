@@ -33,13 +33,27 @@ def get_carbon_emissions(electricity_unit, electricity_value):
             "state": state
         }
         response = requests.post(url, json=payload, headers=headers)
-        if response.status_code == 200:
-            try:
-                results[state] = json.loads(response.json())  # Ensure correct JSON parsing
-            except json.JSONDecodeError:
-                results[state] = {"error": "Invalid JSON response"}
+        if response.status_code == 201:
+            data = response.json()
+            # Extract carbon data from response
+            estimated_at = data.get('data', {}).get('attributes', {}).get('estimated_at')
+            electricity_unit = data.get('data', {}).get('attributes', {}).get('electricity_unit')
+            carbon_g = data.get('data', {}).get('attributes', {}).get('carbon_g')
+            carbon_lb = data.get('data', {}).get('attributes', {}).get('carbon_lb')
+            carbon_kg = data.get('data', {}).get('attributes', {}).get('carbon_kg')
+            key = data.get('data', {}).get('attributes', {}).get('state')
+                        
+            state_data = key.upper()
+            results[state_data] = {
+                'estimated_at': estimated_at,
+                'electricity_unit':  electricity_unit,
+                'carbon_g': carbon_g,
+                'carbon_kg': carbon_kg,
+                'carbon_lb': carbon_lb
+            }
         else:
-            results[state] = {"error": response.text}
+            print(f"Error fetching data for {state}: {response.status_code}")
+    
     return results
 
  # Fetch real-time electricity carbon intensity from ElectricityMap API for the US-MIDA-PJM zone (covers all target states).
