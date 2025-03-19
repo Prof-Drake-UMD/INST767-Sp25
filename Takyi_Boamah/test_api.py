@@ -37,6 +37,7 @@ def get_carbon_emissions(electricity_unit, electricity_value):
             data = response.json()
             # Extract carbon data from response
             estimated_at = data.get('data', {}).get('attributes', {}).get('estimated_at')
+            electricity_value = data.get('data', {}).get('attributes', {}).get('electricity_value')
             electricity_unit = data.get('data', {}).get('attributes', {}).get('electricity_unit')
             carbon_g = data.get('data', {}).get('attributes', {}).get('carbon_g')
             carbon_lb = data.get('data', {}).get('attributes', {}).get('carbon_lb')
@@ -46,6 +47,7 @@ def get_carbon_emissions(electricity_unit, electricity_value):
             state_data = key.upper()
             results[state_data] = {
                 'estimated_at': estimated_at,
+                'electricity_value':  electricity_value,
                 'electricity_unit':  electricity_unit,
                 'carbon_g': carbon_g,
                 'carbon_kg': carbon_kg,

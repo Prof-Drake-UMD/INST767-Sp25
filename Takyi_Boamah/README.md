@@ -40,7 +40,7 @@ The free-tier version of the ElectricityMap API allows for data retrieval from o
 
 The Carbon Interface API provides estimated carbon emissions for electricity consumption in different states. The key attributes include:
 
-- **electricity_unit**: Measurement unit (e.g., MWh).
+- **electricity_unit**: Measurement unit .
 - **electricity_value**: The amount of electricity used.
 - **carbon_g, carbon_lb, carbon_kg, carbon_mt**: Carbon emissions in grams, pounds, kilograms, and metric tons.
 - **estimated_at**: Timestamp of the estimate.
