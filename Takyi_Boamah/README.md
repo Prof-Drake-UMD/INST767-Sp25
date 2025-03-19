@@ -30,7 +30,9 @@ The pipeline will utilize the following APIs:
 
 The free-tier version of the ElectricityMap API allows for data retrieval from only one zone. For this project, the zone **"US-MIDA-PJM"** was selected. This zone covers the states of **District of Columbia, Maryland, Virginia, West Virginia, Pennsylvania, New Jersey, Delaware, Ohio, and Kentucky**.
 
-![US-MIDA-PJM Zone Map](zone_map.png)
+<p align="center">
+  <img src="zone_map.png" alt="US-MIDA-PJM Zone Map" width="700">
+</p>
 
 ### Data Types from APIs
 
