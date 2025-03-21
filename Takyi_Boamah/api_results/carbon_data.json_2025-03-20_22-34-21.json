@@ -1,6 +1,7 @@
 {
     "DC": {
-        "estimated_at": "2025-03-21T01:26:34.813Z",
+        "id": "ac95df9a-626e-4f76-983a-508a74f5821b",
+        "estimated_at": "2025-03-21T02:34:18.309Z",
         "electricity_value": 42.0,
         "electricity_unit": "mwh",
         "carbon_g": 15194285,
@@ -8,7 +9,8 @@
         "carbon_lb": 33497.67
     },
     "MD": {
-        "estimated_at": "2025-03-21T01:26:34.985Z",
+        "id": "5701c0b5-9396-46da-8c33-c5787d8a0476",
+        "estimated_at": "2025-03-21T02:34:18.429Z",
         "electricity_value": 42.0,
         "electricity_unit": "mwh",
         "carbon_g": 14070476,
@@ -16,7 +18,8 @@
         "carbon_lb": 31020.09
     },
     "VA": {
-        "estimated_at": "2025-03-21T01:26:35.116Z",
+        "id": "772fa46b-5bde-4b0d-b1de-7e31fa30de5e",
+        "estimated_at": "2025-03-21T02:34:18.544Z",
         "electricity_value": 42.0,
         "electricity_unit": "mwh",
         "carbon_g": 12110476,
@@ -24,7 +27,8 @@
         "carbon_lb": 26699.03
     },
     "WV": {
-        "estimated_at": "2025-03-21T01:26:35.227Z",
+        "id": "43abb659-d508-4baf-898b-2ceee85c05fc",
+        "estimated_at": "2025-03-21T02:34:18.665Z",
         "electricity_value": 42.0,
         "electricity_unit": "mwh",
         "carbon_g": 37051428,
@@ -32,7 +36,8 @@
         "carbon_lb": 81684.42
     },
     "PA": {
-        "estimated_at": "2025-03-21T01:26:35.336Z",
+        "id": "f8131223-164f-4ad5-9e91-0af5410dcbe6",
+        "estimated_at": "2025-03-21T02:34:18.748Z",
         "electricity_value": 42.0,
         "electricity_unit": "mwh",
         "carbon_g": 14453333,
@@ -40,7 +45,8 @@
         "carbon_lb": 31864.15
     },
     "NJ": {
-        "estimated_at": "2025-03-21T01:26:35.473Z",
+        "id": "359078f8-d8fc-4f45-b1d2-b45c9cfa826a",
+        "estimated_at": "2025-03-21T02:34:18.833Z",
         "electricity_value": 42.0,
         "electricity_unit": "mwh",
         "carbon_g": 10384761,
@@ -48,7 +54,8 @@
         "carbon_lb": 22894.48
     },
     "DE": {
-        "estimated_at": "2025-03-21T01:26:35.572Z",
+        "id": "398d9bd4-eed6-48cb-abbc-7125c82eaac1",
+        "estimated_at": "2025-03-21T02:34:18.929Z",
         "electricity_value": 42.0,
         "electricity_unit": "mwh",
         "carbon_g": 13552380,
@@ -56,7 +63,8 @@
         "carbon_lb": 29877.89
     },
     "OH": {
-        "estimated_at": "2025-03-21T01:26:35.667Z",
+        "id": "828a8401-4b05-42c5-bbd3-f3264f42c5d3",
+        "estimated_at": "2025-03-21T02:34:19.057Z",
         "electricity_value": 42.0,
         "electricity_unit": "mwh",
         "carbon_g": 23666666,
@@ -64,7 +72,8 @@
         "carbon_lb": 52176.07
     },
     "KY": {
-        "estimated_at": "2025-03-21T01:26:35.758Z",
+        "id": "0d217c5d-a302-45e9-bd3c-29ab10b8547d",
+        "estimated_at": "2025-03-21T02:34:19.157Z",
         "electricity_value": 42.0,
         "electricity_unit": "mwh",
         "carbon_g": 33916190,

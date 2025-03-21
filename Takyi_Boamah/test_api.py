@@ -44,9 +44,11 @@ def get_carbon_emissions(electricity_unit, electricity_value):
             carbon_lb = data.get('data', {}).get('attributes', {}).get('carbon_lb')
             carbon_kg = data.get('data', {}).get('attributes', {}).get('carbon_kg')
             key = data.get('data', {}).get('attributes', {}).get('state')
+            data_id = data.get('data', {}).get('id')
                         
             state_data = key.upper()
             results[state_data] = {
+                'id': data_id, 
                 'estimated_at': estimated_at,
                 'electricity_value':  electricity_value,
                 'electricity_unit':  electricity_unit,
@@ -59,13 +61,14 @@ def get_carbon_emissions(electricity_unit, electricity_value):
     
     return results
 
- # Fetch real-time electricity carbon intensity from ElectricityMap API for the US-MIDA-PJM zone (covers all target states).
+# Fetch real-time electricity power breakdown from ElectricityMap API for the US-MIDA-PJM zone (covers all target states).
 def get_electricity_data():   
     zone = "US-MIDA-PJM"
     url = f"https://api.electricitymap.org/v3/power-breakdown/latest?zone={zone}"
     headers = {"auth-token": os.getenv('ELECTRICITYMAP_API_KEY')}
     response = requests.get(url, headers=headers)
     return response.json() if response.status_code == 200 else response.text
+
 
 # Fetch weather data from WeatherBit API using major cities in each target state.   
 def get_weather_data():   
