@@ -2,6 +2,7 @@
 import requests
 import os
 import json
+import datetime
 from dotenv import load_dotenv
 
 load_dotenv() 
@@ -76,10 +77,20 @@ def get_weather_data():
     
     return results
 
-def save_json(data, filename):
-   # Save JSON data to a file.
-    with open(filename, 'w') as f:
+def save_json(data, prefix):
+    # Generate filename with timestamp
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    filename = f"{prefix}_{timestamp}.json"
+    
+    # Ensure the directory exists
+    os.makedirs("api_results", exist_ok=True)
+    
+    # Save JSON data
+    filepath = os.path.join("api_results", filename)
+    with open(filepath, 'w') as f:
         json.dump(data, f, indent=4)
+
+    print(f"Saved: {filepath}")
 
 if __name__ == "__main__":
     carbon_data = get_carbon_emissions("mwh", 42)
