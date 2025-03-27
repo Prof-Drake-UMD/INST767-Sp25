@@ -1,11 +1,36 @@
 import requests
 import json
-import os
 from datetime import datetime
+from dotenv import load_dotenv
+import os
 
-# Optional: Make sure data folder exists
-RAW_DATA_DIR = "../data/raw"
+# Load environment variables from .env file
+load_dotenv()
+
+# Access API keys securely from .env
+newsdata_api_key = os.getenv("NEWSDATA_API_KEY")
+gnews_api_key = os.getenv("GNEWS_API_KEY")
+mediastack_api_key = os.getenv("MEDIASTACK_API_KEY")
+
+# Ensure raw data directory exists
+RAW_DATA_DIR = "data/raw"
 os.makedirs(RAW_DATA_DIR, exist_ok=True)
+
+# Optional: Toggle to save with timestamps
+USE_TIMESTAMP = False
+
+# Helper: Safe filename timestamp
+def get_timestamp():
+    return datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+# Helper: Generate filename based on flag
+def get_filename(source_name):
+    if USE_TIMESTAMP:
+        return f"{RAW_DATA_DIR}/{source_name}_{get_timestamp()}.json"
+    else:
+        return f"{RAW_DATA_DIR}/{source_name}_latest.json"
+
+# ---------------------- Fetch Functions ---------------------- #
 
 def fetch_newsdata(api_key):
     url = f"https://newsdata.io/api/1/news?apikey={api_key}&language=en"
@@ -13,10 +38,11 @@ def fetch_newsdata(api_key):
     response.raise_for_status()
     data = response.json()
 
-    with open(f"{RAW_DATA_DIR}/newsdata_{datetime.now().isoformat()}.json", "w") as f:
+    filename = get_filename("newsdata")
+    with open(filename, "w") as f:
         json.dump(data, f, indent=2)
+    print(f"✅ Newsdata saved to {filename}")
     return data
-
 
 def fetch_gnews(api_key):
     url = f"https://gnews.io/api/v4/top-headlines?token={api_key}&lang=en"
@@ -24,42 +50,27 @@ def fetch_gnews(api_key):
     response.raise_for_status()
     data = response.json()
 
-    with open(f"{RAW_DATA_DIR}/gnews_{datetime.now().isoformat()}.json", "w") as f:
+    filename = get_filename("gnews")
+    with open(filename, "w") as f:
         json.dump(data, f, indent=2)
+    print(f"✅ GNews saved to {filename}")
     return data
 
-
-def fetch_reddit(client_id, secret, user_agent, subreddit="news"):
-    # Step 1: Get access token
-    auth = requests.auth.HTTPBasicAuth(client_id, secret)
-    data = {'grant_type': 'client_credentials'}
-    headers = {'User-Agent': user_agent}
-
-    res = requests.post("https://www.reddit.com/api/v1/access_token",
-                        auth=auth, data=data, headers=headers)
-    res.raise_for_status()
-    token = res.json()['access_token']
-
-    # Step 2: Use access token to fetch data
-    headers['Authorization'] = f"bearer {token}"
-    url = f"https://oauth.reddit.com/r/{subreddit}/hot?limit=25"
-    response = requests.get(url, headers=headers)
+def fetch_mediastack(api_key):
+    url = f"http://api.mediastack.com/v1/news?access_key={api_key}&languages=en&limit=25"
+    response = requests.get(url)
     response.raise_for_status()
     data = response.json()
 
-    with open(f"{RAW_DATA_DIR}/reddit_{datetime.now().isoformat()}.json", "w") as f:
+    filename = get_filename("mediastack")
+    with open(filename, "w") as f:
         json.dump(data, f, indent=2)
+    print(f"✅ Mediastack data saved to {filename}")
     return data
 
+# ---------------------- Main Run Block ---------------------- #
 
-# Example usage (Replace with your actual API keys)
 if __name__ == "__main__":
-    newsdata_api_key = "YOUR_NEWSDATA_API_KEY"
-    gnews_api_key = "YOUR_GNEWS_API_KEY"
-    reddit_client_id = "YOUR_REDDIT_CLIENT_ID"
-    reddit_secret = "YOUR_REDDIT_SECRET"
-    reddit_user_agent = "news-sentiment-tracker/0.1 by YOUR_USERNAME"
-
     fetch_newsdata(newsdata_api_key)
     fetch_gnews(gnews_api_key)
-    fetch_reddit(reddit_client_id, reddit_secret, reddit_user_agent)
+    fetch_mediastack(mediastack_api_key)
