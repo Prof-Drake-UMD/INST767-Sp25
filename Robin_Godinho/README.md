@@ -40,7 +40,7 @@ real_time_news_sentiment/
 ├── data/
 │   └── raw/                       # Raw data from APIs
 ├── utils/
-│   ├── fetch_news.py              # Ingest data
+│   ├── ingest.py              # Ingest data
 │   ├── clean_data.py              # Clean and standardize
 │   └── sentiment_analysis.py      # Add sentiment scores
 ├── README.md
