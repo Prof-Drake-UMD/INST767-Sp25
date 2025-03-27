@@ -27,7 +27,7 @@ The goal is to:
 |--------------|----------------------------------------------|-----------|
 | [NewsData.io](https://newsdata.io/) | Global and regional news data              | ✅ |
 | [GNews](https://gnews.io/)          | Aggregates global news headlines           | ✅ |
-| [Media Stack](https://www.reddit.com/dev/api/) | International news coverage| ✅ |
+| [Media Stack](https://mediastack.com/) | International news coverage| ✅ |
 
 ---
 
