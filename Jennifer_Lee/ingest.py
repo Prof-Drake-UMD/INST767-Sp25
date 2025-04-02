@@ -58,7 +58,7 @@ if __name__ == "__main__":
     crypto_data = fetch_coingecko("bitcoin")
     print("Crypto Data:\n", crypto_data)
     
-def fetch_fred(series_id="CPIAUCSL", api_key= "3ab53daa5812f18f00c5b0873399a5bc"):
+def fetch_fred(series_id="CPIAUCSL", api_key= "apikey"):
   
     url = "https://api.stlouisfed.org/fred/series/observations"
     params = {
