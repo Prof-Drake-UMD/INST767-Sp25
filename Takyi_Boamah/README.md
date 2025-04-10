@@ -1,138 +1,167 @@
-# Sustainability Analytics Pipeline
+# EcoFusion Data Pipeline
 
-## Project Overview
+**EcoFusion** is a data pipeline designed to integrate and analyze sustainability-related datasets from three public APIs:
 
-My project aims to implement a data pipeline that ingests, transforms, and analyzes sustainability-related data from multiple APIs. The goal is to collect carbon emissions data, electricity production information, and weather patterns. This data can be used in the future to provide insights into environmental impacts and help identify opportunities for reducing carbon footprints.
+- ⚡ **EIA State Electricity Profile API** (Electric emissions by fuel type)
+- 🌿 **Carbon Interface API** (Carbon estimates per MWh of electricity usage)
+- 🌦️ **OpenWeatherMap API** (Real-time weather metrics by state capital)
 
-## Data Sources
+The goal is to produce a unified, queryable dataset in **BigQuery** for analyzing environmental impacts of energy generation, with weather context.
 
-The pipeline will utilize the following APIs:
+## 🌐 API Data Sources
 
-### 1. Carbon Interface API
+### 1. **EIA API - State Electricity Profile**
 
-- Provides carbon emissions data for various activities and energy sources.
-- Offers estimates for electricity usage, transportation, and more.
-- **Link**: [Carbon Interface](https://www.carboninterface.com/)
+- **Endpoint:** `https://api.eia.gov/v2/electricity/state-electricity-profiles/emissions-by-state-by-fuel/data`
+- **Inputs:**
+  - `api_key`: EIA API key
+  - `data[]`: Set to `co2-thousand-metric-tons`
+  - `sort[0][column]`: `period`
+  - `sort[0][direction]`: `desc`
+- **Returns:**
+  - CO2 emissions (thousand metric tons) by state and fuel type (e.g., Coal, Natural Gas)
+  - Year (`period`), state abbreviation, fuel description
 
-### 2. ElectricityMap API
+### 2. **Carbon Interface API - Emission Estimates**
 
-- Shows real-time electricity carbon intensity by region.
-- Provides data on energy production sources.
-- **Link**: [ElectricityMap](https://www.electricitymaps.com/)
+- **Endpoint:** `https://www.carboninterface.com/api/v1/estimates`
+- **Method:** POST
+- **Headers:**
+  - `Authorization`: Bearer token
+  - `Content-Type`: application/json
+- **Payload Example:**
 
-### 3. WeatherBit API
+```json
+{
+  "type": "electricity",
+  "electricity_unit": "mwh",
+  "electricity_value": 42,
+  "country": "US",
+  "state": "CA"
+}
+```
 
-- Detailed weather data including temperature, precipitation, wind.
-- Historical and forecast capabilities.
-- **Link**: [WeatherBit](https://www.weatherbit.io/)
+- **Returns:**
+  - Estimated emissions: grams, pounds, kilograms, metric tons of CO2
+  - Includes the electricity value submitted and a timestamp
 
-## Data from API
+### 3. **OpenWeatherMap API - Current Weather**
 
-The free-tier version of the ElectricityMap API allows for data retrieval from only one zone. For this project, the zone **"US-MIDA-PJM"** was selected. This zone covers the states of **District of Columbia, Maryland, Virginia, West Virginia, Pennsylvania, New Jersey, Delaware, Ohio, and Kentucky**.
+- **Endpoint:** `http://api.openweathermap.org/data/2.5/weather`
+- **Inputs:**
+  - `q`: City and country code (e.g., `Baltimore,US`)
+  - `appid`: OpenWeatherMap API key
+  - `units`: `metric` for Celsius output
+- **Returns:**
+  - Current temperature, humidity, wind speed/direction, visibility, pressure
+  - Main weather type (e.g., Clear, Rain), and cloud cover
 
-<p align="center">
-  <img src="zone_map.png" alt="US-MIDA-PJM Zone Map" width="700">
-</p>
+## 📁 Project Structure
 
-### Data Types from APIs
+```
+/Takyi_Boamah/
+│
+├── get_data.py                 # Python ingest script for API data collection
+├── .env                        # Environment variables for API keys
+├── api_results/                # Stores JSON outputs of API calls
+├── schema/
+│   └── bigquery_schema.sql     # BigQuery table creation statements
+├── queries/
+│   └── analysis_queries.sql    # Insightful analysis queries
+└── README.md                   # Project overview and instructions
+```
 
-#### **Carbon Interface API**
+## 🧱 BigQuery Dataset Design:
 
-The Carbon Interface API provides estimated carbon emissions for electricity consumption in different states. The key attributes include:
+| Table                           | Description                                    |
+| ------------------------------- | ---------------------------------------------- |
+| `weather_snapshot`              | Real-time weather data by state capital        |
+| `carbon_emissions`              | Carbon footprint per electricity unit consumed |
+| `state_electricity_emissions`   | Emissions by fuel type and state (from EIA)    |
+| `state_emission_summary` (VIEW) | Aggregated emissions per state/year            |
 
-- **electricity_unit**: Measurement unit .
-- **electricity_value**: The amount of electricity used.
-- **carbon_g, carbon_lb, carbon_kg, carbon_mt**: Carbon emissions in grams, pounds, kilograms, and metric tons.
-- **estimated_at**: Timestamp of the estimate.
+### Table: `weather_snapshot`
 
-#### **ElectricityMap API**
+| Column Name         | Data Type | Description                                |
+| ------------------- | --------- | ------------------------------------------ |
+| state               | STRING    | US state abbreviation                      |
+| city                | STRING    | State capital or representative city       |
+| datetime            | TIMESTAMP | Datetime of the weather snapshot           |
+| temp_celsius        | FLOAT64   | Current temperature in Celsius             |
+| feels_like_celsius  | FLOAT64   | Perceived temperature in Celsius           |
+| humidity_percent    | INT64     | Humidity percentage                        |
+| pressure_hpa        | INT64     | Atmospheric pressure in hPa                |
+| weather_main        | STRING    | Main weather condition (e.g., Clear, Rain) |
+| weather_description | STRING    | Detailed weather description               |
+| wind_speed_mps      | FLOAT64   | Wind speed in meters per second            |
+| wind_deg            | INT64     | Wind direction in degrees                  |
+| cloud_percent       | INT64     | Cloudiness percentage                      |
+| visibility_m        | INT64     | Visibility in meters                       |
 
-The ElectricityMap API provides various breakdowns of electricity data, including:
+### Table: `carbon_emissions`
 
-- **Power Consumption Breakdown**: Nuclear, geothermal, biomass, coal, wind, solar, hydro, gas, oil, unknown.
-- **Power Production Breakdown**: Similar categories as consumption.
-- **Power Import/Export Breakdown**: Tracks electricity flow between regions.
-- **Fossil-Free & Renewable Percentage**: Measures the proportion of energy from clean sources.
-- **Total Consumption & Production**: Aggregated values for energy usage and generation.
-- **Estimation Method**: Indicates how the data is estimated.
+| Column Name           | Data Type | Description                       |
+| --------------------- | --------- | --------------------------------- |
+| state                 | STRING    | US state abbreviation             |
+| country               | STRING    | Country code (typically 'US')     |
+| estimated_at          | TIMESTAMP | Time of the estimate              |
+| electricity_value_mwh | FLOAT64   | Amount of electricity used in MWh |
+| carbon_g              | INT64     | Carbon emitted in grams           |
+| carbon_lb             | FLOAT64   | Carbon emitted in pounds          |
+| carbon_kg             | FLOAT64   | Carbon emitted in kilograms       |
+| carbon_mt             | FLOAT64   | Carbon emitted in metric tons     |
 
-#### **WeatherBit API**
+### Table: `state_electricity_emissions`
 
-The WeatherBit API provides real-time and historical weather data, including:
+| Column Name      | Data Type | Description                           |
+| ---------------- | --------- | ------------------------------------- |
+| state            | STRING    | US state abbreviation                 |
+| year             | INT64     | Reporting year                        |
+| fuel_type        | STRING    | Fuel ID code (e.g., COL, NG, PET)     |
+| fuel_description | STRING    | Full description of the fuel          |
+| co2_thousand_mt  | FLOAT64   | CO2 emissions in thousand metric tons |
 
-- **Temperature (temp, app_temp)**: Actual and perceived temperature.
-- **Air Quality Index (aqi)**: Measurement of air pollution.
-- **Cloud Cover (clouds)**: Percentage of cloud coverage.
-- **Dew Point (dewpt)**: Temperature at which condensation forms.
-- **Wind (wind_spd, wind_dir, wind_cdir, wind_cdir_full)**: Speed and direction of wind.
-- **Precipitation (precip, snow)**: Rain and snow levels.
-- **Pressure (pres, slp)**: Atmospheric pressure.
-- **Humidity (rh)**: Relative humidity percentage.
-- **Solar Radiation (solar_rad, ghi, dhi, dni, elev_angle)**: Measures of solar exposure.
-- **Visibility (vis)**: Distance of clear sight.
-- **Weather Description (weather.description, weather.code)**: Text and code representation of weather conditions.
-- **Time Information (ob_time, datetime, sunrise, sunset, timezone)**: Various timestamps and location data.
+### View: `state_emission_summary`
 
-## Data Model Design
+| Column Name         | Data Type | Description                           |
+| ------------------- | --------- | ------------------------------------- |
+| state               | STRING    | US state abbreviation                 |
+| year                | INT64     | Reporting year                        |
+| coal_emissions      | FLOAT64   | Emissions from coal                   |
+| gas_emissions       | FLOAT64   | Emissions from natural gas            |
+| petroleum_emissions | FLOAT64   | Emissions from petroleum              |
+| other_emissions     | FLOAT64   | Emissions from other sources          |
+| total_emissions     | FLOAT64   | Total emissions across all fuel types |
 
-Since BigQuery is a columnar, non-relational database, a denormalized data model has been designed, consisting of three tables:
+## 🔍 Interesting Analytical Queries
 
-### 1. carbon_emissions Table
+### 1. Do hotter states emit less carbon per MWh on average? 🌡️
 
-Stores carbon emissions estimates for each state.
+```sql
+SELECT
+  w.state,
+  AVG(w.temp_celsius) AS avg_temp,
+  AVG(c.carbon_kg / c.electricity_value_mwh) AS kg_per_mwh
+FROM `ecofusion.weather_snapshot` w
+JOIN `ecofusion.carbon_emissions` c ON LOWER(w.state) = LOWER(c.state)
+GROUP BY w.state
+ORDER BY kg_per_mwh DESC;
+```
 
-| Column Name       | Data Type | Description                            |
-| ----------------- | --------- | -------------------------------------- |
-| id                | STRING    | Unique identifier for the estimate     |
-| state             | STRING    | State code (e.g., "VA")                |
-| estimated_at      | TIMESTAMP | Timestamp of estimate                  |
-| electricity_value | FLOAT     | Amount of electricity used             |
-| electricity_unit  | STRING    | Unit of electricity used (e.g., "mwh") |
-| carbon_g          | FLOAT     | Carbon emissions in grams              |
-| carbon_kg         | FLOAT     | Carbon emissions in kilograms          |
-| carbon_lb         | FLOAT     | Carbon emissions in pounds             |
-| carbon_mt         | FLOAT     | Carbon emissions in metric tons        |
+### 2. Are clear sky days associated with lower emissions per state? ☀️
 
-### 2 electricity_production Table
+```sql
+SELECT
+  w.state,
+  COUNTIF(w.weather_main = 'Clear') AS clear_days,
+  AVG(c.carbon_kg) AS avg_emission_all_days,
+  AVG(CASE WHEN w.weather_main = 'Clear' THEN c.carbon_kg END) AS avg_emission_clear_days
+FROM `ecofusion.weather_snapshot` w
+JOIN `ecofusion.carbon_emissions` c ON LOWER(w.state) = LOWER(c.state)
+GROUP BY w.state
+ORDER BY avg_emission_clear_days;
+```
 
-Stores electricity generation and consumption data by zone.
+More interesting queries are included in [`queries/analysis_queries.sql`](queries/analysis_queries.sql).
 
-| Column Name            | Data Type | Description                     |
-| ---------------------- | --------- | ------------------------------- |
-| date                   | DATE      | Date of data collection         |
-| timestamp              | TIMESTAMP | Time of data collection         |
-| zone                   | STRING    | Electricity zone                |
-| fossil_free_percentage | FLOAT64   | Percentage of fossil-free power |
-| renewable_percentage   | FLOAT64   | Percentage of renewable power   |
-| total_production       | FLOAT64   | Total power production (MW)     |
-| total_consumption      | FLOAT64   | Total power consumption (MW)    |
-| carbon_intensity       | FLOAT64   | Carbon intensity                |
-| carbon_intensity_unit  | STRING    | Unit of carbon intensity        |
-| production_nuclear     | FLOAT64   | Power from nuclear (MW)         |
-| production_geothermal  | FLOAT64   | Power from geothermal (MW)      |
-| production_biomass     | FLOAT64   | Power from biomass (MW)         |
-| production_coal        | FLOAT64   | Power from coal (MW)            |
-| production_wind        | FLOAT64   | Power from wind (MW)            |
-| production_solar       | FLOAT64   | Power from solar (MW)           |
-| production_hydro       | FLOAT64   | Power from hydro (MW)           |
-| production_gas         | FLOAT64   | Power from gas (MW)             |
-| production_oil         | FLOAT64   | Power from oil (MW)             |
-| production_unknown     | FLOAT64   | Power from unknown sources (MW) |
-| estimation_method      | STRING    | Method used for estimation      |
-| region                 | STRING    | Region of data collection       |
-
-### 3. weather_data Table
-
-Stores real-time weather information for the major cities in each state.
-
-| Column Name   | Data Type | Description             |
-| ------------- | --------- | ----------------------- |
-| city          | STRING    | City name               |
-| state         | STRING    | State code              |
-| timestamp     | TIMESTAMP | Time of data collection |
-| temp_c        | FLOAT     | Temperature (Celsius)   |
-| wind_speed    | FLOAT     | Wind speed (m/s)        |
-| humidity      | FLOAT     | Humidity percentage     |
-| cloud_cover   | FLOAT     | Cloud cover percentage  |
-| precipitation | FLOAT     | Rainfall (mm)           |
-| solar_rad     | FLOAT     | Solar radiation (W/m²)  |
+---
