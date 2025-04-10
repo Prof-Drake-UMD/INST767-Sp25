@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
-from clean_data import clean_all
+from sentiment_analysis import analyze_sentiment
 
 default_args = {
     'owner': 'airflow',
@@ -10,12 +10,12 @@ default_args = {
     'retry_delay': timedelta(minutes=5)
 }
 
-with DAG('clean_news_dag',
+with DAG('sentiment_analysis_dag',
          default_args=default_args,
          schedule_interval='@daily',
          catchup=False) as dag:
 
-    clean_data_task = PythonOperator(
-        task_id='clean_all_sources',
-        python_callable=clean_all
+    sentiment_task = PythonOperator(
+        task_id='run_sentiment_analysis',
+        python_callable=analyze_sentiment
     )
