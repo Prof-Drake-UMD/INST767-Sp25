@@ -10,3 +10,4 @@ CREATE TABLE Api_data (
 -- Query 2
 
 SELECT 
+FROM 
