@@ -38,9 +38,6 @@ ORDER BY deviation DESC;
 
 
 -- 4. ☀️ Are clear sky days associated with lower emissions per state?
-sql
-Copy
-Edit
 SELECT
   w.state,
   COUNTIF(w.weather_main = 'Clear') AS clear_days,
@@ -52,9 +49,6 @@ GROUP BY w.state
 ORDER BY avg_emission_clear_days;
 
 -- 5. 📊 Trend: Top 5 coal-emitting states over years
-sql
-Copy
-Edit
 SELECT
   state,
   year,

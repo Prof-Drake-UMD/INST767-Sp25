@@ -62,6 +62,7 @@ The goal is to produce a unified, queryable dataset in **BigQuery** for analyzin
 /Takyi_Boamah/
 │
 ├── get_data.py                 # Python ingest script for API data collection
+├── get_data.py                 # Python ingest script for API data collection
 ├── .env                        # Environment variables for API keys
 ├── api_results/                # Stores JSON outputs of API calls
 ├── schema/
