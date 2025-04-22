@@ -1,5 +1,5 @@
 # 🔍 Job Market Data Integration Pipeline  
-*A multi-source ETL project for unified job search insights using Google Cloud Platform*
+*A multi-source ETL project for job search using Google Cloud Platform*
 
 
 
@@ -7,17 +7,17 @@
 
 <!-- This project is part of the final assignment for INST767 (Sp25), focusing on building a **cloud-native data pipeline** using **Google Cloud Platform** tools. The goal is to **extract**, **transform**, and **load** data from multiple external APIs into **BigQuery**, enabling further analysis and unified access via a single API. -->
 
-As a person pursuing a Master's in HCI with a background in computer science, this project aims to provide people with similar background to have a simplified job search experience. This is a ETL pipeline that integrates data from three different job market APIs—tailored for tech, design, and freelance roles—and exposes them through a unified schema and API.
+As a person pursuing a Master's in HCI with a background in computer science, this project aims to provide people with similar background to have a simplified job search experience. This is a ETL pipeline that integrates data from three different job market APIs—tailored for entry level general, tech, and design roles. 
 
 
 
-## 🧭 Objective
+<!-- ## 🧭 Objective
 
 Build an automated data pipeline using **Apache Airflow** (via **Cloud Composer**) that:
 
 - Pulls data from **three external job-related APIs**
 - Transforms the data into a **unified schema**
-- Loads the cleaned data into **BigQuery**
+- Loads the cleaned data into **BigQuery** -->
 
 
 ## 🔗 Data Sources
@@ -26,16 +26,17 @@ Build an automated data pipeline using **Apache Airflow** (via **Cloud Composer*
 |-----|-------|------------------|------|
 | **The Muse** | Creative & Design Jobs | Daily | [API Docs](https://www.themuse.com/developers/api/v2) |
 | **Adzuna** | Technical / Engineering Roles | Every 6 hours | [API Docs](https://developer.adzuna.com/) |
-| **Hacker News: Who's Hiring** | Freelance / Startup Jobs | Monthly | [GitHub API](https://github.com/HackerNews/API) / [Search API](https://hn.algolia.com/api) |
+| **Jooble** | Broad job listings (Entry level / Hourly Jobs) | Daily | [API Docs](https://jooble.org/api/about) |
 
 
 
-## 🏗️ Architecture
 
-The system follows a modular ETL pattern using Google Cloud services:
+<!-- ## 🏗️ Architecture
+
+The system follows a ETL pattern using Google Cloud services:
 
 ```
-[ Muse / Adzuna / HN APIs ] 
+[ Muse / Adzuna / Jooble APIs ] 
         ↓
 [ Python API Connectors ]
         ↓
@@ -44,22 +45,22 @@ The system follows a modular ETL pattern using Google Cloud services:
 [ GCS (intermediate storage) ]
         ↓
 [ BigQuery (final storage & analysis) ]
-```
+``` -->
 
 
 
 ## 🧱 Components
 
-### 🛠️ Extraction
-- Custom Python modules (`muse_connector.py`, etc.)
+### 🛠️ Extraction (Beginning of Ingest)
+- Custom Python modules (`muse_api.py`, etc.)
 - Retry logic and error handling
-- Pulls raw data from APIs and writes to Cloud Storage
+- Pulls raw data from APIs and writes to json files
 
-### 🧼 Transformation
+<!-- ### 🧼 Transformation
 - Converts inconsistent fields into a **standardized schema**
-- Cleans nulls, infers job types, standardizes skills and salary
+- Cleans nulls, infers job types, standardizes skills and salary -->
 
-### 🧩 Unified Schema
+<!-- ### 🧩 Unified Schema
 
 ```json
 {
@@ -76,11 +77,11 @@ The system follows a modular ETL pattern using Google Cloud services:
   "source_api": "string",
   "additional_metadata": "object | null"
 }
-```
+``` -->
 
-### 📥 Loading
+<!-- ### 📥 Loading
 - Transformed files written to GCS in newline-delimited JSON
-- Loaded into partitioned BigQuery table by `posted_date`
+- Loaded into partitioned BigQuery table by `posted_date` -->
 
 ### 📅 Update Schedule
 
@@ -88,7 +89,7 @@ The system follows a modular ETL pattern using Google Cloud services:
 |--------|----------|
 | The Muse | Daily at 12:00 UTC |
 | Adzuna | Every 6 hours |
-| Hacker News | Monthly, 1st day at 12:00 UTC |
+| Jooble | Daily at 06:00 UTC |
 
 
 
@@ -102,7 +103,7 @@ firstname_lastname/
 │   └── modules/
 │       ├── muse_connector.py
 │       ├── adzuna_connector.py
-│       ├── hackernews_connector.py
+│       ├── jooble_connector.py
 │       └── data_transformer.py
 ├── schemas/
 │   └── unified_job_schema.json
@@ -112,11 +113,11 @@ firstname_lastname/
 
 
 
-## 🌐 API Layer 
+<!-- ## 🌐 API Layer 
 
-The cleaned job data in BigQuery is exposed via a basic RESTful API.
+The cleaned job data in BigQuery is exposed via a basic RESTful API. -->
 
-### Base URL
+<!-- ### Base URL
 
 ```
 https://your-api-url.com/jobs
@@ -148,7 +149,7 @@ https://your-api-url.com/jobs
     "source_api": "adzuna"
   }
 ]
-```
+``` -->
 
 
 
@@ -173,7 +174,7 @@ With the integrated dataset in BigQuery, we can explore:
 
 
 
-## 🧑‍💻 Technologies Used
+<!-- ## 🧑‍💻 Technologies Used
 
 - **Google Cloud Platform**
   - Cloud Composer (Airflow)
@@ -182,7 +183,7 @@ With the integrated dataset in BigQuery, we can explore:
 - **Python**
   - `requests`, `pandas`, `datetime`
 - **APIs**
-  - The Muse, Adzuna, Hacker News
+  - The Muse, Adzuna, Jooble -->
 <!-- - FastAPI or Flask for REST API Layer -->
 
 
