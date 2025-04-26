@@ -1,18 +1,18 @@
-# -*- coding: utf-8 -*-
-
 import requests
 import time
 import json
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
+# Load API keys from .env file
 load_dotenv()
 
-TMDB_API_KEY = os.getenv("TMDB_API_KEY")
-OMDB_API_KEY = os.getenv("OMDB_API_KEY")
-WATCHMODE_API_KEY = os.getenv("WATCHMODE_API_KEY")
-def fetch_tmdb_now_playing(language='en-US', page=1, region=None):
-    url = "https://api.themoviedb.org/3/movie/now_playing"
+TMDB_API_KEY = os.getenv('TMDB_API_KEY')
+OMDB_API_KEY = os.getenv('OMDB_API_KEY')
+WATCHMODE_API_KEY = os.getenv('WATCHMODE_API_KEY')
+
+def fetch_tmdb_top_rated(language='en-US', page=1, region=None):
+    url = "https://api.themoviedb.org/3/movie/top_rated"
     params = {
         'api_key': TMDB_API_KEY,
         'language': language,
@@ -68,30 +68,30 @@ def fetch_watchmode_sources(title_id):
     response.raise_for_status()
     return response.json()
 
-def gather_movie_full_data(region=None):
+def gather_top_rated_movies(region=None):
     movies_full_data = []
 
-    # get the first page to find out total pages
-    first_page = fetch_tmdb_now_playing(region=region, page=1)
+    # Fetch first page to get total pages
+    first_page = fetch_tmdb_top_rated(region=region, page=1)
     total_pages = first_page.get('total_pages', 1)
 
-    print(f"Total pages to fetch: {total_pages}")
+    print(f"Total pages to fetch (Top Rated): {total_pages}")
 
-    # handle the first page
+    # Handle first page
     all_movies = first_page.get('results', [])
 
-    # keep fetching until all pages are processed
+    # Keep fetching until all pages are processed
     for page in range(2, total_pages + 1):
         try:
-            page_data = fetch_tmdb_now_playing(region=region, page=page)
+            page_data = fetch_tmdb_top_rated(region=region, page=page)
             page_movies = page_data.get('results', [])
             all_movies.extend(page_movies)
-            time.sleep(0.2)  # to avoid hitting the API rate limit
+            time.sleep(0.2)  # avoid rate limits
         except Exception as e:
             print(f"Failed to fetch page {page}: {str(e)}")
             continue
 
-    print(f"Total movies fetched from TMDB: {len(all_movies)}")
+    print(f"Total top rated movies fetched: {len(all_movies)}")
 
     for movie in all_movies:
         try:
@@ -132,12 +132,17 @@ def gather_movie_full_data(region=None):
                 'vote_average': vote_average,
                 'vote_count': vote_count,
                 'imdb_id': imdb_id,
-                'omdb': omdb_data,
+                'box_office': omdb_data.get('BoxOffice'), 
+                'runtime': omdb_data.get('Runtime'),
+                'imdb_rating': omdb_data.get('imdbRating'),
+                'rotten_tomatoes_rating': next((r['Value'] for r in omdb_data.get('Ratings', []) if r['Source'] == 'Rotten Tomatoes'), None),
+                'metacritic_rating': next((r['Value'] for r in omdb_data.get('Ratings', []) if r['Source'] == 'Metacritic'), None),
+                'awards': omdb_data.get('Awards'),
                 'watchmode_sources': watchmode_sources,
                 'has_streaming': has_streaming
             })
 
-            time.sleep(0.2)
+            time.sleep(2)
 
         except Exception as e:
             print(f"Failed to process movie {movie.get('title')}: {str(e)}")
@@ -146,10 +151,10 @@ def gather_movie_full_data(region=None):
     return movies_full_data
 
 if __name__ == "__main__":
-    movies_data = gather_movie_full_data(region='US')
-    print(f"Fetched and combined data for {len(movies_data)} movies.")
+    movies_data = gather_top_rated_movies(region='US')
+    print(f"Fetched and combined data for {len(movies_data)} top rated movies.")
 
     # Save to JSON
-    with open('movies_data.json', 'w') as f:
+    with open('top_rated_movies.json', 'w') as f:
         json.dump(movies_data, f, indent=2)
-    print("Data saved to movies_data.json!")
+    print("Data saved to top_rated_movies.json!")
