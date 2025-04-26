@@ -3,11 +3,14 @@
 import requests
 import time
 import json
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
-TMDB_API_KEY = '52beb2ce6e91972aac265d2509379095'
-OMDB_API_KEY = 'fa033126'
-WATCHMODE_API_KEY = 'i5Jj3jlDB8wjcc0igIS5EsVganvLNwkelHYi1CaQ'
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
+OMDB_API_KEY = os.getenv("OMDB_API_KEY")
+WATCHMODE_API_KEY = os.getenv("WATCHMODE_API_KEY")
 def fetch_tmdb_now_playing(language='en-US', page=1, region=None):
     url = "https://api.themoviedb.org/3/movie/now_playing"
     params = {
