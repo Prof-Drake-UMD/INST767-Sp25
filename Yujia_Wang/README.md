@@ -191,11 +191,16 @@ https://api.themoviedb.org/3/movie/{movie_id}/external_ids
 ```
 
 
-## 🛠️ How These APIs Work Together
-| API | Key Contribution  |
-| ----------- | ----------- |
-| TMDB | Provides real-time popularity data and metadata for currently playing movies. Also retrieves IMDb IDs for cross-referencing. |
-| OMDb | Offers comprehensive movie details, including ratings from IMDb, Rotten Tomatoes, and Metacritic, as well as box office revenue and awards. |
-| Watchmode | Tracks streaming availability across 200+ platforms, helping analyze how movies transition from theaters to digital streaming. |	
+## 🛠️ Updated Data Flow
 
-By integrating these three APIs, we can analyze the popularity trends of currently playing movies, including their box office performance, audience ratings, and streaming availability.
+1. Extract "Now Playing" movies from TMDB API, including basic metadata and TMDB movie IDs.
+
+2. Get IMDb IDs for each movie via TMDB External IDs API.
+
+3. Fetch movie details (ratings, box office, awards) from OMDb API using IMDb ID.
+
+4. Search Watchmode by IMDb ID to obtain the correct Watchmode title ID.
+
+5. Retrieve streaming availability from Watchmode API using Watchmode title ID.
+
+6. Merge all data into a unified JSON structure, ready for cleaning and loading into Google Cloud Storage and BigQuery.
