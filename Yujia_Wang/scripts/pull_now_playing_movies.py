@@ -44,29 +44,46 @@ def fetch_omdb_movie_data(imdb_id):
     response.raise_for_status()
     return response.json()
 
-def fetch_watchmode_title_id(imdb_id):
+def fetch_watchmode_title_id(imdb_id, retries=3):
     url = "https://api.watchmode.com/v1/search/"
     params = {
         'apiKey': WATCHMODE_API_KEY,
         'search_field': 'imdb_id',
         'search_value': imdb_id
     }
-    response = requests.get(url, params=params)
-    response.raise_for_status()
-    data = response.json()
-    if data.get('title_results'):
-        return data['title_results'][0]['id']
-    else:
-        return None
+    
+    for attempt in range(retries):
+        response = requests.get(url, params=params)
+        if response.status_code == 429:
+            print(f"429 Too Many Requests. Sleeping for 60 seconds... (Attempt {attempt+1}/{retries})")
+            time.sleep(60) 
+            continue
+        response.raise_for_status()
+        data = response.json()
+        if data.get('title_results'):
+            return data['title_results'][0]['id']
+        else:
+            return None
+    print(f"Failed to fetch Watchmode title_id for {imdb_id} after {retries} retries.")
+    return None
 
-def fetch_watchmode_sources(title_id):
+def fetch_watchmode_sources(title_id, retries=3):
     url = f"https://api.watchmode.com/v1/title/{title_id}/sources/"
     params = {
         'apiKey': WATCHMODE_API_KEY
     }
-    response = requests.get(url, params=params)
-    response.raise_for_status()
-    return response.json()
+    
+    for attempt in range(retries):
+        response = requests.get(url, params=params)
+        if response.status_code == 429:
+            print(f"429 Too Many Requests. Sleeping for 60 seconds... (Attempt {attempt+1}/{retries})")
+            time.sleep(60)
+            continue
+        response.raise_for_status()
+        return response.json()
+    
+    print(f"Failed to fetch Watchmode sources for title_id {title_id} after {retries} retries.")
+    return []
 
 def gather_movie_full_data(region=None):
     movies_full_data = []
@@ -86,7 +103,7 @@ def gather_movie_full_data(region=None):
             page_data = fetch_tmdb_now_playing(region=region, page=page)
             page_movies = page_data.get('results', [])
             all_movies.extend(page_movies)
-            time.sleep(0.2)  # to avoid hitting the API rate limit
+            time.sleep(2)  # to avoid hitting the API rate limit
         except Exception as e:
             print(f"Failed to fetch page {page}: {str(e)}")
             continue
@@ -113,6 +130,7 @@ def gather_movie_full_data(region=None):
             if imdb_id:
                 omdb_data = fetch_omdb_movie_data(imdb_id)
                 watchmode_title_id = fetch_watchmode_title_id(imdb_id)
+                time.sleep(1)
                 if watchmode_title_id:
                     try:
                         watchmode_sources = fetch_watchmode_sources(watchmode_title_id)
@@ -142,7 +160,7 @@ def gather_movie_full_data(region=None):
                 'has_streaming': has_streaming
             })
 
-            time.sleep(0.2)
+            time.sleep(2)
 
         except Exception as e:
             print(f"Failed to process movie {movie.get('title')}: {str(e)}")
