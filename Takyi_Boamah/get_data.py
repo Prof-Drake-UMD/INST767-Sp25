@@ -5,10 +5,10 @@ import datetime
 import logging
 import requests
 import concurrent.futures
-from dotenv import load_dotenv
+# from dotenv import load_dotenv        # For  local access to environmental variable
+# load_dotenv()
 
-# Load API keys from .env file
-load_dotenv()
+#Load API keys from .env file
 EIA_API_KEY = os.getenv('EIA_API_KEY')
 CARBON_API_KEY = os.getenv('CARBON_API_KEY2')
 WEATHER_API_KEY = os.getenv('OPENWEATHER_API_KEY')
@@ -132,7 +132,7 @@ def fetch_all_weather_data():
 def save_json(data, filename_prefix):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     os.makedirs("api_results", exist_ok=True)
-    filepath = os.path.join("api_results", f"{filename_prefix}_{timestamp}.json")
+    filepath = os.path.join("api_results", f"{filename_prefix}.json")
     with open(filepath, 'w') as f:
         json.dump(data, f, indent=4)
     logging.info(f"Saved: {filepath}")

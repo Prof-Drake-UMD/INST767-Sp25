@@ -3,25 +3,31 @@ import json
 import pandas as pd
 from datetime import datetime
 
-data_dir = "./api_results"
-output_dir = "./transformed"
-os.makedirs(output_dir, exist_ok=True)
+# Paths inside Cloud Composer
+api_results_path = "/home/airflow/gcs/dags/api_results"
+output_path = "/home/airflow/gcs/dags/data"
+
+# For local use
+# api_results_path = "./api_results"
+# output_path = "./data"
+
+os.makedirs(output_path, exist_ok=True)
 
 def transform_carbon():
-    path = os.path.join(data_dir, "carbon_estimates_2025-04-09_20-41-18.json")
-    with open(path) as f:
+    file_path = os.path.join(api_results_path, "carbon_estimates.json")
+    with open(file_path, 'r') as f:
         carbon_data = json.load(f)
     df = pd.DataFrame(carbon_data)
-    df["estimated_at"] = datetime.now().isoformat()
-    df.to_csv(os.path.join(output_dir, "carbon_emissions.csv"), index=False)
-    print("✅ carbon_emissions.csv saved.")
+    output_file = os.path.join(output_path, "carbon_emissions.csv")
+    df.to_csv(output_file, index=False)
+    print(f"✅ Transformed Carbon data to {output_file}")
 
 def transform_weather():
-    path = os.path.join(data_dir, "weather_data_2025-04-09_20-23-52.json")
-    with open(path) as f:
+    file_path = os.path.join(api_results_path, "weather_data.json")
+    with open(file_path, 'r') as f:
         weather_data = json.load(f)
-
-    records = []
+    
+    weather_records = []
     for entry in weather_data:
         weather = entry.get("weather", {})
         main = weather.get("main", {})
@@ -30,7 +36,7 @@ def transform_weather():
         record = {
             "state": entry.get("state"),
             "city": entry.get("city"),
-            "datetime": datetime.utcfromtimestamp(weather.get("dt", 0)).isoformat(),
+            "datetime": weather.get("dt"),
             "temp_celsius": main.get("temp"),
             "feels_like_celsius": main.get("feels_like"),
             "humidity_percent": main.get("humidity"),
@@ -42,14 +48,16 @@ def transform_weather():
             "cloud_percent": clouds.get("all"),
             "visibility_m": weather.get("visibility")
         }
-        records.append(record)
+        weather_records.append(record)
 
-    pd.DataFrame(records).to_csv(os.path.join(output_dir, "weather_snapshot.csv"), index=False)
-    print("✅ weather_snapshot.csv saved.")
+    df = pd.DataFrame(weather_records)
+    output_file = os.path.join(output_path, "weather_snapshot.csv")
+    df.to_csv(output_file, index=False)
+    print(f"✅ Transformed Weather data to {output_file}")
 
 def transform_eia():
-    path = os.path.join(data_dir, "state_electricity_profile_2025-04-09_20-13-52.json")
-    with open(path) as f:
+    file_path = os.path.join(api_results_path, "state_electricity_profile.json")
+    with open(file_path, 'r') as f:
         eia_data = json.load(f)
     df = pd.DataFrame(eia_data)
     df = df.rename(columns={
@@ -61,5 +69,8 @@ def transform_eia():
     })
     df["year"] = df["year"].astype(int)
     df["co2_thousand_mt"] = pd.to_numeric(df["co2_thousand_mt"], errors="coerce")
-    df.to_csv(os.path.join(output_dir, "state_electricity_emissions.csv"), index=False)
-    print("✅ state_electricity_emissions.csv saved.")
+    output_file = os.path.join(output_path, "state_electricity_emissions.csv")
+    df.to_csv(output_file, index=False)
+    print(f"✅ Transformed EIA data to {output_file}")
+
+

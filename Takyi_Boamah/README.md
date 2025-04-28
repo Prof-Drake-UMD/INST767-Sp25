@@ -8,16 +8,13 @@
 
 The goal is to produce a unified, queryable dataset in **BigQuery** for analyzing environmental impacts of energy generation, with weather context.
 
+The pipeline is orchestrated using **Cloud Composer (Apache Airflow)**.
+
 ## 🌐 API Data Sources
 
 ### 1. **EIA API - State Electricity Profile**
 
 - **Endpoint:** `https://api.eia.gov/v2/electricity/state-electricity-profiles/emissions-by-state-by-fuel/data`
-- **Inputs:**
-  - `api_key`: EIA API key
-  - `data[]`: Set to `co2-thousand-metric-tons`
-  - `sort[0][column]`: `period`
-  - `sort[0][direction]`: `desc`
 - **Returns:**
   - CO2 emissions (thousand metric tons) by state and fuel type (e.g., Coal, Natural Gas)
   - Year (`period`), state abbreviation, fuel description
@@ -25,22 +22,6 @@ The goal is to produce a unified, queryable dataset in **BigQuery** for analyzin
 ### 2. **Carbon Interface API - Emission Estimates**
 
 - **Endpoint:** `https://www.carboninterface.com/api/v1/estimates`
-- **Method:** POST
-- **Headers:**
-  - `Authorization`: Bearer token
-  - `Content-Type`: application/json
-- **Payload Example:**
-
-```json
-{
-  "type": "electricity",
-  "electricity_unit": "mwh",
-  "electricity_value": 42,
-  "country": "US",
-  "state": "CA"
-}
-```
-
 - **Returns:**
   - Estimated emissions: grams, pounds, kilograms, metric tons of CO2
   - Includes the electricity value submitted and a timestamp
@@ -48,10 +29,6 @@ The goal is to produce a unified, queryable dataset in **BigQuery** for analyzin
 ### 3. **OpenWeatherMap API - Current Weather**
 
 - **Endpoint:** `http://api.openweathermap.org/data/2.5/weather`
-- **Inputs:**
-  - `q`: City and country code (e.g., `Baltimore,US`)
-  - `appid`: OpenWeatherMap API key
-  - `units`: `metric` for Celsius output
 - **Returns:**
   - Current temperature, humidity, wind speed/direction, visibility, pressure
   - Main weather type (e.g., Clear, Rain), and cloud cover
@@ -59,12 +36,19 @@ The goal is to produce a unified, queryable dataset in **BigQuery** for analyzin
 ## 📁 Project Structure
 
 ```
-/Takyi_Boamah/
-│
-├── get_data.py                 # Python ingest script for API data collection
-├── get_data.py                 # Python ingest script for API data collection
-├── .env                        # Environment variables for API keys
-├── api_results/                # Stores JSON outputs of API calls
+/dag/
+├── ecofusion_dag.py          # Airflow DAG definition
+├── transform_to_csv.py       # Script to transform JSON data to CSV
+├── load_to_bigquery.py       # Script to load CSVs into BigQuery
+├── get_data.py               # Script to ingest data from APIs (run locally)
+├── api_results/              # Folder containing raw JSON files (input)
+│    ├── carbon_estimates.json
+│    ├── weather_data.json
+│    └── state_electricity_profile.json
+├── data/                     # Folder containing transformed CSVs (output)
+│    ├── carbon_emissions.csv
+│    ├── weather_snapshot.csv
+│    └── state_electricity_emissions.csv
 ├── schema/
 │   └── bigquery_schema.sql     # BigQuery table creation statements
 ├── queries/
@@ -72,14 +56,34 @@ The goal is to produce a unified, queryable dataset in **BigQuery** for analyzin
 └── README.md                   # Project overview and instructions
 ```
 
-## 🧱 BigQuery Dataset Design:
+## 🚀 Pipeline Workflow
 
-| Table                           | Description                                    |
-| ------------------------------- | ---------------------------------------------- |
-| `weather_snapshot`              | Real-time weather data by state capital        |
-| `carbon_emissions`              | Carbon footprint per electricity unit consumed |
-| `state_electricity_emissions`   | Emissions by fuel type and state (from EIA)    |
-| `state_emission_summary` (VIEW) | Aggregated emissions per state/year            |
+1. **Ingest Stage** (Run Locally)
+
+   - `get_data.py` pulls latest data from APIs and saves JSONs into `/api_results/`.
+
+2. **Transform Stage**
+
+   - `transform_to_csv.py` reads JSONs from `/api_results/`
+   - Converts them into structured CSVs saved in `/data/`
+
+3. **Load Stage**
+
+   - `load_to_bigquery.py` loads the CSVs into BigQuery tables inside the `ecofusion` dataset.
+
+4. **Orchestration**
+   - The entire process is automated via `ecofusion_pipeline` Airflow DAG running inside Cloud Composer.
+
+---
+
+## 🌎 BigQuery Dataset Design: `ecofusion`
+
+| Table Name                      | Description                          |
+| ------------------------------- | ------------------------------------ |
+| `weather_snapshot`              | Weather metrics for each state       |
+| `carbon_emissions`              | Carbon emission estimates per state  |
+| `state_electricity_emissions`   | CO2 emissions by fuel type per state |
+| `state_emission_summary` (VIEW) | Aggregated emissions per state/year  |
 
 ### Table: `weather_snapshot`
 
@@ -166,3 +170,31 @@ ORDER BY avg_emission_clear_days;
 More interesting queries are included in [`queries/analysis_queries.sql`](queries/analysis_queries.sql).
 
 ---
+
+## 📅 Deployment Environment
+
+- **Orchestration:** Cloud Composer (Apache Airflow 2.7+)
+- **Compute:** GKE (Google Kubernetes Engine, managed by Composer)
+- **Storage:** Google Cloud Storage (DAGs, data files)
+- **Analytics Warehouse:** BigQuery
+
+---
+
+## ⚡ Future Enhancements
+
+- Enable automatic ingestion from APIs using Airflow scheduled runs.
+- Integrate Airflow variables for secure API key management.
+- Add data quality checks before loading to BigQuery.
+- Build Data Studio dashboards on top of the BigQuery tables.
+
+---
+
+# 📋 Success Checklist
+
+| Step                            | Status |
+| ------------------------------- | ------ |
+| Data ingestion complete         | ✅     |
+| Data transformation working     | ✅     |
+| CSV to BigQuery load successful | ✅     |
+| Airflow DAG operational         | ✅     |
+| BigQuery dataset verified       | ✅     |
