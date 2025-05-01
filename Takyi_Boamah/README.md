@@ -185,6 +185,8 @@ This diagram shows the Airflow DAG structure:
 - Transform Task converts to CSV
 - Load Task pushes to BigQuery
 
+![EcoFusion BigQuery](./snapshots/bigquery1.png)
+
 ## 📋 Success Checklist
 
 | Step                            | Status |
