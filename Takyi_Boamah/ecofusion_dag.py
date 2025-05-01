@@ -1,9 +1,13 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
+from get_data import main as ingest_main
 from transform_to_csv import transform_carbon, transform_weather, transform_eia
 from load_to_bigquery import load_csv_to_bigquery, tables
-from get_data import main as ingest_main
+
+# DAG callable wrappers
+def run_ingest():
+    ingest_main()
 
 def run_transform():
     transform_carbon()
@@ -14,11 +18,7 @@ def run_load():
     for table, filename in tables.items():
         load_csv_to_bigquery(table, filename)
 
-# Ingest run locally - API Calls
-# def run_ingest():        
-#     ingest_main()
-
-# Default arguments for the DAG
+# Default DAG config
 default_args = {
     'owner': 'airflow',
     'retries': 1,
@@ -27,15 +27,18 @@ default_args = {
     'catchup': False
 }
 
-# Define the DAG
 with DAG(
     dag_id='ecofusion_pipeline',
     default_args=default_args,
-    schedule_interval=None,  # Manual trigger for now; we can automate later
-    description='EcoFusion Sustainability Pipeline DAG'
+    schedule_interval=None,  # Or use '@daily' later
+    description='EcoFusion Sustainability Pipeline'
 ) as dag:
 
-    # Only two tasks now: transform and load
+    ingest_task = PythonOperator(
+        task_id='ingest_api_data',
+        python_callable=run_ingest
+    )
+
     transform_task = PythonOperator(
         task_id='transform_to_csv',
         python_callable=run_transform
@@ -46,4 +49,5 @@ with DAG(
         python_callable=run_load
     )
 
-    transform_task >> load_task
+    # Define task order
+    ingest_task >> transform_task >> load_task

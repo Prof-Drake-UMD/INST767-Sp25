@@ -38,9 +38,9 @@ The pipeline is orchestrated using **Cloud Composer (Apache Airflow)**.
 ```
 /dag/
 ├── ecofusion_dag.py          # Airflow DAG definition
+├── get_data.py               # Script to ingest data from APIs
 ├── transform_to_csv.py       # Script to transform JSON data to CSV
 ├── load_to_bigquery.py       # Script to load CSVs into BigQuery
-├── get_data.py               # Script to ingest data from APIs (run locally)
 ├── api_results/              # Folder containing raw JSON files (input)
 │    ├── carbon_estimates.json
 │    ├── weather_data.json
@@ -55,26 +55,6 @@ The pipeline is orchestrated using **Cloud Composer (Apache Airflow)**.
 │   └── analysis_queries.sql    # Insightful analysis queries
 └── README.md                   # Project overview and instructions
 ```
-
-## 🚀 Pipeline Workflow
-
-1. **Ingest Stage** (Run Locally)
-
-   - `get_data.py` pulls latest data from APIs and saves JSONs into `/api_results/`.
-
-2. **Transform Stage**
-
-   - `transform_to_csv.py` reads JSONs from `/api_results/`
-   - Converts them into structured CSVs saved in `/data/`
-
-3. **Load Stage**
-
-   - `load_to_bigquery.py` loads the CSVs into BigQuery tables inside the `ecofusion` dataset.
-
-4. **Orchestration**
-   - The entire process is automated via `ecofusion_pipeline` Airflow DAG running inside Cloud Composer.
-
----
 
 ## 🌎 BigQuery Dataset Design: `ecofusion`
 
@@ -169,7 +149,24 @@ ORDER BY avg_emission_clear_days;
 
 More interesting queries are included in [`queries/analysis_queries.sql`](queries/analysis_queries.sql).
 
----
+## 🚀 Pipeline Workflow
+
+1. **Ingest Stage** (Run Locally)
+
+   - `get_data.py` pulls latest data from APIs and saves JSONs into `/api_results/`.
+   - Runs inside GCP via Airflow PythonOperator task (ingest_api_data).
+
+2. **Transform Stage**
+
+   - `transform_to_csv.py` reads JSONs from `/api_results/`
+   - Converts them into structured CSVs saved in `/data/`
+
+3. **Load Stage**
+
+   - `load_to_bigquery.py` loads the CSVs into BigQuery tables inside the `ecofusion` dataset.
+
+4. **Orchestration**
+   - The entire process is automated via `ecofusion_pipeline` Airflow DAG running inside Cloud Composer.
 
 ## 📅 Deployment Environment
 
@@ -178,23 +175,22 @@ More interesting queries are included in [`queries/analysis_queries.sql`](querie
 - **Storage:** Google Cloud Storage (DAGs, data files)
 - **Analytics Warehouse:** BigQuery
 
----
+## 📊 DAG Flow Diagram
 
-## ⚡ Future Enhancements
+![EcoFusion Pipeline](./snapshots/run.png)
 
-- Enable automatic ingestion from APIs using Airflow scheduled runs.
-- Integrate Airflow variables for secure API key management.
-- Add data quality checks before loading to BigQuery.
-- Build Data Studio dashboards on top of the BigQuery tables.
+This diagram shows the Airflow DAG structure:
 
----
+- Ingest Task pulls from APIs
+- Transform Task converts to CSV
+- Load Task pushes to BigQuery
 
-# 📋 Success Checklist
+## 📋 Success Checklist
 
 | Step                            | Status |
 | ------------------------------- | ------ |
+| irflow DAG operational          | ✅     |
 | Data ingestion complete         | ✅     |
 | Data transformation working     | ✅     |
 | CSV to BigQuery load successful | ✅     |
-| Airflow DAG operational         | ✅     |
 | BigQuery dataset verified       | ✅     |
