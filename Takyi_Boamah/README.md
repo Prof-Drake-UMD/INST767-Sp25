@@ -189,7 +189,7 @@ This diagram shows the Airflow DAG structure:
 
 | Step                            | Status |
 | ------------------------------- | ------ |
-| irflow DAG operational          | ✅     |
+| Airflow DAG operational         | ✅     |
 | Data ingestion complete         | ✅     |
 | Data transformation working     | ✅     |
 | CSV to BigQuery load successful | ✅     |
