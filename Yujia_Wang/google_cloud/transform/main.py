@@ -24,6 +24,8 @@ def main_entry(event, context):
         pubsub_message = base64.b64decode(event['data']).decode('utf-8')
         raw_movie = json.loads(pubsub_message)
 
+        print("📩 Received raw movie data")
+
         # Clean the movie
         cleaned = clean_movie(raw_movie, is_now_playing=True)
 

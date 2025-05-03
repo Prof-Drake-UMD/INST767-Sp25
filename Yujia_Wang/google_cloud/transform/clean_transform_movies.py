@@ -1,13 +1,15 @@
-# transform/clean.py
 import json
 import requests
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
-TMDB_API_KEY = os.getenv('TMDB_API_KEY')
+TMDB_API_KEY = os.environ.get('TMDB_API_KEY')
+_genre_cache = None  # local cache
 
 def fetch_genre_mapping():
+    global _genre_cache
+    if _genre_cache is not None:
+        return _genre_cache
+
     url = "https://api.themoviedb.org/3/genre/movie/list"
     params = {
         'api_key': TMDB_API_KEY,
@@ -16,9 +18,8 @@ def fetch_genre_mapping():
     response = requests.get(url, params=params)
     response.raise_for_status()
     genres = response.json().get('genres', [])
-    return {genre['id']: genre['name'] for genre in genres}
-
-GENRE_MAPPING = fetch_genre_mapping()
+    _genre_cache = {genre['id']: genre['name'] for genre in genres}
+    return _genre_cache
 
 def safe_float(value):
     try:
@@ -29,9 +30,12 @@ def safe_float(value):
 def clean_movie(movie: dict, is_now_playing=True) -> dict:
     genre_ids = movie.get("genre_ids") or movie.get("genres") or []
     genres_mapped = []
+
+    genre_mapping = fetch_genre_mapping()
+
     if isinstance(genre_ids, list):
         for genre_id in genre_ids:
-            genre_name = GENRE_MAPPING.get(genre_id)
+            genre_name = genre_mapping.get(genre_id)
             if genre_name:
                 genres_mapped.append(genre_name)
 

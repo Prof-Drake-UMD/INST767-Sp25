@@ -5,12 +5,16 @@ import json
 
 def main_entry(request):
     topic_name = os.environ.get("TOPIC_NAME")
+    bucket_name = os.environ.get("GCS_BUCKET")  
     publisher = pubsub_v1.PublisherClient()
     topic_path = publisher.topic_path(os.environ["PROJECT_ID"], topic_name)
 
-    movies = gather_movie_full_data(region='US')
+  #bucket name for fallback
+    movies = gather_movie_full_data(bucket_name=bucket_name, region='US')
+
     for movie in movies:
         movie_data = json.dumps(movie).encode("utf-8")
         publisher.publish(topic_path, movie_data)
 
     return f"✅ Published {len(movies)} movies to Pub/Sub topic: {topic_name}"
+
