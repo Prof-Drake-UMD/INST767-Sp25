@@ -1,11 +1,5 @@
 # Project: Transit Data Integration Pipeline on GCP
 
-**Author:** Yixin Bai  
-
-## 📘 Overview
-
-This project develops an automated data pipeline using Google Cloud Platform (GCP) services and Apache Airflow (via Cloud Composer). The pipeline extracts real-time or frequently updated data from three distinct public transit APIs, transforms the data into a standardized format, and loads it into Google BigQuery for integrated analysis, demonstrating proficiency in cloud-based data integration.
-
 ## 🎯 Objective
 
 The primary objective is to:
@@ -153,48 +147,7 @@ For this project, three public transit APIs providing real-time operational data
 
 ---
 
-## 🛠️ Data Flow / Integration Strategy
-
-The overall process integrates these data sources within the Airflow DAG as follows:
-
-1. **Parallel Fetch & Stage:** The DAG fetches data concurrently from the relevant endpoints of MBTA (Routes, Predictions), WMATA (Rail Predictions), and CTA (Train Positions).
-
-2. **Independent Transformation:** Each raw dataset is transformed into a standardized Pandas DataFrame using functions in `data_transformers.py`. Key fields are extracted, renamed for consistency (e.g., using common names like `route_id`, `vehicle_id`, `station_id`, `arrival_time`, `latitude`, `longitude`), and a `recorded_at` timestamp is added.
-
-3. **GCS Loading:** Each transformed DataFrame is saved as a newline-delimited JSON file to a temporary location on Google Cloud Storage.
-
-4. **BigQuery Source Tables:** Each JSONL file is loaded (appended) into its corresponding table in the `transit_data` BigQuery dataset (e.g., `mbta_data`, `wmata_data`, `cta_positions_data`). Schema auto-detection and relaxation are enabled.
-
-5. **BigQuery Integration:** A final SQL query (`integrated_query` in `data_transformers.py`) executes within BigQuery:
-   * It reads from the individual source tables
-   * It performs final standardization (casting types like `TIMESTAMP`, handling WMATA's arrival time logic, parsing CTA's string timestamps)
-   * It uses `UNION ALL` to combine the standardized records from all sources into a single view
-   * This combined result creates or replaces the final `integrated_transit_data` table, which includes a `transit_system` column to identify the source
-
-## 📊 Architecture Overview
-
-The project leverages the following GCP services:
-
-- **Cloud Composer (Apache Airflow)**: Orchestrates the data pipeline workflow
-- **Cloud Storage**: Temporarily stores transformed data before BigQuery loading
-- **BigQuery**: Stores and analyzes the integrated transit data
-- **Secret Manager**: Securely stores API keys and credentials
-
-### High-Level Architecture:
-
-![High-Level Architecture Diagram](https://raw.githubusercontent.com/username/transit-data-integration/main/images/high-level-architecture.png)
-
-### Detailed Data Flow:
-
-![Detailed Data Flow Diagram](https://raw.githubusercontent.com/username/transit-data-integration/main/images/detailed-data-flow.png)
-
-The architecture follows a classic ETL pattern:
-1. **Ingest**: Data is pulled from the three transit APIs
-2. **Transform**: Raw data is standardized and cleaned
-3. **Storage**: Processed data is stored in BigQuery for analysis
-
-
-## ✅ Sample Integrated Data (BigQuery)
+## 📊 Sample Integrated Data (BigQuery)
 
 Below is a sample of the integrated data schema in BigQuery, showing records from all three transit systems in a unified format:
 
