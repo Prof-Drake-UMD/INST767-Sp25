@@ -7,3 +7,8 @@ A mood-based recommendation system for a day at home, suggesting a book, a song,
 1. **Open Library API:** Genre/keyword (mapped from mood). Returns-book title, author, cover, etc.
 2. **Spotify API:** Mood mapped to audio features (valence, energy, etc.) or playlist keywords. Returns-track/playlist info.
 3. **Bored API:** Provides activity type (mapped from mood). Returns-activity description.
+
+## How to Run
+1. **Install dependencies:** `pip install -r requirements.txt`
+2. **Set up API keys** (see `.env.example`)
+3. **Run:** `python main.py`
