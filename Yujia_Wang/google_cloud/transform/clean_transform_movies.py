@@ -69,3 +69,6 @@ def clean_movie(movie: dict, is_now_playing=True) -> dict:
         cleaned["has_streaming"] = bool(movie.get("has_streaming", False))
 
     return cleaned
+
+def clean_movies_list(movie_list: list, is_now_playing=True) -> list:
+    return [clean_movie(movie, is_now_playing=is_now_playing) for movie in movie_list]

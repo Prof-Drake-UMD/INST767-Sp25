@@ -7,6 +7,7 @@ import json
 import os
 from dotenv import load_dotenv
 from google.cloud import storage
+from datetime import datetime
 
 load_dotenv()
 
@@ -193,7 +194,20 @@ def gather_movie_full_data(bucket_name, region=None):
             continue
 
     save_last_success_to_gcs(bucket_name, movies_full_data)
+     # Save full movie data to cleaned/ in GCS
+    try:
+        timestamp = datetime.utcnow().strftime("%Y%m%d-%H%M%S")
+        blob_path = f"cleaned/movies_{timestamp}.json"
+        client = storage.Client()
+        bucket = client.bucket(bucket_name)
+        blob = bucket.blob(blob_path)
+        blob.upload_from_string(json.dumps(movies_full_data, indent=2), content_type="application/json")
+        print(f"✅ Uploaded all movies to GCS: {blob_path}")
+    except Exception as e:
+        print(f"❌ Failed to upload full movie data to GCS: {e}")
+
     return movies_full_data
+
 
 # ----------------- Optional local test -----------------
 

@@ -55,7 +55,7 @@ else
 fi
 
 # --- PARSE ENV VARS ---
-ENV_VARS=$(grep -v '^#' "$ENV_FILE" | paste -sd, -)
+ENV_VARS=$(grep -v '^#' "$ENV_FILE" | grep -v '^$' | paste -sd, -)
 echo "🔐 Environment variables parsed: $ENV_VARS"
 
 # --- DEPLOY INGEST FUNCTION ---
