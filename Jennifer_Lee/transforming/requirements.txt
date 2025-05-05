@@ -1,0 +1,5 @@
+flask
+pandas
+google-cloud-storage
+google-cloud-bigquery
+gunicorn
