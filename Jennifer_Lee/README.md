@@ -4,7 +4,7 @@ Project Overview:
 
 This project builds a fully automated data pipeline using Google Cloud Platform (GCP). The system collects, cleans, and stores financial market data from multiple public APIs, transforming it into a usable format for analysis in BigQuery.
 
-For this project, I created a DAG to integrate three different APIs that continuously update financial and economic data. These APIs provide stock market data, cryptocurrency pricing, and macroeconomic indicators. The goal is to analyze relationships between traditional financial markets, cryptocurrency trends, and broader economic factors.
+For this project, I created a DAG to integrate three different APIs that continuously update financial and economic data. These APIs provide stock market data, cryptocurrency pricing, and macroeconomic indicators. The goal is to analyze relationships between traditional financial markets, cryptocurrency trends, and broader economic factors. I decided to focus on Apple Stock, Bitcoin, and CPIAUCSL for this project. 
 
 
 Data Sources:
