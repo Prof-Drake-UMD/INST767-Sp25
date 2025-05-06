@@ -1,0 +1,101 @@
+movie_id,title,release_date,popularity,vote_average,vote_count,genres,overview,box_office,imdb_rating,rotten_tomatoes_rating,metacritic_rating,awards
+278,The Shawshank Redemption,1994-09-23,62.9294,8.709,28197,"['Drama', 'Crime']",,"$28,767,189",9.3,89%,82/100,Nominated for 7 Oscars. 21 wins & 42 nominations total
+238,The Godfather,1972-03-24,35.2183,8.687,21375,"['Drama', 'Crime']",,"$136,381,073",9.2,97%,100/100,Won 3 Oscars. 31 wins & 31 nominations total
+240,The Godfather Part II,1974-12-20,16.8829,8.571,12916,"['Drama', 'Crime']",,"$47,834,595",9.0,96%,90/100,Won 6 Oscars. 17 wins & 21 nominations total
+424,Schindler's List,1993-12-15,36.5596,8.564,16389,"['Drama', 'History', 'War']",,"$96,898,818",9.0,98%,95/100,Won 7 Oscars. 91 wins & 49 nominations total
+389,12 Angry Men,1957-04-10,15.6512,8.548,9093,['Drama'],,N/A,9.0,100%,97/100,Nominated for 3 Oscars. 16 wins & 12 nominations total
+129,Spirited Away,2002-09-20,21.8291,8.536,17078,"['Animation', 'Family', 'Fantasy']",,"$15,205,725",8.6,96%,96/100,Won 1 Oscar. 58 wins & 31 nominations total
+155,The Dark Knight,2008-07-18,30.3051,8.5,33766,"['Drama', 'Action', 'Crime', 'Thriller']",,"$534,987,076",9.0,94%,84/100,Won 2 Oscars. 164 wins & 165 nominations total
+19404,Dilwale Dulhania Le Jayenge,1995-10-20,7.2897,8.516,4484,"['Comedy', 'Drama', 'Romance']",,N/A,8.0,100%,,15 wins & 4 nominations total
+497,The Green Mile,1999-12-10,36.8162,8.504,18036,"['Fantasy', 'Drama', 'Crime']",,"$136,801,374",8.6,79%,61/100,Nominated for 4 Oscars. 15 wins & 37 nominations total
+496243,Parasite,2019-10-11,28.5778,8.5,18984,"['Comedy', 'Thriller', 'Drama']",,"$53,369,749",8.5,99%,97/100,Won 4 Oscars. 316 wins & 266 nominations total
+680,Pulp Fiction,1994-10-14,50.4129,8.489,28606,"['Thriller', 'Crime']",,"$107,928,762",8.9,92%,95/100,Won 1 Oscar. 69 wins & 72 nominations total
+372058,Your Name.,2017-04-07,19.1827,8.485,11731,"['Animation', 'Romance', 'Drama']",,"$5,017,246",8.4,98%,81/100,17 wins & 27 nominations total
+122,The Lord of the Rings: The Return of the King,2003-12-17,24.3598,8.483,25008,"['Adventure', 'Fantasy', 'Action']",,"$381,878,219",9.0,94%,94/100,Won 11 Oscars. 215 wins & 124 nominations total
+13,Forrest Gump,1994-07-06,26.8034,8.468,28142,"['Comedy', 'Drama', 'Romance']",,"$330,455,270",8.8,75%,82/100,Won 6 Oscars. 51 wins & 74 nominations total
+429,"The Good, the Bad and the Ugly",1967-12-29,42.5435,8.5,8952,['Western'],,"$25,100,000",8.8,97%,90/100,2 wins & 5 nominations total
+346,Seven Samurai,1956-11-19,7.9603,8.458,3876,"['Action', 'Drama']",,"$820,278",8.6,100%,98/100,Nominated for 2 Oscars. 5 wins & 9 nominations total
+769,GoodFellas,1990-09-19,72.4881,8.455,13318,"['Drama', 'Crime']",,"$46,909,721",8.7,94%,92/100,Won 1 Oscar. 45 wins & 38 nominations total
+157336,Interstellar,2014-11-05,42.7904,8.454,37026,"['Adventure', 'Drama', 'Science Fiction']",,"$203,227,580",8.7,73%,74/100,Won 1 Oscar. 44 wins & 148 nominations total
+12477,Grave of the Fireflies,2018-08-12,0.0111,8.451,5856,"['Animation', 'Drama', 'War']",,"$516,962",8.5,100%,94/100,3 wins total
+637,Life Is Beautiful,1998-10-22,16.4767,8.449,13325,"['Comedy', 'Drama']",,"$57,563,264",8.6,81%,58/100,Won 3 Oscars. 72 wins & 52 nominations total
+550,Fight Club,1999-10-15,34.2907,8.439,30199,['Drama'],,"$37,030,102",8.8,81%,67/100,Nominated for 1 Oscar. 12 wins & 38 nominations total
+11216,Cinema Paradiso,1990-02-23,7.6699,8.436,4512,"['Drama', 'Romance']",,"$12,397,210",8.5,91%,80/100,Won 1 Oscar. 25 wins & 33 nominations total
+598,City of God,2003-01-17,13.8329,8.429,7606,"['Drama', 'Crime']",,"$7,564,459",8.6,91%,79/100,Nominated for 4 Oscars. 75 wins & 50 nominations total
+539,Psycho,1960-06-22,16.0393,8.422,10325,"['Horror', 'Thriller', 'Mystery']",,"$32,000,000",8.5,97%,97/100,Nominated for 4 Oscars. 8 wins & 14 nominations total
+120,The Lord of the Rings: The Fellowship of the Ring,2001-12-19,25.1152,8.42,25909,"['Adventure', 'Fantasy', 'Action']",,"$319,372,078",8.9,92%,92/100,Won 4 Oscars. 125 wins & 126 nominations total
+40096,A Dog's Will,2000-09-15,3.8035,8.418,1152,"['Comedy', 'Drama', 'Fantasy']",,N/A,8.6,,,10 wins & 10 nominations
+14537,Harakiri,1963-09-11,3.4474,8.4,1064,"['Action', 'Drama', 'History']",,N/A,8.6,100%,85/100,9 wins & 3 nominations total
+667257,Impossible Things,2021-06-17,3.2344,8.4,403,"['Family', 'Drama']",,N/A,7.7,,,1 win & 9 nominations
+510,One Flew Over the Cuckoo's Nest,1975-11-19,16.3825,8.414,10734,['Drama'],,"$108,981,275",8.7,93%,84/100,Won 5 Oscars. 38 wins & 15 nominations total
+696374,Gabriel's Inferno,2020-05-29,4.0932,8.4,2419,"['Romance', 'Drama']",,N/A,5.9,,,N/A
+311,Once Upon a Time in America,1984-06-01,7.1738,8.408,5585,"['Drama', 'Crime']",,"$5,321,508",8.3,86%,75/100,Won 2 BAFTA 11 wins & 13 nominations total
+121,The Lord of the Rings: The Two Towers,2002-12-18,18.1859,8.404,22518,"['Adventure', 'Fantasy', 'Action']",,"$345,518,923",8.8,95%,87/100,Won 2 Oscars. 132 wins & 138 nominations total
+324857,Spider-Man: Into the Spider-Verse,2018-12-14,17.5029,8.397,16083,"['Animation', 'Action', 'Adventure', 'Science Fiction']",,"$190,241,310",8.4,97%,87/100,Won 1 Oscar. 85 wins & 61 nominations total
+4935,Howl's Moving Castle,2005-06-10,25.5119,8.397,10256,"['Fantasy', 'Animation', 'Adventure']",,"$9,173,958",8.2,88%,82/100,Nominated for 1 Oscar. 14 wins & 20 nominations total
+255709,Hope,2013-10-02,4.4903,8.394,771,['Drama'],,N/A,8.2,,,7 wins & 13 nominations total
+1891,The Empire Strikes Back,1980-05-21,9.4596,8.392,17348,"['Adventure', 'Action', 'Science Fiction']",,"$292,753,960",8.7,94%,82/100,Won 1 Oscar. 27 wins & 20 nominations total
+378064,A Silent Voice: The Movie,2017-10-20,18.7193,8.387,4100,"['Animation', 'Drama', 'Romance']",,"$1,079,689",8.1,,78/100,6 wins & 9 nominations total
+1356039,Counterattack,2025-02-28,71.7856,8.38,650,"['Action', 'Adventure', 'Thriller']",,N/A,6.0,,,N/A
+724089,Gabriel's Inferno: Part II,2020-07-31,1.8136,8.4,1521,"['Romance', 'Drama']",,N/A,6.4,,,N/A
+704264,Primal: Tales of Savagery,2019-11-21,1.6455,8.378,332,"['Action', 'Adventure', 'Animation', 'Drama']",,N/A,8.4,,,1 nomination total
+423,The Pianist,2002-12-25,18.9605,8.378,9487,"['Drama', 'War']",,"$32,590,750",8.5,95%,85/100,Won 3 Oscars. 57 wins & 74 nominations total
+761053,Gabriel's Inferno: Part III,2020-11-19,3.0578,8.376,1058,"['Romance', 'Drama']",,N/A,6.5,,,N/A
+1058694,Radical,2023-11-03,2.587,8.375,449,['Drama'],,"$8,702,731",7.8,96%,70/100,18 wins & 23 nominations total
+244786,Whiplash,2014-10-10,17.0335,8.374,15578,"['Drama', 'Music']",,"$14,003,391",8.5,94%,89/100,Won 3 Oscars. 99 wins & 144 nominations total
+807,Se7en,1995-09-22,28.9875,8.4,21662,"['Crime', 'Mystery', 'Thriller']",,"$101,040,643",8.6,84%,65/100,Nominated for 1 Oscar. 29 wins & 44 nominations total
+27205,Inception,2010-07-16,32.732,8.368,37397,"['Action', 'Science Fiction', 'Adventure']",,"$292,587,330",8.8,87%,74/100,Won 4 Oscars. 159 wins & 220 nominations total
+567,Rear Window,1954-09-01,10.0293,8.353,6671,"['Thriller', 'Mystery']",,"$36,764,313",8.5,98%,100/100,Nominated for 4 Oscars. 6 wins & 13 nominations total
+770156,Lucy Shimmers and the Prince of Peace,2020-10-19,4.4022,8.3,304,"['Drama', 'Family']",,N/A,7.1,,,5 wins & 4 nominations total
+620249,The Legend of Hei,2021-04-20,4.297,8.345,384,"['Animation', 'Fantasy', 'Action']",,N/A,7.3,,,3 wins & 9 nominations total
+274,The Silence of the Lambs,1991-02-14,5.1725,8.345,16759,"['Crime', 'Drama', 'Thriller']",,"$130,742,922",8.6,95%,86/100,Won 5 Oscars. 71 wins & 50 nominations total
+12493,High and Low,1963-11-26,2.7781,8.344,967,"['Drama', 'Crime', 'Mystery', 'Thriller']",,"$46,808",8.4,96%,90/100,3 wins & 3 nominations total
+569094,Spider-Man: Across the Spider-Verse,2023-06-02,30.082,8.343,7507,"['Animation', 'Action', 'Adventure', 'Science Fiction']",,"$381,593,754",8.5,95%,86/100,Nominated for 1 Oscar. 106 wins & 165 nominations total
+73,American History X,1998-10-30,14.8676,8.337,11834,['Drama'],,"$6,719,864",8.5,84%,62/100,Nominated for 1 Oscar. 4 wins & 15 nominations total
+128,Princess Mononoke,1999-10-29,13.7993,8.329,8306,"['Adventure', 'Fantasy', 'Animation']",,"$11,437,745",8.3,93%,76/100,14 wins & 6 nominations total
+372754,Dou kyu sei – Classmates,2016-05-06,7.8282,8.3,401,"['Romance', 'Animation']",,N/A,7.7,,,N/A
+1184918,The Wild Robot,2024-09-27,51.916,8.324,4794,"['Animation', 'Science Fiction', 'Family']",,"$143,901,945",8.2,96%,85/100,Nominated for 3 Oscars. 85 wins & 104 nominations total
+105,Back to the Future,1985-07-03,15.4498,8.319,20467,"['Adventure', 'Comedy', 'Science Fiction']",,"$214,553,307",8.5,93%,87/100,Won 1 Oscar. 27 wins & 25 nominations total
+3782,Ikiru,1956-03-25,6.0998,8.3,1196,['Drama'],,"$60,239",8.3,98%,92/100,Nominated for 1 BAFTA Award6 wins & 2 nominations total
+820067,The Quintessential Quintuplets Movie,2022-12-02,10.294,8.3,407,"['Animation', 'Comedy', 'Romance']",,"$502,000",7.3,92%,,N/A
+15804,A Brighter Summer Day,1993-01-08,2.1731,8.3,335,"['Crime', 'Drama', 'Romance']",,N/A,8.2,100%,91/100,8 wins & 13 nominations total
+10494,Perfect Blue,1999-08-20,6.2116,8.302,2795,"['Animation', 'Thriller']",,"$558,598",8.0,84%,67/100,3 wins & 3 nominations total
+207,Dead Poets Society,1989-06-02,10.8704,8.301,11617,['Drama'],,"$95,860,116",8.1,85%,79/100,Won 1 Oscar. 20 wins & 19 nominations total
+101,Léon: The Professional,1994-11-18,19.7046,8.301,15166,"['Crime', 'Drama', 'Action']",,"$19,501,238",8.5,75%,64/100,5 wins & 16 nominations total
+914,The Great Dictator,1940-10-23,6.6262,8.298,3441,"['Comedy', 'War']",,N/A,8.4,92%,,Nominated for 5 Oscars. 7 wins & 6 nominations total
+599,Sunset Boulevard,1950-08-10,7.1071,8.3,2670,['Drama'],,"$299,645",8.4,98%,94/100,Won 3 Oscars. 19 wins & 20 nominations total
+652837,"Josee, the Tiger and the Fish",2021-07-12,10.7451,8.295,499,"['Animation', 'Drama', 'Romance']",,N/A,7.6,100%,,1 win & 8 nominations total
+644479,Dedicated to my ex,2019-11-01,1.7457,8.292,506,"['Drama', 'Comedy']",,N/A,7.1,,,N/A
+335,Once Upon a Time in the West,1969-07-04,22.8321,8.3,4496,"['Drama', 'Western']",,"$5,321,508",8.5,96%,82/100,6 wins & 5 nominations total
+3082,Modern Times,1936-02-12,3.5997,8.282,3787,"['Comedy', 'Drama', 'Romance']",,"$163,577",8.5,98%,96/100,4 wins & 1 nomination total
+18491,Neon Genesis Evangelion: The End of Evangelion,2024-03-17,6.0654,8.28,1671,"['Animation', 'Science Fiction', 'Action', 'Drama']",,"$1,302,300",8.1,92%,,2 wins total
+92321,Hotarubi no Mori e,2012-06-30,0.0084,8.278,1142,"['Romance', 'Animation', 'Fantasy']",,N/A,7.8,,,N/A
+42269,We All Loved Each Other So Much,1977-05-23,2.5242,8.278,588,"['Drama', 'Comedy']",,N/A,8.0,,,10 wins & 2 nominations total
+1585,It's a Wonderful Life,1946-12-20,65.3424,8.3,4477,"['Drama', 'Family', 'Fantasy']",,"$1,483,643",8.6,94%,89/100,Nominated for 5 Oscars. 11 wins & 7 nominations total
+1139087,Once Upon a Studio,2023-09-24,3.5539,8.274,379,"['Animation', 'Family', 'Fantasy', 'Comedy']",,N/A,8.3,,,2 nominations total
+632632,Given,2020-12-28,7.8944,8.272,399,"['Animation', 'Drama', 'Music', 'Romance']",,N/A,7.7,,,1 nomination
+77338,The Intouchables,2011-11-02,16.2944,8.272,17569,"['Drama', 'Comedy']",,"$10,198,820",8.5,76%,57/100,Nominated for 1 BAFTA Award38 wins & 40 nominations total
+28,Apocalypse Now,1979-08-15,10.0221,8.272,8465,"['Drama', 'War']",,"$96,042,913",8.4,90%,94/100,Won 2 Oscars. 21 wins & 33 nominations total
+901,City Lights,1931-03-07,3.1752,8.27,2249,"['Comedy', 'Drama', 'Romance']",,"$19,181",8.5,95%,99/100,6 wins total
+533514,Violet Evergarden: The Movie,2021-03-30,9.4936,8.3,440,"['Animation', 'Fantasy', 'Romance', 'Drama']",,N/A,8.3,100%,,1 win & 3 nominations total
+975,Paths of Glory,1957-12-20,6.5229,8.258,3014,"['War', 'Drama', 'History']",,N/A,8.4,96%,90/100,Nominated for 1 BAFTA Award5 wins & 3 nominations total
+637920,Miracle in Cell No. 7,2019-10-10,6.9033,8.3,4451,['Drama'],,N/A,8.2,,,12 wins & 13 nominations total
+8587,The Lion King,1994-06-15,33.4749,8.257,18702,"['Family', 'Animation', 'Drama']",,"$424,979,720",8.5,93%,88/100,Won 2 Oscars. 43 wins & 35 nominations total
+10376,The Legend of 1900,1998-10-28,3.1332,8.255,2300,"['Drama', 'Music']",,"$167,435",8.0,56%,58/100,22 wins & 10 nominations total
+670,Oldboy,2005-03-11,21.0917,8.251,8976,"['Drama', 'Thriller', 'Mystery', 'Action']",,"$2,458,200",8.3,82%,78/100,43 wins & 28 nominations total
+630566,Clouds,2020-10-09,5.2828,8.25,1017,"['Music', 'Drama', 'Romance']",,N/A,7.5,83%,55/100,2 wins & 2 nominations total
+29259,Le Trou,1964-05-26,2.6065,8.2,503,"['Drama', 'Thriller', 'Crime']",,"$34,588",8.5,,,Nominated for 2 BAFTA 2 wins & 4 nominations total
+572154,Rascal Does Not Dream of a Dreaming Girl,2019-10-02,9.5888,8.244,535,"['Animation', 'Romance', 'Drama', 'Fantasy']",,,9.0,,,N/A
+568332,Taylor Swift: Reputation Stadium Tour,2018-12-31,2.8186,8.244,401,['Music'],,N/A,8.4,,,2 nominations
+504253,I Want to Eat Your Pancreas,2019-02-07,13.2385,8.24,1608,"['Animation', 'Drama', 'Romance']",,"$277,019",8.0,,,2 wins & 2 nominations
+447362,Life in a Year,2020-11-27,6.4404,8.24,1909,"['Drama', 'Romance']",,N/A,6.2,,,N/A
+508965,Klaus,2019-11-08,9.6717,8.239,4248,"['Animation', 'Family', 'Adventure', 'Comedy', 'Fantasy']",,N/A,8.2,95%,65/100,Nominated for 1 Oscar. 11 wins & 27 nominations total
+995133,"The Boy, the Mole, the Fox and the Horse",2022-12-24,7.2897,8.238,622,"['Animation', 'Family', 'Adventure', 'Fantasy']",,N/A,7.8,75%,75/100,Won 1 Oscar. 6 wins & 6 nominations total
+527641,Five Feet Apart,2019-03-15,13.0696,8.238,5707,"['Romance', 'Drama']",,"$45,729,221",7.2,52%,53/100,3 wins & 8 nominations total
+299534,Avengers: Endgame,2019-04-26,79.3322,8.237,26268,"['Adventure', 'Science Fiction', 'Action']",,"$858,373,000",8.4,94%,78/100,Nominated for 1 Oscar. 71 wins & 133 nominations total
+25237,Come and See,1985-12-06,5.3253,8.2,1581,"['Drama', 'War']",,"$71,909",8.4,89%,,3 wins
+299536,Avengers: Infinity War,2018-04-27,130.5899,8.235,30453,"['Adventure', 'Action', 'Science Fiction']",,"$678,815,482",8.4,85%,68/100,Nominated for 1 Oscar. 48 wins & 81 nominations total
+283566,Evangelion: 3.0+1.0 Thrice Upon a Time,2022-12-06,4.71,8.235,844,"['Animation', 'Action', 'Science Fiction', 'Drama']",,"$810,744",8.0,100%,85/100,4 wins & 4 nominations total
+490132,Green Book,2018-11-16,21.4709,8.233,11966,"['Drama', 'History']",,"$85,080,171",8.2,77%,69/100,Won 3 Oscars. 58 wins & 123 nominations total
+654299,Out of the Clear Blue Sky,2019-12-24,1.4721,8.231,355,"['Comedy', 'Drama', 'Music']",,N/A,6.5,,,N/A
+265177,Mommy,2015-01-23,5.7309,8.2,2749,['Drama'],,"$3,494,070",8.0,89%,74/100,58 wins & 65 nominations total
