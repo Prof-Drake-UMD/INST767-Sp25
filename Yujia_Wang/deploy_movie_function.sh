@@ -1,5 +1,12 @@
+
+
+#!/bin/bash
+echo "⚠️  This script is deprecated and has been replaced by deploy_pubsub_pipeline.sh"
+exit 0
+
 #!/bin/bash
 # Movie Data Cloud Function Deployment Script (Now Playing only)
+
 
 ENV_FILE="google_cloud/.env"
 set -a

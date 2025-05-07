@@ -2,8 +2,8 @@ import json
 import os
 from datetime import datetime
 from google.cloud import storage
-from utils.pull_now_playing_movies import gather_movie_full_data
-from utils.clean_transform_movies import clean_movie
+from google_cloud.ingest.fetch import gather_movie_full_data
+from google_cloud.transform.clean_transform_movies import clean_movie
 
 def upload_to_gcs(data, bucket_name, filename):
     client = storage.Client()

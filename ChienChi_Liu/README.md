@@ -65,6 +65,7 @@ The system follows a ETL pattern using Google Cloud services:
 ```json
 {
   "job_id": "string",
+  "category": "string", 
   "title": "string",
   "company": "string",
   "location": "string",
