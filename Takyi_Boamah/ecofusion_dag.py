@@ -1,10 +1,13 @@
-# ecofusion_dag.py — Airflow DAG for EcoFusion Pipeline (Cloud Composer Ready)
-
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
+from get_data import main as ingest_main
 from transform_to_csv import transform_carbon, transform_weather, transform_eia
-from load_to_bigquery import load_csv_to_bigquery, tables, csv_folder
+from load_to_bigquery import load_csv_to_bigquery, tables
+
+# DAG callable wrappers
+def run_ingest():
+    ingest_main()
 
 def run_transform():
     transform_carbon()
@@ -12,29 +15,23 @@ def run_transform():
     transform_eia()
 
 def run_load():
-    for table in tables:
-        filepath = os.path.join(csv_folder, tables[table])
-        load_csv_to_bigquery(table, filepath)
+    for table, filename in tables.items():
+        load_csv_to_bigquery(table, filename)
 
-def run_ingest():
-    from get_data import main as ingest_main
-    ingest_main()
-
-# Default arguments for the DAG
+# Default DAG config
 default_args = {
     'owner': 'airflow',
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
-    'start_date': datetime(2024, 1, 1),
+    'start_date': datetime(2025, 4, 28),
     'catchup': False
 }
 
-# Define the DAG
 with DAG(
     dag_id='ecofusion_pipeline',
     default_args=default_args,
-    schedule_interval='@daily',
-    description='Orchestrates EcoFusion data ingestion, transformation, and load to BigQuery'
+    schedule_interval=None,  # Or use '@daily' later
+    description='EcoFusion Sustainability Pipeline'
 ) as dag:
 
     ingest_task = PythonOperator(
@@ -52,4 +49,5 @@ with DAG(
         python_callable=run_load
     )
 
+    # Define task order
     ingest_task >> transform_task >> load_task

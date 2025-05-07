@@ -1,26 +1,20 @@
 from google.cloud import bigquery
-import os
 
-# Set up environment
-project_id = "ecofusion-pipeline"  # Replace with your GCP project ID
-dataset_id = "ecofusion"            # Your BigQuery dataset name
-csv_folder = "./transformed"         # Folder where CSVs were output
+project_id = "ecofusion-pipeline"    
+dataset_id = "ecofusion"
+bucket_name = "us-central1-ecofusion-airfl-159dd45e-bucket"
+csv_folder_gcs = f"gs://{bucket_name}/data"
 
-# Table-to-CSV mapping
 tables = {
     "carbon_emissions": "carbon_emissions.csv",
     "weather_snapshot": "weather_snapshot.csv",
     "state_electricity_emissions": "state_electricity_emissions.csv"
 }
 
-# Authenticate using environment variable or service account
-# export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your-service-account.json"
-
-client = bigquery.Client(project=project_id)
-
-for table_name, file_name in tables.items():
+def load_csv_to_bigquery(table_name, file_name):
+    client = bigquery.Client(project=project_id)
     table_id = f"{project_id}.{dataset_id}.{table_name}"
-    file_path = os.path.join(csv_folder, file_name)
+    gcs_uri = f"{csv_folder_gcs}/{file_name}"
 
     job_config = bigquery.LoadJobConfig(
         source_format=bigquery.SourceFormat.CSV,
@@ -29,7 +23,10 @@ for table_name, file_name in tables.items():
         write_disposition="WRITE_TRUNCATE"
     )
 
-    with open(file_path, "rb") as source_file:
-        job = client.load_table_from_file(source_file, table_id, job_config=job_config)
-        job.result()  # Wait for job to finish
-        print(f"✅ Loaded {table_name} into {table_id}")
+    load_job = client.load_table_from_uri(
+        gcs_uri,
+        table_id,
+        job_config=job_config
+    )
+    load_job.result()  # Wait for the job to complete
+    print(f"✅ Loaded {table_name} from {gcs_uri} into {table_id}")
