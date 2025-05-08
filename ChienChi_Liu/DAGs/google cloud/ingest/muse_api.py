@@ -4,8 +4,8 @@ import time
 from typing import Dict, List, Optional, Any
 import requests
 
+
 class MuseConnector:
-    
     BASE_URL = "https://www.themuse.com/api/public/jobs"
     API_VERSION = "v2"
     
@@ -39,7 +39,6 @@ class MuseConnector:
     def _fetch_jobs_page(self, category: str, page: int, count: int) -> List[Dict[str, Any]]:
         
         url = f"{self.BASE_URL}"
-        
         params = {
             "api_key": self.api_key,
             "categories": category,
