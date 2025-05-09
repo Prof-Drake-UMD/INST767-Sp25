@@ -2,10 +2,10 @@
 
 ## API Data Sources
 
-### OpenFitness (API Ninjas) API
-- **Inputs:** Activity name (e.g., "running"), user weight (in kg)
-- **Outputs:** JSON with estimated calories burned for the activity
-- **Authentication:** API Key (passed in header)
+### Wger API
+- **Inputs:** None required for basic exercise info queries; optional query params (e.g., language filter)
+- **Outputs:** JSON with details about exercises, categories, muscles, and equipment
+- **Authentication:** No authentication required (public GET endpoints)
 
 ### Nutritionix API
 - **Inputs:** Food search string or natural language query (e.g., "1 apple")
@@ -18,10 +18,9 @@
 - **Authentication:** API Key (passed in query parameter)
 
 ## Project Description
-This project integrates fitness, nutrition, and weather data to analyze trends in exercise and health behaviors. The goal is to explore correlations such as how weather influences outdoor activity, or how food intake aligns with physical exertion.
+This project integrates fitness, nutrition, and weather data to analyze trends in exercise and health behaviors. The goal is to explore correlations such as how weather influences physical activity choices, or how food intake aligns with fitness routines.
 
 The system will pull data from the three APIs, transform and clean the data, and load it into BigQuery for analysis. Example queries include:
-- Average calories burned per activity type by weather condition
-- Comparison of calorie intake on workout vs. non-workout days
-- Analysis of which activities burn the most calories in different weather
-
+- Frequency of different exercise types performed under varying weather conditions
+- Correlation between specific exercises and average nutritional intake
+- Most popular equipment used in exercises by category
