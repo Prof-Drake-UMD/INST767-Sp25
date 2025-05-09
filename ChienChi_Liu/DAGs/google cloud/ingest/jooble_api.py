@@ -6,7 +6,7 @@ from typing import Dict, List, Optional, Any
 
 class JoobleConnector:
     HOST = "jooble.org"
-    
+
     def __init__(self, api_key: str, max_retries: int = 3, retry_delay: int = 5):
         self.api_key = api_key
         self.max_retries = max_retries

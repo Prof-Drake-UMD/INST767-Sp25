@@ -5,6 +5,7 @@ from typing import Dict, List, Optional, Any
 import requests
 
 class AdzunaConnector:
+
     BASE_URL = "https://api.adzuna.com/v1/api/jobs"
     
     def __init__(self, app_id: str, app_key: str, country: str = "us",max_retries: int = 3, retry_delay: int = 5):
@@ -23,7 +24,7 @@ class AdzunaConnector:
         for keyword in keywords:
             print(f"Extracting Adzuna jobs for keyword: {keyword}")
             page = 1
-            
+
             while page <= max_pages:
                 try:
                     jobs = self._fetch_jobs_page(keyword, page, results_per_page)

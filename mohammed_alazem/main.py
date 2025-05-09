@@ -377,7 +377,7 @@ class UberMapApp:
             command=self.export_to_excel
         ).grid(row=5, column=0, columnspan=2, pady=5)
 
-    def setup_map(self):
+    """ def setup_map(self):
         self.map_widget = TkinterMapView(self.root, width=980, height=600, corner_radius=0)
         self.map_widget.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
 
@@ -391,7 +391,38 @@ class UberMapApp:
         self.map_widget.last_mouse_down_position = (0, 0)
         self.map_widget.last_mouse_down_time = time.time()       
         self.map_widget.canvas.bind("<Button-1>", self.on_map_click)
+ """
+    def setup_map(self):
+        # Create map widget
+        self.map_widget = TkinterMapView(
+            self.root,
+            width=980,
+            height=600,
+            corner_radius=0
+        )
+        # Use OSM tiles (free, public)
+        self.map_widget.set_tile_server("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png")
 
+        # Position & zoom
+        self.map_widget.set_position(self.latitude, self.longitude)
+        self.map_widget.set_zoom(14)
+
+        # Add to layout
+        self.map_widget.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+
+        # Initial marker
+        self.marker = self.map_widget.set_marker(
+            self.latitude,
+            self.longitude,
+            text=f"Selected Location\nLat: {self.latitude:.6f}\nLng: {self.longitude:.6f}"
+        )
+
+        # Fix for the mouse‐click handling bug
+        self.map_widget.last_mouse_down_position = (0, 0)
+        self.map_widget.last_mouse_down_time = time.time()
+        self.map_widget.canvas.bind("<Button-1>", self.on_map_click)
+
+ 
     def on_map_click(self, event):
         coords = self.map_widget.convert_canvas_coords_to_decimal_coords(event.x, event.y)
         if coords:
