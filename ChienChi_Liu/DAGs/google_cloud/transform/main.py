@@ -1,14 +1,23 @@
 import os
 import json
 import base64
-import flask
+from flask import Flask, request
+import logging
 import pandas as pd
 from google.cloud import storage
+from google.cloud import bigquery
 
 PROJECT_ID = os.environ.get('PROJECT_ID')
 BUCKET_NAME = f"job-data-{PROJECT_ID}"
 
-app = flask.Flask(__name__)
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+app = Flask(__name__)
 
 def download_json_from_gcs(bucket_name, source_blob_name):
     try:
@@ -148,13 +157,17 @@ def transform_job_data(message_data):
                 df_standardized['salary'] = df_standardized['salary'].str.replace('$ - $', '', regex=False)
                 df_standardized['salary'] = df_standardized['salary'].str.replace('$nan', '', regex=False)
                 df_standardized['salary'] = df_standardized['salary'].str.replace('nan$', '', regex=False)
-                df_standardized['salary'] = df_standardized['salary'].str.replace(' - ', '', regex=False)
 
         output_filename = f"transformed_{api_source}_jobs.json"
         upload_success = upload_to_gcs(df_standardized, output_filename, bucket)
         
         if upload_success:
             print(f"Transformation complete for {api_source}. Result saved to {output_filename}")
+            bigquery_success = load_to_bigquery(df_standardized)
+            if bigquery_success:
+                print(f"Successfully loaded {api_source} data to BigQuery")
+            else:
+                print(f"Failed to load {api_source} data to BigQuery")
             return df_standardized
         else:
             print(f"Failed to upload transformed data for {api_source}")
@@ -162,6 +175,36 @@ def transform_job_data(message_data):
     else:
         print(f"Unknown API source: {api_source}")
         return None
+    
+def load_to_bigquery(df, dataset_id='job_data', table_id='standardized_jobs'):
+    try:
+        client = bigquery.Client()
+        table_ref = f"{client.project}.{dataset_id}.{table_id}"
+        
+        job_config = bigquery.LoadJobConfig(
+            write_disposition=bigquery.WriteDisposition.WRITE_APPEND,
+            schema=[
+                bigquery.SchemaField("job_title", "STRING"),
+                bigquery.SchemaField("job_description", "STRING"),
+                bigquery.SchemaField("job_url", "STRING"),
+                bigquery.SchemaField("posted_date", "STRING"),
+                bigquery.SchemaField("job_category", "STRING"),
+                bigquery.SchemaField("job_type", "STRING"),
+                bigquery.SchemaField("company_name", "STRING"),
+                bigquery.SchemaField("salary", "STRING"),
+                bigquery.SchemaField("source", "STRING"),
+            ]
+        )
+        
+        job = client.load_table_from_dataframe(
+            df, table_ref, job_config=job_config
+        )
+        job.result() 
+        print(f"Loaded {len(df)} rows into BigQuery table {table_ref}")
+        return True
+    except Exception as e:
+        print(f"Error loading data to BigQuery: {str(e)}")
+        return False
 
 @app.route('/', methods=['GET'])
 def home():
@@ -170,7 +213,8 @@ def home():
 @app.route('/pubsub', methods=['POST'])
 def pubsub_handler():
     try:
-        envelope = flask.request.get_json()
+        envelope = request.get_json()
+        logger.info(f"Received Pub/Sub message: {envelope}")
         
         if not envelope:
             return "No Pub/Sub message received", 400
@@ -179,34 +223,64 @@ def pubsub_handler():
             return "Invalid Pub/Sub message format", 400
             
         pubsub_message = envelope['message']
+        logger.info(f'Extracted message: {pubsub_message}')
         
         if 'data' in pubsub_message:
-            message_data_str = base64.b64decode(pubsub_message['data']).decode('utf-8')
-            message_data = json.loads(message_data_str)
-            
-            result = transform_job_data(message_data)
-            
-            if result is not None:
-                return {
-                    'status': 'success',
-                    'message': f"Successfully transformed job data for {message_data.get('api_source')}"
-                }, 200
-            else:
-                return {
-                    'status': 'error',
-                    'message': f"Failed to transform job data for {message_data.get('api_source')}"
-                }, 500
+            try:
+                logger.info(f'Raw data: {pubsub_message["data"]}')
+
+                decoded_bytes = base64.b64decode(pubsub_message['data'])
+                logger.info(f"Decoded bytes (hex): {decoded_bytes.hex()}")
+
+                # try:
+                #     message_data_str = decoded_bytes.decode('utf-8')
+                #     logger.info(f"Decoded as UTF-8: {message_data_str}")
+                # except UnicodeDecodeError as e:
+                #     logger.info(f"UTF-8 decoding error: {str(e)}")
+                #     message_data_str = decoded_bytes.decode('latin-1')
+                #     logger.info(f"Decoded as Latin-1: {message_data_str}")
+
+                # if not message_data_str.strip():
+                #     return "Empty message data after decoding", 400
+                
+                # try:
+                #     message_data = json.loads(message_data_str)
+                #     logger.info(f"Parsed JSON: {message_data}")
+                # except json.JSONDecodeError as json_err:
+                #     logger.info(f"JSON parsing error: {str(json_err)}")
+                #     logger.info(f"First 100 chars of message_data_str: {message_data_str[:100]}")
+                #     return f"Invalid JSON after decoding: {str(json_err)}", 400
+                try:
+                    message_data = json.loads(decoded_bytes)
+                except:
+                    logger.info(f"Error decoding message data: {decoded_bytes}")
+                    return "Invalid message data", 400
+                result = transform_job_data(message_data)
+                
+                if result is not None:
+                    return {
+                        'status': 'success',
+                        'message': f"Successfully transformed job data for {message_data.get('api_source')}"
+                    }, 200
+                else:
+                    return {
+                        'status': 'error',
+                        'message': f"Failed to transform job data for {message_data.get('api_source')}"
+                    }, 500
+            except Exception as e:
+                logger.info(f"Error processing message data: {str(e)}")
+                return f"Error processing message data: {str(e)}", 400
         else:
-            print("Invalid Pub/Sub message: missing data")
+            logger.info("Invalid Pub/Sub message: missing data")
             return "Invalid message format", 400
     except Exception as e:
-        print(f"Error processing Pub/Sub message: {str(e)}")
+        logger.info(f"Error processing Pub/Sub message: {str(e)}")
         return f"Error: {str(e)}", 500
 
 @app.route('/manual', methods=['POST'])
 def manual_transform():
     try:
-        message_data = flask.request.get_json()
+        message_data = request.get_json()
         
         if not message_data:
             return "No data provided", 400

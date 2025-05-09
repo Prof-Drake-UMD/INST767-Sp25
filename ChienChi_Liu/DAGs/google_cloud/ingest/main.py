@@ -46,9 +46,11 @@ def publish_to_pubsub(api_name, data, timestamp):
             publisher = pubsub_v1.PublisherClient()
             topic_path = publisher.topic_path(PROJECT_ID, JOBS_TOPIC)
             data_bytes = json.dumps(message_data).encode("utf-8")
+
             future = publisher.publish(topic_path, data_bytes)
             message_id = future.result()
             print(f"Published message {message_id} for {api_name} job data")
+            print(f"Message data for {api_name}: {message_data}")
             return True
         except Exception as e:
             print(f"Error publishing message for {api_name}: {str(e)}")
@@ -67,12 +69,9 @@ def collect_jobs():
     }
     
     # Adzuna API
-    try:
-        app_id = os.environ.get("ADZUNA_APP_ID")
-        app_key = os.environ.get("ADZUNA_APP_KEY")
-        
-        if app_id and app_key:
-            adzuna = AdzunaConnector(app_id, app_key)
+    try: 
+        if adzuna_api_id and adzuna_api_key:
+            adzuna = AdzunaConnector(adzuna_api_id, adzuna_api_key)
             keywords = ["software", "data", "devops", "engineer", "IT", "developer", "designer", "manager"]
             adzuna_jobs = adzuna.extract_jobs(keywords=keywords)
             if publish_to_pubsub("adzuna", adzuna_jobs, timestamp):
@@ -85,8 +84,6 @@ def collect_jobs():
     
     # Jooble API
     try:
-        jooble_api_key = os.environ.get("JOOBLE_API_KEY")
-        
         if jooble_api_key:
             jooble = JoobleConnector(jooble_api_key)
             jooble_jobs = jooble.extract_jobs(
@@ -104,11 +101,9 @@ def collect_jobs():
     
     # Muse API
     try:
-        muse_api_key = os.environ.get("MUSE_API_KEY")
-        
         if muse_api_key:
             muse = MuseConnector(muse_api_key)
-            categories = ["ux", "design", "management", "ui", "product", "interaction", "engineer"]
+            categories = ["ux", "design", "management"]
             muse_jobs = muse.extract_jobs(categories=categories)
             if publish_to_pubsub("muse", muse_jobs, timestamp):
                 results["success"] += 1
