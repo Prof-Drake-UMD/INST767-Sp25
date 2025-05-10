@@ -2,7 +2,6 @@ import os
 import json
 import base64
 from flask import Flask, request
-import logging
 import pandas as pd
 from google.cloud import storage
 from google.cloud import bigquery
@@ -10,12 +9,6 @@ from google.cloud import bigquery
 PROJECT_ID = os.environ.get('PROJECT_ID')
 BUCKET_NAME = f"job-data-{PROJECT_ID}"
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
@@ -83,7 +76,6 @@ def transform_job_data(message_data):
     print(f"Downloaded {len(df)} records from {filename}")
     
     df_standardized = pd.DataFrame()
-    df_standardized['source'] = api_source
     
     field_mappings = {
         'adzuna': {
@@ -128,17 +120,17 @@ def transform_job_data(message_data):
                 if '.' in original_col:
                     parts = original_col.split('.')
                     if parts[0] in df.columns:
-                        if parts[0] == 'categories[0]' and 'categories' in df.columns:
-                            df_standardized[new_col] = df['categories'].apply(
-                                lambda x: x[0].get('name') if isinstance(x, list) and len(x) > 0 and 'name' in x[0] else None
-                            )
-                        elif parts[0] == 'refs' and 'refs' in df.columns:
+                        if parts[0] == 'refs' and 'refs' in df.columns:
                             df_standardized[new_col] = df['refs'].apply(
                                 lambda x: x.get('landing_page') if isinstance(x, dict) and 'landing_page' in x else None
                             )
                         else:
                             df_standardized[new_col] = df[parts[0]].apply(
                                 lambda x: x.get(parts[1]) if isinstance(x, dict) and parts[1] in x else None
+                            )
+                    elif parts[0] == 'categories[0]' and 'categories' in df.columns:
+                            df_standardized[new_col] = df['categories'].apply(
+                                lambda x: x[0].get('name') if isinstance(x, list) and len(x) > 0 and 'name' in x[0] else None
                             )
                 elif original_col in df.columns:
                     df_standardized[new_col] = df[original_col]
@@ -158,6 +150,7 @@ def transform_job_data(message_data):
                 df_standardized['salary'] = df_standardized['salary'].str.replace('$nan', '', regex=False)
                 df_standardized['salary'] = df_standardized['salary'].str.replace('nan$', '', regex=False)
 
+        df_standardized['source'] = api_source
         output_filename = f"transformed_{api_source}_jobs.json"
         upload_success = upload_to_gcs(df_standardized, output_filename, bucket)
         
@@ -214,7 +207,7 @@ def home():
 def pubsub_handler():
     try:
         envelope = request.get_json()
-        logger.info(f"Received Pub/Sub message: {envelope}")
+        print(f"Received Pub/Sub message: {envelope}")
         
         if not envelope:
             return "No Pub/Sub message received", 400
@@ -223,37 +216,19 @@ def pubsub_handler():
             return "Invalid Pub/Sub message format", 400
             
         pubsub_message = envelope['message']
-        logger.info(f'Extracted message: {pubsub_message}')
+        print(f'Extracted message: {pubsub_message}')
         
         if 'data' in pubsub_message:
             try:
-                logger.info(f'Raw data: {pubsub_message["data"]}')
+                print(f'Raw data: {pubsub_message["data"]}')
 
                 decoded_bytes = base64.b64decode(pubsub_message['data'])
-                logger.info(f"Decoded bytes (hex): {decoded_bytes.hex()}")
+                print(f"Decoded bytes (hex): {decoded_bytes.hex()}")
 
-                # try:
-                #     message_data_str = decoded_bytes.decode('utf-8')
-                #     logger.info(f"Decoded as UTF-8: {message_data_str}")
-                # except UnicodeDecodeError as e:
-                #     logger.info(f"UTF-8 decoding error: {str(e)}")
-                #     message_data_str = decoded_bytes.decode('latin-1')
-                #     logger.info(f"Decoded as Latin-1: {message_data_str}")
-
-                # if not message_data_str.strip():
-                #     return "Empty message data after decoding", 400
-                
-                # try:
-                #     message_data = json.loads(message_data_str)
-                #     logger.info(f"Parsed JSON: {message_data}")
-                # except json.JSONDecodeError as json_err:
-                #     logger.info(f"JSON parsing error: {str(json_err)}")
-                #     logger.info(f"First 100 chars of message_data_str: {message_data_str[:100]}")
-                #     return f"Invalid JSON after decoding: {str(json_err)}", 400
                 try:
                     message_data = json.loads(decoded_bytes)
                 except:
-                    logger.info(f"Error decoding message data: {decoded_bytes}")
+                    print(f"Error decoding message data: {decoded_bytes}")
                     return "Invalid message data", 400
                 result = transform_job_data(message_data)
                 
@@ -268,13 +243,13 @@ def pubsub_handler():
                         'message': f"Failed to transform job data for {message_data.get('api_source')}"
                     }, 500
             except Exception as e:
-                logger.info(f"Error processing message data: {str(e)}")
+                print(f"Error processing message data: {str(e)}")
                 return f"Error processing message data: {str(e)}", 400
         else:
-            logger.info("Invalid Pub/Sub message: missing data")
+            print("Invalid Pub/Sub message: missing data")
             return "Invalid message format", 400
     except Exception as e:
-        logger.info(f"Error processing Pub/Sub message: {str(e)}")
+        print(f"Error processing Pub/Sub message: {str(e)}")
         return f"Error: {str(e)}", 500
 
 @app.route('/manual', methods=['POST'])
