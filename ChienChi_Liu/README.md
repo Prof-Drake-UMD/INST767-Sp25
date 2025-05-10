@@ -18,9 +18,9 @@ To write a DAG that intergrates multiple big data sources together, and create a
 
 | API | Focus | Update Frequency | Docs |
 |-----|-------|------------------|------|
-| **The Muse** | Creative & Design Jobs |  Daily at 12:00 UTC |[API Docs](https://www.themuse.com/developers/api/v2) |
-| **Adzuna** | Technical / Engineering Roles | Every 6 hours | [API Docs](https://developer.adzuna.com/) |
-| **Jooble** | Broad job listings (Entry level / Hourly Jobs) | Daily at 06:00 UTC | [API Docs](https://jooble.org/api/about) |
+| **The Muse** | Technical / Engineering / Design Roles |  Daily at 12:00 UTC |[API Docs](https://www.themuse.com/developers/api/v2) |
+| **Adzuna** | Technical / Engineering / Design Roles | Every 6 hours | [API Docs](https://developer.adzuna.com/) |
+| **Jooble** | Broad job listings (Remote / Hourly Jobs) | Daily at 06:00 UTC | [API Docs](https://jooble.org/api/about) |
 
 
 
