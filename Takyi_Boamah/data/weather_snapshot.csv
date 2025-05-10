@@ -1,0 +1,52 @@
+state,city,datetime,temp_celsius,feels_like_celsius,humidity_percent,pressure_hpa,weather_main,weather_description,wind_speed_mps,wind_deg,cloud_percent,visibility_m
+AL,Montgomery,2025-04-10T00:23:49,7.79,6.15,46,1024,Clear,clear sky,2.57,130,0,10000
+AK,Juneau,2025-04-10T00:23:49,7.0,4.0,76,1018,Rain,light rain,4.63,120,100,10000
+AZ,Phoenix,2025-04-10T00:20:53,34.83,32.17,9,1014,Clear,clear sky,2.24,254,0,10000
+AR,Little Rock,2025-04-10T00:21:46,22.49,21.92,43,1015,Clear,clear sky,4.12,220,0,10000
+CA,Sacramento,2025-04-10T00:23:49,27.65,27.09,35,1018,Clear,clear sky,3.6,350,0,10000
+CO,Denver,2025-04-10T00:22:03,21.38,19.94,14,1017,Clouds,broken clouds,4.47,322,80,10000
+CT,Hartford,2025-04-10T00:21:53,4.49,3.59,46,1025,Clouds,scattered clouds,1.34,259,46,10000
+DE,Dover,2025-04-10T00:23:49,6.23,3.6,53,1026,Clear,clear sky,3.6,140,0,10000
+FL,Tallahassee,2025-04-10T00:19:58,18.67,17.92,51,1019,Clear,clear sky,2.54,4,0,10000
+GA,Atlanta,2025-04-10T00:21:18,17.16,16.11,45,1020,Clouds,few clouds,2.06,150,20,10000
+HI,Honolulu,2025-04-10T00:20:00,26.59,26.59,69,1016,Clouds,scattered clouds,8.75,40,40,10000
+ID,Boise,2025-04-10T00:23:50,19.84,18.61,28,1023,Clear,clear sky,3.09,340,0,10000
+IL,Springfield,2025-04-10T00:20:52,20.81,20.25,50,1013,Clear,clear sky,3.09,300,0,10000
+IN,Indianapolis,2025-04-10T00:20:54,7.67,4.62,68,1017,Clouds,overcast clouds,5.14,150,100,10000
+IA,Des Moines,2025-04-10T00:20:59,18.22,17.04,36,1013,Clouds,scattered clouds,1.54,290,40,10000
+KS,Topeka,2025-04-10T00:23:50,22.63,21.78,32,1014,Clear,clear sky,3.09,330,0,10000
+KY,Frankfort,2025-04-10T00:23:50,11.99,10.5,48,1017,Clouds,few clouds,2.57,90,20,10000
+LA,Baton Rouge,2025-04-10T00:23:50,22.06,21.57,48,1020,Clear,clear sky,3.09,230,0,10000
+ME,Augusta,2025-04-10T00:20:31,17.28,16.73,64,1021,Clear,clear sky,0.0,0,0,10000
+MD,Annapolis,2025-04-10T00:23:50,7.53,4.05,55,1024,Clear,clear sky,6.17,160,0,10000
+MA,Boston,2025-04-10T00:19:22,4.57,1.26,47,1025,Clouds,few clouds,4.12,130,20,10000
+MI,Lansing,2025-04-10T00:23:50,2.26,-1.89,88,1020,Rain,light rain,4.63,190,100,3219
+MN,Saint Paul,2025-04-10T00:21:02,14.95,13.52,39,1011,Clear,clear sky,3.09,150,0,10000
+MS,Jackson,2025-04-10T00:19:50,21.73,21.11,44,1020,Clear,clear sky,3.6,310,0,10000
+MO,Jefferson City,2025-04-10T00:23:18,21.25,20.27,32,1011,Clear,clear sky,4.63,270,0,10000
+MT,Helena,2025-04-10T00:23:50,12.86,10.98,30,1023,Clouds,few clouds,8.75,300,20,10000
+NE,Lincoln,2025-04-10T00:23:50,21.04,19.8,23,1014,Clouds,broken clouds,4.63,290,75,10000
+NV,Carson City,2025-04-10T00:23:50,23.43,22.27,17,1017,Clear,clear sky,4.12,280,0,10000
+NH,Concord,2025-04-10T00:23:50,26.76,26.51,36,1018,Clear,clear sky,4.63,290,0,10000
+NJ,Trenton,2025-04-10T00:20:51,6.2,5.27,40,1026,Clear,clear sky,1.54,230,0,10000
+NM,Santa Fe,2025-04-10T00:23:50,22.53,21.13,11,1012,Clear,clear sky,5.66,280,0,10000
+NY,Albany,2025-04-10T00:19:51,1.71,1.71,48,1025,Clouds,broken clouds,0.45,18,73,10000
+NC,Raleigh,2025-04-10T00:19:10,11.17,9.91,60,1023,Clear,clear sky,2.77,112,1,10000
+ND,Bismarck,2025-04-10T00:20:32,13.23,11.94,51,1013,Clouds,overcast clouds,9.77,310,100,10000
+OH,Columbus,2025-04-10T00:19:42,4.57,1.92,86,1020,Rain,light rain,3.09,120,100,10000
+OK,Oklahoma City,2025-04-10T00:20:00,25.22,24.74,36,1014,Clouds,few clouds,2.06,360,20,10000
+OR,Salem,2025-04-10T00:20:49,17.7,17.12,61,1022,Clouds,scattered clouds,1.79,73,40,10000
+PA,Harrisburg,2025-04-10T00:23:51,5.84,5.84,54,1024,Clouds,few clouds,0.89,130,19,10000
+RI,Providence,2025-04-10T00:22:10,4.06,2.82,54,1026,Clear,clear sky,1.54,290,0,10000
+SC,Columbia,2025-04-10T00:23:27,16.08,15.31,60,1022,Clear,clear sky,0.0,0,0,10000
+SD,Pierre,2025-04-10T00:23:51,16.58,15.21,35,1014,Clouds,scattered clouds,4.63,320,40,10000
+TN,Nashville,2025-04-10T00:20:07,18.92,17.55,26,1018,Clear,clear sky,5.14,190,0,10000
+TX,Austin,2025-04-10T00:19:52,27.92,27.13,32,1016,Clear,clear sky,5.14,170,0,10000
+UT,Salt Lake City,2025-04-10T00:20:39,19.8,18.41,22,1023,Clouds,broken clouds,6.17,350,75,10000
+VT,Montpelier,2025-04-10T00:23:51,-0.39,-4.85,51,1025,Clouds,few clouds,4.12,310,20,10000
+VA,Richmond,2025-04-10T00:19:06,9.8,6.93,49,1024,Clear,clear sky,6.17,140,0,10000
+WA,Olympia,2025-04-10T00:21:02,15.77,15.05,63,1023,Clouds,scattered clouds,4.12,20,40,10000
+WV,Charleston,2025-04-10T00:23:50,15.32,14.79,72,1023,Clear,clear sky,5.14,90,0,10000
+WI,Madison,2025-04-10T00:23:51,15.38,14.2,47,1018,Clear,clear sky,0.0,0,0,10000
+WY,Cheyenne,2025-04-10T00:23:51,16.38,14.54,18,1018,Clear,clear sky,16.46,290,0,10000
+DC,Washington,2025-04-10T00:20:18,14.69,13.18,37,1023,Clouds,broken clouds,1.34,99,77,10000

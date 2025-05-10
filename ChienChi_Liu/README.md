@@ -1,188 +1,114 @@
 # 🔍 Job Market Data Integration Pipeline  
-*A multi-source ETL project for unified job search insights using Google Cloud Platform*
+A multi-source ETL project for job search using Google Cloud Platform
 
 
 
 ## 📘 Project Overview
 
-<!-- This project is part of the final assignment for INST767 (Sp25), focusing on building a **cloud-native data pipeline** using **Google Cloud Platform** tools. The goal is to **extract**, **transform**, and **load** data from multiple external APIs into **BigQuery**, enabling further analysis and unified access via a single API. -->
+This is the final project for INST767 (Sp25) in University of Maryland, focusing on building a **cloud data pipeline** using **Google Cloud Platform** tools. The goal is to **extract**, **transform**, and **load** data from multiple external APIs into **BigQuery** to enable further analysis.
 
-As a person pursuing a Master's in HCI with a background in computer science, this project aims to provide people with similar background to have a simplified job search experience. This is a ETL pipeline that integrates data from three different job market APIs—tailored for tech, design, and freelance roles—and exposes them through a unified schema and API.
-
+As a person pursuing a Master's in HCI with a background in computer science, this project aims to provide people with similar background to have a simplified job search experience. This is a ETL pipeline that integrates data from three different job market APIs, which specifically tailored for data, engineer, and design roles. 
 
 
 ## 🧭 Objective
 
-Build an automated data pipeline using **Apache Airflow** (via **Cloud Composer**) that:
-
-- Pulls data from **three external job-related APIs**
-- Transforms the data into a **unified schema**
-- Loads the cleaned data into **BigQuery**
-
+To write a DAG that intergrates multiple big data sources together, and create a system on Google Cloud. Three different data apis that have conistently updating data are selected.
 
 ## 🔗 Data Sources
 
 | API | Focus | Update Frequency | Docs |
 |-----|-------|------------------|------|
-| **The Muse** | Creative & Design Jobs | Daily | [API Docs](https://www.themuse.com/developers/api/v2) |
-| **Adzuna** | Technical / Engineering Roles | Every 6 hours | [API Docs](https://developer.adzuna.com/) |
-| **Hacker News: Who's Hiring** | Freelance / Startup Jobs | Monthly | [GitHub API](https://github.com/HackerNews/API) / [Search API](https://hn.algolia.com/api) |
-
-
-
-## 🏗️ Architecture
-
-The system follows a modular ETL pattern using Google Cloud services:
-
-```
-[ Muse / Adzuna / HN APIs ] 
-        ↓
-[ Python API Connectors ]
-        ↓
-[ Cloud Composer (Airflow DAG) ]
-        ↓
-[ GCS (intermediate storage) ]
-        ↓
-[ BigQuery (final storage & analysis) ]
-```
+| **The Muse** | Technical / Engineering / Design Roles |  Daily at 12:00 UTC |[API Docs](https://www.themuse.com/developers/api/v2) |
+| **Adzuna** | Technical / Engineering / Design Roles | Every 6 hours | [API Docs](https://developer.adzuna.com/) |
+| **Jooble** | Broad job listings (Remote / Hourly Jobs) | Daily at 06:00 UTC | [API Docs](https://jooble.org/api/about) |
 
 
 
 ## 🧱 Components
 
-### 🛠️ Extraction
-- Custom Python modules (`muse_connector.py`, etc.)
+###  Extraction (Ingest)
+- Python modules (`adzuna_api.py`, `jooble_api.py`, `muse_api.py`)
 - Retry logic and error handling
-- Pulls raw data from APIs and writes to Cloud Storage
+- Pulls raw data from APIs and writes to json files
 
-### 🧼 Transformation
+### Transformation
 - Converts inconsistent fields into a **standardized schema**
-- Cleans nulls, infers job types, standardizes skills and salary
-
-### 🧩 Unified Schema
-
+  
 ```json
 {
-  "job_id": "string",
-  "title": "string",
-  "company": "string",
-  "location": "string",
-  "description": "string",
-  "salary_info": "string | null",
-  "employment_type": "string",
-  "posted_date": "date",
-  "skills_required": ["string"],
-  "experience_level": "string | null",
-  "source_api": "string",
-  "additional_metadata": "object | null"
+  "source": "string",
+  "job_title": "string",
+  "job_description": "string",
+  "job_url": "string",
+  "posted_date": "string",
+  "company_name": "string",
+  "job_category": "string",
+  "job_type": "string",
+  "salary": "string",
 }
 ```
 
-### 📥 Loading
-- Transformed files written to GCS in newline-delimited JSON
-- Loaded into partitioned BigQuery table by `posted_date`
-
-### 📅 Update Schedule
-
-| Source | Schedule |
-|--------|----------|
-| The Muse | Daily at 12:00 UTC |
-| Adzuna | Every 6 hours |
-| Hacker News | Monthly, 1st day at 12:00 UTC |
+### Loading
+- Transformed files written to Google Cloud Storage
+- Loaded into BigQuery table
+- Run the dataset table with queries to analyze job market data
 
 
 
-<!-- ## 📁 File Structure
+## 📁 File Structure
+Since this project includes both local pipeline and upload to Google Cloud Platform, I separated files into different directories and kept all of them. 
+- Files run on GCP are stored in `google_cloud` directory
+- `pipeline.py` includes api fetch from files under `api_connection` and data transformation from `data_cleaning.py`
+- `data` and `transformed_data` stored fetched data and transformed data separately
+- `sql` contains dataset with table in `job_market_tables.sql` and queries in `job_market_queries.sql`
 
 ```
-firstname_lastname/
+ChienChi_Liu/
 ├── README.md
-├── dags/
-│   ├── job_data_pipeline.py
-│   └── modules/
-│       ├── muse_connector.py
-│       ├── adzuna_connector.py
-│       ├── hackernews_connector.py
-│       └── data_transformer.py
-├── schemas/
-│   └── unified_job_schema.json
-└── sql/
-    └── analysis_queries.sql
-``` -->
-
-
-
-## 🌐 API Layer 
-
-The cleaned job data in BigQuery is exposed via a basic RESTful API.
-
-### Base URL
-
-```
-https://your-api-url.com/jobs
-```
-
-### GET /jobs — Query Parameters
-
-| Parameter | Type | Example | Description |
-|----------|------|---------|-------------|
-| `location` | string | `Remote` | Filter by location |
-| `role` | string | `Engineer` | Job title keyword |
-| `employment_type` | string | `freelance` | Filter job type |
-| `source_api` | string | `adzuna` | Filter by source |
-| `skills` | string[] | `["Python"]` | Filter by skills |
-
-### Example Response
-
-```json
-[
-  {
-    "job_id": "adz-87493",
-    "title": "Backend Engineer",
-    "company": "Techie Inc.",
-    "location": "Remote",
-    "salary_info": "$100k–$120k",
-    "employment_type": "full-time",
-    "posted_date": "2025-03-29",
-    "skills_required": ["Python", "Django", "SQL"],
-    "source_api": "adzuna"
-  }
-]
+├── DAGs/
+│   ├── api_connection
+│   │   ├── adzuna_api.py
+│   │   ├── jooble_api.py
+│   │   ├── muse_api.py
+│   ├── data_cleaning
+│   │   ├── jobs_cleaning.ipynb
+│   │   ├── jobs_cleaning.py
+│   ├── data
+│   │   ├── adzuna_jobs.json
+│   │   ├── jooble_jobs.json
+│   │   ├── muse_jobs.json
+│   ├── transformed_data
+│   │   ├── jobs_data_standardized.csv
+│   │   ├── jobs_data_standardized.json
+│   ├── pipeline.py
+│   ├── google_cloud
+│   │   ├── ingest
+│   │   │   ├── adzuna_api.py
+│   │   │   ├── jooble_api.py
+│   │   │   ├── muse_api.py
+│   │   │   ├── main.py
+│   │   │   ├── requirements.txt
+│   │   ├── transform
+│   │   │   ├── main.py
+│   │   │   ├── requirements.txt
+│   │   ├── screenshots
+│   ├── sql
+│   │   ├── job_market_queries.sql
+│   │   ├── job_market_tables.sql
+├── Dockerfile.fetch
+└── Dockerfile.transform
 ```
 
 
+## 📊 Analytical Use Cases
 
-<!-- ## 📊 Analytical Use Cases
+With the integrated dataset in BigQuery, I explore:
 
-With the integrated dataset in BigQuery, we can explore:
+- Job Posting Trends: Analyze how job postings are changing by industry and company
+- Top Hiring Companies: Identify leading employers in each job category
+- New Companies Hiring: Discover recently active companies
+- Key Job Platforms: Determine the most popular sources for job postings among three apis
+- Salary Ranges: Understand typical pay scales across different job types and industries
 
-- Job **trends by location** or **job type**
-- **Salary** insights for similar roles across platforms
-- **Skill demand** across different industries
-- Comparison: **Freelance vs Full-time** opportunities
-
-
-
-## 🔮 Future Enhancements
-
-- ✅ Add **data validation and anomaly detection**
-- 🧠 Perform **sentiment analysis** on job descriptions
-- 📈 Build a **dashboard** in Looker Studio for recruiters
-- 🌍 Add more regional or international job boards
-- 🛡️ Implement **OAuth or API key protection** -->
-
-
-
-## 🧑‍💻 Technologies Used
-
-- **Google Cloud Platform**
-  - Cloud Composer (Airflow)
-  - Cloud Storage
-  - BigQuery
-- **Python**
-  - `requests`, `pandas`, `datetime`
-- **APIs**
-  - The Muse, Adzuna, Hacker News
-<!-- - FastAPI or Flask for REST API Layer -->
 
 
