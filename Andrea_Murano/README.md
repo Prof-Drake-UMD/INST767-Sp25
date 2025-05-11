@@ -1,11 +1,11 @@
-# Cozy Day Curator
+# "Culture Yourself" Curator
 
-## Project Description: As a lover of the great indoors, I feel particularly invested in, and equipped to, create the Cozy Day Curator. This recommendation system is perfect for those who enjoy a quiet day at home, offering book suggestions, potential activities, and even a soundtrack to score what is sure to be a perfect day! This system provides peak relation, because you don't even have to make decisions for yourself - Cozy Day Curator will do it for you.
+## Project Description: Generate a work of art, a book, and a song to expand your cultural horizons. The goal is that each element will be connected by a theme.
 
 ## APIs Used:
-1. **Pinterest API:** Low-key crafts or a new recipe for that special night alone! 
-2. **Open Library API:** Books so that you can read about people and not actually have to be around them.
-3. **LastFM API:** Curated playlists to set the mood.
+1. **The MET Collection API:** Access to over 450,000 works of art.
+2. **Open Library API:** Access to millions of books and bibliographic metadata. 
+3. **TheAudioDB Free Music API:** Access metadata about music, including artist details, track listings, genres, moods, and album covers.
 
 ## How to Run
 1. **Clone the Repository:**
