@@ -1,26 +1,58 @@
-# Fitness & Health Tracker Insights Pipeline
+# INST767 Final Project: Nutrition-Exercise Data Pipeline
 
-## API Data Sources
+## Project Overview
 
-### Wger API
-- **Inputs:** None required for basic exercise info queries; optional query params (e.g., language filter)
-- **Outputs:** JSON with details about exercises, categories, muscles, and equipment
-- **Authentication:** No authentication required (public GET endpoints)
+This project implements a cloud-ready data pipeline that integrates **three public APIs** to collect and process structured data about food, exercise, and nutritional metadata. The pipeline is designed for extensibility, asynchronous processing, and compatibility with Google BigQuery.
 
-### Nutritionix API
-- **Inputs:** Food search string or natural language query (e.g., "1 apple")
-- **Outputs:** JSON with food name, calories, macronutrients
-- **Authentication:** App ID and App Key (passed in header)
+---
 
-### OpenWeatherMap API
-- **Inputs:** City name or coordinates
-- **Outputs:** JSON with weather details (temperature, humidity, precipitation)
-- **Authentication:** API Key (passed in query parameter)
+## Project Goals
 
-## Project Description
-This project integrates fitness, nutrition, and weather data to analyze trends in exercise and health behaviors. The goal is to explore correlations such as how weather influences physical activity choices, or how food intake aligns with fitness routines.
+- Integrate **three continuously updated public APIs**
+- Extract and transform real-world food and exercise metadata
+- Create three robust tables suitable for analysis in BigQuery
+- Support meaningful, cross-domain SQL queries
 
-The system will pull data from the three APIs, transform and clean the data, and load it into BigQuery for analysis. Example queries include:
-- Frequency of different exercise types performed under varying weather conditions
-- Correlation between specific exercises and average nutritional intake
-- Most popular equipment used in exercises by category
+---
+
+## APIs Used
+
+| API                 | Description                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| **Nutritionix**       | Real-time food nutrient breakdowns for natural queries (e.g., "1 apple")     |
+| **Wger**              | Exercise metadata, including muscles targeted, categories, equipment        |
+| **USDA FoodData Central** | Verified nutrient and ingredient data from a federally maintained database |
+
+---
+
+## Output Tables
+
+| Table Name         | Description                                                  |
+|--------------------|--------------------------------------------------------------|
+| `nutrition_logs`   | Contains nutrition info from Nutritionix based on real-world ingredients |
+| `exercises`        | Exercise metadata from Wger including category, muscles, and equipment |
+| `usda_foods`       | USDA food product entries with nutrient values and food groups |
+
+---
+
+## Pipeline Components
+
+Sai_Gangineni/
+├── dag/
+│ ├── api_calls.py
+│ ├── transform_nutrition.py
+│ ├── transform_exercises.py
+│ ├── transform_usda.py
+│ └── pipeline.py
+├── output/
+│ ├── nutrition_logs.csv
+│ ├── exercises.csv
+│ └── usda_foods.csv
+
+---
+
+## Sample SQL Use Cases
+
+- Match USDA food groups with high-protein, low-fat entries
+- Join Nutritionix and USDA data to compare branded vs. generic food items
+- Recommend exercises based on nutrient-supporting muscle recovery (e.g., potassium)

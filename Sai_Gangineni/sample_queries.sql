@@ -1,65 +1,60 @@
--- Query 1: Recommend exercise categories for high-calorie days
-WITH high_calorie_days AS (
-  SELECT DATE(logged_at) AS day
-  FROM `your_dataset.nutrition_logs`
-  GROUP BY day
-  HAVING AVG(calories) > (
-    SELECT AVG(calories) FROM `your_dataset.nutrition_logs`
-  )
-)
-SELECT DISTINCT e.category AS recommended_category
-FROM `your_dataset.exercises` AS e
-JOIN high_calorie_days AS h
-ON TRUE
-ORDER BY recommended_category;
+-- Query 1. Find exercises that target major muscle groups and pair them with high-protein foods
+SELECT
+    e.name AS exercise_name,
+    e.primary_muscles,
+    n.food_name,
+    n.protein
+FROM exercises e
+JOIN nutrition_logs n
+  ON LOWER(n.food_name) LIKE CONCAT('%', LOWER(e.primary_muscles), '%')
+WHERE n.protein > 10
+ORDER BY n.protein DESC;
 
--- Query 2: Analyze average calories per equipment type and weather
-SELECT 
-  equipment_name,
-  w.weather_description,
-  AVG(n.calories) AS avg_calories
-FROM `your_dataset.exercises` AS e
-JOIN UNNEST(e.equipment) AS equipment_name
-JOIN `your_dataset.weather_logs` AS w
-ON TRUE
-JOIN `your_dataset.nutrition_logs` AS n
-ON DATE(w.logged_at) = DATE(n.logged_at)
-GROUP BY equipment_name, weather_description
-ORDER BY avg_calories DESC;
+-- Query 2. Compare calories in branded vs natural foods for fitness-focused users
+SELECT
+    u.description AS usda_food,
+    u.brandOwner,
+    n.food_name,
+    u.calories AS branded_calories,
+    n.calories AS estimated_calories,
+    ABS(u.calories - n.calories) AS calorie_difference
+FROM usda_foods u
+JOIN nutrition_logs n
+  ON LOWER(u.description) LIKE CONCAT('%', LOWER(n.food_name), '%')
+WHERE u.calories IS NOT NULL AND n.calories IS NOT NULL
+ORDER BY calorie_difference DESC;
 
--- Query 3: Recommend exercises targeting muscles relevant to high-protein days under specific weather
-WITH high_protein_days AS (
-  SELECT DATE(logged_at) AS day
-  FROM `your_dataset.nutrition_logs`
-  GROUP BY day
-  HAVING AVG(protein) > (
-    SELECT AVG(protein) FROM `your_dataset.nutrition_logs`
-  )
-)
-SELECT DISTINCT e.category AS suggested_category
-FROM `your_dataset.exercises` AS e
-JOIN `your_dataset.exercise_primary_muscles` AS epm
-ON e.id = epm.exercise_id
-JOIN `your_dataset.muscles` AS m
-ON epm.muscle_id = m.muscle_id
-JOIN high_protein_days AS h
-ON TRUE
-JOIN `your_dataset.weather_logs` AS w
-ON DATE(w.logged_at) = DATE(h.day)
-WHERE w.weather_description LIKE '%rain%'
-ORDER BY suggested_category;
-
--- Original Query 4: Top exercises targeting most muscles
-SELECT e.name, COUNT(epm.muscle_id) AS num_primary_muscles
-FROM `your_dataset.exercises` AS e
-LEFT JOIN `your_dataset.exercise_primary_muscles` AS epm
-ON e.id = epm.exercise_id
+-- Query 3. Rank exercises by number of compatible nutrient-rich foods
+SELECT
+    e.name AS exercise,
+    COUNT(n.food_name) AS matching_foods
+FROM exercises e
+JOIN nutrition_logs n
+  ON LOWER(n.food_name) LIKE CONCAT('%', LOWER(e.primary_muscles), '%')
 GROUP BY e.name
-ORDER BY num_primary_muscles DESC
+ORDER BY matching_foods DESC
 LIMIT 10;
 
--- Original Query 5: Count exercises by equipment
-SELECT equipment_name, COUNT(*) AS num_exercises
-FROM `your_dataset.exercises`, UNNEST(equipment) AS equipment_name
-GROUP BY equipment_name
-ORDER BY num_exercises DESC;
+-- Query 4. Identify food categories in USDA that best support muscle-building
+SELECT
+    foodCategory,
+    AVG(protein) AS avg_protein
+FROM usda_foods
+WHERE protein IS NOT NULL
+GROUP BY foodCategory
+ORDER BY avg_protein DESC
+LIMIT 10;
+
+-- Query 5. Recommend food matches for top compound exercises (multi-muscle)
+SELECT
+    e.name AS exercise,
+    e.primary_muscles,
+    n.food_name,
+    n.calories,
+    n.protein
+FROM exercises e
+JOIN nutrition_logs n
+  ON LOWER(n.food_name) LIKE CONCAT('%', LOWER(e.primary_muscles), '%')
+WHERE (e.primary_muscles LIKE '%chest%' OR e.primary_muscles LIKE '%legs%' OR e.primary_muscles LIKE '%back%')
+  AND n.protein > 5
+ORDER BY n.protein DESC;

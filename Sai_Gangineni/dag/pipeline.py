@@ -1,17 +1,23 @@
-from transform_exercises import transform_exercises
 from transform_nutrition import transform_nutrition
-from transform_weather import transform_weather
+from transform_exercises import transform_exercises
+from transform_usda import transform_usda
 
 def main():
-    print("Starting pipeline...")
+    print("Starting pipeline...\n")
+
+    print("Transforming Wger...")
     transform_exercises()
-    print("Finished exercises transformation.")
+    print("Done with Wger.\n")
+
+    print("Transforming USDA FoodData Central...")
+    transform_usda()
+    print("Done with USDA.\n")
+
+    print("Transforming Nutritionix...")
     transform_nutrition()
-    print("Finished nutrition transformation.")
-    transform_weather()
-    print("Finished weather transformation.")
-    print("Pipeline completed. CSV files generated.")
+    print("Done with Nutritionix.\n")
+    
+    print("All CSVs written to output folder!")
 
 if __name__ == "__main__":
     main()
-
