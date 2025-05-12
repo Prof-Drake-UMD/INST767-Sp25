@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 import requests
 import json
 from datetime import datetime, timedelta
+import pandas as pd
+import time
 
 
 load_dotenv()
@@ -35,14 +37,3 @@ else:
 
 
 
-#vehicle count data
-url = "https://data.cityofnewyork.us/resource/btm5-ppia.json"
-
-response = requests.get(url)
-if response.status_code == 200:
-    data = response.json()
-    #print(data)
-    with open('john_davitz/vehicle_traffic.json', 'w') as json_file:
-        json.dump(data, json_file, indent=4)
-else:
-    print(f"Error: {response.status_code}")
