@@ -1,2 +1,44 @@
-id,food_name,calories,total_fat,saturated_fat,protein,carbohydrates,sugars,serving_weight_grams,logged_at
-384,apple,0,0,0,0,0,0,0,2025-05-08T21:16:11Z
+food_name,calories,protein,total_fat,carbohydrates
+almonds,7.71,0.27,0.68,0.27
+avocado dressing,111.35,0.22,11.44,2.28
+avocado,321.6,4.02,29.47,17.15
+avocados,321.6,4.02,29.47,17.15
+banana,105.02,1.29,0.39,26.95
+banana,105.02,1.29,0.39,26.95
+banana raw,105.02,1.29,0.39,26.95
+bananas,105.02,1.29,0.39,26.95
+banana powder,346,3.89,1.81,88.28
+bread,77.14,2.57,0.97,14.33
+sweet potato,102.6,2.29,0.17,23.61
+broccoli,3.5,0.24,0.04,0.72
+brown rice,109.2,2.26,0.81,22.92
+chicken breast,198,37.22,4.28,0
+cottage cheese,106.58,12.09,4.68,3.68
+eggs,71.5,6.28,4.76,0.36
+greek yogurt,100.3,17.32,0.66,6.12
+ground beef,308.45,30.62,19.69,0
+lentils,229.68,17.86,0.75,39.86
+salmon,467.62,50.17,28.03,0
+marmalade,42.4,0,0,10.59
+orange,68.6,1.27,0.21,17.56
+milk,122,8.05,4.83,11.71
+oat milk,130.38,1.97,0.98,29.15
+oats,153.5,5.33,2.64,27.42
+oats,153.5,5.33,2.64,27.42
+oil avocado,123.76,0,14,0
+oil,123.76,0,14,0
+oat,153.5,5.33,2.64,27.42
+orange,68.6,1.27,0.21,17.56
+orange,68.6,1.27,0.21,17.56
+orange,68.6,1.27,0.21,17.56
+chicken,187,20.37,11.11,0.04
+orange,68.6,1.27,0.21,17.56
+peanut butter,188.16,7.02,15.85,7.67
+pie,296.25,2.38,13.75,42.5
+sweet potato,102.6,2.29,0.17,23.61
+quinoa,111,4.07,1.78,19.7
+salmon,467.62,50.17,28.03,0
+spinach,41.4,5.35,0.47,6.75
+sweet potato,102.6,2.29,0.17,23.61
+sweet potato tots,211.49,2.13,7.66,33.92
+tofu,75.53,9.08,4.79,1.07
