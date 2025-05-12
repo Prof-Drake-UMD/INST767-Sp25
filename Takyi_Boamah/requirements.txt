@@ -1,0 +1,5 @@
+pandas
+python-dotenv
+requests
+google-cloud-bigquery
+apache-airflow[google]==2.7.2

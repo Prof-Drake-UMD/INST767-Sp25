@@ -1,0 +1,7 @@
+flask
+pandas
+yfinance
+requests
+google-cloud-pubsub
+google-cloud-storage
+gunicorn

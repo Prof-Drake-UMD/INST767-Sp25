@@ -1,0 +1,101 @@
+fdcId,description,brandOwner,foodCategory,protein,fat,carbs,calories
+2187885,CHICKEN BREAST,"Giant Eagle, Inc.","Poultry, Chicken & Turkey",20.4,8.1,1.06,165
+2092152,CHICKEN BREAST,"Tyson Foods, Inc.","Pepperoni, Salami & Cold Cuts",14.3,8.93,3.57,143
+2125872,CHICKEN BREAST,"Jennie-O Turkey Store, Inc.",Cooked & Prepared,19.6,1.79,1.79,107
+2055943,CHICKEN BREAST,Tony Downs Foods Co,Canned Meat,21.4,1.79,0.0,107
+2096160,CHICKEN BREAST,H E Butt Grocery Company,Other Deli,11.4,4.16,5.71,96.0
+2016166,SALMON,High Liner Foods (USA) Incorporated,Frozen Fish & Seafood,15.2,7.95,2.65,139
+1028841,SALMON,NOT A BRANDED ITEM,Fish & Seafood,19.0,15.5,0.0,232
+2470000,SALMON,Changing Seas,Frozen Fish & Seafood,20.7,13.2,0.0,207
+1895461,SALMON,"Rje Trade International, Inc.",Fish & Seafood,21.8,11.8,1.82,209
+2706850,Lomi salmon,,Seafood mixed dishes,7.55,1.86,3.31,60
+2071973,GROUND BEEF,Jobbers Meat Packing Co. Inc.,Other Meats,15.2,26.8,0.0,312
+1942314,GROUND BEEF,"Wal-Mart Stores, Inc.",Other Meats,17.0,26.8,0.0,312
+1548111,GROUND BEEF,FPL Food LLC,Other Frozen Meats,17.0,26.8,0.0,312
+1548127,GROUND BEEF,FPL Food LLC,Other Frozen Meats,17.0,19.6,0.0,250
+1567818,GROUND BEEF,FPL Food LLC,Other Meats,15.0,26.6,0.0,310
+2498468,EGGS,Mars Chocolate North America LLC,Chocolate,3.57,35.7,57.1,571
+577532,EGGS,"Safeway, Inc.",Eggs & Egg Substitutes,13.6,9.09,0.0,136
+578455,EGGS,SUN HARVEST,Eggs & Egg Substitutes,12.0,10.0,0.0,140
+2575422,EGGS,Mars Chocolate North America LLC,Candy,7.5,27.5,60.0,525
+1663044,EGGS,"Oakdell Egg Farms, Inc.",Eggs & Egg Substitutes,12.7,9.52,0.0,143
+2035482,GREEK YOGURT,"Ocean Spray Cranberries, Inc.","Popcorn, Peanuts, Seeds & Related Snacks",3.33,20.0,70.0,467
+373595,GREEK YOGURT,TRADER JOE'S,Yogurt,4.85,7.05,12.3,132
+2038865,GREEK YOGURT,"Chobani, Inc.",Yogurt,8.67,0.0,10.7,80.0
+2475934,GREEK YOGURT,"Cafe Hon, Inc.",Yogurt,11.8,0.0,4.12,65.0
+2038866,GREEK YOGURT,"Chobani, Inc.",Yogurt,7.33,2.0,12.0,93.0
+2294522,TOFU,Aloha Tofu Factory Inc,Other Meats,,,,
+1910113,TOFU,House Foods America Corporation ,Other Meats,9.41,5.88,1.18,94.0
+2038883,TOFU,House Foods America Corporation ,Other Meats,9.41,5.29,2.35,94.0
+1863123,TOFU,"Nasoya Foods USA, LLC",Other Meats,4.4,2.2,1.1,49.0
+1864648,TOFU,"Nasoya Foods USA, LLC",Other Meats,8.24,4.12,2.35,82.0
+2025325,LENTILS,The Kroger Co.,Vegetable and Lentil Mixes,28.6,0.0,57.1,229
+2425458,LENTILS,"Safeway, Inc.",Vegetable and Lentil Mixes,22.9,1.43,65.7,286
+2507171,LENTILS,N.F.J. Inc.,Vegetable and Lentil Mixes,14.1,0.0,35.3,205
+2424296,LENTILS,"Safeway, Inc.",Vegetable and Lentil Mixes,22.9,1.43,65.7,286
+1795141,LENTILS,Stater Bros. Markets Inc.,Vegetable and Lentil Mixes,22.9,1.43,65.7,286
+2025821,COTTAGE CHEESE,The Kroger Co.,Cheese,10.6,4.42,4.42,97.0
+2546921,COTTAGE CHEESE,United World Imports Inc.,Cheese,7.5,4.0,6.5,95.0
+2658451,COTTAGE CHEESE,Kraft Heinz Foods Company,Cheese,8.55,0.0,6.84,68.0
+2658102,COTTAGE CHEESE,"Darigold, Inc. ",Cheese,11.5,2.21,4.42,80.0
+2287080,COTTAGE CHEESE,"Lala U.S., Inc. ",Cheese,11.5,4.42,3.54,106
+1905313,SPINACH,"Ahold USA, Inc. ",Pre-Packaged Fruit & Vegetables,3.53,0.0,3.53,24.0
+2099349,SPINACH,"Supervalu, Inc.",Canned Vegetables,1.67,0.0,3.33,21.0
+2617829,SPINACH,"Safeway, Inc.",Pre-Packaged Fruit & Vegetables,2.35,0.0,3.53,29.0
+2664391,SPINACH,Strumba Media LLC,Pasta by Shape & Type,1.18,0.0,2.35,18.0
+2064619,SPINACH,"Winn-Dixie Stores, Inc.",Canned Vegetables,2.61,0.0,2.61,17.0
+2549992,BROCCOLI,"Wal-Mart Stores, Inc.",Frozen Vegetables,2.35,0.0,4.71,24.0
+2384291,BROCCOLI,Quirch Foods Company,Frozen Vegetables,1.18,0.0,3.53,29.0
+539572,BROCCOLI,OCEAN MIST,Pre-Packaged Fruit & Vegetables,2.7,0.34,5.41,34.0
+1935906,BROCCOLI,"Curation Foods, Inc.",Pre-Packaged Fruit & Vegetables,3.53,0.0,4.71,29.0
+2325759,BROCCOLI,Target Stores,Frozen Vegetables,2.35,0.0,4.71,24.0
+477475,SWEET POTATO,FRESH & EASY,Other Deli,5.45,1.28,16.4,106
+1946920,SWEET POTATO,"Mindful Foods, Inc.","Croissants, Sweet Rolls, Muffins & Other Pastries",6.25,12.5,32.8,250
+2709715,Sweet potato tots,,Fried vegetables,2.26,9.35,37.3,191
+2707648,"Bread, sweet potato",,Yeast breads,8.64,2.87,45.38,241
+2708012,"Pie, sweet potato",,Cakes and pies,4.96,9.75,41.08,269
+2710208,Avocado dressing,,Salad dressings and vegetable oils,1.9,43.33,7.36,427
+2709223,"Avocado, raw",,Other vegetables and combinations,2,14.66,8.53,160
+173573,"Oil, avocado",,Fats and Oils,0.0,100,0.0,884
+2710248,"Avocado, for use on a sandwich",,Vegetables on a sandwich,2,14.66,8.53,160
+171706,"Avocados, raw, California",,Fruits and Fruit Juices,1.96,15.4,8.64,697
+2286638,QUINOA,Eillien's Candies Inc.,Other Grains & Seeds,14.3,7.14,64.3,357
+386410,QUINOA,IMG Holdings Inc.,Other Grains & Seeds,10.0,4.0,70.0,360
+2058561,QUINOA,The Kroger Co.,Other Grains & Seeds,14.3,4.76,66.7,333
+2384144,QUINOA,Sunrise Natural Foods,Other Grains & Seeds,14.3,7.14,71.4,375
+2307070,QUINOA,Lieber Chocolate & Food Products Co.,Other Grains & Seeds,13.3,4.44,66.7,356
+2393132,BROWN RICE,Riviana Foods Inc.,Rice,3.2,2.8,36.8,192
+2286928,BROWN RICE,Rite Aid Corporation,Rice,8.89,3.33,75.6,378
+360294,BROWN RICE,Harris-Teeter Inc.,Rice,9.3,2.33,76.7,349
+2431690,BROWN RICE,"Goya Foods, Inc. ",Rice,7.14,3.57,76.2,357
+2058930,BROWN RICE,"Giant Eagle, Inc.",Rice,8.0,3.0,78.0,380
+2652803,ALMONDS,International Foodsource,"Popcorn, Peanuts, Seeds & Related Snacks",20.0,50.0,20.0,567
+2093782,ALMONDS,"Jo-Lee Food Products, Inc.","Popcorn, Peanuts, Seeds & Related Snacks",20.0,53.3,20.0,667
+2074342,ALMONDS,Western Nut Company,"Popcorn, Peanuts, Seeds & Related Snacks",23.3,56.7,13.3,633
+2433310,ALMONDS,Western Mixers Produce and Nuts Inc.,"Popcorn, Peanuts, Seeds & Related Snacks",20.0,50.0,20.0,603
+2104640,ALMONDS,Eillien's Candies Inc.,"Popcorn, Peanuts, Seeds & Related Snacks",19.4,52.8,16.7,583
+2707537,Peanut butter,,Nuts and seeds,22.21,51.36,22.31,598
+2025704,PEANUT BUTTER,"Schnuck Markets, Inc.",Nut & Seed Butters,21.9,46.9,25.0,562
+2031766,PEANUT BUTTER,Reginald's Homemade Llc,Nut & Seed Butters,20.0,50.0,20.0,600
+467670,PEANUT BUTTER,PIC'S REALLY GOOD,Nut & Seed Butters,23.3,46.7,10.0,567
+1945605,PEANUT BUTTER,Kenny's Candy Company Inc.,Other Snacks,6.67,20.0,70.0,500
+2012128,BANANA,Wonder Natural Foods Corp,Nut & Seed Butters,12.5,6.25,40.6,312
+2011468,BANANA,Kid Vids Educational Entertainment,Wholesome Snacks,0.0,1.07,78.6,336
+173945,"Bananas, dehydrated, or banana powder",,Fruits and Fruit Juices,3.89,1.81,88.3,346
+2709225,"Banana, baked",,Bananas,0.82,3.21,32.43,161
+2709224,"Banana, raw",,Bananas,0.74,0.28,22.71,97
+1864680,ORANGE,"Ahold USA, Inc. ","Gelatin, Gels, Pectins & Desserts",4.76,0.0,90.5,381
+2709171,"Orange, raw",,Citrus fruits,0.92,0.14,11.78,50
+168819,"Marmalade, orange",,Sweets,0.3,0.0,66.3,1030.0
+2710647,Orange Blossom,,Liquor and cocktails,0.57,0.26,9.32,98
+2706443,Orange chicken,,Stir-fry and soy-based sauce mixtures,14.46,12.68,22.46,262
+2503416,MILK,HP Hood LLC,Milk,3.33,3.33,5.42,62.0
+2454032,MILK,"Safeway, Inc.",Milk,3.75,3.33,5.42,67.0
+1909132,MILK,Elmhurst Milk & Cream Co.Inc.,Milk,3.39,2.12,5.08,55.0
+2078244,MILK,"Winn-Dixie Stores, Inc.",Milk,3.75,3.33,4.58,62.0
+2083027,MILK,"Bogopa Enterprises, Inc.",Milk,3.33,3.33,5.42,62.0
+2020713,OATS,The Moran Group Incorporated,Cereal,12.5,6.25,67.5,375
+2014676,OATS,"Bay Valley Foods, LLC",Cereal,12.5,6.25,67.5,375
+2705412,Oat milk,,Plant-based milk,0.66,2.33,5.37,45
+2708489,"Oats, raw",,Not included in a food category,13.15,6.52,67.7,379
+173576,"Oil, oat",,Fats and Oils,0.0,100,0.0,3700.0

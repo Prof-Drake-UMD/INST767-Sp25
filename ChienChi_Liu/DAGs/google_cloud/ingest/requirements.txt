@@ -1,0 +1,6 @@
+flask
+gunicorn
+requests
+google-cloud-storage
+google-cloud-pubsub
+pandas

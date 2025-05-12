@@ -1,0 +1,2535 @@
+[
+    {
+        "state": "AL",
+        "city": "Montgomery",
+        "weather": {
+            "coord": {
+                "lon": -77.1997,
+                "lat": 39.1501
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 22.77,
+                "feels_like": 21.86,
+                "temp_min": 21.73,
+                "temp_max": 24.26,
+                "pressure": 1025,
+                "humidity": 29,
+                "sea_level": 1025,
+                "grnd_level": 1009
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.63,
+                "deg": 140,
+                "gust": 8.75
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874544,
+            "sys": {
+                "type": 2,
+                "id": 2001892,
+                "country": "US",
+                "sunrise": 1745835226,
+                "sunset": 1745884708
+            },
+            "timezone": -14400,
+            "id": 4362716,
+            "name": "Montgomery",
+            "cod": 200
+        }
+    },
+    {
+        "state": "AK",
+        "city": "Juneau",
+        "weather": {
+            "coord": {
+                "lon": -134.4197,
+                "lat": 58.3019
+            },
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "moderate rain",
+                    "icon": "10d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 7,
+                "feels_like": 2.56,
+                "temp_min": 5.79,
+                "temp_max": 7,
+                "pressure": 1004,
+                "humidity": 81,
+                "sea_level": 1004,
+                "grnd_level": 1004
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 8.75,
+                "deg": 110
+            },
+            "rain": {
+                "1h": 1.24
+            },
+            "clouds": {
+                "all": 100
+            },
+            "dt": 1745874487,
+            "sys": {
+                "type": 1,
+                "id": 7729,
+                "country": "US",
+                "sunrise": 1745845804,
+                "sunset": 1745901594
+            },
+            "timezone": -28800,
+            "id": 5554072,
+            "name": "Juneau",
+            "cod": 200
+        }
+    },
+    {
+        "state": "AZ",
+        "city": "Phoenix",
+        "weather": {
+            "coord": {
+                "lon": -112.074,
+                "lat": 33.4484
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 25.65,
+                "feels_like": 24.79,
+                "temp_min": 24.18,
+                "temp_max": 26.84,
+                "pressure": 1013,
+                "humidity": 20,
+                "sea_level": 1013,
+                "grnd_level": 970
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 5.14,
+                "deg": 280,
+                "gust": 8.23
+            },
+            "clouds": {
+                "all": 20
+            },
+            "dt": 1745874155,
+            "sys": {
+                "type": 2,
+                "id": 2008537,
+                "country": "US",
+                "sunrise": 1745844158,
+                "sunset": 1745892514
+            },
+            "timezone": -25200,
+            "id": 5308655,
+            "name": "Phoenix",
+            "cod": 200
+        }
+    },
+    {
+        "state": "AR",
+        "city": "Little Rock",
+        "weather": {
+            "coord": {
+                "lon": -92.2896,
+                "lat": 34.7465
+            },
+            "weather": [
+                {
+                    "id": 802,
+                    "main": "Clouds",
+                    "description": "scattered clouds",
+                    "icon": "03d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 30.53,
+                "feels_like": 31.86,
+                "temp_min": 29.16,
+                "temp_max": 30.96,
+                "pressure": 1015,
+                "humidity": 50,
+                "sea_level": 1015,
+                "grnd_level": 1003
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 8.75,
+                "deg": 210,
+                "gust": 12.86
+            },
+            "clouds": {
+                "all": 40
+            },
+            "dt": 1745874579,
+            "sys": {
+                "type": 2,
+                "id": 47703,
+                "country": "US",
+                "sunrise": 1745839292,
+                "sunset": 1745887885
+            },
+            "timezone": -18000,
+            "id": 4119403,
+            "name": "Little Rock",
+            "cod": 200
+        }
+    },
+    {
+        "state": "CA",
+        "city": "Sacramento",
+        "weather": {
+            "coord": {
+                "lon": -121.3177,
+                "lat": 38.4666
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 21.81,
+                "feels_like": 21.4,
+                "temp_min": 20.58,
+                "temp_max": 23.31,
+                "pressure": 1019,
+                "humidity": 52,
+                "sea_level": 1019,
+                "grnd_level": 1015
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.12,
+                "deg": 300
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874729,
+            "sys": {
+                "type": 2,
+                "id": 2002655,
+                "country": "US",
+                "sunrise": 1745845879,
+                "sunset": 1745895230
+            },
+            "timezone": -25200,
+            "id": 5389519,
+            "name": "Sacramento",
+            "cod": 200
+        }
+    },
+    {
+        "state": "CO",
+        "city": "Denver",
+        "weather": {
+            "coord": {
+                "lon": -104.9847,
+                "lat": 39.7392
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 18.21,
+                "feels_like": 16.61,
+                "temp_min": 16.56,
+                "temp_max": 19.36,
+                "pressure": 1008,
+                "humidity": 20,
+                "sea_level": 1008,
+                "grnd_level": 830
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 3.13,
+                "deg": 345,
+                "gust": 5.81
+            },
+            "clouds": {
+                "all": 94
+            },
+            "dt": 1745874605,
+            "sys": {
+                "type": 2,
+                "id": 2101246,
+                "country": "US",
+                "sunrise": 1745841825,
+                "sunset": 1745891446
+            },
+            "timezone": -21600,
+            "id": 5419384,
+            "name": "Denver",
+            "cod": 200
+        }
+    },
+    {
+        "state": "CT",
+        "city": "Hartford",
+        "weather": {
+            "coord": {
+                "lon": -72.7662,
+                "lat": 41.7668
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 23.5,
+                "feels_like": 22.56,
+                "temp_min": 22.7,
+                "temp_max": 24.61,
+                "pressure": 1022,
+                "humidity": 25,
+                "sea_level": 1022,
+                "grnd_level": 1015
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 2.57,
+                "deg": 180
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874464,
+            "sys": {
+                "type": 2,
+                "id": 2016234,
+                "country": "US",
+                "sunrise": 1745833868,
+                "sunset": 1745883938
+            },
+            "timezone": -14400,
+            "id": 4835806,
+            "name": "Hartford",
+            "cod": 200
+        }
+    },
+    {
+        "state": "DE",
+        "city": "Dover",
+        "weather": {
+            "coord": {
+                "lon": -75.5244,
+                "lat": 39.1582
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 23.08,
+                "feels_like": 22.12,
+                "temp_min": 22.81,
+                "temp_max": 23.39,
+                "pressure": 1025,
+                "humidity": 26,
+                "sea_level": 1025,
+                "grnd_level": 1024
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 0.45,
+                "deg": 266,
+                "gust": 0.45
+            },
+            "clouds": {
+                "all": 2
+            },
+            "dt": 1745874727,
+            "sys": {
+                "type": 2,
+                "id": 2077052,
+                "country": "US",
+                "sunrise": 1745834824,
+                "sunset": 1745884307
+            },
+            "timezone": -14400,
+            "id": 4142290,
+            "name": "Dover",
+            "cod": 200
+        }
+    },
+    {
+        "state": "FL",
+        "city": "Tallahassee",
+        "weather": {
+            "coord": {
+                "lon": -84.2807,
+                "lat": 30.4383
+            },
+            "weather": [
+                {
+                    "id": 802,
+                    "main": "Clouds",
+                    "description": "scattered clouds",
+                    "icon": "03d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 32.1,
+                "feels_like": 32.42,
+                "temp_min": 31.03,
+                "temp_max": 32.41,
+                "pressure": 1019,
+                "humidity": 40,
+                "sea_level": 1019,
+                "grnd_level": 1014
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 0.89,
+                "deg": 54,
+                "gust": 2.68
+            },
+            "clouds": {
+                "all": 46
+            },
+            "dt": 1745874616,
+            "sys": {
+                "type": 2,
+                "id": 2098118,
+                "country": "US",
+                "sunrise": 1745837760,
+                "sunset": 1745885573
+            },
+            "timezone": -14400,
+            "id": 4174715,
+            "name": "Tallahassee",
+            "cod": 200
+        }
+    },
+    {
+        "state": "GA",
+        "city": "Atlanta",
+        "weather": {
+            "coord": {
+                "lon": -84.388,
+                "lat": 33.749
+            },
+            "weather": [
+                {
+                    "id": 803,
+                    "main": "Clouds",
+                    "description": "broken clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 25.31,
+                "feels_like": 25.33,
+                "temp_min": 24.25,
+                "temp_max": 26.44,
+                "pressure": 1022,
+                "humidity": 55,
+                "sea_level": 1022,
+                "grnd_level": 988
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 0.89,
+                "deg": 109,
+                "gust": 2.24
+            },
+            "clouds": {
+                "all": 53
+            },
+            "dt": 1745874002,
+            "sys": {
+                "type": 2,
+                "id": 2006620,
+                "country": "US",
+                "sunrise": 1745837491,
+                "sunset": 1745885894
+            },
+            "timezone": -14400,
+            "id": 4180439,
+            "name": "Atlanta",
+            "cod": 200
+        }
+    },
+    {
+        "state": "HI",
+        "city": "Honolulu",
+        "weather": {
+            "coord": {
+                "lon": -157.8583,
+                "lat": 21.3069
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 27.69,
+                "feels_like": 30.08,
+                "temp_min": 26.9,
+                "temp_max": 28.27,
+                "pressure": 1017,
+                "humidity": 70,
+                "sea_level": 1017,
+                "grnd_level": 1014
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.63,
+                "deg": 200
+            },
+            "clouds": {
+                "all": 20
+            },
+            "dt": 1745874701,
+            "sys": {
+                "type": 1,
+                "id": 7878,
+                "country": "US",
+                "sunrise": 1745856128,
+                "sunset": 1745902519
+            },
+            "timezone": -36000,
+            "id": 5856195,
+            "name": "Honolulu",
+            "cod": 200
+        }
+    },
+    {
+        "state": "ID",
+        "city": "Boise",
+        "weather": {
+            "coord": {
+                "lon": -116.2035,
+                "lat": 43.6135
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 20.91,
+                "feels_like": 20.15,
+                "temp_min": 19.32,
+                "temp_max": 21.79,
+                "pressure": 1017,
+                "humidity": 42,
+                "sea_level": 1017,
+                "grnd_level": 902
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.47,
+                "deg": 288,
+                "gust": 5.36
+            },
+            "clouds": {
+                "all": 20
+            },
+            "dt": 1745874727,
+            "sys": {
+                "type": 2,
+                "id": 2043419,
+                "country": "US",
+                "sunrise": 1745844058,
+                "sunset": 1745894596
+            },
+            "timezone": -21600,
+            "id": 5586437,
+            "name": "Boise",
+            "cod": 200
+        }
+    },
+    {
+        "state": "IL",
+        "city": "Springfield",
+        "weather": {
+            "coord": {
+                "lon": -93.2982,
+                "lat": 37.2153
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 27.14,
+                "feels_like": 28.18,
+                "temp_min": 26.21,
+                "temp_max": 27.98,
+                "pressure": 1012,
+                "humidity": 59,
+                "sea_level": 1012,
+                "grnd_level": 967
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 7.2,
+                "deg": 200,
+                "gust": 12.86
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874729,
+            "sys": {
+                "type": 2,
+                "id": 2016620,
+                "country": "US",
+                "sunrise": 1745839290,
+                "sunset": 1745888371
+            },
+            "timezone": -18000,
+            "id": 4409896,
+            "name": "Springfield",
+            "cod": 200
+        }
+    },
+    {
+        "state": "IN",
+        "city": "Indianapolis",
+        "weather": {
+            "coord": {
+                "lon": -86.158,
+                "lat": 39.7684
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 27.42,
+                "feels_like": 27.69,
+                "temp_min": 26.41,
+                "temp_max": 27.88,
+                "pressure": 1017,
+                "humidity": 48,
+                "sea_level": 1017,
+                "grnd_level": 989
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.63,
+                "deg": 180,
+                "gust": 7.72
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874044,
+            "sys": {
+                "type": 2,
+                "id": 2089097,
+                "country": "US",
+                "sunrise": 1745837307,
+                "sunset": 1745886927
+            },
+            "timezone": -14400,
+            "id": 4259418,
+            "name": "Indianapolis",
+            "cod": 200
+        }
+    },
+    {
+        "state": "IA",
+        "city": "Des Moines",
+        "weather": {
+            "coord": {
+                "lon": -93.6091,
+                "lat": 41.6005
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 24.65,
+                "feels_like": 25.05,
+                "temp_min": 24.03,
+                "temp_max": 25.18,
+                "pressure": 1004,
+                "humidity": 72,
+                "sea_level": 1004,
+                "grnd_level": 973
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 10.29,
+                "deg": 200,
+                "gust": 16.98
+            },
+            "clouds": {
+                "all": 100
+            },
+            "dt": 1745874467,
+            "sys": {
+                "type": 2,
+                "id": 20270,
+                "country": "US",
+                "sunrise": 1745838885,
+                "sunset": 1745888925
+            },
+            "timezone": -18000,
+            "id": 4853828,
+            "name": "Des Moines",
+            "cod": 200
+        }
+    },
+    {
+        "state": "KS",
+        "city": "Topeka",
+        "weather": {
+            "coord": {
+                "lon": -95.678,
+                "lat": 39.0483
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 27.1,
+                "feels_like": 28.77,
+                "temp_min": 26.21,
+                "temp_max": 28.05,
+                "pressure": 1007,
+                "humidity": 67,
+                "sea_level": 1007,
+                "grnd_level": 970
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 12.35,
+                "deg": 180,
+                "gust": 16.98
+            },
+            "clouds": {
+                "all": 20
+            },
+            "dt": 1745874526,
+            "sys": {
+                "type": 1,
+                "id": 6052,
+                "country": "US",
+                "sunrise": 1745839668,
+                "sunset": 1745889135
+            },
+            "timezone": -18000,
+            "id": 4280539,
+            "name": "Topeka",
+            "cod": 200
+        }
+    },
+    {
+        "state": "KY",
+        "city": "Frankfort",
+        "weather": {
+            "coord": {
+                "lon": -84.8733,
+                "lat": 38.2009
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 28.46,
+                "feels_like": 28.24,
+                "temp_min": 27.78,
+                "temp_max": 28.51,
+                "pressure": 1019,
+                "humidity": 42,
+                "sea_level": 1019,
+                "grnd_level": 992
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.12,
+                "deg": 190
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874729,
+            "sys": {
+                "type": 1,
+                "id": 4088,
+                "country": "US",
+                "sunrise": 1745837168,
+                "sunset": 1745886450
+            },
+            "timezone": -14400,
+            "id": 4292188,
+            "name": "Frankfort",
+            "cod": 200
+        }
+    },
+    {
+        "state": "LA",
+        "city": "Baton Rouge",
+        "weather": {
+            "coord": {
+                "lon": -91.1545,
+                "lat": 30.4508
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 30.51,
+                "feels_like": 32.57,
+                "temp_min": 29.45,
+                "temp_max": 31.63,
+                "pressure": 1018,
+                "humidity": 54,
+                "sea_level": 1018,
+                "grnd_level": 1015
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.63,
+                "deg": 170
+            },
+            "clouds": {
+                "all": 20
+            },
+            "dt": 1745874602,
+            "sys": {
+                "type": 2,
+                "id": 2034371,
+                "country": "US",
+                "sunrise": 1745839408,
+                "sunset": 1745887224
+            },
+            "timezone": -18000,
+            "id": 4315588,
+            "name": "Baton Rouge",
+            "cod": 200
+        }
+    },
+    {
+        "state": "ME",
+        "city": "Augusta",
+        "weather": {
+            "coord": {
+                "lon": -81.9748,
+                "lat": 33.471
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 28.8,
+                "feels_like": 27.82,
+                "temp_min": 28.01,
+                "temp_max": 29.49,
+                "pressure": 1023,
+                "humidity": 32,
+                "sea_level": 1023,
+                "grnd_level": 1012
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 3.09,
+                "deg": 170
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874729,
+            "sys": {
+                "type": 1,
+                "id": 3848,
+                "country": "US",
+                "sunrise": 1745836938,
+                "sunset": 1745885289
+            },
+            "timezone": -14400,
+            "id": 4180531,
+            "name": "Augusta",
+            "cod": 200
+        }
+    },
+    {
+        "state": "MD",
+        "city": "Annapolis",
+        "weather": {
+            "coord": {
+                "lon": -76.4922,
+                "lat": 38.9785
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 21.41,
+                "feels_like": 20.47,
+                "temp_min": 20.54,
+                "temp_max": 23.14,
+                "pressure": 1025,
+                "humidity": 33,
+                "sea_level": 1025,
+                "grnd_level": 1024
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 3.6,
+                "deg": 170
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874716,
+            "sys": {
+                "type": 2,
+                "id": 2003219,
+                "country": "US",
+                "sunrise": 1745835075,
+                "sunset": 1745884520
+            },
+            "timezone": -14400,
+            "id": 4347242,
+            "name": "Annapolis",
+            "cod": 200
+        }
+    },
+    {
+        "state": "MA",
+        "city": "Boston",
+        "weather": {
+            "coord": {
+                "lon": -71.0598,
+                "lat": 42.3584
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 23.56,
+                "feels_like": 22.57,
+                "temp_min": 21.27,
+                "temp_max": 24.76,
+                "pressure": 1022,
+                "humidity": 23,
+                "sea_level": 1022,
+                "grnd_level": 1018
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 2.24,
+                "deg": 295,
+                "gust": 4.92
+            },
+            "clouds": {
+                "all": 6
+            },
+            "dt": 1745874066,
+            "sys": {
+                "type": 2,
+                "id": 2013408,
+                "country": "US",
+                "sunrise": 1745833389,
+                "sunset": 1745883599
+            },
+            "timezone": -14400,
+            "id": 4930956,
+            "name": "Boston",
+            "cod": 200
+        }
+    },
+    {
+        "state": "MI",
+        "city": "Lansing",
+        "weather": {
+            "coord": {
+                "lon": -84.5555,
+                "lat": 42.7325
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 23.99,
+                "feels_like": 23.23,
+                "temp_min": 23.59,
+                "temp_max": 24.16,
+                "pressure": 1015,
+                "humidity": 30,
+                "sea_level": 1015,
+                "grnd_level": 985
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 8.23,
+                "deg": 180,
+                "gust": 14.92
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874580,
+            "sys": {
+                "type": 1,
+                "id": 4665,
+                "country": "US",
+                "sunrise": 1745836579,
+                "sunset": 1745886886
+            },
+            "timezone": -14400,
+            "id": 4998830,
+            "name": "Lansing",
+            "cod": 200
+        }
+    },
+    {
+        "state": "MN",
+        "city": "Saint Paul",
+        "weather": {
+            "coord": {
+                "lon": -93.0933,
+                "lat": 44.9444
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 21.48,
+                "feels_like": 21.8,
+                "temp_min": 20.32,
+                "temp_max": 22.38,
+                "pressure": 998,
+                "humidity": 81,
+                "sea_level": 998,
+                "grnd_level": 967
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 10.29,
+                "deg": 180,
+                "gust": 15.95
+            },
+            "clouds": {
+                "all": 100
+            },
+            "dt": 1745874729,
+            "sys": {
+                "type": 1,
+                "id": 5934,
+                "country": "US",
+                "sunrise": 1745838346,
+                "sunset": 1745889217
+            },
+            "timezone": -18000,
+            "id": 5045360,
+            "name": "Saint Paul",
+            "cod": 200
+        }
+    },
+    {
+        "state": "MS",
+        "city": "Jackson",
+        "weather": {
+            "coord": {
+                "lon": -122.8345,
+                "lat": 42.4165
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 18.99,
+                "feels_like": 18.09,
+                "temp_min": 17.14,
+                "temp_max": 20.97,
+                "pressure": 1024,
+                "humidity": 44,
+                "sea_level": 1024,
+                "grnd_level": 960
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 2.06,
+                "deg": 0
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874729,
+            "sys": {
+                "type": 1,
+                "id": 4869,
+                "country": "US",
+                "sunrise": 1745845796,
+                "sunset": 1745896042
+            },
+            "timezone": -25200,
+            "id": 5733351,
+            "name": "Jackson",
+            "cod": 200
+        }
+    },
+    {
+        "state": "MO",
+        "city": "Jefferson City",
+        "weather": {
+            "coord": {
+                "lon": -92.1735,
+                "lat": 38.5767
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 29.01,
+                "feels_like": 29.67,
+                "temp_min": 27.61,
+                "temp_max": 29.24,
+                "pressure": 1009,
+                "humidity": 50,
+                "sea_level": 1009,
+                "grnd_level": 986
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.02,
+                "deg": 190,
+                "gust": 7.6
+            },
+            "clouds": {
+                "all": 23
+            },
+            "dt": 1745874528,
+            "sys": {
+                "type": 2,
+                "id": 19033,
+                "country": "US",
+                "sunrise": 1745838878,
+                "sunset": 1745888243
+            },
+            "timezone": -18000,
+            "id": 4392388,
+            "name": "Jefferson City",
+            "cod": 200
+        }
+    },
+    {
+        "state": "MT",
+        "city": "Helena",
+        "weather": {
+            "coord": {
+                "lon": -112.0361,
+                "lat": 46.5927
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 15.92,
+                "feels_like": 14.64,
+                "temp_min": 14.23,
+                "temp_max": 16.31,
+                "pressure": 1017,
+                "humidity": 41,
+                "sea_level": 1017,
+                "grnd_level": 848
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 3.6,
+                "deg": 70
+            },
+            "clouds": {
+                "all": 20
+            },
+            "dt": 1745874729,
+            "sys": {
+                "type": 2,
+                "id": 2033674,
+                "country": "US",
+                "sunrise": 1745842662,
+                "sunset": 1745893993
+            },
+            "timezone": -21600,
+            "id": 5656882,
+            "name": "Helena",
+            "cod": 200
+        }
+    },
+    {
+        "state": "NE",
+        "city": "Lincoln",
+        "weather": {
+            "coord": {
+                "lon": -96.667,
+                "lat": 40.8
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 31.34,
+                "feels_like": 29.9,
+                "temp_min": 30.19,
+                "temp_max": 31.95,
+                "pressure": 1001,
+                "humidity": 28,
+                "sea_level": 1001,
+                "grnd_level": 957
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 15.43,
+                "deg": 220,
+                "gust": 20.58
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874468,
+            "sys": {
+                "type": 2,
+                "id": 2007392,
+                "country": "US",
+                "sunrise": 1745839711,
+                "sunset": 1745889567
+            },
+            "timezone": -18000,
+            "id": 5072006,
+            "name": "Lincoln",
+            "cod": 200
+        }
+    },
+    {
+        "state": "NV",
+        "city": "Carson City",
+        "weather": {
+            "coord": {
+                "lon": -119.7674,
+                "lat": 39.1638
+            },
+            "weather": [
+                {
+                    "id": 803,
+                    "main": "Clouds",
+                    "description": "broken clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 15.21,
+                "feels_like": 13.8,
+                "temp_min": 13.76,
+                "temp_max": 16.58,
+                "pressure": 1020,
+                "humidity": 39,
+                "sea_level": 1020,
+                "grnd_level": 826
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 2.06,
+                "deg": 0
+            },
+            "clouds": {
+                "all": 75
+            },
+            "dt": 1745874729,
+            "sys": {
+                "type": 1,
+                "id": 3750,
+                "country": "US",
+                "sunrise": 1745845432,
+                "sunset": 1745894933
+            },
+            "timezone": -25200,
+            "id": 5501344,
+            "name": "Carson City",
+            "cod": 200
+        }
+    },
+    {
+        "state": "NH",
+        "city": "Concord",
+        "weather": {
+            "coord": {
+                "lon": -122.0311,
+                "lat": 37.978
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 21.77,
+                "feels_like": 21.28,
+                "temp_min": 18.59,
+                "temp_max": 23.37,
+                "pressure": 1021,
+                "humidity": 49,
+                "sea_level": 1021,
+                "grnd_level": 1006
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.12,
+                "deg": 350
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874559,
+            "sys": {
+                "type": 1,
+                "id": 3581,
+                "country": "US",
+                "sunrise": 1745846101,
+                "sunset": 1745895350
+            },
+            "timezone": -25200,
+            "id": 5339111,
+            "name": "Concord",
+            "cod": 200
+        }
+    },
+    {
+        "state": "NJ",
+        "city": "Trenton",
+        "weather": {
+            "coord": {
+                "lon": -74.7429,
+                "lat": 40.217
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 24.17,
+                "feels_like": 23.19,
+                "temp_min": 22.84,
+                "temp_max": 25.06,
+                "pressure": 1024,
+                "humidity": 21,
+                "sea_level": 1024,
+                "grnd_level": 1021
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 2.68,
+                "deg": 199,
+                "gust": 4.02
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874480,
+            "sys": {
+                "type": 2,
+                "id": 2021152,
+                "country": "US",
+                "sunrise": 1745834520,
+                "sunset": 1745884235
+            },
+            "timezone": -14400,
+            "id": 5105496,
+            "name": "Trenton",
+            "cod": 200
+        }
+    },
+    {
+        "state": "NM",
+        "city": "Santa Fe",
+        "weather": {
+            "coord": {
+                "lon": -105.9506,
+                "lat": 35.5167
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 16.23,
+                "feels_like": 14.3,
+                "temp_min": 14.44,
+                "temp_max": 17.51,
+                "pressure": 1008,
+                "humidity": 15,
+                "sea_level": 1008,
+                "grnd_level": 796
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 5.66,
+                "deg": 240,
+                "gust": 12.86
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874729,
+            "sys": {
+                "type": 2,
+                "id": 2002541,
+                "country": "US",
+                "sunrise": 1745842494,
+                "sunset": 1745891240
+            },
+            "timezone": -21600,
+            "id": 5490272,
+            "name": "Santa Fe",
+            "cod": 200
+        }
+    },
+    {
+        "state": "NY",
+        "city": "Albany",
+        "weather": {
+            "coord": {
+                "lon": -73.9662,
+                "lat": 42.6001
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 22.57,
+                "feels_like": 21.54,
+                "temp_min": 21.41,
+                "temp_max": 23.23,
+                "pressure": 1022,
+                "humidity": 25,
+                "sea_level": 1022,
+                "grnd_level": 996
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 2.76,
+                "deg": 308,
+                "gust": 3.73
+            },
+            "clouds": {
+                "all": 15
+            },
+            "dt": 1745874585,
+            "sys": {
+                "type": 2,
+                "id": 2009955,
+                "country": "US",
+                "sunrise": 1745834056,
+                "sunset": 1745884326
+            },
+            "timezone": -14400,
+            "id": 5106841,
+            "name": "Albany",
+            "cod": 200
+        }
+    },
+    {
+        "state": "NC",
+        "city": "Raleigh",
+        "weather": {
+            "coord": {
+                "lon": -78.6386,
+                "lat": 35.7721
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 24.71,
+                "feels_like": 24.02,
+                "temp_min": 23.44,
+                "temp_max": 26.29,
+                "pressure": 1025,
+                "humidity": 30,
+                "sea_level": 1025,
+                "grnd_level": 1012
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 2.06,
+                "deg": 200
+            },
+            "clouds": {
+                "all": 20
+            },
+            "dt": 1745874506,
+            "sys": {
+                "type": 2,
+                "id": 2033877,
+                "country": "US",
+                "sunrise": 1745835919,
+                "sunset": 1745884706
+            },
+            "timezone": -14400,
+            "id": 4487042,
+            "name": "Raleigh",
+            "cod": 200
+        }
+    },
+    {
+        "state": "ND",
+        "city": "Bismarck",
+        "weather": {
+            "coord": {
+                "lon": -100.7837,
+                "lat": 46.8083
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 6.46,
+                "feels_like": 1.58,
+                "temp_min": 5.48,
+                "temp_max": 6.91,
+                "pressure": 1010,
+                "humidity": 82,
+                "sea_level": 1010,
+                "grnd_level": 944
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 9.77,
+                "deg": 340,
+                "gust": 13.89
+            },
+            "clouds": {
+                "all": 100
+            },
+            "dt": 1745874562,
+            "sys": {
+                "type": 2,
+                "id": 40637,
+                "country": "US",
+                "sunrise": 1745839934,
+                "sunset": 1745891320
+            },
+            "timezone": -18000,
+            "id": 5688025,
+            "name": "Bismarck",
+            "cod": 200
+        }
+    },
+    {
+        "state": "OH",
+        "city": "Columbus",
+        "weather": {
+            "coord": {
+                "lon": -82.9988,
+                "lat": 39.9612
+            },
+            "weather": [
+                {
+                    "id": 803,
+                    "main": "Clouds",
+                    "description": "broken clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 25.83,
+                "feels_like": 25.12,
+                "temp_min": 25.29,
+                "temp_max": 26.29,
+                "pressure": 1019,
+                "humidity": 25,
+                "sea_level": 1019,
+                "grnd_level": 991
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 5.66,
+                "deg": 180,
+                "gust": 9.77
+            },
+            "clouds": {
+                "all": 75
+            },
+            "dt": 1745874434,
+            "sys": {
+                "type": 2,
+                "id": 2011192,
+                "country": "US",
+                "sunrise": 1745836528,
+                "sunset": 1745886190
+            },
+            "timezone": -14400,
+            "id": 4509177,
+            "name": "Columbus",
+            "cod": 200
+        }
+    },
+    {
+        "state": "OK",
+        "city": "Oklahoma City",
+        "weather": {
+            "coord": {
+                "lon": -97.5164,
+                "lat": 35.4676
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 25.86,
+                "feels_like": 26.38,
+                "temp_min": 24.97,
+                "temp_max": 27.19,
+                "pressure": 1010,
+                "humidity": 72,
+                "sea_level": 1010,
+                "grnd_level": 967
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 10.8,
+                "deg": 190,
+                "gust": 14.4
+            },
+            "clouds": {
+                "all": 100
+            },
+            "dt": 1745874718,
+            "sys": {
+                "type": 2,
+                "id": 2035418,
+                "country": "US",
+                "sunrise": 1745840476,
+                "sunset": 1745889210
+            },
+            "timezone": -18000,
+            "id": 4544349,
+            "name": "Oklahoma City",
+            "cod": 200
+        }
+    },
+    {
+        "state": "OR",
+        "city": "Salem",
+        "weather": {
+            "coord": {
+                "lon": -123.0351,
+                "lat": 44.9429
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 17.37,
+                "feels_like": 16.52,
+                "temp_min": 15.98,
+                "temp_max": 18.55,
+                "pressure": 1026,
+                "humidity": 52,
+                "sea_level": 1026,
+                "grnd_level": 1016
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 2.24,
+                "deg": 248,
+                "gust": 3.58
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874730,
+            "sys": {
+                "type": 2,
+                "id": 2097964,
+                "country": "US",
+                "sunrise": 1745845524,
+                "sunset": 1745896409
+            },
+            "timezone": -25200,
+            "id": 5750162,
+            "name": "Salem",
+            "cod": 200
+        }
+    },
+    {
+        "state": "PA",
+        "city": "Harrisburg",
+        "weather": {
+            "coord": {
+                "lon": -76.8844,
+                "lat": 40.2737
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 22.98,
+                "feels_like": 22.04,
+                "temp_min": 22.45,
+                "temp_max": 23.7,
+                "pressure": 1024,
+                "humidity": 27,
+                "sea_level": 1024,
+                "grnd_level": 1006
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 2.57,
+                "deg": 200
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874577,
+            "sys": {
+                "type": 2,
+                "id": 2001523,
+                "country": "US",
+                "sunrise": 1745835027,
+                "sunset": 1745884756
+            },
+            "timezone": -14400,
+            "id": 5192726,
+            "name": "Harrisburg",
+            "cod": 200
+        }
+    },
+    {
+        "state": "RI",
+        "city": "Providence",
+        "weather": {
+            "coord": {
+                "lon": -71.4128,
+                "lat": 41.824
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 23.53,
+                "feels_like": 22.49,
+                "temp_min": 21.77,
+                "temp_max": 24.95,
+                "pressure": 1022,
+                "humidity": 21,
+                "sea_level": 1022,
+                "grnd_level": 1016
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.12,
+                "deg": 290
+            },
+            "clouds": {
+                "all": 20
+            },
+            "dt": 1745874609,
+            "sys": {
+                "type": 2,
+                "id": 2007842,
+                "country": "US",
+                "sunrise": 1745833537,
+                "sunset": 1745883620
+            },
+            "timezone": -14400,
+            "id": 5224151,
+            "name": "Providence",
+            "cod": 200
+        }
+    },
+    {
+        "state": "SC",
+        "city": "Columbia",
+        "weather": {
+            "coord": {
+                "lon": -81.0348,
+                "lat": 34.0007
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 26.25,
+                "feels_like": 26.25,
+                "temp_min": 25.71,
+                "temp_max": 27.41,
+                "pressure": 1024,
+                "humidity": 34,
+                "sea_level": 1024,
+                "grnd_level": 1014
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 3.6,
+                "deg": 150
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874700,
+            "sys": {
+                "type": 1,
+                "id": 3722,
+                "country": "US",
+                "sunrise": 1745836663,
+                "sunset": 1745885112
+            },
+            "timezone": -14400,
+            "id": 4575352,
+            "name": "Columbia",
+            "cod": 200
+        }
+    },
+    {
+        "state": "SD",
+        "city": "Pierre",
+        "weather": {
+            "coord": {
+                "lon": -100.351,
+                "lat": 44.3683
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 9.33,
+                "feels_like": 4.86,
+                "temp_min": 7.93,
+                "temp_max": 9.36,
+                "pressure": 1006,
+                "humidity": 88,
+                "sea_level": 1006,
+                "grnd_level": 943
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 12.35,
+                "deg": 10,
+                "gust": 18.01
+            },
+            "clouds": {
+                "all": 100
+            },
+            "dt": 1745874730,
+            "sys": {
+                "type": 2,
+                "id": 2041039,
+                "country": "US",
+                "sunrise": 1745840161,
+                "sunset": 1745890885
+            },
+            "timezone": -18000,
+            "id": 5767918,
+            "name": "Pierre",
+            "cod": 200
+        }
+    },
+    {
+        "state": "TN",
+        "city": "Nashville",
+        "weather": {
+            "coord": {
+                "lon": -86.7844,
+                "lat": 36.1659
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 29.74,
+                "feels_like": 30.38,
+                "temp_min": 28.69,
+                "temp_max": 30.61,
+                "pressure": 1019,
+                "humidity": 48,
+                "sea_level": 1019,
+                "grnd_level": 997
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.12,
+                "deg": 160
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874482,
+            "sys": {
+                "type": 1,
+                "id": 4609,
+                "country": "US",
+                "sunrise": 1745837833,
+                "sunset": 1745886701
+            },
+            "timezone": -18000,
+            "id": 4644585,
+            "name": "Nashville",
+            "cod": 200
+        }
+    },
+    {
+        "state": "TX",
+        "city": "Austin",
+        "weather": {
+            "coord": {
+                "lon": -97.7431,
+                "lat": 30.2672
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 29.78,
+                "feels_like": 32.8,
+                "temp_min": 28.72,
+                "temp_max": 30.67,
+                "pressure": 1013,
+                "humidity": 62,
+                "sea_level": 1013,
+                "grnd_level": 989
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 8.23,
+                "deg": 160,
+                "gust": 11.83
+            },
+            "clouds": {
+                "all": 20
+            },
+            "dt": 1745874300,
+            "sys": {
+                "type": 2,
+                "id": 2003218,
+                "country": "US",
+                "sunrise": 1745841004,
+                "sunset": 1745888790
+            },
+            "timezone": -18000,
+            "id": 4671654,
+            "name": "Austin",
+            "cod": 200
+        }
+    },
+    {
+        "state": "UT",
+        "city": "Salt Lake City",
+        "weather": {
+            "coord": {
+                "lon": -111.8911,
+                "lat": 40.7608
+            },
+            "weather": [
+                {
+                    "id": 803,
+                    "main": "Clouds",
+                    "description": "broken clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 14.36,
+                "feels_like": 13.05,
+                "temp_min": 13.03,
+                "temp_max": 15.89,
+                "pressure": 1017,
+                "humidity": 46,
+                "sea_level": 1017,
+                "grnd_level": 838
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 6.17,
+                "deg": 290,
+                "gust": 11.83
+            },
+            "clouds": {
+                "all": 75
+            },
+            "dt": 1745874671,
+            "sys": {
+                "type": 2,
+                "id": 2004156,
+                "country": "US",
+                "sunrise": 1745843366,
+                "sunset": 1745893219
+            },
+            "timezone": -21600,
+            "id": 5780993,
+            "name": "Salt Lake City",
+            "cod": 200
+        }
+    },
+    {
+        "state": "VT",
+        "city": "Montpelier",
+        "weather": {
+            "coord": {
+                "lon": -72.5754,
+                "lat": 44.2601
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 20.86,
+                "feels_like": 19.68,
+                "temp_min": 20.79,
+                "temp_max": 21.5,
+                "pressure": 1022,
+                "humidity": 26,
+                "sea_level": 1022,
+                "grnd_level": 978
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 2.57,
+                "deg": 330
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874506,
+            "sys": {
+                "type": 2,
+                "id": 2090516,
+                "country": "US",
+                "sunrise": 1745833516,
+                "sunset": 1745884199
+            },
+            "timezone": -14400,
+            "id": 5238685,
+            "name": "Montpelier",
+            "cod": 200
+        }
+    },
+    {
+        "state": "VA",
+        "city": "Richmond",
+        "weather": {
+            "coord": {
+                "lon": -77.4603,
+                "lat": 37.5538
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 24.12,
+                "feels_like": 23.32,
+                "temp_min": 22.4,
+                "temp_max": 25.44,
+                "pressure": 1025,
+                "humidity": 28,
+                "sea_level": 1025,
+                "grnd_level": 1018
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 2.06,
+                "deg": 110
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874502,
+            "sys": {
+                "type": 2,
+                "id": 2099650,
+                "country": "US",
+                "sunrise": 1745835457,
+                "sunset": 1745884602
+            },
+            "timezone": -14400,
+            "id": 4781708,
+            "name": "Richmond",
+            "cod": 200
+        }
+    },
+    {
+        "state": "WA",
+        "city": "Olympia",
+        "weather": {
+            "coord": {
+                "lon": -122.9007,
+                "lat": 47.0379
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 13.42,
+                "feels_like": 12.67,
+                "temp_min": 12.01,
+                "temp_max": 14.43,
+                "pressure": 1026,
+                "humidity": 71,
+                "sea_level": 1026,
+                "grnd_level": 1014
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 5.14,
+                "deg": 230,
+                "gust": 8.75
+            },
+            "clouds": {
+                "all": 100
+            },
+            "dt": 1745874486,
+            "sys": {
+                "type": 2,
+                "id": 2041693,
+                "country": "US",
+                "sunrise": 1745845203,
+                "sunset": 1745896666
+            },
+            "timezone": -25200,
+            "id": 5805687,
+            "name": "Olympia",
+            "cod": 200
+        }
+    },
+    {
+        "state": "WV",
+        "city": "Charleston",
+        "weather": {
+            "coord": {
+                "lon": -79.9309,
+                "lat": 32.7766
+            },
+            "weather": [
+                {
+                    "id": 803,
+                    "main": "Clouds",
+                    "description": "broken clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 23.25,
+                "feels_like": 23.33,
+                "temp_min": 22.23,
+                "temp_max": 24.5,
+                "pressure": 1025,
+                "humidity": 65,
+                "sea_level": 1025,
+                "grnd_level": 1024
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 7.72,
+                "deg": 120,
+                "gust": 10.29
+            },
+            "clouds": {
+                "all": 75
+            },
+            "dt": 1745874570,
+            "sys": {
+                "type": 2,
+                "id": 2034523,
+                "country": "US",
+                "sunrise": 1745836511,
+                "sunset": 1745884734
+            },
+            "timezone": -14400,
+            "id": 4574324,
+            "name": "Charleston",
+            "cod": 200
+        }
+    },
+    {
+        "state": "WI",
+        "city": "Madison",
+        "weather": {
+            "coord": {
+                "lon": -86.5667,
+                "lat": 34.7334
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 28.89,
+                "feels_like": 30.42,
+                "temp_min": 27.41,
+                "temp_max": 29.95,
+                "pressure": 1020,
+                "humidity": 57,
+                "sea_level": 1020,
+                "grnd_level": 993
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.63,
+                "deg": 160
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1745874638,
+            "sys": {
+                "type": 2,
+                "id": 2034804,
+                "country": "US",
+                "sunrise": 1745837920,
+                "sunset": 1745886510
+            },
+            "timezone": -18000,
+            "id": 4074277,
+            "name": "Madison",
+            "cod": 200
+        }
+    },
+    {
+        "state": "WY",
+        "city": "Cheyenne",
+        "weather": {
+            "coord": {
+                "lon": -104.8203,
+                "lat": 41.14
+            },
+            "weather": [
+                {
+                    "id": 803,
+                    "main": "Clouds",
+                    "description": "broken clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 15.73,
+                "feels_like": 13.91,
+                "temp_min": 15.08,
+                "temp_max": 17.1,
+                "pressure": 1010,
+                "humidity": 21,
+                "sea_level": 1010,
+                "grnd_level": 803
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 12.35,
+                "deg": 280,
+                "gust": 16.46
+            },
+            "clouds": {
+                "all": 75
+            },
+            "dt": 1745874530,
+            "sys": {
+                "type": 1,
+                "id": 3752,
+                "country": "US",
+                "sunrise": 1745841627,
+                "sunset": 1745891564
+            },
+            "timezone": -21600,
+            "id": 5821086,
+            "name": "Cheyenne",
+            "cod": 200
+        }
+    },
+    {
+        "state": "DC",
+        "city": "Washington",
+        "weather": {
+            "coord": {
+                "lon": -120.5015,
+                "lat": 47.5001
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 20.32,
+                "feels_like": 19.27,
+                "temp_min": 18.36,
+                "temp_max": 21.98,
+                "pressure": 1018,
+                "humidity": 33,
+                "sea_level": 1018,
+                "grnd_level": 933
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 3.98,
+                "deg": 346,
+                "gust": 5.14
+            },
+            "clouds": {
+                "all": 94
+            },
+            "dt": 1745874476,
+            "sys": {
+                "type": 2,
+                "id": 2003593,
+                "country": "US",
+                "sunrise": 1745844561,
+                "sunset": 1745896157
+            },
+            "timezone": -25200,
+            "id": 5815135,
+            "name": "Washington",
+            "cod": 200
+        }
+    }
+]
