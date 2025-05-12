@@ -1,58 +1,86 @@
-# INST767 Final Project: Nutrition-Exercise Data Pipeline
+# Fitness & Nutrition Data Pipeline
 
-## Project Overview
+## Overview
 
-This project implements a cloud-ready data pipeline that integrates **three public APIs** to collect and process structured data about food, exercise, and nutritional metadata. The pipeline is designed for extensibility, asynchronous processing, and compatibility with Google BigQuery.
+This project builds a **cloud-native data pipeline** that integrates data from three public APIs — Wger (exercise), Nutritionix (food nutrition), and USDA (food metadata). The goal is to enable real-time, cross-domain insights about food and fitness.
 
----
-
-## Project Goals
-
-- Integrate **three continuously updated public APIs**
-- Extract and transform real-world food and exercise metadata
-- Create three robust tables suitable for analysis in BigQuery
-- Support meaningful, cross-domain SQL queries
+It was developed as a final project for **INST767** (Spring 2025).
 
 ---
 
-## APIs Used
+## Features
 
-| API                 | Description                                                                 |
-|----------------------|-----------------------------------------------------------------------------|
-| **Nutritionix**       | Real-time food nutrient breakdowns for natural queries (e.g., "1 apple")     |
-| **Wger**              | Exercise metadata, including muscles targeted, categories, equipment        |
-| **USDA FoodData Central** | Verified nutrient and ingredient data from a federally maintained database |
-
----
-
-## Output Tables
-
-| Table Name         | Description                                                  |
-|--------------------|--------------------------------------------------------------|
-| `nutrition_logs`   | Contains nutrition info from Nutritionix based on real-world ingredients |
-| `exercises`        | Exercise metadata from Wger including category, muscles, and equipment |
-| `usda_foods`       | USDA food product entries with nutrient values and food groups |
+- **Fully serverless pipeline** using Google Cloud Functions, Pub/Sub, BigQuery, and Cloud Scheduler  
+- Nutrition data via **Nutritionix**  
+- Exercise data via **Wger**  
+- Food metadata via **USDA FoodData Central**  
+- Final data stored in BigQuery for analysis and dashboarding  
+- Scheduled daily ingestion using **Cloud Scheduler**
 
 ---
 
-## Pipeline Components
+## Architecture
 
-Sai_Gangineni/
-├── dag/
-│ ├── api_calls.py
-│ ├── transform_nutrition.py
-│ ├── transform_exercises.py
-│ ├── transform_usda.py
-│ └── pipeline.py
-├── output/
-│ ├── nutrition_logs.csv
-│ ├── exercises.csv
-│ └── usda_foods.csv
+```
++----------------+           +------------------+
+| Cloud Scheduler|  ───────► | Publisher Function|
++----------------+           +------------------+
+                                  │
+                                  ▼
+                          +------------------+
+                          |   Pub/Sub Topic   |
+                          +------------------+
+                                  │
+                                  ▼
+                        +----------------------+
+                        | Subscriber Function  |
+                        | + BigQuery Insert    |
+                        +----------------------+
+```
+
+- **Topics**: `usda-topic`, `nutrition-topic`, `wger-topic`  
+- **Functions**: Each API has a publisher/subscriber pair  
+- **Storage**: BigQuery dataset `inst767_final` with 3 tables
+
 
 ---
 
-## Sample SQL Use Cases
+## Queries
 
-- Match USDA food groups with high-protein, low-fat entries
-- Join Nutritionix and USDA data to compare branded vs. generic food items
-- Recommend exercises based on nutrient-supporting muscle recovery (e.g., potassium)
+Five real-world queries were created and tested to generate cross-API insights. These include:
+
+1. Top protein-per-calorie foods  
+2. Exercises matching food types like chicken  
+3. Food logs matched to USDA metadata  
+4. Popular equipment types in exercises  
+5. Full cross-table join of USDA → Nutritionix → Wger  
+
+See [`sample_queries.sql`](./sample_queries.sql) for the query code.
+
+---
+
+## Automation via Cloud Scheduler
+
+All three publishers are triggered daily using **Cloud Scheduler**:
+
+| Job Name         | Schedule (ET) | Triggers                      |
+|------------------|---------------|-------------------------------|
+| `usda-job`       | 9:00 AM        | USDA → Pub/Sub                |
+| `nutritionix-job`| 9:30 AM        | Nutritionix via USDA matches |
+| `wger-job`       | 10:00 AM       | Wger exercise ingestion       |
+
+---
+
+## Final Notes
+
+- All deployment is serverless — no compute instances used  
+- The data grows over time as Cloud Scheduler triggers fetch new data  
+- Screenshots and logs of successful ingestion and queries were captured for project documentation
+
+---
+
+## Credits
+
+Developed by **Sai Gangineni**  
+University of Maryland, College Park  
+Spring 2025 – INST767 Final Project

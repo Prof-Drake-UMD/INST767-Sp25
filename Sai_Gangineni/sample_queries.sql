@@ -1,60 +1,54 @@
--- Query 1. Find exercises that target major muscle groups and pair them with high-protein foods
+-- 1. Top 5 foods with the highest protein per calorie ratio
 SELECT
-    e.name AS exercise_name,
-    e.primary_muscles,
-    n.food_name,
-    n.protein
-FROM exercises e
-JOIN nutrition_logs n
-  ON LOWER(n.food_name) LIKE CONCAT('%', LOWER(e.primary_muscles), '%')
-WHERE n.protein > 10
-ORDER BY n.protein DESC;
+  food_name,
+  calories,
+  protein,
+  ROUND(protein / NULLIF(calories, 0), 2) AS protein_per_calorie
+FROM `inst767_final.nutrition_logs`
+WHERE calories > 0
+ORDER BY protein_per_calorie DESC
+LIMIT 5;
 
--- Query 2. Compare calories in branded vs natural foods for fitness-focused users
+-- 2. Exercises with 'arms' in their category and relevant USDA foods containing 'chicken'
 SELECT
-    u.description AS usda_food,
-    u.brandOwner,
-    n.food_name,
-    u.calories AS branded_calories,
-    n.calories AS estimated_calories,
-    ABS(u.calories - n.calories) AS calorie_difference
-FROM usda_foods u
-JOIN nutrition_logs n
-  ON LOWER(u.description) LIKE CONCAT('%', LOWER(n.food_name), '%')
-WHERE u.calories IS NOT NULL AND n.calories IS NOT NULL
-ORDER BY calorie_difference DESC;
-
--- Query 3. Rank exercises by number of compatible nutrient-rich foods
-SELECT
-    e.name AS exercise,
-    COUNT(n.food_name) AS matching_foods
-FROM exercises e
-JOIN nutrition_logs n
-  ON LOWER(n.food_name) LIKE CONCAT('%', LOWER(e.primary_muscles), '%')
-GROUP BY e.name
-ORDER BY matching_foods DESC
+  e.name AS exercise_name,
+  e.category,
+  u.description AS usda_food
+FROM `inst767_final.exercises` e
+JOIN `inst767_final.usda_foods` u
+  ON LOWER(e.category) = 'arms' AND LOWER(u.description) LIKE '%chicken%'
 LIMIT 10;
 
--- Query 4. Identify food categories in USDA that best support muscle-building
+-- 3. Nutrition logs that match USDA descriptions and provide more than 15g protein
 SELECT
-    foodCategory,
-    AVG(protein) AS avg_protein
-FROM usda_foods
-WHERE protein IS NOT NULL
-GROUP BY foodCategory
-ORDER BY avg_protein DESC
+  n.food_name,
+  u.description AS usda_match,
+  n.protein
+FROM `inst767_final.nutrition_logs` n
+JOIN `inst767_final.usda_foods` u
+  ON LOWER(n.food_name) LIKE CONCAT('%', LOWER(u.description), '%')
+WHERE n.protein > 15
+ORDER BY n.protein DESC
 LIMIT 10;
 
--- Query 5. Recommend food matches for top compound exercises (multi-muscle)
+-- 4. Count of exercises per equipment type
 SELECT
-    e.name AS exercise,
-    e.primary_muscles,
-    n.food_name,
-    n.calories,
-    n.protein
-FROM exercises e
-JOIN nutrition_logs n
-  ON LOWER(n.food_name) LIKE CONCAT('%', LOWER(e.primary_muscles), '%')
-WHERE (e.primary_muscles LIKE '%chest%' OR e.primary_muscles LIKE '%legs%' OR e.primary_muscles LIKE '%back%')
-  AND n.protein > 5
-ORDER BY n.protein DESC;
+  equipment,
+  COUNT(*) AS exercise_count
+FROM `inst767_final.exercise_logs`
+GROUP BY equipment
+ORDER BY exercise_count DESC
+LIMIT 10;
+
+-- 5. Join all three tables: foods from USDA that are logged in Nutritionix and matched to equipment-based exercises
+SELECT
+  u.description AS usda_food,
+  n.food_name,
+  e.name AS exercise_name,
+  e.equipment
+FROM `inst767_final.usda_foods` u
+JOIN `inst767_final.nutrition_logs` n
+  ON LOWER(n.food_name) LIKE CONCAT('%', LOWER(u.description), '%')
+JOIN `inst767_final.exercises` e
+  ON LOWER(e.equipment) LIKE '%dumbbell%'
+LIMIT 10;
