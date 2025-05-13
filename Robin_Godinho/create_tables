@@ -1,0 +1,23 @@
+CREATE TABLE `inst737-final-project.real_news_data.gnews` (
+  title STRING,
+  description STRING,
+  published_at TIMESTAMP
+  title_sentiment FLOAT64,
+  description_sentiment FLOAT64
+);
+
+CREATE TABLE `inst737-final-project.real_news_data.mediastack` (
+  title STRING,
+  description STRING,
+  published_at TIMESTAMP
+  title_sentiment FLOAT64,
+  description_sentiment FLOAT64
+);
+
+CREATE TABLE `inst737-final-project.real_news_data.newsdata` (
+  title STRING,
+  description STRING,
+  published_at TIMESTAMP
+  title_sentiment FLOAT64,
+  description_sentiment FLOAT64
+);
