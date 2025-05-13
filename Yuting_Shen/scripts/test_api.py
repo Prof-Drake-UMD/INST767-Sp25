@@ -26,7 +26,7 @@ def test_sports_api():
         api = SportsAPI()
 
         # Test getting league information (English Premier League)
-        print("Getting information for English Premier League...")
+        print("Getting information for National Football League...")
         league_data = api.get_league("4328")
 
         if "leagues" in league_data and league_data["leagues"]:

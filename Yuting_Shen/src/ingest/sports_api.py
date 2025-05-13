@@ -68,6 +68,8 @@ class SportsAPI:
 
         return response
 
+
+
     def get_team(self, team_id):
         """
         Get information about a specific team.
@@ -82,6 +84,23 @@ class SportsAPI:
 
         # Save raw data to file with timestamp
         self._save_raw_data(response, f"team_{team_id}")
+
+        return response
+
+    def search_teams(self, team_name):
+        """
+        Search for teams by name.
+
+        Args:
+            team_name (str): Name of the team to search for
+
+        Returns:
+            dict: JSON response with search results
+        """
+        response = self._make_request("searchteams.php", {"t": team_name})
+
+        # Save raw data to file with timestamp
+        self._save_raw_data(response, f"team_search_{team_name}")
 
         return response
 
@@ -121,6 +140,34 @@ class SportsAPI:
 
         # Save raw data to file with timestamp
         self._save_raw_data(response, f"event_{event_id}")
+
+        return response
+
+    def search_events(self, event_name, season=None):
+        """
+        Search for events by event name, with optional season filter.
+
+        Args:
+            event_name (str): Name of the event to search for (e.g., 'Arsenal_vs_Chelsea')
+            season (str, optional): Season to filter by (e.g., '2016-2017')
+
+        Returns:
+            dict: JSON response with event search results
+        """
+        # Build parameters
+        params = {"e": event_name}
+        if season:
+            params["s"] = season
+
+        response = self._make_request("searchevents.php", params)
+
+        # Save raw data to file with timestamp
+        prefix = f"event_search_{event_name}"
+        if season:
+            prefix += f"_season_{season}"
+        self._save_raw_data(response, prefix)
+
+        logger.info(f"Searched for events with name '{event_name}'{' for season ' + season if season else ''}")
 
         return response
 
@@ -167,11 +214,13 @@ if __name__ == "__main__":
     # Initialize the API client
     api = SportsAPI()
 
-    # Example: Get information about English Premier League (ID: 4328)
-    league_data = api.get_league("4328")
+    # Example: Get information about NFL (ID: 4391)
+    league_data = api.get_league("4391")
 
-    # Example: Get past events for English Premier League
-    events_data = api.get_past_events("4328", limit=5)
+    # Example: Get past events for NFL
+    events_data = api.get_past_events("4391", limit=5)
+
+    search_events = api.search_events("Chiefs vs Eagles")
 
     # Print the first event
     if "events" in events_data and events_data["events"]:

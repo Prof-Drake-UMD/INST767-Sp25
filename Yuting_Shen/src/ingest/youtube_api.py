@@ -227,8 +227,8 @@ if __name__ == "__main__":
     # Initialize the API client
     api = YouTubeAPI("AIzaSyDHMMEqzjYdqGkca8duq5YRGm_lGBzN074")
 
-    # Example: Search for Premier League highlights
-    videos = api.search_sports_videos("Premier League", max_results=3)
+    # Example: Search for highlights
+    videos = api.search_sports_videos("Kansas City Chiefs", max_results=3)
 
     # Print information about the first video
     if videos:
