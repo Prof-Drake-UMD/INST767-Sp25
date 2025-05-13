@@ -64,20 +64,15 @@ real_time_news_sentiment/
    Writes the processed and labeled data to a BigQuery table.
 
 ---
+## Architecture
++--------------------+        +----------------------+        +-------------------------+        +-----------------------------+
+|  Cloud Scheduler   | ───▶   |  Publisher Function  | ───▶   |     Pub/Sub Topic       | ───▶   | Subscriber Function         |
+|  (Triggers timed)  |        |  (sends metadata)    |        |  (real-news-ingest)     |        | + Loads to BigQuery         |
++--------------------+        +----------------------+        +-------------------------+        | Dataset: real_news_data     |
+                                                                                                 | Tables: gnews, mediastack,  |
+                                                                                                 |          newsdata           |
+                                                                                                 +-----------------------------+
 
-## 🧪 Sample BigQuery Schema
-
-| Column         | Type      | Description                          |
-|----------------|-----------|--------------------------------------|
-| `title`        | STRING    | News headline                        |
-| `content`      | STRING    | Article snippet                      |
-| `source`       | STRING    | Source of the article                |
-| `published_at` | TIMESTAMP | Publication time                     |
-| `sentiment`    | STRING    | Positive, Neutral, or Negative       |
-| `api_source`   | STRING    | Which API provided the article       |
-| `keywords`     | STRING    | Optional - Extracted keywords        |
-
----
 
 ## ⚙️ Technologies Used
 
