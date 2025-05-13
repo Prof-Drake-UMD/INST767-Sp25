@@ -65,13 +65,40 @@ real_time_news_sentiment/
 
 ---
 ## Architecture
-+--------------------+        +----------------------+        +-------------------------+        +-----------------------------+
-|  Cloud Scheduler   | ───▶   |  Publisher Function  | ───▶   |     Pub/Sub Topic       | ───▶   | Subscriber Function         |
-|  (Triggers timed)  |        |  (sends metadata)    |        |  (real-news-ingest)     |        | + Loads to BigQuery         |
-+--------------------+        +----------------------+        +-------------------------+        | Dataset: real_news_data     |
-                                                                                                 | Tables: gnews, mediastack,  |
-                                                                                                 |          newsdata           |
-                                                                                                 +-----------------------------+
+
++--------------------+
+|  Cloud Scheduler   |
+| (Triggers on cron) |
++--------------------+
+          │
+          ▼
++----------------------+
+|  Publisher Function  |
+| (Publishes metadata) |
++----------------------+
+          │
+          ▼
++-------------------------+
+|     Pub/Sub Topic       |
+|   (real-news-ingest)    |
++-------------------------+
+          │
+          ▼
++-----------------------------+
+|  Subscriber Function        |
+|  (subscriber_loader.py)     |
+|  + Loads to BigQuery        |
++-----------------------------+
+          │
+          ▼
++-----------------------------+
+| BigQuery Dataset:          |
+| real_news_data             |
+| Tables:                    |
+|  - gnews                   |
+|  - mediastack              |
+|  - newsdata                |
++-----------------------------+
 
 
 ## ⚙️ Technologies Used
