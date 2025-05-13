@@ -2,7 +2,8 @@ import json
 import requests
 import os
 from google.cloud import bigquery
-
+from dotenv import load_dotenv
+load_dotenv()
 TMDB_API_KEY = os.environ.get('TMDB_API_KEY')
 _genre_cache = None  # local cache
 

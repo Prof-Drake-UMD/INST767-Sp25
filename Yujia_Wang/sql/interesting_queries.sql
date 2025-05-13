@@ -10,14 +10,14 @@ FROM (
     'Now Playing' AS movie_group,
     genre
   FROM
-    `glass-marker-458019-q6.movies_dataset.now_playing_movies`,
+    `movie-pipeline-project.movies_dataset.now_playing_movies`,
     UNNEST(genres) AS genre
   UNION ALL
   SELECT
     'Top Rated' AS movie_group,
     genre
   FROM
-    `glass-marker-458019-q6.movies_dataset.top_rated_movies`,
+    `movie-pipeline-project.movies_dataset.top_rated_movies`,
     UNNEST(genres) AS genre
 )
 GROUP BY
@@ -31,7 +31,7 @@ SELECT
   imdb_rating,
   SAFE_CAST(REPLACE(REPLACE(box_office, '$', ''), ',', '') AS FLOAT64) AS box_office_value
 FROM
-  `glass-marker-458019-q6.movies_dataset.now_playing_movies`
+  `movie-pipeline-project.movies_dataset.now_playing_movies`
 WHERE
   imdb_rating IS NOT NULL
   AND box_office IS NOT NULL
@@ -41,7 +41,7 @@ WHERE
 SELECT
   AVG(ARRAY_LENGTH(streaming_sources)) AS avg_platforms
 FROM
-  `glass-marker-458019-q6.movies_dataset.now_playing_movies`
+  `movie-pipeline-project.movies_dataset.now_playing_movies`
 WHERE
   release_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 YEAR)
   AND ARRAY_LENGTH(streaming_sources) > 0;
@@ -51,7 +51,7 @@ SELECT
   genre,
   COUNT(*) AS award_winning_movie_count
 FROM
-  `glass-marker-458019-q6.movies_dataset.top_rated_movies`,
+  `movie-pipeline-project.movies_dataset.top_rated_movies`,
   UNNEST(genres) AS genre
 WHERE
   awards IS NOT NULL
@@ -73,7 +73,7 @@ SELECT
   END AS decade,
   AVG(imdb_rating) AS avg_imdb_rating
 FROM
-  `glass-marker-458019-q6.movies_dataset.top_rated_movies`
+  `movie-pipeline-project.movies_dataset.top_rated_movies`
 WHERE
   imdb_rating IS NOT NULL
 GROUP BY
