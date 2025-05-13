@@ -1,6 +1,7 @@
 import json
 import requests
 import os
+from google.cloud import bigquery
 
 TMDB_API_KEY = os.environ.get('TMDB_API_KEY')
 _genre_cache = None  # local cache
@@ -59,10 +60,11 @@ def clean_movie(movie: dict, is_now_playing=True) -> dict:
         sources = movie.get("watchmode_sources", [])
         cleaned["streaming_sources"] = [
             {
+                "source_id": s.get("id", ""),
                 "source_name": s.get("name", ""),
                 "type": s.get("type", ""),
                 "region": s.get("region", ""),
-                "url": s.get("web_url", "")
+                "web_url": s.get("web_url", "")
             }
             for s in sources
         ] if isinstance(sources, list) else []
@@ -72,3 +74,23 @@ def clean_movie(movie: dict, is_now_playing=True) -> dict:
 
 def clean_movies_list(movie_list: list, is_now_playing=True) -> list:
     return [clean_movie(movie, is_now_playing=is_now_playing) for movie in movie_list]
+
+def load_json_to_bigquery(bucket_name, blob_path, dataset_id, table_id):
+    client = bigquery.Client()
+    uri = f"gs://{bucket_name}/{blob_path}"
+
+    from schema import NOW_PLAYING_SCHEMA
+
+    table_ref = client.dataset(dataset_id).table(table_id)
+
+    job_config = bigquery.LoadJobConfig(
+        source_format=bigquery.SourceFormat.NEWLINE_DELIMITED_JSON,
+        schema=NOW_PLAYING_SCHEMA,
+        write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE
+    )
+
+    load_job = client.load_table_from_uri(uri, table_ref, job_config=job_config)
+
+    print(f"📅 Starting BigQuery load job: {load_job.job_id}")
+    load_job.result()
+    print("✅ Data loaded into BigQuery table.")
