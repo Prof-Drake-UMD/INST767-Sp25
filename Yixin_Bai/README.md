@@ -17,7 +17,7 @@ The primary objective is to:
 
 Our pipeline extracts data from transit APIs, stores it in Cloud Storage, and ultimately integrates it in BigQuery. The BigQuery Schema for the CTA positions data is shown below:
 
-![CTA Positions Schema](Screenshot1.png)
+![CTA Positions Schema](Screenshot20.png)
 *Screenshot 1: BigQuery schema for CTA positions data*
 
 ### Pipeline Status
@@ -169,7 +169,7 @@ Our BigQuery data model consists of several tables that store transit data from 
 
 ### Table Structure
 
-![BigQuery Dataset](Screenshot5.png)
+![BigQuery Dataset](Screenshot14.png)
 *Screenshot 5: BigQuery dataset overview showing all tables*
 
 The tables include:
@@ -179,14 +179,14 @@ The tables include:
 - **wmata_data**: WMATA rail predictions data
 - **integrated_transit_data**: The unified view of all transit data
 
-![CTA Data Schema](Screenshot2.png)
+![CTA Data Schema](Screenshot18.png)
 *Screenshot 2: Schema for the CTA data table*
 
 ## Sample Integrated Data
 
 The integrated view combines data from all transit systems with a standardized schema:
 
-![Query Results](Screenshot3.png)
+![Query Results](Screenshot8.png)
 *Screenshot 3: Query results showing integrated transit data*
 
 This integrated schema has consistent field names and data types across all transit systems:
@@ -213,16 +213,8 @@ This integrated schema has consistent field names and data types across all tran
 
 Our integrated dataset enables various analyses, including daily transit activity patterns:
 
-![Transit Data Metrics](Screenshot5.png)
+![Transit Data Metrics](Screenshot14.png)
 *Screenshot 5: Daily transit activity metrics for December 2024*
-
-Additional metrics show consistent transit data collection throughout November and December 2024:
-
-![November Metrics](Screenshot8.png)
-*Screenshot 8: November 2024 transit data metrics*
-
-![December Metrics](Screenshot6.png)
-*Screenshot 6: December 2024 transit data metrics*
 
 ## 🚀 Workflow Automation
 
@@ -282,9 +274,6 @@ transit-data-integration/
     ├── query.sql                 # Sample queries
     └── transit_data_complete.sql # Table creation SQL (Issue #2)
 ```
-
-![Project Directory Structure](Screenshot4.png)
-*Screenshot 4: Project repository structure showing key components*
 
 ## ⚙️ Technology Stack
 
