@@ -169,7 +169,7 @@ Our BigQuery data model consists of several tables that store transit data from 
 
 ### Table Structure
 
-![BigQuery Dataset](screenshot/Screenshot5.png)
+![BigQuery Dataset](Screenshot5.png)
 *Screenshot 5: BigQuery dataset overview showing all tables*
 
 The tables include:
@@ -179,14 +179,14 @@ The tables include:
 - **wmata_data**: WMATA rail predictions data
 - **integrated_transit_data**: The unified view of all transit data
 
-![CTA Data Schema](screenshot/Screenshot2.png)
+![CTA Data Schema](Screenshot2.png)
 *Screenshot 2: Schema for the CTA data table*
 
 ## Sample Integrated Data
 
 The integrated view combines data from all transit systems with a standardized schema:
 
-![Query Results](screenshot/Screenshot3.png)
+![Query Results](Screenshot3.png)
 *Screenshot 3: Query results showing integrated transit data*
 
 This integrated schema has consistent field names and data types across all transit systems:
@@ -213,15 +213,15 @@ This integrated schema has consistent field names and data types across all tran
 
 Our integrated dataset enables various analyses, including daily transit activity patterns:
 
-![Transit Data Metrics](screenshot/Screenshot5.png)
+![Transit Data Metrics](Screenshot5.png)
 *Screenshot 5: Daily transit activity metrics for December 2024*
 
 Additional metrics show consistent transit data collection throughout November and December 2024:
 
-![November Metrics](screenshot/Screenshot8.png)
+![November Metrics](Screenshot8.png)
 *Screenshot 8: November 2024 transit data metrics*
 
-![December Metrics](screenshot/Screenshot6.png)
+![December Metrics](Screenshot6.png)
 *Screenshot 6: December 2024 transit data metrics*
 
 ## 🚀 Workflow Automation
@@ -234,7 +234,7 @@ The entire data pipeline is orchestrated using Apache Airflow, which automates t
 4. Load data into individual tables
 5. Integrate data into a unified view
 
-![Airflow DAG](screenshot/Screenshot10.png)
+![Airflow DAG](Screenshot10.png)
 *Screenshot 10: Airflow DAG showing all pipeline steps*
 
 ## 🔍 Analytical Capabilities
@@ -283,7 +283,7 @@ transit-data-integration/
     └── transit_data_complete.sql # Table creation SQL (Issue #2)
 ```
 
-![Project Directory Structure](screenshot/Screenshot4.png)
+![Project Directory Structure](Screenshot4.png)
 *Screenshot 4: Project repository structure showing key components*
 
 ## ⚙️ Technology Stack
