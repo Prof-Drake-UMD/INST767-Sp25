@@ -63,14 +63,62 @@ real_time_news_sentiment/
 4. **Load to BigQuery**  
    Writes the processed and labeled data to a BigQuery table.
 
+---
+
+## 📊 Architecture Overview
+
+```
++--------------------+
+|  Cloud Scheduler   |
+| (Triggers on cron) |
++--------------------+
+          │
+          ▼
++----------------------+
+|  Publisher Function  |
+| (Publishes metadata) |
++----------------------+
+          │
+          ▼
++-------------------------+
+|     Pub/Sub Topic       |
+|   (real-news-ingest)    |
++-------------------------+
+          │
+          ▼
++-----------------------------+
+|  Subscriber Function        |
+|  (subscriber_loader.py)     |
+|  + Loads to BigQuery        |
++-----------------------------+
+          │
+          ▼
++-----------------------------+
+| BigQuery Dataset:          |
+| real_news_data             |
+| Tables:                    |
+|  - gnews                   |
+|  - mediastack              |
+|  - newsdata                |
++-----------------------------+
+```
+
+## 🔁 Workflow Summary
+
+- **Cloud Scheduler** triggers the publisher periodically  
+- **Publisher Function** sends file + table info to the topic  
+- **Pub/Sub** queues the message  
+- **Subscriber Function** receives the message and loads the data into BigQuery  
+- **BigQuery** stores it in the `real_news_data` dataset
+
 ## ⚙️ Technologies Used
 
-- Python 3.10+
-- Google Cloud Platform (BigQuery, Cloud Storage)
-- Apache Airflow (optional for DAG orchestration)
-- pandas, requests, TextBlob/VADER
-
-
+- Google Cloud Pub/Sub  
+- Google Cloud Functions  
+- Google BigQuery  
+- Cloud Scheduler  
+- Python (Pub/Sub Subscriber)
+                        
 ## 🙌 Author
 
 **Robin Godinho**  
