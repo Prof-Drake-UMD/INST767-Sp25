@@ -17,14 +17,14 @@ The primary objective is to:
 
 Our pipeline extracts data from transit APIs, stores it in Cloud Storage, and ultimately integrates it in BigQuery. The BigQuery Schema for the CTA positions data is shown below:
 
-![CTA Positions Schema](screenshot/Screenshot1.png)
+![CTA Positions Schema](Screenshot1.png)
 *Screenshot 1: BigQuery schema for CTA positions data*
 
 ### Pipeline Status
 
 Our Airflow DAG successfully executes the data integration workflow, as shown below:
 
-![DAG Success](screenshot/Screenshot10.png)
+![DAG Success](Screenshot10.png)
 *Screenshot 10: Successful DAG execution with logs*
 
 ## 🌐 Selected APIs and Justification
