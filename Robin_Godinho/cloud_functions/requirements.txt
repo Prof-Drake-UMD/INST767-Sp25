@@ -1,0 +1,11 @@
+# Core GCP clients
+google-cloud-pubsub==2.18.4
+google-cloud-bigquery==3.17.2
+google-cloud-logging==3.10.0
+
+# Optional: for CSV or JSON manipulation if needed
+pandas==2.2.2
+numpy==1.26.4
+
+# Environment variable loading (optional)
+python-dotenv==1.0.1

@@ -1,0 +1,1960 @@
+[
+  {
+    "tmdb_id": 278,
+    "title": "The Shawshank Redemption",
+    "popularity": 62.9294,
+    "release_date": "1994-09-23",
+    "genre_ids": [
+      18,
+      80
+    ],
+    "vote_average": 8.709,
+    "vote_count": 28197,
+    "imdb_id": "tt0111161",
+    "box_office": "$28,767,189",
+    "runtime": "142 min",
+    "imdb_rating": "9.3",
+    "rotten_tomatoes_rating": "89%",
+    "metacritic_rating": "82/100",
+    "awards": "Nominated for 7 Oscars. 21 wins & 42 nominations total"
+  },
+  {
+    "tmdb_id": 238,
+    "title": "The Godfather",
+    "popularity": 35.2183,
+    "release_date": "1972-03-24",
+    "genre_ids": [
+      18,
+      80
+    ],
+    "vote_average": 8.687,
+    "vote_count": 21375,
+    "imdb_id": "tt0068646",
+    "box_office": "$136,381,073",
+    "runtime": "175 min",
+    "imdb_rating": "9.2",
+    "rotten_tomatoes_rating": "97%",
+    "metacritic_rating": "100/100",
+    "awards": "Won 3 Oscars. 31 wins & 31 nominations total"
+  },
+  {
+    "tmdb_id": 240,
+    "title": "The Godfather Part II",
+    "popularity": 16.8829,
+    "release_date": "1974-12-20",
+    "genre_ids": [
+      18,
+      80
+    ],
+    "vote_average": 8.571,
+    "vote_count": 12916,
+    "imdb_id": "tt0071562",
+    "box_office": "$47,834,595",
+    "runtime": "202 min",
+    "imdb_rating": "9.0",
+    "rotten_tomatoes_rating": "96%",
+    "metacritic_rating": "90/100",
+    "awards": "Won 6 Oscars. 17 wins & 21 nominations total"
+  },
+  {
+    "tmdb_id": 424,
+    "title": "Schindler's List",
+    "popularity": 36.5596,
+    "release_date": "1993-12-15",
+    "genre_ids": [
+      18,
+      36,
+      10752
+    ],
+    "vote_average": 8.564,
+    "vote_count": 16389,
+    "imdb_id": "tt0108052",
+    "box_office": "$96,898,818",
+    "runtime": "195 min",
+    "imdb_rating": "9.0",
+    "rotten_tomatoes_rating": "98%",
+    "metacritic_rating": "95/100",
+    "awards": "Won 7 Oscars. 91 wins & 49 nominations total"
+  },
+  {
+    "tmdb_id": 389,
+    "title": "12 Angry Men",
+    "popularity": 15.6512,
+    "release_date": "1957-04-10",
+    "genre_ids": [
+      18
+    ],
+    "vote_average": 8.548,
+    "vote_count": 9093,
+    "imdb_id": "tt0050083",
+    "box_office": "N/A",
+    "runtime": "96 min",
+    "imdb_rating": "9.0",
+    "rotten_tomatoes_rating": "100%",
+    "metacritic_rating": "97/100",
+    "awards": "Nominated for 3 Oscars. 16 wins & 12 nominations total"
+  },
+  {
+    "tmdb_id": 129,
+    "title": "Spirited Away",
+    "popularity": 21.8291,
+    "release_date": "2002-09-20",
+    "genre_ids": [
+      16,
+      10751,
+      14
+    ],
+    "vote_average": 8.536,
+    "vote_count": 17078,
+    "imdb_id": "tt0245429",
+    "box_office": "$15,205,725",
+    "runtime": "124 min",
+    "imdb_rating": "8.6",
+    "rotten_tomatoes_rating": "96%",
+    "metacritic_rating": "96/100",
+    "awards": "Won 1 Oscar. 58 wins & 31 nominations total"
+  },
+  {
+    "tmdb_id": 155,
+    "title": "The Dark Knight",
+    "popularity": 30.3051,
+    "release_date": "2008-07-18",
+    "genre_ids": [
+      18,
+      28,
+      80,
+      53
+    ],
+    "vote_average": 8.5,
+    "vote_count": 33766,
+    "imdb_id": "tt0468569",
+    "box_office": "$534,987,076",
+    "runtime": "152 min",
+    "imdb_rating": "9.0",
+    "rotten_tomatoes_rating": "94%",
+    "metacritic_rating": "84/100",
+    "awards": "Won 2 Oscars. 164 wins & 165 nominations total"
+  },
+  {
+    "tmdb_id": 19404,
+    "title": "Dilwale Dulhania Le Jayenge",
+    "popularity": 7.2897,
+    "release_date": "1995-10-20",
+    "genre_ids": [
+      35,
+      18,
+      10749
+    ],
+    "vote_average": 8.516,
+    "vote_count": 4484,
+    "imdb_id": "tt0112870",
+    "box_office": "N/A",
+    "runtime": "181 min",
+    "imdb_rating": "8.0",
+    "rotten_tomatoes_rating": "100%",
+    "metacritic_rating": null,
+    "awards": "15 wins & 4 nominations total"
+  },
+  {
+    "tmdb_id": 497,
+    "title": "The Green Mile",
+    "popularity": 36.8162,
+    "release_date": "1999-12-10",
+    "genre_ids": [
+      14,
+      18,
+      80
+    ],
+    "vote_average": 8.504,
+    "vote_count": 18036,
+    "imdb_id": "tt0120689",
+    "box_office": "$136,801,374",
+    "runtime": "189 min",
+    "imdb_rating": "8.6",
+    "rotten_tomatoes_rating": "79%",
+    "metacritic_rating": "61/100",
+    "awards": "Nominated for 4 Oscars. 15 wins & 37 nominations total"
+  },
+  {
+    "tmdb_id": 496243,
+    "title": "Parasite",
+    "popularity": 28.5778,
+    "release_date": "2019-10-11",
+    "genre_ids": [
+      35,
+      53,
+      18
+    ],
+    "vote_average": 8.5,
+    "vote_count": 18984,
+    "imdb_id": "tt6751668",
+    "box_office": "$53,369,749",
+    "runtime": "132 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "99%",
+    "metacritic_rating": "97/100",
+    "awards": "Won 4 Oscars. 316 wins & 266 nominations total"
+  },
+  {
+    "tmdb_id": 680,
+    "title": "Pulp Fiction",
+    "popularity": 50.4129,
+    "release_date": "1994-10-14",
+    "genre_ids": [
+      53,
+      80
+    ],
+    "vote_average": 8.489,
+    "vote_count": 28606,
+    "imdb_id": "tt0110912",
+    "box_office": "$107,928,762",
+    "runtime": "154 min",
+    "imdb_rating": "8.9",
+    "rotten_tomatoes_rating": "92%",
+    "metacritic_rating": "95/100",
+    "awards": "Won 1 Oscar. 69 wins & 72 nominations total"
+  },
+  {
+    "tmdb_id": 372058,
+    "title": "Your Name.",
+    "popularity": 19.1827,
+    "release_date": "2017-04-07",
+    "genre_ids": [
+      16,
+      10749,
+      18
+    ],
+    "vote_average": 8.485,
+    "vote_count": 11731,
+    "imdb_id": "tt5311514",
+    "box_office": "$5,017,246",
+    "runtime": "106 min",
+    "imdb_rating": "8.4",
+    "rotten_tomatoes_rating": "98%",
+    "metacritic_rating": "81/100",
+    "awards": "17 wins & 27 nominations total"
+  },
+  {
+    "tmdb_id": 122,
+    "title": "The Lord of the Rings: The Return of the King",
+    "popularity": 24.3598,
+    "release_date": "2003-12-17",
+    "genre_ids": [
+      12,
+      14,
+      28
+    ],
+    "vote_average": 8.483,
+    "vote_count": 25008,
+    "imdb_id": "tt0167260",
+    "box_office": "$381,878,219",
+    "runtime": "201 min",
+    "imdb_rating": "9.0",
+    "rotten_tomatoes_rating": "94%",
+    "metacritic_rating": "94/100",
+    "awards": "Won 11 Oscars. 215 wins & 124 nominations total"
+  },
+  {
+    "tmdb_id": 13,
+    "title": "Forrest Gump",
+    "popularity": 26.8034,
+    "release_date": "1994-07-06",
+    "genre_ids": [
+      35,
+      18,
+      10749
+    ],
+    "vote_average": 8.468,
+    "vote_count": 28142,
+    "imdb_id": "tt0109830",
+    "box_office": "$330,455,270",
+    "runtime": "142 min",
+    "imdb_rating": "8.8",
+    "rotten_tomatoes_rating": "75%",
+    "metacritic_rating": "82/100",
+    "awards": "Won 6 Oscars. 51 wins & 74 nominations total"
+  },
+  {
+    "tmdb_id": 429,
+    "title": "The Good, the Bad and the Ugly",
+    "popularity": 42.5435,
+    "release_date": "1967-12-29",
+    "genre_ids": [
+      37
+    ],
+    "vote_average": 8.5,
+    "vote_count": 8952,
+    "imdb_id": "tt0060196",
+    "box_office": "$25,100,000",
+    "runtime": "178 min",
+    "imdb_rating": "8.8",
+    "rotten_tomatoes_rating": "97%",
+    "metacritic_rating": "90/100",
+    "awards": "2 wins & 5 nominations total"
+  },
+  {
+    "tmdb_id": 346,
+    "title": "Seven Samurai",
+    "popularity": 7.9603,
+    "release_date": "1956-11-19",
+    "genre_ids": [
+      28,
+      18
+    ],
+    "vote_average": 8.458,
+    "vote_count": 3876,
+    "imdb_id": "tt0047478",
+    "box_office": "$820,278",
+    "runtime": "207 min",
+    "imdb_rating": "8.6",
+    "rotten_tomatoes_rating": "100%",
+    "metacritic_rating": "98/100",
+    "awards": "Nominated for 2 Oscars. 5 wins & 9 nominations total"
+  },
+  {
+    "tmdb_id": 769,
+    "title": "GoodFellas",
+    "popularity": 72.4881,
+    "release_date": "1990-09-19",
+    "genre_ids": [
+      18,
+      80
+    ],
+    "vote_average": 8.455,
+    "vote_count": 13318,
+    "imdb_id": "tt0099685",
+    "box_office": "$46,909,721",
+    "runtime": "145 min",
+    "imdb_rating": "8.7",
+    "rotten_tomatoes_rating": "94%",
+    "metacritic_rating": "92/100",
+    "awards": "Won 1 Oscar. 45 wins & 38 nominations total"
+  },
+  {
+    "tmdb_id": 157336,
+    "title": "Interstellar",
+    "popularity": 42.7904,
+    "release_date": "2014-11-05",
+    "genre_ids": [
+      12,
+      18,
+      878
+    ],
+    "vote_average": 8.454,
+    "vote_count": 37026,
+    "imdb_id": "tt0816692",
+    "box_office": "$203,227,580",
+    "runtime": "169 min",
+    "imdb_rating": "8.7",
+    "rotten_tomatoes_rating": "73%",
+    "metacritic_rating": "74/100",
+    "awards": "Won 1 Oscar. 44 wins & 148 nominations total"
+  },
+  {
+    "tmdb_id": 12477,
+    "title": "Grave of the Fireflies",
+    "popularity": 0.0111,
+    "release_date": "2018-08-12",
+    "genre_ids": [
+      16,
+      18,
+      10752
+    ],
+    "vote_average": 8.451,
+    "vote_count": 5856,
+    "imdb_id": "tt0095327",
+    "box_office": "$516,962",
+    "runtime": "88 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "100%",
+    "metacritic_rating": "94/100",
+    "awards": "3 wins total"
+  },
+  {
+    "tmdb_id": 637,
+    "title": "Life Is Beautiful",
+    "popularity": 16.4767,
+    "release_date": "1998-10-22",
+    "genre_ids": [
+      35,
+      18
+    ],
+    "vote_average": 8.449,
+    "vote_count": 13325,
+    "imdb_id": "tt0118799",
+    "box_office": "$57,563,264",
+    "runtime": "116 min",
+    "imdb_rating": "8.6",
+    "rotten_tomatoes_rating": "81%",
+    "metacritic_rating": "58/100",
+    "awards": "Won 3 Oscars. 72 wins & 52 nominations total"
+  },
+  {
+    "tmdb_id": 550,
+    "title": "Fight Club",
+    "popularity": 34.2907,
+    "release_date": "1999-10-15",
+    "genre_ids": [
+      18
+    ],
+    "vote_average": 8.439,
+    "vote_count": 30199,
+    "imdb_id": "tt0137523",
+    "box_office": "$37,030,102",
+    "runtime": "139 min",
+    "imdb_rating": "8.8",
+    "rotten_tomatoes_rating": "81%",
+    "metacritic_rating": "67/100",
+    "awards": "Nominated for 1 Oscar. 12 wins & 38 nominations total"
+  },
+  {
+    "tmdb_id": 11216,
+    "title": "Cinema Paradiso",
+    "popularity": 7.6699,
+    "release_date": "1990-02-23",
+    "genre_ids": [
+      18,
+      10749
+    ],
+    "vote_average": 8.436,
+    "vote_count": 4512,
+    "imdb_id": "tt0095765",
+    "box_office": "$12,397,210",
+    "runtime": "174 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "91%",
+    "metacritic_rating": "80/100",
+    "awards": "Won 1 Oscar. 25 wins & 33 nominations total"
+  },
+  {
+    "tmdb_id": 598,
+    "title": "City of God",
+    "popularity": 13.8329,
+    "release_date": "2003-01-17",
+    "genre_ids": [
+      18,
+      80
+    ],
+    "vote_average": 8.429,
+    "vote_count": 7606,
+    "imdb_id": "tt0317248",
+    "box_office": "$7,564,459",
+    "runtime": "130 min",
+    "imdb_rating": "8.6",
+    "rotten_tomatoes_rating": "91%",
+    "metacritic_rating": "79/100",
+    "awards": "Nominated for 4 Oscars. 75 wins & 50 nominations total"
+  },
+  {
+    "tmdb_id": 539,
+    "title": "Psycho",
+    "popularity": 16.0393,
+    "release_date": "1960-06-22",
+    "genre_ids": [
+      27,
+      53,
+      9648
+    ],
+    "vote_average": 8.422,
+    "vote_count": 10325,
+    "imdb_id": "tt0054215",
+    "box_office": "$32,000,000",
+    "runtime": "109 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "97%",
+    "metacritic_rating": "97/100",
+    "awards": "Nominated for 4 Oscars. 8 wins & 14 nominations total"
+  },
+  {
+    "tmdb_id": 120,
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "popularity": 25.1152,
+    "release_date": "2001-12-19",
+    "genre_ids": [
+      12,
+      14,
+      28
+    ],
+    "vote_average": 8.42,
+    "vote_count": 25909,
+    "imdb_id": "tt0120737",
+    "box_office": "$319,372,078",
+    "runtime": "178 min",
+    "imdb_rating": "8.9",
+    "rotten_tomatoes_rating": "92%",
+    "metacritic_rating": "92/100",
+    "awards": "Won 4 Oscars. 125 wins & 126 nominations total"
+  },
+  {
+    "tmdb_id": 40096,
+    "title": "A Dog's Will",
+    "popularity": 3.8035,
+    "release_date": "2000-09-15",
+    "genre_ids": [
+      35,
+      18,
+      14
+    ],
+    "vote_average": 8.418,
+    "vote_count": 1152,
+    "imdb_id": "tt0271383",
+    "box_office": "N/A",
+    "runtime": "104 min",
+    "imdb_rating": "8.6",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "10 wins & 10 nominations"
+  },
+  {
+    "tmdb_id": 14537,
+    "title": "Harakiri",
+    "popularity": 3.4474,
+    "release_date": "1963-09-11",
+    "genre_ids": [
+      28,
+      18,
+      36
+    ],
+    "vote_average": 8.4,
+    "vote_count": 1064,
+    "imdb_id": "tt0056058",
+    "box_office": "N/A",
+    "runtime": "133 min",
+    "imdb_rating": "8.6",
+    "rotten_tomatoes_rating": "100%",
+    "metacritic_rating": "85/100",
+    "awards": "9 wins & 3 nominations total"
+  },
+  {
+    "tmdb_id": 667257,
+    "title": "Impossible Things",
+    "popularity": 3.2344,
+    "release_date": "2021-06-17",
+    "genre_ids": [
+      10751,
+      18
+    ],
+    "vote_average": 8.4,
+    "vote_count": 403,
+    "imdb_id": "tt10032342",
+    "box_office": "N/A",
+    "runtime": "89 min",
+    "imdb_rating": "7.7",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "1 win & 9 nominations"
+  },
+  {
+    "tmdb_id": 510,
+    "title": "One Flew Over the Cuckoo's Nest",
+    "popularity": 16.3825,
+    "release_date": "1975-11-19",
+    "genre_ids": [
+      18
+    ],
+    "vote_average": 8.414,
+    "vote_count": 10734,
+    "imdb_id": "tt0073486",
+    "box_office": "$108,981,275",
+    "runtime": "133 min",
+    "imdb_rating": "8.7",
+    "rotten_tomatoes_rating": "93%",
+    "metacritic_rating": "84/100",
+    "awards": "Won 5 Oscars. 38 wins & 15 nominations total"
+  },
+  {
+    "tmdb_id": 696374,
+    "title": "Gabriel's Inferno",
+    "popularity": 4.0932,
+    "release_date": "2020-05-29",
+    "genre_ids": [
+      10749,
+      18
+    ],
+    "vote_average": 8.4,
+    "vote_count": 2419,
+    "imdb_id": "tt11316854",
+    "box_office": "N/A",
+    "runtime": "124 min",
+    "imdb_rating": "5.9",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "N/A"
+  },
+  {
+    "tmdb_id": 311,
+    "title": "Once Upon a Time in America",
+    "popularity": 7.1738,
+    "release_date": "1984-06-01",
+    "genre_ids": [
+      18,
+      80
+    ],
+    "vote_average": 8.408,
+    "vote_count": 5585,
+    "imdb_id": "tt0087843",
+    "box_office": "$5,321,508",
+    "runtime": "229 min",
+    "imdb_rating": "8.3",
+    "rotten_tomatoes_rating": "86%",
+    "metacritic_rating": "75/100",
+    "awards": "Won 2 BAFTA 11 wins & 13 nominations total"
+  },
+  {
+    "tmdb_id": 121,
+    "title": "The Lord of the Rings: The Two Towers",
+    "popularity": 18.1859,
+    "release_date": "2002-12-18",
+    "genre_ids": [
+      12,
+      14,
+      28
+    ],
+    "vote_average": 8.404,
+    "vote_count": 22518,
+    "imdb_id": "tt0167261",
+    "box_office": "$345,518,923",
+    "runtime": "179 min",
+    "imdb_rating": "8.8",
+    "rotten_tomatoes_rating": "95%",
+    "metacritic_rating": "87/100",
+    "awards": "Won 2 Oscars. 132 wins & 138 nominations total"
+  },
+  {
+    "tmdb_id": 324857,
+    "title": "Spider-Man: Into the Spider-Verse",
+    "popularity": 17.5029,
+    "release_date": "2018-12-14",
+    "genre_ids": [
+      16,
+      28,
+      12,
+      878
+    ],
+    "vote_average": 8.397,
+    "vote_count": 16083,
+    "imdb_id": "tt4633694",
+    "box_office": "$190,241,310",
+    "runtime": "117 min",
+    "imdb_rating": "8.4",
+    "rotten_tomatoes_rating": "97%",
+    "metacritic_rating": "87/100",
+    "awards": "Won 1 Oscar. 85 wins & 61 nominations total"
+  },
+  {
+    "tmdb_id": 4935,
+    "title": "Howl's Moving Castle",
+    "popularity": 25.5119,
+    "release_date": "2005-06-10",
+    "genre_ids": [
+      14,
+      16,
+      12
+    ],
+    "vote_average": 8.397,
+    "vote_count": 10256,
+    "imdb_id": "tt0347149",
+    "box_office": "$9,173,958",
+    "runtime": "119 min",
+    "imdb_rating": "8.2",
+    "rotten_tomatoes_rating": "88%",
+    "metacritic_rating": "82/100",
+    "awards": "Nominated for 1 Oscar. 14 wins & 20 nominations total"
+  },
+  {
+    "tmdb_id": 255709,
+    "title": "Hope",
+    "popularity": 4.4903,
+    "release_date": "2013-10-02",
+    "genre_ids": [
+      18
+    ],
+    "vote_average": 8.394,
+    "vote_count": 771,
+    "imdb_id": "tt3153634",
+    "box_office": "N/A",
+    "runtime": "122 min",
+    "imdb_rating": "8.2",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "7 wins & 13 nominations total"
+  },
+  {
+    "tmdb_id": 1891,
+    "title": "The Empire Strikes Back",
+    "popularity": 9.4596,
+    "release_date": "1980-05-21",
+    "genre_ids": [
+      12,
+      28,
+      878
+    ],
+    "vote_average": 8.392,
+    "vote_count": 17348,
+    "imdb_id": "tt0080684",
+    "box_office": "$292,753,960",
+    "runtime": "124 min",
+    "imdb_rating": "8.7",
+    "rotten_tomatoes_rating": "94%",
+    "metacritic_rating": "82/100",
+    "awards": "Won 1 Oscar. 27 wins & 20 nominations total"
+  },
+  {
+    "tmdb_id": 378064,
+    "title": "A Silent Voice: The Movie",
+    "popularity": 18.7193,
+    "release_date": "2017-10-20",
+    "genre_ids": [
+      16,
+      18,
+      10749
+    ],
+    "vote_average": 8.387,
+    "vote_count": 4100,
+    "imdb_id": "tt5323662",
+    "box_office": "$1,079,689",
+    "runtime": "130 min",
+    "imdb_rating": "8.1",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": "78/100",
+    "awards": "6 wins & 9 nominations total"
+  },
+  {
+    "tmdb_id": 1356039,
+    "title": "Counterattack",
+    "popularity": 71.7856,
+    "release_date": "2025-02-28",
+    "genre_ids": [
+      28,
+      12,
+      53
+    ],
+    "vote_average": 8.38,
+    "vote_count": 650,
+    "imdb_id": "tt23648788",
+    "box_office": "N/A",
+    "runtime": "84 min",
+    "imdb_rating": "6.0",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "N/A"
+  },
+  {
+    "tmdb_id": 724089,
+    "title": "Gabriel's Inferno: Part II",
+    "popularity": 1.8136,
+    "release_date": "2020-07-31",
+    "genre_ids": [
+      10749,
+      18
+    ],
+    "vote_average": 8.4,
+    "vote_count": 1521,
+    "imdb_id": "tt13535454",
+    "box_office": "N/A",
+    "runtime": "106 min",
+    "imdb_rating": "6.4",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "N/A"
+  },
+  {
+    "tmdb_id": 704264,
+    "title": "Primal: Tales of Savagery",
+    "popularity": 1.6455,
+    "release_date": "2019-11-21",
+    "genre_ids": [
+      28,
+      12,
+      16,
+      18
+    ],
+    "vote_average": 8.378,
+    "vote_count": 332,
+    "imdb_id": "tt11191124",
+    "box_office": "N/A",
+    "runtime": "85 min",
+    "imdb_rating": "8.4",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "1 nomination total"
+  },
+  {
+    "tmdb_id": 423,
+    "title": "The Pianist",
+    "popularity": 18.9605,
+    "release_date": "2002-12-25",
+    "genre_ids": [
+      18,
+      10752
+    ],
+    "vote_average": 8.378,
+    "vote_count": 9487,
+    "imdb_id": "tt0253474",
+    "box_office": "$32,590,750",
+    "runtime": "150 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "95%",
+    "metacritic_rating": "85/100",
+    "awards": "Won 3 Oscars. 57 wins & 74 nominations total"
+  },
+  {
+    "tmdb_id": 761053,
+    "title": "Gabriel's Inferno: Part III",
+    "popularity": 3.0578,
+    "release_date": "2020-11-19",
+    "genre_ids": [
+      10749,
+      18
+    ],
+    "vote_average": 8.376,
+    "vote_count": 1058,
+    "imdb_id": "tt13535456",
+    "box_office": "N/A",
+    "runtime": "102 min",
+    "imdb_rating": "6.5",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "N/A"
+  },
+  {
+    "tmdb_id": 1058694,
+    "title": "Radical",
+    "popularity": 2.587,
+    "release_date": "2023-11-03",
+    "genre_ids": [
+      18
+    ],
+    "vote_average": 8.375,
+    "vote_count": 449,
+    "imdb_id": "tt14570440",
+    "box_office": "$8,702,731",
+    "runtime": "125 min",
+    "imdb_rating": "7.8",
+    "rotten_tomatoes_rating": "96%",
+    "metacritic_rating": "70/100",
+    "awards": "18 wins & 23 nominations total"
+  },
+  {
+    "tmdb_id": 244786,
+    "title": "Whiplash",
+    "popularity": 17.0335,
+    "release_date": "2014-10-10",
+    "genre_ids": [
+      18,
+      10402
+    ],
+    "vote_average": 8.374,
+    "vote_count": 15578,
+    "imdb_id": "tt2582802",
+    "box_office": "$14,003,391",
+    "runtime": "106 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "94%",
+    "metacritic_rating": "89/100",
+    "awards": "Won 3 Oscars. 99 wins & 144 nominations total"
+  },
+  {
+    "tmdb_id": 807,
+    "title": "Se7en",
+    "popularity": 28.9875,
+    "release_date": "1995-09-22",
+    "genre_ids": [
+      80,
+      9648,
+      53
+    ],
+    "vote_average": 8.4,
+    "vote_count": 21662,
+    "imdb_id": "tt0114369",
+    "box_office": "$101,040,643",
+    "runtime": "127 min",
+    "imdb_rating": "8.6",
+    "rotten_tomatoes_rating": "84%",
+    "metacritic_rating": "65/100",
+    "awards": "Nominated for 1 Oscar. 29 wins & 44 nominations total"
+  },
+  {
+    "tmdb_id": 27205,
+    "title": "Inception",
+    "popularity": 32.732,
+    "release_date": "2010-07-16",
+    "genre_ids": [
+      28,
+      878,
+      12
+    ],
+    "vote_average": 8.368,
+    "vote_count": 37397,
+    "imdb_id": "tt1375666",
+    "box_office": "$292,587,330",
+    "runtime": "148 min",
+    "imdb_rating": "8.8",
+    "rotten_tomatoes_rating": "87%",
+    "metacritic_rating": "74/100",
+    "awards": "Won 4 Oscars. 159 wins & 220 nominations total"
+  },
+  {
+    "tmdb_id": 567,
+    "title": "Rear Window",
+    "popularity": 10.0293,
+    "release_date": "1954-09-01",
+    "genre_ids": [
+      53,
+      9648
+    ],
+    "vote_average": 8.353,
+    "vote_count": 6671,
+    "imdb_id": "tt0047396",
+    "box_office": "$36,764,313",
+    "runtime": "112 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "98%",
+    "metacritic_rating": "100/100",
+    "awards": "Nominated for 4 Oscars. 6 wins & 13 nominations total"
+  },
+  {
+    "tmdb_id": 770156,
+    "title": "Lucy Shimmers and the Prince of Peace",
+    "popularity": 4.4022,
+    "release_date": "2020-10-19",
+    "genre_ids": [
+      18,
+      10751
+    ],
+    "vote_average": 8.3,
+    "vote_count": 304,
+    "imdb_id": "tt11916254",
+    "box_office": "N/A",
+    "runtime": "87 min",
+    "imdb_rating": "7.1",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "5 wins & 4 nominations total"
+  },
+  {
+    "tmdb_id": 620249,
+    "title": "The Legend of Hei",
+    "popularity": 4.297,
+    "release_date": "2021-04-20",
+    "genre_ids": [
+      16,
+      14,
+      28
+    ],
+    "vote_average": 8.345,
+    "vote_count": 384,
+    "imdb_id": "tt10734928",
+    "box_office": "N/A",
+    "runtime": "101 min",
+    "imdb_rating": "7.3",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "3 wins & 9 nominations total"
+  },
+  {
+    "tmdb_id": 274,
+    "title": "The Silence of the Lambs",
+    "popularity": 5.1725,
+    "release_date": "1991-02-14",
+    "genre_ids": [
+      80,
+      18,
+      53
+    ],
+    "vote_average": 8.345,
+    "vote_count": 16759,
+    "imdb_id": "tt0102926",
+    "box_office": "$130,742,922",
+    "runtime": "118 min",
+    "imdb_rating": "8.6",
+    "rotten_tomatoes_rating": "95%",
+    "metacritic_rating": "86/100",
+    "awards": "Won 5 Oscars. 71 wins & 50 nominations total"
+  },
+  {
+    "tmdb_id": 12493,
+    "title": "High and Low",
+    "popularity": 2.7781,
+    "release_date": "1963-11-26",
+    "genre_ids": [
+      18,
+      80,
+      9648,
+      53
+    ],
+    "vote_average": 8.344,
+    "vote_count": 967,
+    "imdb_id": "tt0057565",
+    "box_office": "$46,808",
+    "runtime": "143 min",
+    "imdb_rating": "8.4",
+    "rotten_tomatoes_rating": "96%",
+    "metacritic_rating": "90/100",
+    "awards": "3 wins & 3 nominations total"
+  },
+  {
+    "tmdb_id": 569094,
+    "title": "Spider-Man: Across the Spider-Verse",
+    "popularity": 30.082,
+    "release_date": "2023-06-02",
+    "genre_ids": [
+      16,
+      28,
+      12,
+      878
+    ],
+    "vote_average": 8.343,
+    "vote_count": 7507,
+    "imdb_id": "tt9362722",
+    "box_office": "$381,593,754",
+    "runtime": "140 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "95%",
+    "metacritic_rating": "86/100",
+    "awards": "Nominated for 1 Oscar. 106 wins & 165 nominations total"
+  },
+  {
+    "tmdb_id": 73,
+    "title": "American History X",
+    "popularity": 14.8676,
+    "release_date": "1998-10-30",
+    "genre_ids": [
+      18
+    ],
+    "vote_average": 8.337,
+    "vote_count": 11834,
+    "imdb_id": "tt0120586",
+    "box_office": "$6,719,864",
+    "runtime": "119 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "84%",
+    "metacritic_rating": "62/100",
+    "awards": "Nominated for 1 Oscar. 4 wins & 15 nominations total"
+  },
+  {
+    "tmdb_id": 128,
+    "title": "Princess Mononoke",
+    "popularity": 13.7993,
+    "release_date": "1999-10-29",
+    "genre_ids": [
+      12,
+      14,
+      16
+    ],
+    "vote_average": 8.329,
+    "vote_count": 8306,
+    "imdb_id": "tt0119698",
+    "box_office": "$11,437,745",
+    "runtime": "133 min",
+    "imdb_rating": "8.3",
+    "rotten_tomatoes_rating": "93%",
+    "metacritic_rating": "76/100",
+    "awards": "14 wins & 6 nominations total"
+  },
+  {
+    "tmdb_id": 372754,
+    "title": "Dou kyu sei \u2013 Classmates",
+    "popularity": 7.8282,
+    "release_date": "2016-05-06",
+    "genre_ids": [
+      10749,
+      16
+    ],
+    "vote_average": 8.3,
+    "vote_count": 401,
+    "imdb_id": "tt5526028",
+    "box_office": "N/A",
+    "runtime": "60 min",
+    "imdb_rating": "7.7",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "N/A"
+  },
+  {
+    "tmdb_id": 1184918,
+    "title": "The Wild Robot",
+    "popularity": 51.916,
+    "release_date": "2024-09-27",
+    "genre_ids": [
+      16,
+      878,
+      10751
+    ],
+    "vote_average": 8.324,
+    "vote_count": 4794,
+    "imdb_id": "tt29623480",
+    "box_office": "$143,901,945",
+    "runtime": "102 min",
+    "imdb_rating": "8.2",
+    "rotten_tomatoes_rating": "96%",
+    "metacritic_rating": "85/100",
+    "awards": "Nominated for 3 Oscars. 85 wins & 104 nominations total"
+  },
+  {
+    "tmdb_id": 105,
+    "title": "Back to the Future",
+    "popularity": 15.4498,
+    "release_date": "1985-07-03",
+    "genre_ids": [
+      12,
+      35,
+      878
+    ],
+    "vote_average": 8.319,
+    "vote_count": 20467,
+    "imdb_id": "tt0088763",
+    "box_office": "$214,553,307",
+    "runtime": "116 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "93%",
+    "metacritic_rating": "87/100",
+    "awards": "Won 1 Oscar. 27 wins & 25 nominations total"
+  },
+  {
+    "tmdb_id": 3782,
+    "title": "Ikiru",
+    "popularity": 6.0998,
+    "release_date": "1956-03-25",
+    "genre_ids": [
+      18
+    ],
+    "vote_average": 8.3,
+    "vote_count": 1196,
+    "imdb_id": "tt0044741",
+    "box_office": "$60,239",
+    "runtime": "143 min",
+    "imdb_rating": "8.3",
+    "rotten_tomatoes_rating": "98%",
+    "metacritic_rating": "92/100",
+    "awards": "Nominated for 1 BAFTA Award6 wins & 2 nominations total"
+  },
+  {
+    "tmdb_id": 820067,
+    "title": "The Quintessential Quintuplets Movie",
+    "popularity": 10.294,
+    "release_date": "2022-12-02",
+    "genre_ids": [
+      16,
+      35,
+      10749
+    ],
+    "vote_average": 8.3,
+    "vote_count": 407,
+    "imdb_id": "tt15721650",
+    "box_office": "$502,000",
+    "runtime": "136 min",
+    "imdb_rating": "7.3",
+    "rotten_tomatoes_rating": "92%",
+    "metacritic_rating": null,
+    "awards": "N/A"
+  },
+  {
+    "tmdb_id": 15804,
+    "title": "A Brighter Summer Day",
+    "popularity": 2.1731,
+    "release_date": "1993-01-08",
+    "genre_ids": [
+      80,
+      18,
+      10749
+    ],
+    "vote_average": 8.3,
+    "vote_count": 335,
+    "imdb_id": "tt0101985",
+    "box_office": "N/A",
+    "runtime": "237 min",
+    "imdb_rating": "8.2",
+    "rotten_tomatoes_rating": "100%",
+    "metacritic_rating": "91/100",
+    "awards": "8 wins & 13 nominations total"
+  },
+  {
+    "tmdb_id": 10494,
+    "title": "Perfect Blue",
+    "popularity": 6.2116,
+    "release_date": "1999-08-20",
+    "genre_ids": [
+      16,
+      53
+    ],
+    "vote_average": 8.302,
+    "vote_count": 2795,
+    "imdb_id": "tt0156887",
+    "box_office": "$558,598",
+    "runtime": "81 min",
+    "imdb_rating": "8.0",
+    "rotten_tomatoes_rating": "84%",
+    "metacritic_rating": "67/100",
+    "awards": "3 wins & 3 nominations total"
+  },
+  {
+    "tmdb_id": 207,
+    "title": "Dead Poets Society",
+    "popularity": 10.8704,
+    "release_date": "1989-06-02",
+    "genre_ids": [
+      18
+    ],
+    "vote_average": 8.301,
+    "vote_count": 11617,
+    "imdb_id": "tt0097165",
+    "box_office": "$95,860,116",
+    "runtime": "128 min",
+    "imdb_rating": "8.1",
+    "rotten_tomatoes_rating": "85%",
+    "metacritic_rating": "79/100",
+    "awards": "Won 1 Oscar. 20 wins & 19 nominations total"
+  },
+  {
+    "tmdb_id": 101,
+    "title": "L\u00e9on: The Professional",
+    "popularity": 19.7046,
+    "release_date": "1994-11-18",
+    "genre_ids": [
+      80,
+      18,
+      28
+    ],
+    "vote_average": 8.301,
+    "vote_count": 15166,
+    "imdb_id": "tt0110413",
+    "box_office": "$19,501,238",
+    "runtime": "110 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "75%",
+    "metacritic_rating": "64/100",
+    "awards": "5 wins & 16 nominations total"
+  },
+  {
+    "tmdb_id": 914,
+    "title": "The Great Dictator",
+    "popularity": 6.6262,
+    "release_date": "1940-10-23",
+    "genre_ids": [
+      35,
+      10752
+    ],
+    "vote_average": 8.298,
+    "vote_count": 3441,
+    "imdb_id": "tt0032553",
+    "box_office": "N/A",
+    "runtime": "125 min",
+    "imdb_rating": "8.4",
+    "rotten_tomatoes_rating": "92%",
+    "metacritic_rating": null,
+    "awards": "Nominated for 5 Oscars. 7 wins & 6 nominations total"
+  },
+  {
+    "tmdb_id": 599,
+    "title": "Sunset Boulevard",
+    "popularity": 7.1071,
+    "release_date": "1950-08-10",
+    "genre_ids": [
+      18
+    ],
+    "vote_average": 8.3,
+    "vote_count": 2670,
+    "imdb_id": "tt0043014",
+    "box_office": "$299,645",
+    "runtime": "110 min",
+    "imdb_rating": "8.4",
+    "rotten_tomatoes_rating": "98%",
+    "metacritic_rating": "94/100",
+    "awards": "Won 3 Oscars. 19 wins & 20 nominations total"
+  },
+  {
+    "tmdb_id": 652837,
+    "title": "Josee, the Tiger and the Fish",
+    "popularity": 10.7451,
+    "release_date": "2021-07-12",
+    "genre_ids": [
+      16,
+      18,
+      10749
+    ],
+    "vote_average": 8.295,
+    "vote_count": 499,
+    "imdb_id": "tt12879624",
+    "box_office": "N/A",
+    "runtime": "99 min",
+    "imdb_rating": "7.6",
+    "rotten_tomatoes_rating": "100%",
+    "metacritic_rating": null,
+    "awards": "1 win & 8 nominations total"
+  },
+  {
+    "tmdb_id": 644479,
+    "title": "Dedicated to my ex",
+    "popularity": 1.7457,
+    "release_date": "2019-11-01",
+    "genre_ids": [
+      18,
+      35
+    ],
+    "vote_average": 8.292,
+    "vote_count": 506,
+    "imdb_id": "tt5869370",
+    "box_office": "N/A",
+    "runtime": "94 min",
+    "imdb_rating": "7.1",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "N/A"
+  },
+  {
+    "tmdb_id": 335,
+    "title": "Once Upon a Time in the West",
+    "popularity": 22.8321,
+    "release_date": "1969-07-04",
+    "genre_ids": [
+      18,
+      37
+    ],
+    "vote_average": 8.3,
+    "vote_count": 4496,
+    "imdb_id": "tt0064116",
+    "box_office": "$5,321,508",
+    "runtime": "166 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "96%",
+    "metacritic_rating": "82/100",
+    "awards": "6 wins & 5 nominations total"
+  },
+  {
+    "tmdb_id": 3082,
+    "title": "Modern Times",
+    "popularity": 3.5997,
+    "release_date": "1936-02-12",
+    "genre_ids": [
+      35,
+      18,
+      10749
+    ],
+    "vote_average": 8.282,
+    "vote_count": 3787,
+    "imdb_id": "tt0027977",
+    "box_office": "$163,577",
+    "runtime": "87 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "98%",
+    "metacritic_rating": "96/100",
+    "awards": "4 wins & 1 nomination total"
+  },
+  {
+    "tmdb_id": 18491,
+    "title": "Neon Genesis Evangelion: The End of Evangelion",
+    "popularity": 6.0654,
+    "release_date": "2024-03-17",
+    "genre_ids": [
+      16,
+      878,
+      28,
+      18
+    ],
+    "vote_average": 8.28,
+    "vote_count": 1671,
+    "imdb_id": "tt0169858",
+    "box_office": "$1,302,300",
+    "runtime": "87 min",
+    "imdb_rating": "8.1",
+    "rotten_tomatoes_rating": "92%",
+    "metacritic_rating": null,
+    "awards": "2 wins total"
+  },
+  {
+    "tmdb_id": 92321,
+    "title": "Hotarubi no Mori e",
+    "popularity": 0.0084,
+    "release_date": "2012-06-30",
+    "genre_ids": [
+      10749,
+      16,
+      14
+    ],
+    "vote_average": 8.278,
+    "vote_count": 1142,
+    "imdb_id": "tt2061702",
+    "box_office": "N/A",
+    "runtime": "45 min",
+    "imdb_rating": "7.8",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "N/A"
+  },
+  {
+    "tmdb_id": 42269,
+    "title": "We All Loved Each Other So Much",
+    "popularity": 2.5242,
+    "release_date": "1977-05-23",
+    "genre_ids": [
+      18,
+      35
+    ],
+    "vote_average": 8.278,
+    "vote_count": 588,
+    "imdb_id": "tt0075793",
+    "box_office": "N/A",
+    "runtime": "124 min",
+    "imdb_rating": "8.0",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "10 wins & 2 nominations total"
+  },
+  {
+    "tmdb_id": 1585,
+    "title": "It's a Wonderful Life",
+    "popularity": 65.3424,
+    "release_date": "1946-12-20",
+    "genre_ids": [
+      18,
+      10751,
+      14
+    ],
+    "vote_average": 8.3,
+    "vote_count": 4477,
+    "imdb_id": "tt0038650",
+    "box_office": "$1,483,643",
+    "runtime": "130 min",
+    "imdb_rating": "8.6",
+    "rotten_tomatoes_rating": "94%",
+    "metacritic_rating": "89/100",
+    "awards": "Nominated for 5 Oscars. 11 wins & 7 nominations total"
+  },
+  {
+    "tmdb_id": 1139087,
+    "title": "Once Upon a Studio",
+    "popularity": 3.5539,
+    "release_date": "2023-09-24",
+    "genre_ids": [
+      16,
+      10751,
+      14,
+      35
+    ],
+    "vote_average": 8.274,
+    "vote_count": 379,
+    "imdb_id": "tt28035641",
+    "box_office": "N/A",
+    "runtime": "9 min",
+    "imdb_rating": "8.3",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "2 nominations total"
+  },
+  {
+    "tmdb_id": 632632,
+    "title": "Given",
+    "popularity": 7.8944,
+    "release_date": "2020-12-28",
+    "genre_ids": [
+      16,
+      18,
+      10402,
+      10749
+    ],
+    "vote_average": 8.272,
+    "vote_count": 399,
+    "imdb_id": "tt11802992",
+    "box_office": "N/A",
+    "runtime": "59 min",
+    "imdb_rating": "7.7",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "1 nomination"
+  },
+  {
+    "tmdb_id": 77338,
+    "title": "The Intouchables",
+    "popularity": 16.2944,
+    "release_date": "2011-11-02",
+    "genre_ids": [
+      18,
+      35
+    ],
+    "vote_average": 8.272,
+    "vote_count": 17569,
+    "imdb_id": "tt1675434",
+    "box_office": "$10,198,820",
+    "runtime": "112 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "76%",
+    "metacritic_rating": "57/100",
+    "awards": "Nominated for 1 BAFTA Award38 wins & 40 nominations total"
+  },
+  {
+    "tmdb_id": 28,
+    "title": "Apocalypse Now",
+    "popularity": 10.0221,
+    "release_date": "1979-08-15",
+    "genre_ids": [
+      18,
+      10752
+    ],
+    "vote_average": 8.272,
+    "vote_count": 8465,
+    "imdb_id": "tt0078788",
+    "box_office": "$96,042,913",
+    "runtime": "147 min",
+    "imdb_rating": "8.4",
+    "rotten_tomatoes_rating": "90%",
+    "metacritic_rating": "94/100",
+    "awards": "Won 2 Oscars. 21 wins & 33 nominations total"
+  },
+  {
+    "tmdb_id": 901,
+    "title": "City Lights",
+    "popularity": 3.1752,
+    "release_date": "1931-03-07",
+    "genre_ids": [
+      35,
+      18,
+      10749
+    ],
+    "vote_average": 8.27,
+    "vote_count": 2249,
+    "imdb_id": "tt0021749",
+    "box_office": "$19,181",
+    "runtime": "87 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "95%",
+    "metacritic_rating": "99/100",
+    "awards": "6 wins total"
+  },
+  {
+    "tmdb_id": 533514,
+    "title": "Violet Evergarden: The Movie",
+    "popularity": 9.4936,
+    "release_date": "2021-03-30",
+    "genre_ids": [
+      16,
+      14,
+      10749,
+      18
+    ],
+    "vote_average": 8.3,
+    "vote_count": 440,
+    "imdb_id": "tt8652818",
+    "box_office": "N/A",
+    "runtime": "140 min",
+    "imdb_rating": "8.3",
+    "rotten_tomatoes_rating": "100%",
+    "metacritic_rating": null,
+    "awards": "1 win & 3 nominations total"
+  },
+  {
+    "tmdb_id": 975,
+    "title": "Paths of Glory",
+    "popularity": 6.5229,
+    "release_date": "1957-12-20",
+    "genre_ids": [
+      10752,
+      18,
+      36
+    ],
+    "vote_average": 8.258,
+    "vote_count": 3014,
+    "imdb_id": "tt0050825",
+    "box_office": "N/A",
+    "runtime": "88 min",
+    "imdb_rating": "8.4",
+    "rotten_tomatoes_rating": "96%",
+    "metacritic_rating": "90/100",
+    "awards": "Nominated for 1 BAFTA Award5 wins & 3 nominations total"
+  },
+  {
+    "tmdb_id": 637920,
+    "title": "Miracle in Cell No. 7",
+    "popularity": 6.9033,
+    "release_date": "2019-10-10",
+    "genre_ids": [
+      18
+    ],
+    "vote_average": 8.3,
+    "vote_count": 4451,
+    "imdb_id": "tt10431500",
+    "box_office": "N/A",
+    "runtime": "132 min",
+    "imdb_rating": "8.2",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "12 wins & 13 nominations total"
+  },
+  {
+    "tmdb_id": 8587,
+    "title": "The Lion King",
+    "popularity": 33.4749,
+    "release_date": "1994-06-15",
+    "genre_ids": [
+      10751,
+      16,
+      18
+    ],
+    "vote_average": 8.257,
+    "vote_count": 18702,
+    "imdb_id": "tt0110357",
+    "box_office": "$424,979,720",
+    "runtime": "88 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": "93%",
+    "metacritic_rating": "88/100",
+    "awards": "Won 2 Oscars. 43 wins & 35 nominations total"
+  },
+  {
+    "tmdb_id": 10376,
+    "title": "The Legend of 1900",
+    "popularity": 3.1332,
+    "release_date": "1998-10-28",
+    "genre_ids": [
+      18,
+      10402
+    ],
+    "vote_average": 8.255,
+    "vote_count": 2300,
+    "imdb_id": "tt0120731",
+    "box_office": "$167,435",
+    "runtime": "169 min",
+    "imdb_rating": "8.0",
+    "rotten_tomatoes_rating": "56%",
+    "metacritic_rating": "58/100",
+    "awards": "22 wins & 10 nominations total"
+  },
+  {
+    "tmdb_id": 670,
+    "title": "Oldboy",
+    "popularity": 21.0917,
+    "release_date": "2005-03-11",
+    "genre_ids": [
+      18,
+      53,
+      9648,
+      28
+    ],
+    "vote_average": 8.251,
+    "vote_count": 8976,
+    "imdb_id": "tt0364569",
+    "box_office": "$2,458,200",
+    "runtime": "120 min",
+    "imdb_rating": "8.3",
+    "rotten_tomatoes_rating": "82%",
+    "metacritic_rating": "78/100",
+    "awards": "43 wins & 28 nominations total"
+  },
+  {
+    "tmdb_id": 630566,
+    "title": "Clouds",
+    "popularity": 5.2828,
+    "release_date": "2020-10-09",
+    "genre_ids": [
+      10402,
+      18,
+      10749
+    ],
+    "vote_average": 8.25,
+    "vote_count": 1017,
+    "imdb_id": "tt6473066",
+    "box_office": "N/A",
+    "runtime": "121 min",
+    "imdb_rating": "7.5",
+    "rotten_tomatoes_rating": "83%",
+    "metacritic_rating": "55/100",
+    "awards": "2 wins & 2 nominations total"
+  },
+  {
+    "tmdb_id": 29259,
+    "title": "Le Trou",
+    "popularity": 2.6065,
+    "release_date": "1964-05-26",
+    "genre_ids": [
+      18,
+      53,
+      80
+    ],
+    "vote_average": 8.2,
+    "vote_count": 503,
+    "imdb_id": "tt0054407",
+    "box_office": "$34,588",
+    "runtime": "131 min",
+    "imdb_rating": "8.5",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "Nominated for 2 BAFTA 2 wins & 4 nominations total"
+  },
+  {
+    "tmdb_id": 572154,
+    "title": "Rascal Does Not Dream of a Dreaming Girl",
+    "popularity": 9.5888,
+    "release_date": "2019-10-02",
+    "genre_ids": [
+      16,
+      10749,
+      18,
+      14
+    ],
+    "vote_average": 8.244,
+    "vote_count": 535,
+    "imdb_id": "tt9881586",
+    "box_office": null,
+    "runtime": "N/A",
+    "imdb_rating": "9.0",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "N/A"
+  },
+  {
+    "tmdb_id": 568332,
+    "title": "Taylor Swift: Reputation Stadium Tour",
+    "popularity": 2.8186,
+    "release_date": "2018-12-31",
+    "genre_ids": [
+      10402
+    ],
+    "vote_average": 8.244,
+    "vote_count": 401,
+    "imdb_id": "tt9426852",
+    "box_office": "N/A",
+    "runtime": "125 min",
+    "imdb_rating": "8.4",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "2 nominations"
+  },
+  {
+    "tmdb_id": 504253,
+    "title": "I Want to Eat Your Pancreas",
+    "popularity": 13.2385,
+    "release_date": "2019-02-07",
+    "genre_ids": [
+      16,
+      18,
+      10749
+    ],
+    "vote_average": 8.24,
+    "vote_count": 1608,
+    "imdb_id": "tt7236034",
+    "box_office": "$277,019",
+    "runtime": "109 min",
+    "imdb_rating": "8.0",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "2 wins & 2 nominations"
+  },
+  {
+    "tmdb_id": 447362,
+    "title": "Life in a Year",
+    "popularity": 6.4404,
+    "release_date": "2020-11-27",
+    "genre_ids": [
+      18,
+      10749
+    ],
+    "vote_average": 8.24,
+    "vote_count": 1909,
+    "imdb_id": "tt6598238",
+    "box_office": "N/A",
+    "runtime": "107 min",
+    "imdb_rating": "6.2",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "N/A"
+  },
+  {
+    "tmdb_id": 508965,
+    "title": "Klaus",
+    "popularity": 9.6717,
+    "release_date": "2019-11-08",
+    "genre_ids": [
+      16,
+      10751,
+      12,
+      35,
+      14
+    ],
+    "vote_average": 8.239,
+    "vote_count": 4248,
+    "imdb_id": "tt4729430",
+    "box_office": "N/A",
+    "runtime": "96 min",
+    "imdb_rating": "8.2",
+    "rotten_tomatoes_rating": "95%",
+    "metacritic_rating": "65/100",
+    "awards": "Nominated for 1 Oscar. 11 wins & 27 nominations total"
+  },
+  {
+    "tmdb_id": 995133,
+    "title": "The Boy, the Mole, the Fox and the Horse",
+    "popularity": 7.2897,
+    "release_date": "2022-12-24",
+    "genre_ids": [
+      16,
+      10751,
+      12,
+      14
+    ],
+    "vote_average": 8.238,
+    "vote_count": 622,
+    "imdb_id": "tt22667880",
+    "box_office": "N/A",
+    "runtime": "32 min",
+    "imdb_rating": "7.8",
+    "rotten_tomatoes_rating": "75%",
+    "metacritic_rating": "75/100",
+    "awards": "Won 1 Oscar. 6 wins & 6 nominations total"
+  },
+  {
+    "tmdb_id": 527641,
+    "title": "Five Feet Apart",
+    "popularity": 13.0696,
+    "release_date": "2019-03-15",
+    "genre_ids": [
+      10749,
+      18
+    ],
+    "vote_average": 8.238,
+    "vote_count": 5707,
+    "imdb_id": "tt6472976",
+    "box_office": "$45,729,221",
+    "runtime": "116 min",
+    "imdb_rating": "7.2",
+    "rotten_tomatoes_rating": "52%",
+    "metacritic_rating": "53/100",
+    "awards": "3 wins & 8 nominations total"
+  },
+  {
+    "tmdb_id": 299534,
+    "title": "Avengers: Endgame",
+    "popularity": 79.3322,
+    "release_date": "2019-04-26",
+    "genre_ids": [
+      12,
+      878,
+      28
+    ],
+    "vote_average": 8.237,
+    "vote_count": 26268,
+    "imdb_id": "tt4154796",
+    "box_office": "$858,373,000",
+    "runtime": "181 min",
+    "imdb_rating": "8.4",
+    "rotten_tomatoes_rating": "94%",
+    "metacritic_rating": "78/100",
+    "awards": "Nominated for 1 Oscar. 71 wins & 133 nominations total"
+  },
+  {
+    "tmdb_id": 25237,
+    "title": "Come and See",
+    "popularity": 5.3253,
+    "release_date": "1985-12-06",
+    "genre_ids": [
+      18,
+      10752
+    ],
+    "vote_average": 8.2,
+    "vote_count": 1581,
+    "imdb_id": "tt0091251",
+    "box_office": "$71,909",
+    "runtime": "142 min",
+    "imdb_rating": "8.4",
+    "rotten_tomatoes_rating": "89%",
+    "metacritic_rating": null,
+    "awards": "3 wins"
+  },
+  {
+    "tmdb_id": 299536,
+    "title": "Avengers: Infinity War",
+    "popularity": 130.5899,
+    "release_date": "2018-04-27",
+    "genre_ids": [
+      12,
+      28,
+      878
+    ],
+    "vote_average": 8.235,
+    "vote_count": 30453,
+    "imdb_id": "tt4154756",
+    "box_office": "$678,815,482",
+    "runtime": "149 min",
+    "imdb_rating": "8.4",
+    "rotten_tomatoes_rating": "85%",
+    "metacritic_rating": "68/100",
+    "awards": "Nominated for 1 Oscar. 48 wins & 81 nominations total"
+  },
+  {
+    "tmdb_id": 283566,
+    "title": "Evangelion: 3.0+1.0 Thrice Upon a Time",
+    "popularity": 4.71,
+    "release_date": "2022-12-06",
+    "genre_ids": [
+      16,
+      28,
+      878,
+      18
+    ],
+    "vote_average": 8.235,
+    "vote_count": 844,
+    "imdb_id": "tt2458948",
+    "box_office": "$810,744",
+    "runtime": "155 min",
+    "imdb_rating": "8.0",
+    "rotten_tomatoes_rating": "100%",
+    "metacritic_rating": "85/100",
+    "awards": "4 wins & 4 nominations total"
+  },
+  {
+    "tmdb_id": 490132,
+    "title": "Green Book",
+    "popularity": 21.4709,
+    "release_date": "2018-11-16",
+    "genre_ids": [
+      18,
+      36
+    ],
+    "vote_average": 8.233,
+    "vote_count": 11966,
+    "imdb_id": "tt6966692",
+    "box_office": "$85,080,171",
+    "runtime": "130 min",
+    "imdb_rating": "8.2",
+    "rotten_tomatoes_rating": "77%",
+    "metacritic_rating": "69/100",
+    "awards": "Won 3 Oscars. 58 wins & 123 nominations total"
+  },
+  {
+    "tmdb_id": 654299,
+    "title": "Out of the Clear Blue Sky",
+    "popularity": 1.4721,
+    "release_date": "2019-12-24",
+    "genre_ids": [
+      35,
+      18,
+      10402
+    ],
+    "vote_average": 8.231,
+    "vote_count": 355,
+    "imdb_id": "tt10946934",
+    "box_office": "N/A",
+    "runtime": "112 min",
+    "imdb_rating": "6.5",
+    "rotten_tomatoes_rating": null,
+    "metacritic_rating": null,
+    "awards": "N/A"
+  },
+  {
+    "tmdb_id": 265177,
+    "title": "Mommy",
+    "popularity": 5.7309,
+    "release_date": "2015-01-23",
+    "genre_ids": [
+      18
+    ],
+    "vote_average": 8.2,
+    "vote_count": 2749,
+    "imdb_id": "tt3612616",
+    "box_office": "$3,494,070",
+    "runtime": "139 min",
+    "imdb_rating": "8.0",
+    "rotten_tomatoes_rating": "89%",
+    "metacritic_rating": "74/100",
+    "awards": "58 wins & 65 nominations total"
+  }
+]

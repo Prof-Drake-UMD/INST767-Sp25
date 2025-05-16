@@ -1,7 +1,7 @@
 
-# 📰 Real-Time News Sentiment & Trends Tracker
+# Real-Time News Sentiment & Trends Tracker
 
-## 📘 Overview
+## Overview
 
 This project is a real-time data pipeline that collects news headlines from multiple public APIs, cleans and standardizes the content, performs sentiment analysis, and stores the results in **Google BigQuery** for visualization or future analysis.
 
@@ -10,7 +10,7 @@ Built using Python and Google Cloud Platform (GCP), the system follows a DAG-sty
 
 ---
 
-## 🎯 Objective
+## Objective
 
 The goal is to:
 - Integrate at least **three different news APIs**
@@ -31,7 +31,7 @@ The goal is to:
 
 ---
 
-## 🧱 Project Structure
+## Project Structure
 
 ```
 real_time_news_sentiment/
@@ -49,45 +49,77 @@ real_time_news_sentiment/
 
 ---
 
-## 🔁 Pipeline Workflow
+## Pipeline Workflow
 
-1. **Ingest**  
-   Pulls the latest news headlines/articles from the selected APIs.
+1. **Publish**  
+   A message containing the file path and destination table is sent to the Pub/Sub topic (`real-news-ingest`).
 
-2. **Transform**  
-   Cleans text, removes duplicates, formats dates, and extracts metadata.
+2. **Subscribe & Extract**  
+   The subscriber script (`subscriber_loader.py`) receives the message and reads the specified CSV file.
 
-3. **Sentiment Analysis**  
-   Uses `TextBlob` or `VADER` to classify sentiment: Positive, Neutral, or Negative.
+3. **Transform**  
+   The subscriber handles light preprocessing (e.g., auto-detect schema, skip headers) before loading.
 
 4. **Load to BigQuery**  
-   Writes the processed and labeled data to a BigQuery table.
+   The subscriber writes the contents of the CSV to the specified BigQuery table within the `real_news_data` dataset.
 
 ---
 
-## 🧪 Sample BigQuery Schema
+## Architecture Overview
 
-| Column         | Type      | Description                          |
-|----------------|-----------|--------------------------------------|
-| `title`        | STRING    | News headline                        |
-| `content`      | STRING    | Article snippet                      |
-| `source`       | STRING    | Source of the article                |
-| `published_at` | TIMESTAMP | Publication time                     |
-| `sentiment`    | STRING    | Positive, Neutral, or Negative       |
-| `api_source`   | STRING    | Which API provided the article       |
-| `keywords`     | STRING    | Optional - Extracted keywords        |
+```
++--------------------+
+|  Cloud Scheduler   |
+| (Triggers on cron) |
++--------------------+
+          │
+          ▼
++----------------------+
+|  Publisher Function  |
+| (Publishes metadata) |
++----------------------+
+          │
+          ▼
++-------------------------+
+|     Pub/Sub Topic       |
+|   (real-news-ingest)    |
++-------------------------+
+          │
+          ▼
++-----------------------------+
+|  Subscriber Function        |
+|  (subscriber_loader.py)     |
+|  + Loads to BigQuery        |
++-----------------------------+
+          │
+          ▼
++-----------------------------+
+| BigQuery Dataset:          |
+| real_news_data             |
+| Tables:                    |
+|  - gnews                   |
+|  - mediastack              |
+|  - newsdata                |
++-----------------------------+
+```
 
----
+## Workflow Summary
+
+- **Cloud Scheduler** triggers the publisher periodically  
+- **Publisher Function** sends file + table info to the topic  
+- **Pub/Sub** queues the message  
+- **Subscriber Function** receives the message and loads the data into BigQuery  
+- **BigQuery** stores it in the `real_news_data` dataset
 
 ## ⚙️ Technologies Used
 
-- Python 3.10+
-- Google Cloud Platform (BigQuery, Cloud Storage)
-- Apache Airflow (optional for DAG orchestration)
-- pandas, requests, TextBlob/VADER
-
-
-## 🙌 Author
+- Google Cloud Pub/Sub  
+- Google Cloud Functions  
+- Google BigQuery  
+- Cloud Scheduler  
+- Python (Pub/Sub Subscriber)
+                        
+## Author
 
 **Robin Godinho**  
 Graduate Student in Information Management  
