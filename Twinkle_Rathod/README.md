@@ -24,18 +24,25 @@ Below are the three public APIs selected for this project. These APIs offer inci
 
 ---
 
-### 2. **Chicago Crime Incidents (2001–Present)**
-- **API Type:** Socrata Open Data API (SODA)
+### 2. **CDC Firearm Mortality by State **
+
 - **Endpoint:**  
-  [https://data.cityofchicago.org/resource/ijzp-q8t2.json](https://data.cityofchicago.org/resource/ijzp-q8t2.json)
-- **Inputs:**
-  - `$where`: `primary_type = 'HOMICIDE' AND description LIKE '%HANDGUN%'`
-  - `$limit`: max 1000 per request (pagination recommended)
-- **Expected Data Fields:**
-  - `date`, `primary_type`, `description`
-  - `location_description`, `block`
-  - `latitude`, `longitude`, `community_area`
-  - `arrest` (boolean)
+  [`https://data.cdc.gov/resource/fpsi-y8tj.json`](https://data.cdc.gov/resource/fpsi-y8tj.json)
+
+- **Inputs:**  
+  - `$where`: `intent LIKE 'FA_%'`  
+    *(Filters for firearm-related categories such as `FA_Suicide`, `FA_Homicide`, and `FA_Deaths`)*
+  - `$limit`: `1000` *(Adjustable based on volume needs)*
+
+- **Expected Fields:**  
+  - `name`: Name of the U.S. state  
+  - `geoid`: State-level geographic FIPS code  
+  - `intent`: Firearm-specific cause of death (e.g., `FA_Homicide`)  
+  - `period`: Reporting year (used for `incident_date`)  
+  - `count_sup`: Whether values were suppressed (`true/false`)  
+  - `rate`: Crude mortality rate  
+  - `date_as_of`: Last update timestamp from the CDC  
+  - `ttm_date_range`: Trailing 12-month reporting window
 
 ---
 
@@ -52,6 +59,8 @@ Below are the three public APIs selected for this project. These APIs offer inci
   - `latitude`, `longitude`, `juris_desc`
 
 ---
-Which neighborhoods or community areas in each city report the highest number of gun violence incidents?
+
+Which neighborhoods in D.C. and boroughs in NYC report the most firearm-related incidents?
 How have firearm-related incidents trended over the past 12 months in each city?
-What proportion of gun-related incidents result in an arrest? (chicagoo, nyc)
+How do firearm-related injury rates vary across states, according to the CDC?
+Is there any correlation between urban gun violence (DC/NYC) and state-level firearm death rates (CDC)?

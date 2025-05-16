@@ -1,98 +1,71 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "1afb8257-4556-4a30-8d3c-e07b1576947a",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "import requests\n",
-    "import json\n",
-    "import os\n",
-    "from datetime import datetime\n",
-    "\n",
-    "# Create local storage folder\n",
-    "RAW_DATA_DIR = \"data/raw\"\n",
-    "os.makedirs(RAW_DATA_DIR, exist_ok=True)\n",
-    "\n",
-    "\n",
-    "def save_json(data, filename):\n",
-    "    \"\"\"Save response data to local file\"\"\"\n",
-    "    path = os.path.join(RAW_DATA_DIR, filename)\n",
-    "    with open(path, 'w') as f:\n",
-    "        json.dump(data, f, indent=2)\n",
-    "    print(f\"Saved: {filename}\")\n",
-    "\n",
-    "\n",
-    "def fetch_dc_data():\n",
-    "    \"\"\"Fetch DC gun violence data (GeoJSON from ArcGIS)\"\"\"\n",
-    "    url = \"https://opendata.arcgis.com/datasets/89bfd2aed9a142249225a638448a5276_29.geojson\"\n",
-    "    response = requests.get(url)\n",
-    "    data = response.json()\n",
-    "    save_json(data, f\"dc_data_{datetime.today().date()}.json\")\n",
-    "    return data\n",
-    "\n",
-    "\n",
-    "def fetch_chicago_data(limit=1000):\n",
-    "    \"\"\"Fetch Chicago crime data filtered for gun violence\"\"\"\n",
-    "    url = \"https://data.cityofchicago.org/resource/ijzp-q8t2.json\"\n",
-    "    params = {\n",
-    "        \"$where\": \"primary_type = 'HOMICIDE' AND description LIKE '%HANDGUN%'\",\n",
-    "        \"$limit\": limit\n",
-    "    }\n",
-    "    response = requests.get(url, params=params)\n",
-    "    data = response.json()\n",
-    "    save_json(data, f\"chicago_data_{datetime.today().date()}.json\")\n",
-    "    return data\n",
-    "\n",
-    "\n",
-    "def fetch_nyc_data(limit=1000):\n",
-    "    \"\"\"Fetch NYC complaint data filtered for firearms\"\"\"\n",
-    "    url = \"https://data.cityofnewyork.us/resource/5uac-w243.json\"\n",
-    "    params = {\n",
-    "        \"$where\": \"pd_desc LIKE '%FIREARM%'\",\n",
-    "        \"$limit\": limit\n",
-    "    }\n",
-    "    response = requests.get(url, params=params)\n",
-    "    data = response.json()\n",
-    "    save_json(data, f\"nyc_data_{datetime.today().date()}.json\")\n",
-    "    return data\n",
-    "\n",
-    "\n",
-    "if __name__ == \"__main__\":\n",
-    "    print(\" Fetching DC gun violence data...\")\n",
-    "    dc = fetch_dc_data()\n",
-    "\n",
-    "    print(\" Fetching Chicago gun violence data...\")\n",
-    "    chicago = fetch_chicago_data()\n",
-    "\n",
-    "    print(\"Fetching NYC gun violence data...\")\n",
-    "    nyc = fetch_nyc_data()\n",
-    "\n",
-    "    print(\" All data fetched and saved.\")\n"
-   ]
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.12.5"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+import requests
+import os
+import json
+from datetime import datetime
+
+# Create a folder to store raw data
+RAW_DATA_DIR = "data/raw"
+os.makedirs(RAW_DATA_DIR, exist_ok=True)
+
+
+def save_json(data, filename):
+    """Save response JSON to a file"""
+    path = os.path.join(RAW_DATA_DIR, filename)
+    with open(path, "w") as f:
+        json.dump(data, f, indent=2)
+    print(f"Saved: {filename}")
+
+
+def fetch_dc_data():
+    """Fetch DC gun violence data (GeoJSON format)"""
+    print("Fetching DC data...")
+    url = "https://opendata.arcgis.com/datasets/89bfd2aed9a142249225a638448a5276_29.geojson"
+    response = requests.get(url)
+    data = response.json()
+    save_json(data, f"dc_data_{datetime.today().date()}.geojson")
+    return data
+
+
+def fetch_nyc_data(limit=1000):
+    """Fetch NYC gun crime complaints from Socrata"""
+    print("Fetching NYC data...")
+    url = "https://data.cityofnewyork.us/resource/5uac-w243.json"
+    params = {
+        "$where": "pd_desc LIKE '%FIREARM%'",
+        "$limit": limit
+    }
+    response = requests.get(url, params=params)
+    data = response.json()
+    save_json(data, f"nyc_data_{datetime.today().date()}.json")
+    return data
+
+def fetch_cdc_data(limit=1000):
+    print("Fetching CDC data...")
+    url = "https://data.cdc.gov/resource/fpsi-y8tj.json"
+    params = {"$limit": limit, "$where": "intent LIKE 'FA_%'"}
+    response = requests.get(url, params=params)
+    data = response.json()
+    save_json(data, f"cdc_state_data_{datetime.today().date()}.json")
+    return data
+
+
+
+
+if __name__ == "__main__":
+    dc_data = fetch_dc_data()
+    nyc_data = fetch_nyc_data()
+    cdc_data = fetch_cdc_data()
+
+    print("All data fetched and saved.")
+
+
+
+
+
+
+
+
+
+
+
+

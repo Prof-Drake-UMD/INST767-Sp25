@@ -1,0 +1,18 @@
+CREATE TABLE `gv-etl-spring.gun_violence_dataset.firearm_incidents` (
+  incident_id STRING,
+  city STRING,
+  incident_date DATE,
+  incident_time TIME,
+  description STRING,
+  location STRING,
+  latitude FLOAT64,
+  longitude FLOAT64,
+  source_dataset STRING,
+  loaded_at TIMESTAMP
+)
+PARTITION BY DATE(incident_date)
+CLUSTER BY city, location;
+
+
+
+#Using a single table as all datasets (washington DC, NYC, CDC) have been standardized into same schema. Partitioning and clustering for optimized read performance.
