@@ -1,4 +1,4 @@
-# Title: Analyzing News Trends and Air Quality in California
+# Title: News and Air Quality Analysis in California
 I will be analyzing news articles related to environmental issues (such as pollution, extreme weather events) and compare with air quality data from multiple cities
 in California. The goal is to identify whether certain cities have the most media attention regarding environmental topics on air quality issues and if there is improvements
 based on the News article output.
