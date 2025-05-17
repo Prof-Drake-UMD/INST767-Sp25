@@ -19,7 +19,7 @@ nyc_token = os.getenv("TRAFFIC_KEY")
 
 while offset < max_rows:
     this_url = url + f"?$limit={limit}&$offset={offset}&$order=:id&$$app_token={nyc_token}&$where=transit_timestamp > '2023-01-01T00:00:00'"
-    #print(this_url)
+    print(this_url)
     print("{:,}".format(offset))
     response = requests.get(this_url)
     if response.status_code == 200:
