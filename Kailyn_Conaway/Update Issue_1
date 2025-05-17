@@ -1,0 +1,53 @@
+import requests
+import json
+    
+url = "https://api.weather.gov/alerts"
+    
+params = {
+    'area': "MD",
+    'limit': 3,
+    'severity': "Severe"
+    }
+
+response1 = requests.get(url, params=params, )
+
+#retrieving json
+
+if response1.status_code == 200:
+    data1 = response1.json()
+    print(data1)
+else:
+    print(f"Error: {response1.status_code}")
+
+import requests
+import json
+
+url2 = "https://api.nationalflooddata.com/v3/data"
+
+headers = {'x-api-key':'rfLkzNIzvl8RnUdxVYfbDaeTpyanba1h6KLvghZp'}
+
+params = {
+    'address':'501 E Pratt St Baltimore, MD 21202',
+    'searchtype':'addressparcel',
+    'loma': False,
+    'elevation': True
+}
+
+response = requests.get(url2, headers=headers, params=params)
+if response.status_code == 200:
+    data2 = response.json()
+    print(data2)
+else:
+    print(f"Error: {response3.status_code}")
+
+import requests
+
+params = {
+    'access_key': '3ae5d8ff3a31b66c5f31a8918bd7a427',
+    "iata_code":"BWI"
+}
+
+api_result = requests.get('https://api.aviationstack.com/v1/flights', params)
+
+api_response = api_result.json()
+print(api_response)
