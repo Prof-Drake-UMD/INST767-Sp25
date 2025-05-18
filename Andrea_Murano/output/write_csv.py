@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from process.build_cultural_experience import build_cultural_rows
 import pandas as pd
 
