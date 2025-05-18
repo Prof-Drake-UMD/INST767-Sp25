@@ -1,4 +1,4 @@
-# Book-to-Culture Matchmaker
+# Contextual Lens: Literature & Culture Explorer
 
 This project is an cultural recommendation tool that takes a book title and author as input and returns a set of artworks and music tracks released the same, or close to the same, year. It is designed as an immersive discovery engine for artistic content from 1950 to the present.
 
