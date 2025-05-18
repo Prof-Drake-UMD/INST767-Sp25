@@ -4,7 +4,10 @@
 
 import requests
 import json
-    
+
+### 1. Severe Weather Data
+#### Call url with chosen parameters
+
 url = "https://api.weather.gov/alerts"
     
 params = {
@@ -13,7 +16,7 @@ params = {
     'severity': "Severe"
     }
 
-response1 = requests.get(url, params=params, )
+response1 = requests.get(url, params=params)
 
 #retrieving json
 
@@ -26,6 +29,9 @@ else:
 import requests
 import json
 
+### 1. Flood Data
+#### Call url with chosen parameters, access through api key
+
 url2 = "https://api.nationalflooddata.com/v3/data"
 
 headers = {'x-api-key':'rfLkzNIzvl8RnUdxVYfbDaeTpyanba1h6KLvghZp'}
@@ -37,14 +43,19 @@ params = {
     'elevation': True
 }
 
+#retrieving json
+
 response = requests.get(url2, headers=headers, params=params)
 if response.status_code == 200:
     data2 = response.json()
     print(data2)
 else:
-    print(f"Error: {response3.status_code}")
+    print(f"Error: {response.status_code}")
 
 import requests
+
+### 1. Aviation Data
+#### Call url with chosen parameters, access through api key
 
 params = {
     'access_key': '3ae5d8ff3a31b66c5f31a8918bd7a427',
@@ -53,5 +64,9 @@ params = {
 
 api_result = requests.get('https://api.aviationstack.com/v1/flights', params)
 
+#retrieving json
+
 api_response = api_result.json()
 print(api_response)
+
+#### JSONs will return a python object including the attributes from the data considering the given parameters. 
