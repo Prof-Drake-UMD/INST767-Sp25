@@ -1,0 +1,28 @@
+name: "metro-job"
+priority: 10
+taskGroups:
+  - taskSpec:
+      runnables:
+        - script:
+            text: |
+              #!/bin/bash
+              echo "Installing Python..."
+              sudo apt-get update
+              sudo apt-get install -y python3 python3-pip
+              echo "Fetching script from GCS..."
+              gsutil cp gs://api_output_bucket_inst_final/scripts/main.py .
+              echo "Running script..."
+              python3 main.py
+      computeResource:
+        cpuMilli: 2000
+        memoryMib: 4096
+      maxRunDuration: "7200s"
+      maxRetryCount: 1
+    taskCount: 1
+allocationPolicy:
+  instances:
+    - policy:
+        machineType: e2-standard-4
+logsPolicy:
+  destination: CLOUD_LOGGING
+  logsPath: "/logs/"
