@@ -1,23 +1,23 @@
 from ingest.get_books import get_book_data
 from ingest.get_art import get_artworks_near_year
-from ingest.get_music import get_spotify_tracks_by_year, get_spotify_token
+from ingest.get_music import get_spotify_tracks_by_year
 from datetime import datetime
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-SPOTIFY_TOKEN = get_spotify_token()
+SPOTIFY_TOKEN = os.getenv("SPOTIFY_TOKEN")
 
 def build_cultural_rows(book_title, author=None, art_buffer=10, limit=5):
     book = get_book_data(book_title, author)
     if not book:
-        print("❌ Book not found.")
+        print("Book not found.")
         return []
 
     year = book.get("first_publish_year")
     if not year:
-        print("❌ No publication year available.")
+        print("No publication year available.")
         return []
 
     artworks = get_artworks_near_year(year, buffer=art_buffer, max_results=limit)
