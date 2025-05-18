@@ -1,0 +1,23 @@
+CREATE TABLE cultural_experience_items (
+  book_title STRING,
+  book_author STRING,
+  book_first_publish_year INT64,
+  book_language STRING,
+  book_url STRING,
+
+  artwork_title STRING,
+  artwork_artist STRING,
+  artwork_medium STRING,
+  artwork_date STRING,
+  artwork_url STRING,
+  artwork_image_url STRING,
+
+  track_title STRING,
+  track_artist STRING,
+  album_title STRING,
+  track_release_date STRING,
+  track_preview_url STRING,
+
+  match_type STRING,
+  ingest_ts TIMESTAMP
+);
