@@ -1,3 +1,7 @@
+## Flood and Aairline Data
+
+### Goal: My goal is to find areas in Baltimore that have above average capacity for floods and other severe weather how it affects plane delays. I'll be using three APIs, severe weather limited to Maryland, floods limited to Baltimore, and airline data limited to BWI.
+
 import requests
 import json
     
