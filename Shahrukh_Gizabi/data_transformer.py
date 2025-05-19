@@ -1,25 +1,23 @@
 # data_transformer.py
 import pandas as pd
 import json
+import datetime # Added for the ingested_at timestamp
 
+# --- Helper Function ---
 def _to_json_string(data_object):
     """ Safely converts a Python object to a JSON string, handling potential errors. """
     if data_object is None:
         return None
     try:
-        # Basic cleaning for common unserializable types if necessary,
-        # though for well-structured API data this might not be an issue.
-        # For this project, we assume data_object is composed of basic types
-        # or lists/dicts of basic types that are JSON serializable.
         return json.dumps(data_object)
     except TypeError as e:
         print(f"Warning: TypeError during json.dumps: {e}. Data: {str(data_object)[:1000]}. Returning None.")
         return None
-    except Exception as e: # Catch any other unexpected errors during dump
+    except Exception as e:
         print(f"Warning: Unexpected error during json.dumps: {e}. Data: {str(data_object)[:1000]}. Returning None.")
         return None
 
-
+# --- Transformation Function for TeamSeasonStats ---
 def transform_team_season_stats_to_df(api_response_data):
     """
     Transforms the JSON response for team season stats (from api-football)
@@ -48,35 +46,30 @@ def transform_team_season_stats_to_df(api_response_data):
     record['team'] = _to_json_string(data.get('team'))
     record['fixtures'] = _to_json_string(data.get('fixtures'))
     
-    # --- Helper function to convert dict of minute/card stats to list of dicts ---
     def _create_segment_stats_array(segment_data_dict):
-        if not isinstance(segment_data_dict, dict):
-            return []
+        if not isinstance(segment_data_dict, dict): return []
         array = []
         for segment_key, stats_values in segment_data_dict.items():
-            if isinstance(stats_values, dict): # Ensure the value is a dict
+            if isinstance(stats_values, dict):
                 array.append({
-                    "segment": segment_key if segment_key else "unknown_time", # Handle empty string key for cards
+                    "segment": segment_key if segment_key else "unknown_time",
                     "total": stats_values.get("total"),
                     "percentage": stats_values.get("percentage")
                 })
         return array
 
-    # --- Helper function to convert dict of under/over stats to list of dicts ---
     def _create_under_over_stats_array(under_over_data_dict):
-        if not isinstance(under_over_data_dict, dict):
-            return []
+        if not isinstance(under_over_data_dict, dict): return []
         array = []
         for line_key, values_dict in under_over_data_dict.items():
-            if isinstance(values_dict, dict): # Ensure the value is a dict
+            if isinstance(values_dict, dict):
                 array.append({
                     "line": line_key,
-                    "over_val": values_dict.get("over"), # DDL uses over_val
-                    "under_val": values_dict.get("under") # DDL uses under_val
+                    "over_val": values_dict.get("over"),
+                    "under_val": values_dict.get("under")
                 })
         return array
 
-    # --- Process 'goals' section ---
     goals_data_raw = data.get('goals', {})
     processed_goals = {}
     if isinstance(goals_data_raw, dict):
@@ -89,20 +82,15 @@ def transform_team_season_stats_to_df(api_response_data):
                     'minute_stats': _create_segment_stats_array(aspect_data_raw.get('minute')),
                     'under_over_stats': _create_under_over_stats_array(aspect_data_raw.get('under_over'))
                 }
-                processed_goals[f"`{aspect}`" if aspect == 'for' else aspect] = processed_aspect # Quote 'for' if it's a top-level key in the output JSON string
-                                                                                                # Actually, BQ `for` field is already quoted in DDL, so direct key 'for' is fine here.
                 processed_goals[aspect] = processed_aspect
-
-
     record['goals'] = _to_json_string(processed_goals) if processed_goals else None
         
     record['biggest'] = _to_json_string(data.get('biggest'))
     record['clean_sheet'] = _to_json_string(data.get('clean_sheet'))
     record['failed_to_score'] = _to_json_string(data.get('failed_to_score'))
     record['penalty'] = _to_json_string(data.get('penalty'))
-    record['lineups'] = _to_json_string(data.get('lineups')) # This is already an array of structs from API
+    record['lineups'] = _to_json_string(data.get('lineups'))
     
-    # --- Process 'cards' section ---
     cards_data_raw = data.get('cards', {})
     processed_cards = {}
     if isinstance(cards_data_raw, dict):
@@ -112,28 +100,13 @@ def transform_team_season_stats_to_df(api_response_data):
             processed_cards['red_card_stats'] = _create_segment_stats_array(cards_data_raw.get('red'))
     record['cards'] = _to_json_string(processed_cards) if processed_cards else None
         
-    # last_updated field for BQ table (set at load time or if available in API)
-    # For now, we don't have a source for this in the team_stats API response itself.
-    # It will be NULL unless you add a specific timestamp here.
-    # The DDL included it, so the column will exist.
-    record['last_updated'] = datetime.datetime.now(datetime.timezone.utc).isoformat() if 'last_updated' in pd.DataFrame([{}], columns=df.columns).columns else None # Add current time as placeholder
+    record['last_updated'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
     df = pd.DataFrame([record])
-
-    # To ensure the CSV output for 'last_updated' is just the timestamp if you want it
-    # and not part of the complex 'cards' JSON, ensure 'last_updated' is a top-level key in `record`.
-    # If the BQ DDL had last_updated at the root level, then:
-    df['last_updated'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
-
     return df
 
-
-# Keep the other transformation functions (transform_matches_to_df, transform_match_events_odds_to_df)
-# as they were, because their corresponding BigQuery DDLs did not have the same parsing issue
-# and their structures were already being correctly prepared for CSV (with JSON strings for complex types).
-
+# --- Transformation Function for Matches ---
 def transform_matches_to_df(api_response_data):
-    # ... (previous correct version of this function) ...
     if not api_response_data or not isinstance(api_response_data.get('matches'), list):
         print("No 'matches' data found or not a list in transform_matches_to_df.")
         return pd.DataFrame()
@@ -160,13 +133,18 @@ def transform_matches_to_df(api_response_data):
         record['awayTeam'] = _to_json_string(match_data.get('awayTeam'))
         record['score'] = _to_json_string(match_data.get('score'))
         record['referees'] = _to_json_string(match_data.get('referees'))
+        # Add ingested_at if this table needs it
+        # record['ingested_at'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
         processed_matches.append(record)
         
-    return pd.DataFrame(processed_matches)
+    df = pd.DataFrame(processed_matches)
+    # If adding ingested_at to all rows of this df after creation:
+    if not df.empty and 'ingested_at' in df.columns: # Check if your DDL for Matches has ingested_at
+         df['ingested_at'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    return df
 
-
+# --- Transformation Function for MatchEventsAndOdds ---
 def transform_match_events_odds_to_df(api_response_data):
-    # ... (previous correct version of this function) ...
     if not api_response_data or not isinstance(api_response_data.get('data'), list):
         print("No 'data' (events list) found or not a list in sportsgameodds response for transform_match_events_odds_to_df.")
         return pd.DataFrame()
@@ -272,10 +250,11 @@ def transform_match_events_odds_to_df(api_response_data):
                         'bookmakers': bookmakers_list
                     })
         record['markets'] = _to_json_string(markets_list) if markets_list else None
+        
+        # Add ingested_at for MatchEventsAndOdds table
+        record['ingested_at'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
         processed_events_records.append(record)
-
-df = pd.DataFrame(processed_events_records)
-if not df.empty:
-    df['ingested_at'] = pd.Timestamp.now(tz='UTC').isoformat() # Use .isoformat() for BQ TIMESTAMP
-return df
-    
+        
+    df = pd.DataFrame(processed_events_records)
+    # No need to add 'ingested_at' again here if it was added to each record
+    return df
