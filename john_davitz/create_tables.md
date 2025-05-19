@@ -16,6 +16,7 @@ CREATE TABLE dataset.Metro (
 
 
 CREATE TABLE dataset.Weather (
+  id STRING,
   date DATE,
   mean_temp FLOAT64, 
   max_temp FLOAT64,
