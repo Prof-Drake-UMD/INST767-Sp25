@@ -1,0 +1,10 @@
+# Ignore environment files
+env.yaml
+.env
+
+# Python cache
+__pycache__/
+
+
+# OS metadata
+.DS_Store

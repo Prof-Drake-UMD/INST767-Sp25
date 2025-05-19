@@ -1,0 +1,52 @@
+import requests
+
+# --- Open-Meteo Weather API ---
+def fetch_weather_forecast(lat=40.7128, lon=-74.0060):
+    url = "https://api.open-meteo.com/v1/forecast"
+    params = {
+        "latitude": lat,
+        "longitude": lon,
+        "hourly": "temperature_2m,precipitation,wind_speed_10m",
+        "timezone": "America/New_York"
+    }
+    response = requests.get(url, params=params)
+    response.raise_for_status()
+    return response.json()
+
+# --- NYC Open Data: Air Quality ---
+def fetch_air_quality():
+    url = "https://data.cityofnewyork.us/resource/c3uy-2p5r.json"
+    response = requests.get(url)
+    response.raise_for_status()
+    return response.json()
+
+# --- USGS Water Services API ---
+def fetch_usgs_water(site="01323500"):
+    """
+    Fetch streamflow data from USGS.
+    Example site: 01323500 (Bronx River at NY Botanical Garden)
+    ParameterCd 00060 = streamflow (cubic feet per second)
+    """
+    url = "https://waterservices.usgs.gov/nwis/iv/"
+    params = {
+        "sites": site,
+        "parameterCd": "00060",
+        "format": "json"
+    }
+    response = requests.get(url, params=params)
+    response.raise_for_status()
+    return response.json()
+
+# --- Example Execution ---
+if __name__ == "__main__":
+    print("Fetching weather forecast...")
+    weather = fetch_weather_forecast()
+    print(weather)
+
+    print("\nFetching NYC air quality data...")
+    air_quality = fetch_air_quality()
+    print(air_quality[:3])  # print just a few entries
+
+    print("\nFetching USGS water data...")
+    usgs_water = fetch_usgs_water()
+    print(usgs_water)

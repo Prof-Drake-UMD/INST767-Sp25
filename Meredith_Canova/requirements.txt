@@ -1,0 +1,10 @@
+# General
+pandas
+pyarrow
+python-dotenv
+requests
+
+# Google Cloud SDK libraries
+google-cloud-pubsub
+google-cloud-storage
+google-cloud-bigquery
