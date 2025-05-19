@@ -1,0 +1,72 @@
+{
+  "start_time": "2025-05-18T20:15:22.899398",
+  "league_id": "4391",
+  "status": "success",
+  "errors": [],
+  "csv_paths": {
+    "events": "data/processed/events_20250518_201524.csv",
+    "teams": "data/processed/teams_20250518_201530.csv",
+    "youtube_videos": "data/processed/youtube_videos_20250518_201531.csv",
+    "video_metrics": "data/processed/video_metrics_20250518_201531.csv",
+    "video_comments": "data/processed/video_comments_20250518_201532.csv"
+  },
+  "sports_results": {
+    "start_time": "2025-05-18T20:15:22.899460",
+    "league_id": "4391",
+    "status": "success",
+    "errors": [],
+    "csv_paths": {
+      "events": "data/processed/events_20250518_201524.csv",
+      "teams": "data/processed/teams_20250518_201530.csv"
+    },
+    "events_count": 15,
+    "teams_count": 16,
+    "end_time": "2025-05-18T20:15:30.090770"
+  },
+  "youtube_results": {
+    "start_time": "2025-05-18T20:15:30.090985",
+    "query": "Kansas City Chiefs",
+    "status": "success",
+    "errors": [],
+    "csv_paths": {
+      "youtube_videos": "data/processed/youtube_videos_20250518_201531.csv",
+      "video_metrics": "data/processed/video_metrics_20250518_201531.csv",
+      "video_comments": "data/processed/video_comments_20250518_201532.csv"
+    },
+    "videos_count": 10,
+    "metrics_count": 10,
+    "comments_count": 342,
+    "end_time": "2025-05-18T20:15:32.325404"
+  },
+  "trends_results": {
+    "start_time": "2025-05-18T20:15:32.325526",
+    "keywords": [
+      "Kansas City Chiefs"
+    ],
+    "timeframe": "today 1-m",
+    "status": "error",
+    "errors": [
+      "No trends data could be retrieved"
+    ],
+    "csv_paths": {},
+    "trends_count": 0,
+    "regional_count": 0,
+    "queries_count": 0,
+    "event_interest_results": [
+      {
+        "event_id": "2209609",
+        "event_name": "Philadelphia Eagles vs Kansas City Chiefs",
+        "trends_count": 31
+      },
+      {
+        "event_id": "2206642",
+        "event_name": "Kansas City Chiefs vs Buffalo Bills",
+        "trends_count": 31
+      }
+    ],
+    "end_time": "2025-05-18T20:22:32.696030"
+  },
+  "end_time": "2025-05-18T20:22:32.696588",
+  "duration": 429.986956,
+  "completed_at": "2025-05-18T20:22:32.696813"
+}
