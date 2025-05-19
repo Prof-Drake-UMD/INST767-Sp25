@@ -29,7 +29,6 @@ Below are the API data sources integrated in this project:
     * `lineups`: Array of objects, each specifying a formation used and how many times it was played.
     * `cards`: Object detailing yellow and red cards, with breakdowns by minute segments.
 
-    *(For the actual data structure, refer to the `TeamSeasonStats.csv` output or the `TeamSeasonStats` table schema in BigQuery, where complex nested parts are stored as JSON strings reflecting this structure or as specific array structures.)*
 
 ### 2. Football-Data.org API
 
@@ -54,8 +53,7 @@ Below are the API data sources integrated in this project:
     * `score`: Object detailing the match score, including winner, duration, full-time, and half-time scores.
     * `referees`: Array of objects, each detailing a referee (ID, name, type, nationality).
 
-    *(For the actual data structure, refer to the `Matches.csv` output or the `Matches` table schema in BigQuery, where complex nested parts are stored as JSON strings.)*
-
+  
 ### 3. Sports Game Odds API (sportsgameodds.com)
 
 * **Documentation:** [https://sportsgameodds.apidocumentation.com/reference](https://sportsgameodds.apidocumentation.com/reference)
@@ -75,6 +73,6 @@ Below are the API data sources integrated in this project:
     * `results`: Complex object containing game statistics broken down by period (`1h`, `2h`, `reg`, `game`) for both home/away teams, and also individual player statistics within `results.game` keyed by dynamic player identifiers.
     * `odds`: Complex object where each key is a unique odds market identifier (e.g., "points-away-1h-ou-under", "combinedCards-PLAYER_ID-game-yn-yes"). Each value is an object containing market details, odds values (`fairOdds`, `bookOdds`, lines like `bookOverUnder`), and a nested `byBookmaker` object which itself can contain odds from specific bookmakers.
 
-    *(For the actual data structure, refer to the `MatchEventsAndOdds.csv` output or the `MatchEventsAndOdds` table schema in BigQuery, where complex nested parts like `info`, `event_players`, `teams`, `results`, and `markets` are stored as JSON strings.)*
+
 
 ---
