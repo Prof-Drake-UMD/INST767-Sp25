@@ -1,2 +1,5 @@
 pandas
 requests
+google-cloud-storage
+google-cloud-pubsub
+functions-framework
