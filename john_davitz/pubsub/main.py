@@ -73,5 +73,13 @@ def fetch_and_upload(event, context):
     output_blob = bucket.blob(output_blob_name)
     output_blob.upload_from_string(combined_df.to_csv(index=False), content_type="text/csv")
 
+    #move data
+    source_weather = bucket.blob("output/weather_api_output.csv")
+    dest_weather = bucket.copy_blob(source_weather, bucket, 'combined_output/final_weather.csv')
+
+    source_traffic = bucket.blob("output/traffic.csv")
+    dest_traffic = bucket.copy_blob(source_weather, bucket, 'combined_output/final_traffic.csv')
+
+
 
     print(f"✅✅ Combined CSV written to {output_blob_name}")

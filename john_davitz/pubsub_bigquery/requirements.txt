@@ -1,0 +1,6 @@
+pandas
+google-cloud-storage
+google-cloud-pubsub
+google-cloud-bigquery
+gcsfs
+pyarrow

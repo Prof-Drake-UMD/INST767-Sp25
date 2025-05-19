@@ -1,1 +1,1 @@
-gcloud functions deploy bigquery_insert --runtime python311 --trigger-topic=transformation-complete --entry-point=fetch_and_upload --region=us-central1 --source=. 
+gcloud functions deploy bigquery_insert --runtime python311 --trigger-topic=transformation-complete --entry-point=fetch_and_upload --region=us-central1 --source=. --memory 8Gi --cpu 4

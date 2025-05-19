@@ -40,19 +40,19 @@ Trigger       \                                            /     Bucket Storage 
 
 
 ### Database schema
+
 #### Weather Table
- - Date
- - Time
- - Temperature
- - Precipitation
- - Weater Code
+ - date - DATE
+ - mean_temp - FLOAT64
+ - max_temp - FLOAT64
+ - min_temp - FLOAT64
+ - weather_code - INT
+ - precipitation_sum - FLOAT64
 
 #### Metro Ridership Table
- - Date
- - Time
- - Ridership
+ - Date - DATE
+ - Ridership - INT
 
 #### Traffic 
- - Date
- - Time
- - Vehicle Volume
+ - date - DATE
+ - traffic_volume - INT
