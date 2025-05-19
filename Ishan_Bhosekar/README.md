@@ -1,45 +1,44 @@
-# Consumer Spending & Economic Trends
+# Climate & Economic Data Pipeline (GCP | Airflow | BigQuery | Pub/Sub)
 
-## Overview
-This project pulls data from multiple economic and financial APIs to analyze consumer spending trends based on inflation, income, and currency exchange rates.
+## Project Overview
+This project builds a robust, cloud-native data pipeline that ingests, transforms, and analyzes environmental and economic data using public APIs. It focuses on integrating weather, air quality, and GDP metrics for major global cities to uncover insights related to climate patterns and their economic implications.
+ 
+Built on the Google Cloud Platform (GCP), the system uses:
 
-## API Data Sources
-1. **US Census Bureau API** (Household income data)
-   - **URL:** `https://api.census.gov/data/2023/acs/acs5`
-   - **Inputs:** State-level income data request (`B19013_001E`)
-   - **Expected Output:**
-     ```json
-     [
-       ["NAME", "B19013_001E", "state"],
-       ["Alabama", "55000", "01"],
-       ["California", "75000", "06"]
-     ]
-     ```
+Cloud Composer (Airflow) for orchestration
 
-2. **FRED (Federal Reserve Economic Data)** (Inflation rates & interest rates)
-   - **URL:** `https://api.stlouisfed.org/fred/series/observations`
-   - **Inputs:** Series ID (e.g., CPIAUCSL for inflation)
-   - **Expected Output:**
-     ```json
-     {
-       "observations": [
-         {"date": "2024-01-01", "value": "3.2"},
-         {"date": "2024-02-01", "value": "3.1"}
-       ]
-     }
-     ```
+Cloud Pub/Sub for asynchronous message passing
 
-3. **Open Exchange Rates API** (Currency exchange data)
-   - **URL:** `https://openexchangerates.org/api/latest.json`
-   - **Inputs:** Base currency (USD)
-   - **Expected Output:**
-     ```json
-     {
-       "rates": {
-         "EUR": 0.92,
-         "GBP": 0.79,
-         "JPY": 148.5
-       },
-       "timestamp": 1712083200
-     }
-     ```
+BigQuery for data storage, transformation, and analysis
+
+## 📡 Data Sources
+| API Source | Description |
+| --- | --- |
+| OpenWeatherMap API | Real-time weather data |
+| WAQI API | Global air quality index data |
+| World Bank API | Historical GDP (NY.GDP.MKTP.CD) per country |
+
+## 🛠️ Technologies Used
+Google Cloud Platform (GCP): BigQuery, Cloud Composer, Cloud Pub/Sub, Cloud Functions
+
+Python 3.11: Data ingestion, transformation, and DAG logic
+
+Apache Airflow: Scheduling and orchestration
+
+Pub/Sub: Event-driven decoupling of ingestion and transformation
+
+BigQuery Views: Analytical queries and data modeling
+
+## 📊 Use Case
+This project answers analytical questions such as:
+
+How does air quality correlate with weather conditions across cities?
+
+What are the GDP growth trends in relation to climate patterns?
+
+Which cities show climate-health risks based on AQI and humidity?
+
+How do temperature and GDP growth interact across major economies?
+
+
+
