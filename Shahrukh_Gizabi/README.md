@@ -1,6 +1,6 @@
 # Soccer Data Integration Project
 
-This project aims to integrate data from three different soccer APIs to create a combined data model for analysis, with the ultimate goal of identifying what stats represent a winning team in the Premier League. The data pipeline involves fetching data from these APIs, transforming it, and loading it into BigQuery.
+This project integrates data from three soccer APIs to analyze team performance statistics, primarily focusing on the Premier League. The pipeline fetches, transforms, and loads data into BigQuery for analysis, aiming to identify what stats represent a winning team.
 
 ## Data Sources
 
@@ -8,71 +8,157 @@ Below are the API data sources integrated in this project:
 
 ### 1. API-Football (by API-Sports)
 
-* **Documentation:** [https://www.api-football.com/documentation-v3#tag/Teams/operation/get-teams-statistics](https://www.api-football.com/documentation-v3#tag/Teams/operation/get-teams-statistics)
-* **Purpose:** Provides comprehensive football statistics for teams, including form, fixture summaries, goal statistics, lineups, and cards. This is a primary source for team performance metrics.
-* **Endpoint Example Used:** `GET /teams/statistics`
-* **Key Inputs Used in This Project:**
-    * `x-rapidapi-key` (Header): Your API authentication key for api-sports.io.
-    * `league` (Query Param): League ID (e.g., "39" for Premier League).
-    * `season` (Query Param): Season year (e.g., "2023").
-    * `team` (Query Param): Team ID (e.g., "33" for Manchester United).
-* **Expected Data Output (JSON Summary):**
-    * `league`: Object containing league ID, name, country, logo, flag, and season.
-    * `team`: Object containing team ID, name, and logo.
-    * `form`: String representing recent match outcomes (e.g., "WLWLL...").
-    * `fixtures`: Object detailing matches played, wins, draws, and losses (broken down by home/away/total).
-    * `goals`: Object detailing goals for and against, including totals, averages, and detailed breakdowns by minute segments (e.g., "0-15", "16-30") and over/under stats.
-    * `biggest`: Object detailing streak information, biggest wins/losses, and goal margins.
-    * `clean_sheet`: Object with home, away, and total clean sheets.
-    * `failed_to_score`: Object with home, away, and total matches failed to score.
-    * `penalty`: Object with penalty statistics (scored, missed, total).
-    * `lineups`: Array of objects, each specifying a formation used and how many times it was played.
-    * `cards`: Object detailing yellow and red cards, with breakdowns by minute segments.
-
+* **Purpose:** Detailed team statistics (form, fixtures, goals, lineups, cards).
+* **Key Inputs Used:**
+    * API Key (Header: `x-rapidapi-key`)
+    * League ID (e.g., "39" for Premier League)
+    * Season Year (e.g., "2023")
+    * Team ID (e.g., "33")
+* **Expected Key Data Output (Example JSON Snippet):**
+    ```json
+    {
+      "league": {
+        "id": 39,
+        "name": "Premier League",
+        "country": "England",
+        "season": 2023
+      },
+      "team": {
+        "id": 33,
+        "name": "Manchester United"
+      },
+      "form": "WLWLLWLWWL...",
+      "fixtures": {
+        "played": {"home": 19, "away": 19, "total": 38},
+        "wins": {"home": 10, "away": 8, "total": 18},
+        "draws": {"home": 3, "away": 3, "total": 6},
+        "loses": {"home": 6, "away": 8, "total": 14}
+      },
+      "goals": {
+        "for": {
+          "total": {"home": 31, "away": 26, "total": 57},
+          "average": {"home": "1.6", "away": "1.4", "total": "1.5"},
+          "minute": {
+            "0-15": {"total": 7, "percentage": "12.07%"},
+            "76-90": {"total": 14, "percentage": "24.14%"}
+          }
+        },
+        "against": {
+          "total": {"home": 28, "away": 30, "total": 58},
+          "average": {"home": "1.5", "away": "1.6", "total": "1.5"}
+        }
+      },
+      "clean_sheet": {"home": 4, "away": 5, "total": 9},
+      "lineups": [
+        {"formation": "4-2-3-1", "played": 32}
+      ]
+    }
+    ```
+* **Documentation:** [API-Football Docs](https://www.api-football.com/documentation-v3#tag/Teams/operation/get-teams-statistics)
 
 ### 2. Football-Data.org API
 
-* **Documentation:** [https://www.football-data.org/documentation/quickstart](https://www.football-data.org/documentation/quickstart)
-* **Purpose:** Provides data on football competitions, matches (schedules, results, scores), teams, and standings. This is a primary source for match outcomes.
-* **Endpoint Example Used:** `GET /v4/competitions/{competitionId}/matches`
-* **Key Inputs Used in This Project:**
-    * `X-Auth-Token` (Header): Your API authentication token for football-data.org.
-    * `competition_code` (Path Param, e.g., "PL" for Premier League, used to form the URL).
-    * `season` (Query Param): The year the season started (e.g., "2023" for the 2023/2024 season).
-* **Expected Data Output (JSON Summary for a Match):**
-    * `area`: Object with area (country) details (ID, name, code, flag).
-    * `competition`: Object with competition details (ID, name, code, type, emblem).
-    * `season`: Object with season details (ID, start/end dates, current matchday).
-    * `id`: Unique match identifier.
-    * `utcDate`: Match date and time in UTC.
-    * `status`: Match status (e.g., "FINISHED", "SCHEDULED").
-    * `matchday`: The matchday number in the season.
-    * `stage`: Stage of the competition (e.g., "REGULAR_SEASON").
-    * `homeTeam`: Object with home team details (ID, name, short name, TLA, crest).
-    * `awayTeam`: Object with away team details (ID, name, short name, TLA, crest).
-    * `score`: Object detailing the match score, including winner, duration, full-time, and half-time scores.
-    * `referees`: Array of objects, each detailing a referee (ID, name, type, nationality).
+* **Purpose:** Match results, schedules, scores, and competition details.
+* **Key Inputs Used:**
+    * API Token (Header: `X-Auth-Token`)
+    * Competition Code (e.g., "PL" for Premier League)
+    * Season Year (e.g., "2023")
+* **Expected Key Data Output (Example JSON Snippet for one match):**
+    ```json
+    {
+      "area": {
+        "id": 2072,
+        "name": "England",
+        "code": "ENG"
+      },
+      "competition": {
+        "id": 2021,
+        "name": "Premier League",
+        "code": "PL"
+      },
+      "season": {
+        "id": 1564,
+        "startDate": "2023-08-11",
+        "endDate": "2024-05-19",
+        "currentMatchday": 38
+      },
+      "id": 435943,
+      "utcDate": "2023-08-11T19:00:00Z",
+      "status": "FINISHED",
+      "matchday": 1,
+      "homeTeam": {
+        "id": 328,
+        "name": "Burnley FC",
+        "shortName": "Burnley"
+      },
+      "awayTeam": {
+        "id": 65,
+        "name": "Manchester City FC",
+        "shortName": "Man City"
+      },
+      "score": {
+        "winner": "AWAY_TEAM",
+        "fullTime": {"home": 0, "away": 3},
+        "halfTime": {"home": 0, "away": 2}
+      },
+      "referees": [
+        {"id": 11585, "name": "Craig Pawson", "type": "REFEREE"}
+      ]
+    }
+    ```
+* **Documentation:** [Football-Data.org Docs](https://www.football-data.org/documentation/quickstart)
 
-  
 ### 3. Sports Game Odds API (sportsgameodds.com)
 
-* **Documentation:** [https://sportsgameodds.apidocumentation.com/reference](https://sportsgameodds.apidocumentation.com/reference)
-* **Purpose:** Provides betting odds for various sports events, including soccer. This is used to gather pre-match odds and potentially player-specific betting market data.
-* **Endpoint Example Used:** `GET /v2/events/`
-* **Key Inputs Used in This Project:**
-    * `apiKey` (Query Param): Your API authentication key.
-    * `leagueID` (Query Param): Identifier for the league (e.g., "EPL" for English Premier League).
-    * `startsAfter` (Query Param): Start date for events filter (YYYY-MM-DD).
-    * `startsBefore` (Query Param): End date for events filter (YYYY-MM-DD).
-* **Expected Data Output (JSON Summary for an Event):**
-    * `eventID`: Unique identifier for the match/event.
-    * `sportID`, `leagueID`, `type` (e.g., "match").
-    * `info`: Object with event details (e.g., `seasonWeek`).
-    * `players`: Object containing details for players involved in the event, keyed by dynamic player identifiers.
-    * `teams`: Object containing `home` and `away` team details (names, team IDs for this API, colors, scores from this API's perspective if available).
-    * `results`: Complex object containing game statistics broken down by period (`1h`, `2h`, `reg`, `game`) for both home/away teams, and also individual player statistics within `results.game` keyed by dynamic player identifiers.
-    * `odds`: Complex object where each key is a unique odds market identifier (e.g., "points-away-1h-ou-under", "combinedCards-PLAYER_ID-game-yn-yes"). Each value is an object containing market details, odds values (`fairOdds`, `bookOdds`, lines like `bookOverUnder`), and a nested `byBookmaker` object which itself can contain odds from specific bookmakers.
-
-
+* **Purpose:** Betting odds for matches, including various markets and player props.
+* **Key Inputs Used:**
+    * API Key (Query Param: `apiKey`)
+    * League ID (e.g., "EPL")
+    * Date Range (`startsAfter`, `startsBefore`)
+* **Expected Key Data Output (Example JSON Snippet for one event, focusing on odds):**
+    ```json
+    {
+      "eventID": "n7D1xG8G6DP4PkFsI2rg",
+      "sportID": "SOCCER",
+      "leagueID": "EPL",
+      "info": {
+        "seasonWeek": "Premier League 24/25"
+      },
+      "teams": {
+        "home": {"names": {"long": "Manchester United"}, "teamID": "MANCHESTER_UNITED_EPL"},
+        "away": {"names": {"long": "Fulham"}, "teamID": "FULHAM_EPL"}
+      },
+      "odds": {
+        "points-home-game-ml-home": {
+          "marketName": "Moneyline (Full Match)",
+          "statEntityID": "home",
+          "periodID": "game",
+          "bookOdds": "-5000", 
+          "byBookmaker": {
+            "fanduel": {"odds": "-2400", "lastUpdatedAt": "2024-08-16T20:48:41.000Z"},
+            "draftkings": {"odds": "-20000", "lastUpdatedAt": "2024-08-16T20:50:17.000Z"}
+          }
+        },
+        "points-all-game-ou-under": {
+          "marketName": "Over/Under (Full Match)",
+          "statEntityID": "all",
+          "periodID": "game",
+          "bookOdds": "-1107",
+          "bookOverUnder": "1.5",
+          "byBookmaker": {
+            "pinnacle": {"odds": "-450", "overUnder": "1.5", "lastUpdatedAt": "2024-08-16T20:51:55.000Z"}
+          }
+        },
+        "shots_onGoal-BRUNO_FERNANDES_1_EPL-game-ou-over": {
+          "marketName": "Bruno Fernandes Shots On Goal Over/Under (Full Match)",
+          "playerID": "BRUNO_FERNANDES_1_EPL",
+          "bookOdds": "-211",
+          "bookOverUnder": "0.5"
+        }
+      }
+    }
+    ```
+    *(Note: The full response from this API is very detailed, including extensive player lists and results. The snippet above focuses on key event identifiers and a sample of the odds structure.)*
+* **Documentation:** [Sports Game Odds API Docs](https://sportsgameodds.apidocumentation.com/reference)
 
 ---
