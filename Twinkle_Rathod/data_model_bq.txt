@@ -15,4 +15,4 @@ CLUSTER BY city, location;
 
 
 
-#Using a single table as all datasets (washington DC, NYC, CDC) have been standardized into same schema. Partitioning and clustering for optimized read performance.
+# Using a single table as all datasets (washington DC, NYC, CDC) have been standardized into same schema. Partitioning and clustering for optimized read performance.

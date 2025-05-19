@@ -1,5 +1,5 @@
 
--- 1. Monthly firearm incident trend per city (2020–2024)(if covid had an impact on city-level firearm incidents)
+-- Query 1. Monthly firearm incident trend per city (2020–2024)(if covid had an impact on city-level firearm incidents)
 SELECT
   city,
   FORMAT_DATE('%Y-%m', incident_date) AS month,
@@ -11,7 +11,7 @@ WHERE
 GROUP BY city, month
 ORDER BY city, month;
 
--- Query 2: Top 5 neighborhoods/boroughs with the most firearm-related incidents per city
+-- Query 2: Top 5 neighborhoods/boroughs per city and states with the most firearm-related incidents 
 SELECT
   city,
   location,
@@ -56,7 +56,7 @@ WITH city_data AS (
   SELECT
     EXTRACT(YEAR FROM incident_date) AS year,
     COUNT(*) AS city_total
-  FROM `gv-etl-springg.gun_violence_dataset.firearm_incidents`
+  FROM `gv-etl-spring.gun_violence_dataset.firearm_incidents`
   WHERE city IN ('New York City', 'Washington DC')
   GROUP BY year
 ),

@@ -72,7 +72,6 @@ def upload_to_gcs(bucket_name, source_file_name, destination_blob_name):
 
 #loading csv from gcs to BigQuery table (overwrites everytime)
 def load_csv_to_bigquery(uri, table_id):
-    """Loads CSV from GCS into BigQuery table (overwrites)"""
     client = bigquery.Client()
     job_config = bigquery.LoadJobConfig(
         source_format=bigquery.SourceFormat.CSV,
