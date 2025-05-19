@@ -158,7 +158,7 @@ Below are the API data sources integrated in this project:
       }
     }
     ```
-    *(Note: The full response from this API is very detailed, including extensive player lists and results. The snippet above focuses on key event identifiers and a sample of the odds structure.)*
+
 * **Documentation:** [Sports Game Odds API Docs](https://sportsgameodds.apidocumentation.com/reference)
 
 ---
