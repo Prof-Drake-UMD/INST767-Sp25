@@ -1,9 +1,1863 @@
-output.csv will be in this folder what is below is what is expected there are many recrods that were ingested many times some with null or even duplicates but thats where big query came in when i made the sql ,
-
-| song_title         | artist            | city          | weather_main | temperature | ingested_at               | lyrics_preview                                
-|--------------------|-------------------|---------------|--------------|-------------|--------------------------|-----------------------------------------------|
-| Ribs               | Lorde             | Los Angeles   | Clear        | 62.1        | 2025-05-19 03:13:07 UTC | The drink you spilt all over me               
-| BIRDS OF A FEATHER  | Billie Eilish     | Los Angeles   | Clear        | 62.1        | 2025-05-19 03:12:14 UTC | (But I wanna stay) I want you to stay         
-| Blinding Lights    | The Weeknd        | Los Angeles   | Clear        | 75.0        | 2025-05-18 20:44:31 UTC | Yeah I've been tryna call I've been on my own 
-| Pink + White       | Frank Ocean       | San Francisco | Clear        | 59.52       | 2025-05-19 03:13:00 UTC | Yeah, yeah, oh (Woo) Yeah, yeah, yeah         
-| espresso           | Sabrina Carpenter | San Francisco | Clear        | 59.52       | 2025-05-19 03:12:26 UTC | Now he's thinkin' 'bout me every night, oh    
+song_title,artist,city,weather_main,temperature,ingested_at,lyrics_preview,row_num,song_mood,weather_mood
+Creep,Radiohead,Atlanta,Clear,71.46,2025-05-19 03:12:57.578247 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",1,,
+What Was That,Lorde,Atlanta,Clear,71.46,2025-05-19 03:12:22.871042 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",1,,
+luther (with SZA),Kendrick Lamar,Austin,Clear,80.82,2025-05-19 03:12:20.24292 UTC,Lyrics preview unavailable.,1,,
+tAsTe,Sabrina Carpenter,Austin,Clear,80.82,2025-05-19 03:12:51.456418 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",1,,
+Von Dutch,Charli XCX,Los Angeles,Clear,62.1,2025-05-19 03:12:37.207954 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",1,,
+Ribs,Lorde,Los Angeles,Clear,62.1,2025-05-19 03:13:07.895942 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",1,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,62.1,2025-05-19 03:12:14.833792 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",1,,
+Blinding Lights,The Weeknd,Los Angeles,Clear,75,2025-05-18 20:44:31.468879 UTC,"Yeah
+I've been tryna call
+I've been on my own for long enough",1,,
+Pink + White,Frank Ocean,San Francisco,Clear,59.52,2025-05-19 03:13:00.000905 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",1,,
+espresso,Sabrina Carpenter,San Francisco,Clear,59.52,2025-05-19 03:12:26.159194 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",1,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,61.3,2025-05-19 03:12:31.181447 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",1,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,61.3,2025-05-19 03:13:02.170427 UTC,Lyrics preview unavailable.,1,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,46.06,2025-05-19 03:13:12.409551 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",1,,
+No One Noticed,The Marías,Chicago,Clouds,46.06,2025-05-19 03:12:17.832608 UTC,"Maybe I
+Lost my mind
+No one noticed",1,,
+Cruel Summer,Taylor Swift,Chicago,Clouds,74.64,2025-05-13 18:42:31.147734 UTC,,1,,
+Judas,Lady Gaga,Chicago,Clouds,46.06,2025-05-19 03:12:45.101717 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",1,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,52.5,2025-05-19 03:13:01.777551 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",1,,
+Party 4 U,Charli XCX,Denver,Clouds,52.5,2025-05-19 03:12:28.622697 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",1,,
+Abracadabra,Lady Gaga,Miami,Clouds,80.29,2025-05-19 03:12:16.25509 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",1,,
+Paint the Town Red,Doja Cat,Miami,Clouds,84.74,2025-05-13 18:42:30.898378 UTC,,1,,
+Wildflower,Billie Eilish,Miami,Clouds,80.29,2025-05-19 03:13:10.669379 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",1,,
+Poker Face,Lady Gaga,Miami,Clouds,80.29,2025-05-19 03:12:42.704528 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",1,,
+Die With A Smile,Lady Gaga,New York,Clouds,65.23,2025-05-19 03:12:33.663274 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",1,,
+Bad Romance,Lady Gaga,New York,Clouds,65.23,2025-05-19 03:13:06.052103 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",1,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,65.23,2025-05-19 03:12:12.501752 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",1,,
+Lovers Rock,TV Girl,Seattle,Clouds,56.41,2025-05-19 03:13:14.741658 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",1,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,56.41,2025-05-19 03:12:19.822272 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",1,,
+505,Arctic Monkeys,Seattle,Clouds,56.41,2025-05-19 03:12:49.404878 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",1,,
+Love Me Again,V,College Park,Rain,66.11,2025-05-13 18:42:30.422748 UTC,,1,,
+As It Was,Harry Styles,New York,Rain,67.37,2025-05-13 18:42:30.333817 UTC,,1,,
+Cruel Summer,Taylor Swift,New York,Rain,59,2025-05-13 23:18:46.382707 UTC,,1,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 03:31:39.977499 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 03:31:40.173015 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 03:31:40.198792 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 03:31:40.636882 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 03:31:40.670933 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 03:31:40.676615 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,65.41,2025-05-19 03:31:41.301155 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,61.61,2025-05-19 03:31:41.459193 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 03:31:42.838337 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,80.29,2025-05-19 03:31:42.869603 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 03:31:42.875633 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 03:31:42.888286 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 03:31:44.60801 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 03:31:44.640145 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,46.11,2025-05-19 03:31:44.625315 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 03:31:44.646504 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 03:31:46.748064 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,55.47,2025-05-19 03:31:46.772554 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 03:31:46.79456 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 03:31:46.783871 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+luther (with SZA),Kendrick Lamar,Austin,Clear,,2025-05-19 03:31:47.125807 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clear,80.35,2025-05-19 03:31:47.147992 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clear,,2025-05-19 03:31:47.162809 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clear,,2025-05-19 03:31:47.166734 UTC,Lyrics preview unavailable.,,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 03:31:48.789517 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 03:31:48.830634 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,71.26,2025-05-19 03:31:48.827119 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 03:31:48.895311 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 03:31:51.872972 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,60.04,2025-05-19 03:31:51.898483 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 03:31:51.909909 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 03:31:51.906516 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 03:31:53.721583 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 03:31:53.751833 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,53.08,2025-05-19 03:31:53.757343 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 03:31:53.771006 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 03:31:56.424273 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 03:31:56.445544 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 03:31:56.461305 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,60.98,2025-05-19 03:31:56.442184 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 03:31:59.017474 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 03:31:59.052025 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 03:31:59.073962 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,65.21,2025-05-19 03:31:59.100833 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 03:32:00.588629 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,61.61,2025-05-19 03:32:00.610917 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 03:32:00.624245 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 03:32:00.69252 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 03:32:04.840531 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 03:32:04.859355 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,80.29,2025-05-19 03:32:04.858107 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 03:32:04.919708 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 03:32:07.101623 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,46.11,2025-05-19 03:32:07.120667 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 03:32:07.124521 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 03:32:07.133972 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 03:32:09.629693 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,55.47,2025-05-19 03:32:09.625317 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 03:32:09.63274 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 03:32:09.611504 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+tAsTe,Sabrina Carpenter,Austin,Clear,,2025-05-19 03:32:12.992171 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clear,,2025-05-19 03:32:13.013894 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clear,,2025-05-19 03:32:13.014246 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clear,80.35,2025-05-19 03:32:13.009482 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 03:32:19.555124 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 03:32:19.573386 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 03:32:19.585047 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,71.26,2025-05-19 03:32:19.572426 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Pink + White,Frank Ocean,San Francisco,Clear,60.04,2025-05-19 03:32:21.214025 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 03:32:21.201132 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 03:32:21.215354 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 03:32:21.222544 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 03:32:23.408798 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 03:32:23.423572 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 03:32:23.429706 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,53.08,2025-05-19 03:32:23.457392 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 03:32:23.813848 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,60.98,2025-05-19 03:32:23.817889 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 03:32:23.859707 UTC,Lyrics preview unavailable.,,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 03:32:27.933111 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,65.21,2025-05-19 03:32:27.947358 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 03:32:27.95186 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 03:32:27.965151 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 03:32:29.89308 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 03:32:29.91324 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 03:32:29.91683 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,61.61,2025-05-19 03:32:29.910818 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 03:32:32.045423 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 03:32:32.068437 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 03:32:32.063728 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,80.42,2025-05-19 03:32:32.062083 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,46.11,2025-05-19 03:32:33.796395 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 03:32:33.766633 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 03:32:33.783798 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 03:32:33.786652 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 03:32:35.646304 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 03:32:35.661715 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,55.47,2025-05-19 03:32:35.661344 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 03:32:35.71758 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 03:32:38.292295 UTC,Lyrics preview unavailable.,,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 03:35:46.336414 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 03:35:46.337407 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,65.21,2025-05-19 03:35:46.400878 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 03:35:46.320802 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,61.61,2025-05-19 03:35:49.836917 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 03:35:49.806879 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 03:35:49.825302 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 03:35:49.821477 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 03:35:51.795354 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 03:35:51.819964 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,80.42,2025-05-19 03:35:51.813729 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 03:35:51.825549 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 03:35:53.51361 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,46.11,2025-05-19 03:35:53.523527 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 03:35:53.543514 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 03:35:53.536966 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 03:35:56.686196 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,53.91,2025-05-19 03:35:56.703924 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 03:35:56.712887 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 03:35:56.71942 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+luther (with SZA),Kendrick Lamar,Austin,Clear,,2025-05-19 03:35:57.671146 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clear,,2025-05-19 03:35:57.69088 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clear,80.35,2025-05-19 03:35:57.699632 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clear,,2025-05-19 03:35:58.09596 UTC,Lyrics preview unavailable.,,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 03:35:58.882026 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 03:35:58.906954 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 03:35:58.901207 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,71.15,2025-05-19 03:35:58.896984 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 03:36:01.347161 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 03:36:01.369998 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 03:36:01.372374 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,60.04,2025-05-19 03:36:01.386114 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 03:36:03.454967 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,53.08,2025-05-19 03:36:03.470633 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 03:36:03.462503 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 03:36:03.470153 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 03:36:07.807607 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 03:36:07.827051 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,60.98,2025-05-19 03:36:07.834065 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 03:36:07.832998 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 03:36:12.703637 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 03:36:12.711919 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,65.21,2025-05-19 03:36:12.718226 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 03:36:12.724798 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 03:36:17.009044 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,61.61,2025-05-19 03:36:17.025598 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 03:36:17.029679 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 03:36:17.029101 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 03:36:26.982194 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 03:36:26.99958 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 03:36:27.006416 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,80.42,2025-05-19 03:36:27.007305 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 03:36:29.694559 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 03:36:29.712892 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 03:36:29.720102 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,46,2025-05-19 03:36:29.737118 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 03:36:33.8704 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,55.47,2025-05-19 03:36:33.886579 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 03:36:33.888548 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 03:36:33.905906 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+tAsTe,Sabrina Carpenter,Austin,Clear,,2025-05-19 03:36:40.792958 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clear,,2025-05-19 03:36:40.813505 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clear,80.35,2025-05-19 03:36:40.813247 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clear,,2025-05-19 03:36:40.819952 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 03:36:46.209005 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,71.28,2025-05-19 03:36:46.236519 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 03:36:46.238972 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 03:36:46.229425 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Pink + White,Frank Ocean,San Francisco,Clear,58.24,2025-05-19 03:36:48.964489 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 03:36:48.957841 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 03:36:48.96606 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 03:36:49.074582 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 03:36:52.434198 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 03:36:52.452556 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,53.08,2025-05-19 03:36:52.445883 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 03:36:52.453432 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 03:36:52.785976 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 03:36:52.766491 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 03:36:52.794594 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,61.02,2025-05-19 03:36:52.790337 UTC,Lyrics preview unavailable.,,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 03:37:03.326318 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 03:37:03.350931 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 03:37:03.34944 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,65.21,2025-05-19 03:37:03.361751 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 03:37:05.31979 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 03:37:05.335078 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 03:37:05.352059 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,61.65,2025-05-19 03:37:05.334496 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 03:37:09.670929 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,80.42,2025-05-19 03:37:09.689035 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 03:37:09.691745 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 03:37:09.705421 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 03:37:11.788606 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 03:37:11.807352 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,46,2025-05-19 03:37:11.810949 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 03:37:11.806081 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Lovers Rock,TV Girl,Seattle,Clouds,55.47,2025-05-19 03:37:14.100058 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 03:37:14.079936 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 03:37:14.104768 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 03:37:14.101619 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 04:23:04.159796 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 04:23:04.33848 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 04:23:04.425337 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,63.97,2025-05-19 04:23:05.332852 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 04:23:10.518413 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,60.51,2025-05-19 04:23:10.58577 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 04:23:10.551782 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 04:23:10.559812 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 04:23:12.106268 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 04:23:12.137332 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 04:23:12.145666 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,79.86,2025-05-19 04:23:12.143115 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 04:23:13.760195 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 04:23:13.718236 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,46.17,2025-05-19 04:23:13.767561 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 04:23:13.759275 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 04:23:16.333198 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 04:23:16.362787 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,52.38,2025-05-19 04:23:16.374387 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 04:23:16.433622 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,79.29,2025-05-19 04:23:16.763521 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,,2025-05-19 04:23:16.760096 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,,2025-05-19 04:23:16.731384 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,,2025-05-19 04:23:16.777815 UTC,Lyrics preview unavailable.,,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 04:23:17.905808 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,70.38,2025-05-19 04:23:17.945957 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 04:23:17.944128 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 04:23:17.948778 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 04:23:20.633814 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 04:23:20.669912 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 04:23:20.67741 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,57.31,2025-05-19 04:23:20.685227 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+Party 4 U,Charli XCX,Denver,Clouds,51.66,2025-05-19 04:23:23.092162 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 04:23:23.055298 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 04:23:23.107309 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 04:23:23.098091 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 04:23:25.646425 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 04:23:25.682155 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,59.43,2025-05-19 04:23:25.716503 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 04:23:25.816289 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 04:23:28.053815 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,63.97,2025-05-19 04:23:28.102743 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 04:23:28.085775 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 04:23:28.098662 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 04:23:30.508261 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 04:23:30.548928 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 04:23:30.559899 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,60.51,2025-05-19 04:23:30.561958 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 04:23:34.796213 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 04:23:34.803155 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 04:23:34.804622 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,79.86,2025-05-19 04:23:34.815245 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 04:23:37.064558 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 04:23:37.080233 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,46.17,2025-05-19 04:23:37.086941 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 04:23:37.081026 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 04:23:38.919694 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 04:23:38.938788 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,52.38,2025-05-19 04:23:38.94998 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 04:23:39.019854 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,,2025-05-19 04:23:44.432042 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,,2025-05-19 04:23:44.459893 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,79.29,2025-05-19 04:23:44.474625 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,,2025-05-19 04:23:44.45609 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 04:23:52.038087 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 04:23:52.052806 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 04:23:52.056712 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,70.38,2025-05-19 04:23:52.058074 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Pink + White,Frank Ocean,San Francisco,Clear,57.31,2025-05-19 04:23:55.22719 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 04:23:55.208517 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 04:23:55.225534 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 04:23:55.231421 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 04:23:56.705803 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 04:23:56.724333 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,51.66,2025-05-19 04:23:56.725811 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 04:23:56.729292 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 04:23:57.084614 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 04:23:57.102839 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,59.43,2025-05-19 04:23:57.102745 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 04:23:57.101849 UTC,Lyrics preview unavailable.,,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 04:24:02.333287 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,63.97,2025-05-19 04:24:02.357308 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 04:24:02.370267 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 04:24:02.421773 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 04:24:06.591664 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 04:24:06.605674 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,60.51,2025-05-19 04:24:06.605462 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 04:24:06.609174 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 04:24:08.919546 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,79.86,2025-05-19 04:24:08.939532 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 04:24:08.938108 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 04:24:08.943278 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,46.17,2025-05-19 04:24:10.827578 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 04:24:10.807196 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 04:24:10.830619 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 04:24:10.822257 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 04:24:12.752747 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 04:24:12.767402 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 04:24:12.779687 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,52.38,2025-05-19 04:24:12.786272 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Test Song,Test Artist,Seattle,Rain,58,2025-05-19 04:34:47.150105 UTC,"I cry every night, alone in the dark",,,
+Test Song,Test Artist,Seattle,Rain,58,2025-05-19 04:34:47.149606 UTC,"I cry every night, alone in the dark",,,
+Test Song,Test Artist,Seattle,Rain,58,2025-05-19 04:34:47.126347 UTC,"I cry every night, alone in the dark",,,
+Test Song,Test Artist,Seattle,Rain,58,2025-05-19 04:34:47.170311 UTC,"I cry every night, alone in the dark",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 04:44:43.918261 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,64.02,2025-05-19 04:44:43.900188 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 04:44:43.834213 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 04:44:43.863163 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 04:44:45.896392 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 04:44:45.906371 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,60.37,2025-05-19 04:44:45.913359 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 04:44:45.906221 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 04:44:47.847264 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 04:44:47.876148 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 04:44:47.875711 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,79.48,2025-05-19 04:44:47.862686 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+No One Noticed,The Marías,Chicago,Clouds,46.08,2025-05-19 04:44:49.361792 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 04:44:49.362632 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 04:44:49.336968 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 04:44:49.378428 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 04:44:51.444438 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 04:44:51.46361 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 04:44:51.479956 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,51.17,2025-05-19 04:44:51.495 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,,2025-05-19 04:44:51.822245 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,,2025-05-19 04:44:51.846403 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,79,2025-05-19 04:44:51.843725 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,,2025-05-19 04:44:51.846004 UTC,Lyrics preview unavailable.,,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 04:44:53.445137 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 04:44:53.464549 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 04:44:53.457933 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,70,2025-05-19 04:44:53.459884 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 04:44:56.180466 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 04:44:56.190029 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,56.41,2025-05-19 04:44:56.200757 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 04:44:56.19263 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 04:44:58.191206 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 04:44:58.213992 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,51.6,2025-05-19 04:44:58.217014 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 04:44:58.223182 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 04:45:01.154683 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 04:45:01.171351 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,58.71,2025-05-19 04:45:01.174637 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 04:45:01.173998 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 04:45:04.428713 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,64.02,2025-05-19 04:45:04.459495 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 04:45:04.45281 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 04:45:04.986701 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 04:45:05.935862 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 04:45:05.956647 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 04:45:05.957307 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,60.37,2025-05-19 04:45:05.959525 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 04:45:10.336851 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 04:45:10.358511 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,79.48,2025-05-19 04:45:10.35816 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 04:45:10.364708 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 04:45:12.730491 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,46.08,2025-05-19 04:45:12.753143 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 04:45:12.758322 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 04:45:12.762749 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+505,Arctic Monkeys,Seattle,Clouds,51.17,2025-05-19 04:45:15.009916 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 04:45:14.995688 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 04:45:15.010207 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 04:45:15.02037 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,,2025-05-19 04:45:17.882938 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,,2025-05-19 04:45:17.911173 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,,2025-05-19 04:45:17.911783 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,79,2025-05-19 04:45:17.907816 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 04:45:24.257977 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 04:45:24.27553 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 04:45:24.279453 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,70,2025-05-19 04:45:24.299873 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 04:45:26.259233 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 04:45:26.284319 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 04:45:26.291605 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,56.41,2025-05-19 04:45:26.299991 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 04:45:28.791273 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 04:45:28.80633 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 04:45:28.810751 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,51.6,2025-05-19 04:45:28.900411 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 04:45:29.18307 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,58.71,2025-05-19 04:45:29.203739 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 04:45:29.204987 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 04:45:29.206546 UTC,Lyrics preview unavailable.,,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 04:45:33.072652 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 04:45:33.087924 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 04:45:33.091986 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,64.02,2025-05-19 04:45:33.088401 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 04:45:35.286541 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,60.37,2025-05-19 04:45:35.3023 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 04:45:35.309482 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 04:45:35.313731 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 04:45:36.731133 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,79.48,2025-05-19 04:45:36.743777 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 04:45:36.752726 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 04:45:36.752443 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 04:45:38.728207 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,46.08,2025-05-19 04:45:38.755466 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 04:45:38.74944 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 04:45:38.752536 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 04:45:40.857181 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 04:45:40.878051 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 04:45:40.888244 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,51.17,2025-05-19 04:45:40.899133 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 04:51:09.192008 UTC,"Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 04:51:09.210983 UTC,"Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 04:51:09.211916 UTC,"Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,64.02,2025-05-19 04:51:09.227396 UTC,"Oh, caught in a bad romance",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,62.98,2025-05-19 05:13:58.101065 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,Neutral,Calm
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 05:13:58.636194 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 05:13:58.752742 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 05:13:58.766512 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,62.98,2025-05-19 05:13:59.685495 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 05:14:00.12386 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,59.56,2025-05-19 05:14:00.150788 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 05:14:00.151204 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 05:14:00.228938 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,59.56,2025-05-19 05:14:00.782144 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,Neutral,Happy
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 05:14:02.330347 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,79.18,2025-05-19 05:14:02.376553 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 05:14:02.381689 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 05:14:02.387964 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,79.18,2025-05-19 05:14:02.394355 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,Neutral,Calm
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 05:14:03.879578 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 05:14:03.906607 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,46.09,2025-05-19 05:14:03.937451 UTC,"Maybe I
+Lost my mind
+No one noticed",,Neutral,Calm
+No One Noticed,The Marías,Chicago,Clouds,46.09,2025-05-19 05:14:03.967816 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 05:14:03.980714 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,50.72,2025-05-19 05:14:06.148704 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 05:14:06.144237 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,50.72,2025-05-19 05:14:06.173329 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,Neutral,Calm
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 05:14:06.110709 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 05:14:06.154317 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,,2025-05-19 05:14:06.517629 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,,2025-05-19 05:14:06.553145 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,78.84,2025-05-19 05:14:06.565442 UTC,Lyrics preview unavailable.,,Neutral,Calm
+luther (with SZA),Kendrick Lamar,Austin,Clouds,78.84,2025-05-19 05:14:06.566408 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,,2025-05-19 05:14:06.562431 UTC,Lyrics preview unavailable.,,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 05:14:08.97413 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 05:14:09.007943 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,69.35,2025-05-19 05:14:09.021857 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,69.35,2025-05-19 05:14:09.046796 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,Neutral,Happy
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 05:14:09.032922 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 05:14:11.993316 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,56.64,2025-05-19 05:14:12.026763 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 05:14:12.030396 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 05:14:12.044315 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,56.64,2025-05-19 05:14:12.046326 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,Mysterious,Happy
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 05:14:14.248465 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 05:14:14.222765 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,51.26,2025-05-19 05:14:14.255885 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 05:14:14.340126 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,51.26,2025-05-19 05:14:14.333947 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,Energetic,Calm
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 05:14:16.805242 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 05:14:16.832376 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,57.88,2025-05-19 05:14:16.846878 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,57.88,2025-05-19 05:14:16.88363 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,Neutral,Calm
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 05:14:16.91724 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 05:14:19.19005 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,62.98,2025-05-19 05:14:19.227484 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 05:14:19.235302 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,62.98,2025-05-19 05:14:19.241201 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,Neutral,Calm
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 05:14:19.234779 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 05:14:21.852268 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 05:14:21.887359 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 05:14:21.900094 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,59.56,2025-05-19 05:14:21.907297 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,59.56,2025-05-19 05:14:22.505322 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,Neutral,Happy
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 05:14:25.18828 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,79.18,2025-05-19 05:14:25.201105 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 05:14:25.201129 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 05:14:25.201241 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,79.18,2025-05-19 05:14:25.255065 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,Neutral,Calm
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 05:14:27.938356 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,46.09,2025-05-19 05:14:27.9502 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 05:14:27.943519 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 05:14:27.920854 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,46.09,2025-05-19 05:14:27.985587 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,Romantic,Calm
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 05:14:30.14117 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,50.72,2025-05-19 05:14:30.161316 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 05:14:30.165439 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 05:14:30.166999 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,50.72,2025-05-19 05:14:30.199573 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,Neutral,Calm
+tAsTe,Sabrina Carpenter,Austin,Clouds,,2025-05-19 05:14:35.689949 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,78.84,2025-05-19 05:14:35.70776 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,Neutral,Calm
+tAsTe,Sabrina Carpenter,Austin,Clouds,,2025-05-19 05:14:35.70318 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,78.84,2025-05-19 05:14:35.705091 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,,2025-05-19 05:14:35.709272 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 05:14:42.759404 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,69.35,2025-05-19 05:14:42.782539 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,69.35,2025-05-19 05:14:42.786124 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,Sad,Happy
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 05:14:42.775565 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 05:14:42.781002 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 05:14:44.838424 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 05:14:44.858909 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,56.64,2025-05-19 05:14:44.859686 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,56.64,2025-05-19 05:14:44.861405 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,Neutral,Happy
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 05:14:44.878596 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 05:14:47.056981 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 05:14:47.074881 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,51.26,2025-05-19 05:14:47.08527 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,Neutral,Calm
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 05:14:47.082186 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,51.26,2025-05-19 05:14:47.077505 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 05:14:47.471342 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 05:14:47.452968 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,57.88,2025-05-19 05:14:47.478506 UTC,Lyrics preview unavailable.,,Neutral,Calm
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,57.88,2025-05-19 05:14:47.470303 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 05:14:47.474929 UTC,Lyrics preview unavailable.,,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 05:14:51.560078 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,62.98,2025-05-19 05:14:51.578418 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,Neutral,Calm
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 05:14:51.587325 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 05:14:51.582638 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,62.98,2025-05-19 05:14:51.578321 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 05:14:53.475574 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,59.56,2025-05-19 05:14:53.4938 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 05:14:53.494281 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,59.56,2025-05-19 05:14:53.499678 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,Romantic,Happy
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 05:14:53.498753 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 05:14:58.939677 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 05:14:58.960907 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 05:14:58.960863 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,79.18,2025-05-19 05:14:58.959303 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,Neutral,Calm
+Wildflower,Billie Eilish,Miami,Clouds,79.18,2025-05-19 05:14:58.977756 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,46.09,2025-05-19 05:15:00.909553 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,Neutral,Calm
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 05:15:00.8832 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,46.09,2025-05-19 05:15:00.913824 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 05:15:00.907375 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 05:15:00.943715 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 05:15:05.372484 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 05:15:05.400022 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,50.72,2025-05-19 05:15:05.392925 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,Neutral,Calm
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 05:15:05.399273 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,50.72,2025-05-19 05:15:05.396425 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 05:22:37.270501 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,62.82,2025-05-19 05:22:37.302247 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 05:22:37.295803 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+"Good Luck, Babe!",Chappell Roan,New York,Clouds,,2025-05-19 05:22:37.29492 UTC,"It's fine, it's cool
+You can say that we are nothing, but you know the truth
+And guess I'm the fool",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 05:22:39.28813 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 05:22:39.314429 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,,2025-05-19 05:22:39.313493 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+BIRDS OF A FEATHER,Billie Eilish,Los Angeles,Clear,60.03,2025-05-19 05:22:39.324158 UTC,"(But I wanna stay)
+I want you to stay
+'Til I'm in the grave",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 05:22:41.436955 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 05:22:41.447794 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,,2025-05-19 05:22:41.460649 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+Abracadabra,Lady Gaga,Miami,Clouds,79.41,2025-05-19 05:22:41.459209 UTC,"Abracadabra, abracadabra
+Abracadabra, abracadabra
+Pay the toll to the angels",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 05:22:43.122187 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,46.06,2025-05-19 05:22:43.150486 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 05:22:43.136987 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+No One Noticed,The Marías,Chicago,Clouds,,2025-05-19 05:22:43.141185 UTC,"Maybe I
+Lost my mind
+No one noticed",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 05:22:45.222279 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 05:22:45.24765 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,50.27,2025-05-19 05:22:45.244149 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+See You Again (feat. Kali Uchis),"Tyler, the Creator",Seattle,Clouds,,2025-05-19 05:22:45.240497 UTC,"Okay, okay, okay, okay, okay, okay, o—
+You live in my dream state
+Relocate my fantasy",,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,,2025-05-19 05:22:45.629575 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,,2025-05-19 05:22:45.646618 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,78.84,2025-05-19 05:22:45.648078 UTC,Lyrics preview unavailable.,,,
+luther (with SZA),Kendrick Lamar,Austin,Clouds,,2025-05-19 05:22:45.653775 UTC,Lyrics preview unavailable.,,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 05:22:47.590529 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 05:22:47.610247 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,,2025-05-19 05:22:47.601771 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+What Was That,Lorde,Atlanta,Clear,69.35,2025-05-19 05:22:47.604854 UTC,"A place in the city
+A chair and a bed
+I cover up all the mirrors",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 05:22:50.410107 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 05:22:50.421812 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,56.64,2025-05-19 05:22:50.427251 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+espresso,Sabrina Carpenter,San Francisco,Clear,,2025-05-19 05:22:50.430491 UTC,"Now he's thinkin' 'bout me every night, oh
+Is it that sweet? I guess so
+Say you can't sleep, baby, I know",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 05:22:52.399045 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 05:22:52.410621 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,,2025-05-19 05:22:52.428805 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+Party 4 U,Charli XCX,Denver,Clouds,51.26,2025-05-19 05:22:52.501349 UTC,"I only threw this party for you
+Only threw this party for you, for you, for you
+I was hopin' you would come through",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 05:22:54.654379 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 05:22:54.666709 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,,2025-05-19 05:22:54.67066 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+guess featuring billie eilish,Charli XCX,Boston,Clouds,57.42,2025-05-19 05:22:54.676932 UTC,"Hey, Billie, you there?
+Uh-uh
+You wanna guess the colour of my underwear",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 05:22:57.296257 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 05:22:57.315011 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,62.82,2025-05-19 05:22:57.321902 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Die With A Smile,Lady Gaga,New York,Clouds,,2025-05-19 05:22:57.311306 UTC,"(Ooh, ooh)
+I, I just woke up from a dream
+Where you and I had to say goodbye",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 05:22:59.774439 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,60.03,2025-05-19 05:22:59.791484 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 05:22:59.783104 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Von Dutch,Charli XCX,Los Angeles,Clear,,2025-05-19 05:22:59.793761 UTC,"It's okay to just admit that you're jealous of me
+Yeah, I heard you talk about me, that's the word on the street
+You're obsessing, just confess it, put your hands up",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 05:23:05.17894 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,79.41,2025-05-19 05:23:05.195395 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 05:23:05.198631 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Poker Face,Lady Gaga,Miami,Clouds,,2025-05-19 05:23:05.194762 UTC,"Mum-mum-mum-mah
+Mum-mum-mum-mah
+Mum-mum-mum-mah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 05:23:07.689759 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 05:23:07.702927 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,,2025-05-19 05:23:07.69959 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+Judas,Lady Gaga,Chicago,Clouds,46.06,2025-05-19 05:23:07.704592 UTC,"Woah-woah-woah-woah-woah
+I'm in love with Juda-as, Juda-as
+Woah-woah-woah-woah-woah",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 05:23:09.572795 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,50.27,2025-05-19 05:23:09.587006 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 05:23:09.581663 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+505,Arctic Monkeys,Seattle,Clouds,,2025-05-19 05:23:09.59025 UTC,"I'm going back to 505
+If it's a seven hour flight or a forty-five minute drive
+In my imagination, you're waitin' lyin' on your side",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,,2025-05-19 05:23:12.313749 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,,2025-05-19 05:23:12.329391 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,78.84,2025-05-19 05:23:12.343238 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+tAsTe,Sabrina Carpenter,Austin,Clouds,,2025-05-19 05:23:12.328681 UTC,"D.A.
+Hah
+Slide on it pimp game with my pinky ring",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 05:23:19.54028 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 05:23:19.55979 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,69.35,2025-05-19 05:23:19.558163 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Creep,Radiohead,Atlanta,Clear,,2025-05-19 05:23:19.559723 UTC,"When you were here before, couldn't look you in the eye
+You're just like an angel, your skin makes me cry
+You float like a feather in a beautiful world",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 05:23:21.47507 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 05:23:21.466395 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,56.64,2025-05-19 05:23:21.48244 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Pink + White,Frank Ocean,San Francisco,Clear,,2025-05-19 05:23:21.451487 UTC,"Yeah, yeah, oh (Woo)
+Yeah, yeah, yeah
+That's the way every day goes",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 05:23:23.202721 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 05:23:23.215823 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,,2025-05-19 05:23:23.238 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+Like Him (feat. Lola Young),"Tyler, the Creator",Denver,Clouds,51.3,2025-05-19 05:23:23.224658 UTC,"Damn, nigga, every time I look at you, I swear to God
+Nigga, you got that nigga feet
+You got that nigga body",,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 05:23:23.601609 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 05:23:23.589094 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,,2025-05-19 05:23:23.60283 UTC,Lyrics preview unavailable.,,,
+All The Stars (with SZA),Kendrick Lamar,Boston,Clouds,57.42,2025-05-19 05:23:23.615483 UTC,Lyrics preview unavailable.,,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 05:23:27.909606 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 05:23:27.926334 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,62.82,2025-05-19 05:23:27.926047 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Bad Romance,Lady Gaga,New York,Clouds,,2025-05-19 05:23:27.930565 UTC,"Gaga talked to Grazia about writing this record saying:
+Oh, caught in a bad romance
+Oh, caught in a bad romance",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 05:23:29.702305 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 05:23:29.71256 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,60.03,2025-05-19 05:23:29.717031 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Ribs,Lorde,Los Angeles,Clear,,2025-05-19 05:23:29.71346 UTC,"The drink you spilt all over me
+""Lover's Spit"" left on repeat
+My mum and dad let me stay home",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 05:23:31.773949 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 05:23:31.762008 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,,2025-05-19 05:23:31.77387 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Wildflower,Billie Eilish,Miami,Clouds,79.41,2025-05-19 05:23:31.79891 UTC,"Things fall apart
+And time breaks your heart
+I wasn't there, but I know",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 05:23:33.62226 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,46.06,2025-05-19 05:23:33.639674 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 05:23:33.636415 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Pink Pony Club,Chappell Roan,Chicago,Clouds,,2025-05-19 05:23:33.638977 UTC,"I know you wanted me to stay
+But I can't ignore the crazy visions of me in L.A.
+And I heard that there's a special place",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 05:23:35.474714 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,50.27,2025-05-19 05:23:35.496494 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 05:23:35.492831 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
+Lovers Rock,TV Girl,Seattle,Clouds,,2025-05-19 05:23:35.492601 UTC,"Are you sick of me?
+Would you like to be?
+I'm tryin' to tell you somethin'",,,
