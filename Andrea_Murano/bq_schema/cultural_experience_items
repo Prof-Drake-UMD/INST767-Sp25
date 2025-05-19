@@ -1,10 +1,12 @@
 CREATE TABLE cultural_experience_items (
+  book_id STRING,
   book_title STRING,
   book_author STRING,
   book_first_publish_year INT64,
   book_language STRING,
   book_url STRING,
 
+  object_id STRING,
   artwork_title STRING,
   artwork_artist STRING,
   artwork_medium STRING,
@@ -12,6 +14,7 @@ CREATE TABLE cultural_experience_items (
   artwork_url STRING,
   artwork_image_url STRING,
 
+  track_id STRING,
   track_title STRING,
   track_artist STRING,
   album_title STRING,
