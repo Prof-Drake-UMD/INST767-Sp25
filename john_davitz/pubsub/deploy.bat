@@ -1,0 +1,1 @@
+gcloud functions deploy transform_api_output --runtime python311 --trigger-topic=api-output --entry-point=fetch_and_upload --region=us-central1 --source=.

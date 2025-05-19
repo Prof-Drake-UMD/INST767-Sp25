@@ -4,8 +4,10 @@ import pandas as pd
 import io
 from google.cloud import storage
 import os
+from google.cloud import pubsub_v1
 
 def fetch_and_upload(event, context):
+    combined_file = False
     # Decode the Pub/Sub message
     if "data" not in event:
         print("No data in event")
@@ -22,7 +24,10 @@ def fetch_and_upload(event, context):
     # Only process files that start with "metro" and end with .csv
     if not file_name.startswith("metro") or not file_name.endswith(".csv"):
         print("Not a metro CSV file — still running combination")
-        
+
+    if file_name.startswith('combined'):
+        combined_file=True
+        print("Combined file detected")
 
     # Combine all matching metro*.csv files in the bucket
     storage_client = storage.Client()
@@ -32,6 +37,20 @@ def fetch_and_upload(event, context):
     # Only process files in the "output/" folder
     if not file_name.startswith("output/"):
         print(f"Ignoring file outside output/: {file_name}")
+        if combined_file:
+            print("Triggering bigquery script")
+            #call a pubsub to insert to big query 
+            project_id = "instfinal-459621"
+            topic_id = "transformation-complete"
+
+            publisher = pubsub_v1.PublisherClient()
+            topic_path = publisher.topic_path(project_id, topic_id)
+
+            #dont sent data just blsnk message
+            message = b'{}'
+
+            future = publisher.publish(topic_path, message)
+            print(f"Published message ID: {future.result()}")
         return
 
     metro_blobs = [b for b in blobs if b.name.startswith("output/metro") and b.name.endswith(".csv")]
@@ -53,5 +72,6 @@ def fetch_and_upload(event, context):
     output_blob_name = f"combined_output/combined_metro.csv"
     output_blob = bucket.blob(output_blob_name)
     output_blob.upload_from_string(combined_df.to_csv(index=False), content_type="text/csv")
+
 
     print(f"✅✅ Combined CSV written to {output_blob_name}")
