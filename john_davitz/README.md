@@ -40,7 +40,7 @@ Trigger       \                                            /     Bucket Storage 
 
 
 ### Database schema
-
+!(https://github.com/Prof-Drake-UMD/INST767-Sp25/blob/main/john_davitz/BigQuery_Screenshot.png)
 #### Weather Table
  - date - DATE
  - mean_temp - FLOAT64
