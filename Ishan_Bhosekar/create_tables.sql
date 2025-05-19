@@ -10,7 +10,7 @@ CREATE TABLE `climate-data-pipeline-457720.climate_data.weather` (
   high_humidity_flag INT64
 );
 
-/*  Creating the Air_Quality Table  */
+/* Creating the Air_Quality Table */
 CREATE TABLE `climate-data-pipeline-457720.climate_data.air_quality` (
   city STRING,
   timestamp TIMESTAMP,
