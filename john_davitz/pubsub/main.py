@@ -78,7 +78,7 @@ def fetch_and_upload(event, context):
     dest_weather = bucket.copy_blob(source_weather, bucket, 'combined_output/final_weather.csv')
 
     source_traffic = bucket.blob("output/traffic.csv")
-    dest_traffic = bucket.copy_blob(source_weather, bucket, 'combined_output/final_traffic.csv')
+    dest_traffic = bucket.copy_blob(source_traffic, bucket, 'combined_output/final_traffic.csv')
 
 
 

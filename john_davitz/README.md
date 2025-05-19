@@ -1,7 +1,8 @@
-# README
 
 # NYC Transit Tracker
 This data pipeline aims to determine if weather has any effect on the usage of public transportation in the biggest city in the United States. 
+
+Unfortunatly the main inspiration for this project - NYC Congestion tolls which is claimed to have drasticly reduced traffic in downtown NYC is not reflected as most data only goes to Dec. 2024
 
 The project pulls data from three different sources
 
@@ -25,7 +26,27 @@ This was the largest dataset that needed to be aggregated. Each row of the respo
 CloudRun Jobs run inside of a Docker container were used to handle this API.
 
 #### Weather API
-The Weather data from the Open-Metro dataset was highly customizable and through the parameters sent to the API the exact data needed was able to be requested and only the formatting for the data had to be adjusted to transform it to a tabular structure for import into BigQuery
+The Weather data from the Open-Metro dataset was highly customizable and through the parameters sent to the API the exact data needed was able to be requested and only the formatting for the data had to be adjusted to transform it to a tabular structure for import into BigQuery.
+
+Weather contains a weathercode that corresponds to the below:
+| Code           | Description                                      |
+|----------------|--------------------------------------------------|
+| 0              | Clear sky                                        |
+| 1, 2, 3        | Mainly clear, partly cloudy, and overcast        |
+| 45, 48         | Fog and depositing rime fog                      |
+| 51, 53, 55     | Drizzle: Light, moderate, and dense intensity    |
+| 56, 57         | Freezing Drizzle: Light and dense intensity      |
+| 61, 63, 65     | Rain: Slight, moderate and heavy intensity       |
+| 66, 67         | Freezing Rain: Light and heavy intensity         |
+| 71, 73, 75     | Snow fall: Slight, moderate, and heavy intensity |
+| 77             | Snow grains                                      |
+| 80, 81, 82     | Rain showers: Slight, moderate, and violent      |
+| 85, 86         | Snow showers slight and heavy                    |
+| 95 *           | Thunderstorm: Slight or moderate                 |
+| 96, 99 *       | Thunderstorm with slight and heavy hail          |
+
+
+
 A CloudRun Function was used for this API.
 
 ### Pipline Process
@@ -58,4 +79,4 @@ Trigger       \                                            /     Bucket Storage 
 
 #### Traffic 
  - date - DATE
- - traffic_volume - INT
+ - vol - INT

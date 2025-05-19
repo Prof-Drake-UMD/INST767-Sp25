@@ -2,9 +2,7 @@
 
 CREATE TABLE dataset.Traffic (
   date DATE,
-  segment STRING,
-  reading_date DATE,
-  daily_sum FLOAT64
+  vol FLOAT64
 );
 
 CREATE TABLE dataset.Metro (
