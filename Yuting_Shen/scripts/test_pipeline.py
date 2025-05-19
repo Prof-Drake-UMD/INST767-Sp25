@@ -13,8 +13,8 @@ import warnings
 # Add the src directory to the path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from Yuting_Shen.src.pipeline.integration_pipeline import IntegrationPipeline
-from Yuting_Shen.src.utils.logging_utils import setup_logger
+from src.pipeline.integration_pipeline import IntegrationPipeline
+from src.utils.logging_utils import setup_logger
 
 
 def run_test():

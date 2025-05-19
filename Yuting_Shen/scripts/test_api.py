@@ -12,9 +12,9 @@ import json
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import API clients
-from Yuting_Shen.src.ingest.sports_api import SportsAPI
-from Yuting_Shen.src.ingest.youtube_api import YouTubeAPI
-from Yuting_Shen.src.ingest.trends_api import GoogleTrendsAPI
+from src.ingest.sports_api import SportsAPI
+from src.ingest.youtube_api import YouTubeAPI
+from src.ingest.trends_api import GoogleTrendsAPI
 
 
 def test_sports_api():

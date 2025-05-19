@@ -8,6 +8,8 @@ import json
 import requests
 from datetime import datetime
 import logging
+import functions_framework
+from google.cloud import storage
 
 # Configure logging
 logging.basicConfig(
@@ -243,3 +245,69 @@ if __name__ == "__main__":
         event_id = first_event["idEvent"]
         event_details = api.get_event_details(event_id)
         print(f"Retrieved details for event {event_id}")
+
+
+# Add this function after the class definition
+@functions_framework.http
+def get_past_events(request):
+    """
+    Cloud Function HTTP entry point to get past events for a league.
+
+    Args:
+        request (flask.Request): HTTP request object
+
+    Returns:
+        dict: JSON response
+    """
+    # Parse request parameters
+    request_json = request.get_json(silent=True)
+    request_args = request.args
+
+    if request_json and 'league_id' in request_json:
+        league_id = request_json['league_id']
+    elif request_args and 'league_id' in request_args:
+        league_id = request_args['league_id']
+    else:
+        return {"error": "No league_id specified"}, 400
+
+    # Optional parameters
+    limit = 15
+    start_date = None
+    end_date = None
+
+    if request_json:
+        limit = request_json.get('limit', limit)
+        start_date = request_json.get('start_date')
+        end_date = request_json.get('end_date')
+    elif request_args:
+        limit = request_args.get('limit', limit)
+        start_date = request_args.get('start_date')
+        end_date = request_args.get('end_date')
+
+    # Initialize API and get events
+    api = SportsAPI()
+    events_data = api.get_past_events(league_id, start_date, end_date, limit)
+
+    # Save to Cloud Storage if GCP project is available
+    try:
+        project_id = os.environ.get('GOOGLE_CLOUD_PROJECT')
+        if project_id:
+            # Create a timestamp for the filename
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            bucket_name = f"{project_id}-raw-data"
+            blob_name = f"sportsdb/events_{league_id}_{timestamp}.json"
+
+            # Initialize storage client
+            storage_client = storage.Client()
+            bucket = storage_client.bucket(bucket_name)
+            blob = bucket.blob(blob_name)
+
+            # Upload data to GCS
+            blob.upload_from_string(
+                json.dumps(events_data),
+                content_type='application/json'
+            )
+    except Exception as e:
+        print(f"Error saving to Cloud Storage: {str(e)}")
+
+    return events_data

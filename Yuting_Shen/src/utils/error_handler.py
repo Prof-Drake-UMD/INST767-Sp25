@@ -15,9 +15,9 @@ import logging
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import pipeline modules
-from Yuting_Shen.src.pipeline.integration_pipeline import IntegrationPipeline
-from Yuting_Shen.src.utils.logging_utils import setup_logger, log_pipeline_start, log_pipeline_end
-from Yuting_Shen.src.utils.error_handler import handle_error, wrap_with_error_handling
+from src.pipeline.integration_pipeline import IntegrationPipeline
+from src.utils.logging_utils import setup_logger, log_pipeline_start, log_pipeline_end
+from src.utils.error_handler import handle_error, wrap_with_error_handling
 
 def parse_args():
     """Parse command line arguments."""

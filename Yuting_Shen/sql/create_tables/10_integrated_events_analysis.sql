@@ -13,8 +13,8 @@ CREATE OR REPLACE TABLE sports_analytics.integrated_events_analysis (
   away_score INT64,
 
   -- Video metrics
-  related_videos ARRAY
-    STRUCT
+  related_videos ARRAY<
+    STRUCT<
       video_id STRING,
       title STRING,
       published_at TIMESTAMP,
@@ -29,8 +29,8 @@ CREATE OR REPLACE TABLE sports_analytics.integrated_events_analysis (
   video_count INT64,
 
   -- Search interest metrics
-  search_metrics ARRAY
-    STRUCT
+  search_metrics ARRAY<
+    STRUCT<
       keyword STRING,
       date DATE,
       interest_score INT64
