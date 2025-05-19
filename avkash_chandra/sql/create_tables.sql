@@ -1,12 +1,12 @@
-
-CREATE TABLE song_insights (
+CREATE TABLE song_weather (
     song_title STRING,
     artist STRING,
-    lyrics_url STRING,
-    lastfm_listeners INT64,
-    lastfm_playcount STRING,
-    temperature_F FLOAT64,
+    city STRING,
     weather_main STRING,
+    temperature FLOAT64,
     weather_description STRING,
-    city STRING
+    lyrics_preview STRING,         -- instead of lyrics_url
+    song_mood STRING,
+    weather_mood STRING,
+    ingested_at TIMESTAMP
 );
