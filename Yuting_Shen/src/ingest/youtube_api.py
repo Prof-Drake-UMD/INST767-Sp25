@@ -11,6 +11,9 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from dotenv import load_dotenv
 
+import functions_framework
+from google.cloud import storage
+
 # Load environment variables
 load_dotenv()
 
@@ -380,3 +383,88 @@ if __name__ == "__main__":
         if details:
             print(f"View count: {details['statistics'].get('viewCount', 'unknown')}")
             print(f"Like count: {details['statistics'].get('likeCount', 'unknown')}")
+
+# Add this function after the class definition
+@functions_framework.http
+def search_sports_videos(request):
+    """
+    Cloud Function HTTP entry point to search for sports videos.
+
+    Args:
+        request (flask.Request): HTTP request object
+
+    Returns:
+        dict: JSON response
+    """
+    # Parse request parameters
+    request_json = request.get_json(silent=True)
+    request_args = request.args
+
+    if request_json and 'query' in request_json:
+        query = request_json['query']
+    elif request_args and 'query' in request_args:
+        query = request_args['query']
+    else:
+        return {"error": "No query specified"}, 400
+
+    # Optional parameters
+    max_results = 10
+    published_after = None
+    published_before = None
+
+    if request_json:
+        max_results = request_json.get('max_results', max_results)
+        published_after = request_json.get('published_after')
+        published_before = request_json.get('published_before')
+    elif request_args:
+        max_results = request_args.get('max_results', max_results)
+        published_after = request_args.get('published_after')
+        published_before = request_args.get('published_before')
+
+    # Get API key
+    api_key = os.environ.get('YOUTUBE_API_KEY')
+    if not api_key:
+        return {"error": "YouTube API key not configured"}, 500
+
+    # Initialize API and search videos
+    api = YouTubeAPI(api_key)
+    videos = api.search_sports_videos(query, max_results, published_after, published_before)
+
+    # If no videos were found, return an empty result
+    if not videos:
+        return {"results": [], "count": 0}
+
+    # Get details for each video
+    video_ids = [video['id']['videoId'] for video in videos]
+    video_details = api.fetch_video_details(video_ids)
+
+    # Combine results
+    result = {
+        "search_results": videos,
+        "video_details": video_details,
+        "count": len(videos)
+    }
+
+    # Save to Cloud Storage if GCP project is available
+    try:
+        project_id = os.environ.get('GOOGLE_CLOUD_PROJECT')
+        if project_id:
+            # Create a timestamp for the filename
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            bucket_name = f"{project_id}-raw-data"
+            blob_name = f"youtube/videos_{timestamp}.json"
+
+            # Initialize storage client
+            storage_client = storage.Client()
+            bucket = storage_client.bucket(bucket_name)
+            blob = bucket.blob(blob_name)
+
+            # Upload data to GCS
+            blob.upload_from_string(
+                json.dumps(result),
+                content_type='application/json'
+            )
+    except Exception as e:
+        print(f"Error saving to Cloud Storage: {str(e)}")
+
+    return result

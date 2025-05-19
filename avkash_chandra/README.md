@@ -1,11 +1,85 @@
-The 3 APIs I selected for this objective was from my taste in music on listening on Spotify.
+# Real-Time Music & Weather Data Pipeline on GCP
 
-For this project, the three APIs I chose that provide a vast efficiency of music-related data and the different ways they can be analyzed together are as follows:
+This project implements a real-time data pipeline to ingest music and weather data from multiple public APIs, process it using Google Cloud Functions, and load the transformed data into BigQuery for analysis. The pipeline uses Google Cloud Pub/Sub to enable decoupled and scalable message passing between ingestion and transformation components.
 
-Spotify API – The Spotify API provides access to music tracks, albums, artists, and playlists, and also current user's top tracks and track features. This is were the bulk of the music data will be coming from especially as I use Spotify as my main app too.
 
-Genius API – The Genius API provides detailed song lyrics and artist information, giving insights into the meaning and background of the music and the artist. This was something I was also able to find through the publc API website as sometimes in songs I would want to know the meaning and Genius provides a great insight on it.
 
-Last.fm API – The Last.fm API tracks insights into song popularity, trends, and information about the songs. This API was seleclted due to finding data on some statistical measures such as trends and engagement.
+Folder created using firstname_lastname format  
+Selected 3 dynamic APIs with regularly updated data:
+- Last.fm API
+- Genius API
+- OpenWeatherMap API  
+Built a workflow that:
+- Pulls, enriches, and transforms API data
+- Publishes data through Google Pub/Sub
+- Loads data into BigQuery  
+Created analytical queries on the integrated dataset  
 
-The objective I am going to use the APIs together is by using Spotify's data on songs and artists and then using Genius data on detailed lyrics on songs for better meaning and then finally using the Last.fm data for popularity trends and engagent data. I am then able to anaylze songs and artists and dive into the meanings of what the artist is trying to portray while looking at trends and engagement for those songs.
+
+
+## Architecture Overview
+
+The data pipeline follows these main stages:
+
+### 1. Data Ingestion (Cloud Functions — HTTP Triggered)
+- **Last.fm**: Fetches top tracks by tag or artist
+- **Genius**: Fetches lyrics and metadata
+- **OpenWeatherMap**: Retrieves weather data for given locations
+
+> Each function publishes raw JSON to a dedicated **Pub/Sub topic** for downstream processing.
+
+### 2. Data Transformation (Cloud Functions — Pub/Sub Triggered)
+- Subscriber functions consume messages from Pub/Sub
+- Data is validated, enriched, and standardized
+- Final processed data is loaded into **BigQuery tables**
+- Includes retry logic for handling race conditions and transient errors
+
+### 3. Storage and Analysis (BigQuery)
+- Tables: `merged_songs`, `song_weather`, `song_moods`, etc.
+- Tables are partitioned by `ingest_timestamp` for performance
+- Analytical queries extract trends and correlations between music and weather
+
+---
+
+## 📁 Project Structure
+
+Ingestion Functions
+
+Transformation Functions
+
+BigQuery Setup
+
+Integration & Orchestration Scripts
+
+Data Output & Analysis
+```
+avkash_chandra/
+│
+├── ingest_function/                    # Cloud Function (HTTP triggered) - Ingests API data
+│   ├── main.py                         # Entry point for GCP deployment
+│   ├── ingest_pub.py                   # Publishes enriched API data to Pub/Sub
+│   ├── Genius.py                       # Genius API call and response handler
+│   ├── Lastfm.py                       # Last.fm API call and response handler
+│   ├── Openweather.py                  # OpenWeatherMap API call and response handler
+│   ├── inspect_json.py                 # Tool for exploring raw API responses
+│   ├── test_genius.py                  # Local test script for Genius ingestion
+│   ├── weather_data.json               # Sample API response for testing
+│   └── requirements.txt                # Dependencies for ingestion function
+│
+├── transform_function_cloud/           # Cloud Function (Pub/Sub triggered) - Transforms & loads data
+│   ├── main.py                         # Entry point for subscriber/transformer
+│   └── requirements.txt                # Dependencies for transformation function
+│
+├── create_tables.sql                   # BigQuery table definitions (DDL)
+├── create_tables.py                    # Script to create BigQuery tables programmatically
+├── build_dataset.py                    # Inserts example/test data into BigQuery
+│
+├── merged.py                           # Locally merges all data sources for testing
+├── run_all.py                          # Orchestrates ingestion and transformation locally
+├── export_csv.py                       # Exports BigQuery tables to CSV
+├── output.csv                          # Sample output file
+│
+├── queries.sql                         # SQL queries for analysis
+├── example_queries.py                  # Runs queries on BigQuery
+└── script.py                           # Utility runner for quick tests
+```

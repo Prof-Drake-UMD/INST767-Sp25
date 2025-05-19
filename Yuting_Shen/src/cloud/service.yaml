@@ -1,0 +1,20 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: sports-data-transform
+spec:
+  template:
+    spec:
+      containers:
+      - image: gcr.io/PROJECT_ID/sports-data-transform
+        resources:
+          limits:
+            memory: 1Gi
+            cpu: 1
+        env:
+        - name: YOUTUBE_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: youtube-api-key
+              key: latest
+        timeoutSeconds: 900

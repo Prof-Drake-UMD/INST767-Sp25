@@ -1,0 +1,32 @@
+
+# Core libraries
+requests==2.31.0
+python-dotenv==1.0.0
+pandas==2.0.3
+
+
+# Google API libraries
+google-api-python-client==2.97.0
+google-auth==2.22.0
+google-auth-oauthlib==1.0.0
+google-auth-httplib2==0.1.0
+
+
+# Google Trends API
+pytrends==4.9.2
+
+
+# Data processing
+numpy==1.24.3
+pytz==2023.3
+
+# Cloud libraries (for future use)
+google-cloud-storage==2.10.0
+google-cloud-bigquery==3.11.4
+google-cloud-pubsub==2.18.4
+
+# Date utilities
+python-dateutil==2.8.2
+
+# For web server
+flask==2.0.1

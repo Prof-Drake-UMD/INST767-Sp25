@@ -13,7 +13,7 @@ from datetime import datetime
 # Add the src directory to the path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from Yuting_Shen.src.utils.logging_utils import setup_logger
+from src.utils.logging_utils import setup_logger
 
 # Schema definitions based on BigQuery tables
 SCHEMA_DEFINITIONS = {
