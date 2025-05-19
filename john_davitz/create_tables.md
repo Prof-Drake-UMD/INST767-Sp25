@@ -1,7 +1,6 @@
 ## Traffic Table
 
 CREATE TABLE dataset.Traffic (
-  id STRING,
   date DATE,
   segment STRING,
   reading_date DATE,
@@ -9,14 +8,12 @@ CREATE TABLE dataset.Traffic (
 );
 
 CREATE TABLE dataset.Metro (
-  id STRING,
   date DATE,
   ridership FLOAT64
 );
 
 
 CREATE TABLE dataset.Weather (
-  id STRING,
   date DATE,
   mean_temp FLOAT64, 
   max_temp FLOAT64,
