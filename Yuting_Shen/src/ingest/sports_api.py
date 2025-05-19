@@ -23,9 +23,22 @@ class SportsAPI:
     Retrieve sports data including events, teams, and leagues.
     """
 
-    def __init__(self):
-        """Initialize the SportsAPI client."""
-        self.base_url = "https://www.thesportsdb.com/api/v1/json/3"
+    def __init__(self, api_key=None):
+        """
+        Initialize the SportsAPI client.
+
+        Args:
+            api_key (str, optional): API key for TheSportsDB (needed for premium tier)
+        """
+        # Default to the free tier (v3) if no API key is provided
+        self.api_key = api_key
+
+        if self.api_key:
+            # Use premium tier (v1) with API key
+            self.base_url = f"https://www.thesportsdb.com/api/v1/json/{self.api_key}"
+        else:
+            # Use free tier (v3)
+            self.base_url = "https://www.thesportsdb.com/api/v1/json/3"
 
     def _make_request(self, endpoint, params=None):
         """
@@ -104,27 +117,42 @@ class SportsAPI:
 
         return response
 
-    def get_past_events(self, league_id, limit=15):
+    def get_past_events(self, league_id, start_date=None, end_date=None, limit=15):
         """
-        Get past events for a specific league.
+        Get past events for a specific league within a date range.
 
         Args:
             league_id (str): ID of the league
+            start_date (str, optional): Start date in YYYY-MM-DD format
+            end_date (str, optional): End date in YYYY-MM-DD format
             limit (int, optional): Number of events to return
 
         Returns:
             dict: JSON response with events data
         """
-        response = self._make_request(f"eventspastleague.php", {"id": league_id})
+        params = {"id": league_id}
+
+        if start_date and end_date:
+            # Some APIs support date range filtering
+            params["start_date"] = start_date
+            params["end_date"] = end_date
+            endpoint = "eventsseason.php"  # API endpoint for season events
+        else:
+            endpoint = "eventspastleague.php"  # API endpoint for past events
+
+        response = self._make_request(endpoint, params)
 
         # Save raw data to file with timestamp
-        self._save_raw_data(response, f"past_events_league_{league_id}")
+        date_suffix = f"_{start_date}_to_{end_date}" if start_date and end_date else ""
+        self._save_raw_data(response, f"past_events_league_{league_id}{date_suffix}")
 
         # Limit the number of events if specified
         if "events" in response and isinstance(response["events"], list) and limit:
             response["events"] = response["events"][:limit]
 
         return response
+
+
 
     def get_event_details(self, event_id):
         """
@@ -171,23 +199,6 @@ class SportsAPI:
 
         return response
 
-    def search_teams(self, team_name):
-        """
-        Search for teams by name.
-
-        Args:
-            team_name (str): Name of the team to search for
-
-        Returns:
-            dict: JSON response with search results
-        """
-        response = self._make_request(f"searchteams.php", {"t": team_name})
-
-        # Save raw data to file with timestamp
-        self._save_raw_data(response, f"team_search_{team_name}")
-
-        return response
-
     def _save_raw_data(self, data, prefix):
         """
         Save raw API response to a file with timestamp.
@@ -211,8 +222,9 @@ class SportsAPI:
 
 # Example usage
 if __name__ == "__main__":
+
     # Initialize the API client
-    api = SportsAPI()
+    api = SportsAPI("308460")
 
     # Example: Get information about NFL (ID: 4391)
     league_data = api.get_league("4391")
@@ -220,14 +232,14 @@ if __name__ == "__main__":
     # Example: Get past events for NFL
     events_data = api.get_past_events("4391", limit=5)
 
-    search_events = api.search_events("Chiefs vs Eagles")
+    #search_events = api.search_events("Philadelphia Eagles vs Kansas City Chiefs")
 
     # Print the first event
     if "events" in events_data and events_data["events"]:
         first_event = events_data["events"][0]
         print(f"Event: {first_event['strEvent']} on {first_event['dateEvent']}")
 
-        # Get details for this event
+        # Get details for the first event
         event_id = first_event["idEvent"]
         event_details = api.get_event_details(event_id)
         print(f"Retrieved details for event {event_id}")
