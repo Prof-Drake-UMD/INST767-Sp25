@@ -157,14 +157,12 @@ def flatten_and_export(result, output_csv='output/cultural_experience_items.csv'
     artworks = result.get('artworks', [])
     music = result.get('music', [])
     match_type = result.get('step', None)
-    ingest_ts = book.get('ingest_ts')  # or use datetime.utcnow().isoformat() for all
+    ingest_ts = book.get('ingest_ts')
 
-    # Ensure at least one row, use max length of artworks/music or 1 if both empty
     max_len = max(len(artworks), len(music), 1)
     for i in range(max_len):
         art = artworks[i] if i < len(artworks) else {}
         mus = music[i] if i < len(music) else {}
-
         row = {
             "book_id": book.get("book_id"),
             "book_title": book.get("title"),
@@ -189,7 +187,14 @@ def flatten_and_export(result, output_csv='output/cultural_experience_items.csv'
             "ingest_ts": ingest_ts
         }
         rows.append(row)
-    df = pd.DataFrame(rows)
+
+    columns = [
+        "book_id", "book_title", "book_author", "book_first_publish_year", "book_language", "book_url",
+        "object_id", "artwork_title", "artwork_artist", "artwork_medium", "artwork_date", "artwork_url", "artwork_image_url",
+        "track_id", "track_title", "track_artist", "album_title", "track_release_date", "track_preview_url",
+        "match_type", "ingest_ts"
+    ]
+    df = pd.DataFrame(rows, columns=columns)
     df.to_csv(output_csv, index=False)
     print(f"Exported {len(rows)} rows to {output_csv}")
 
