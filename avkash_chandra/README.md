@@ -52,7 +52,7 @@ BigQuery Setup
 Integration & Orchestration Scripts
 
 Data Output & Analysis
-'''
+```
 avkash_chandra/
 │
 ├── ingest_function/                    # Cloud Function (HTTP triggered) - Ingests API data
@@ -82,4 +82,4 @@ avkash_chandra/
 ├── queries.sql                         # SQL queries for analysis
 ├── example_queries.py                  # Runs queries on BigQuery
 └── script.py                           # Utility runner for quick tests
-'''
+```
