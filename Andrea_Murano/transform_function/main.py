@@ -7,7 +7,11 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from api_logic import flatten_and_export
 
 def main(event, context):
-    """Background Cloud Function triggered by Pub/Sub."""
+    """
+    Google Cloud Function entry point.
+    Triggered by Pub/Sub when ingest function publishes a message.
+    Receives data, then flattens and exports it (e.g., to CSV).
+    """
     try:
         raw_data = base64.b64decode(event['data']).decode('utf-8')
         result = json.loads(raw_data)
