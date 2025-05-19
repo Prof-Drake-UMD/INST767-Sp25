@@ -10,7 +10,7 @@ def main(event, context):
     """
     Google Cloud Function entry point.
     Triggered by Pub/Sub when ingest function publishes a message.
-    Receives data, then flattens and exports it (e.g., to CSV).
+    Receives data, then flattens and exports it (e.g., to BigQuery or Cloud Storage).
     """
     try:
         raw_data = base64.b64decode(event['data']).decode('utf-8')
@@ -20,7 +20,7 @@ def main(event, context):
         return
 
     try:
-        flatten_and_export(result)
+        flatten_and_export(result) 
         print("Flattened and exported result.")
     except Exception as e:
         print(f"Error flattening/exporting: {e}")
