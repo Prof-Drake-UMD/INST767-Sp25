@@ -1,0 +1,5 @@
+requests
+beautifulsoup4
+python-dotenv
+lyricsgenius
+google-cloud-pubsub
