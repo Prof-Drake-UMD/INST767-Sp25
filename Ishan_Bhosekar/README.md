@@ -24,6 +24,9 @@ subscribe_from_pubsub_pipeline: Subscribes to messages and processes them asynch
 Asynchronous architecture using Cloud Pub/Sub as a message broker to decouple ingest and transformation stages.
 
 
+> 📌 **Note:** All functional components like `ingest/`, `transform/`, `load/`, and `PubSub/` are contained within the `dag/` folder for modularity and Airflow DAG support.
+
+
 ## 📡 Data Sources
 | API Source | Description |
 | --- | --- |
@@ -72,6 +75,10 @@ Uses ROW_NUMBER() window function to ensure the latest snapshot per city and mos
 Supports deep analytical queries with a wide, rich schema.
 
 The combined_view is the primary layer for exploratory data analysis and SQL insights, and abstracts away the need for complex joins in downstream queries or visualization tools like Tableau.
+
+
+> 📌 **Note:** All functional components like `ingest/`, `transform/`, `load/`, and `PubSub/` are contained within the `dag/` folder for modularity and Airflow DAG support.
+
 
 
 ## 📉 Limitations & Considerations
