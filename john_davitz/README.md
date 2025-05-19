@@ -65,6 +65,8 @@ Trigger       \                                            /     Bucket Storage 
 ![BigQuery Screenshot](BigQuery_Screenshot.png)
 
 [BigQuery Commands to create Tables](create_tables.md)
+
+[Interesting Queries](db_queries.md)
 #### Weather Table
  - date - DATE
  - mean_temp - FLOAT64
