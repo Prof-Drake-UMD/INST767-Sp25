@@ -54,17 +54,16 @@ ORDER BY avg_gdp DESC;
 
 
 
-/*5.Environmental Health Risk Zones — High AQI + High Humidity*/
+/*5.Top cities with best economic growth & clean air*/
 SELECT
   city,
   country,
-  temperature_category,
-  humidity,
+  gdp_growth_rate,
   aqi,
-  aqi_category,
-  gdp_value
+  temperature_category
 FROM `climate-data-pipeline-457720.climate_data.combined_view`
-WHERE high_humidity_flag = 1 AND aqi >= 100
-ORDER BY aqi DESC;
+WHERE aqi <= 50 AND gdp_growth_rate > 0
+ORDER BY gdp_growth_rate DESC
+LIMIT 10;
 
 
