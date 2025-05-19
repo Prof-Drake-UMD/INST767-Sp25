@@ -1,0 +1,1 @@
+gcloud functions deploy initial_trigger --runtime python311 --entry-point=fetch_and_upload --region=us-central1 --source=. --trigger-http
