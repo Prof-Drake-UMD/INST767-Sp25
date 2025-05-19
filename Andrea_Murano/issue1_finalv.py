@@ -14,6 +14,16 @@ Then, write some python code to make the api calls and pull the data down. These
 
 !pip install requests
 
+# -*- coding: utf-8 -*-
+"""issue1_finalv.py
+
+Updated for schema flattening and CSV output.
+
+Original file is located at
+    https://colab.research.google.com/drive/1PDSQA8YTsWS5TI3HRu50lZ_e8XectG-s
+
+"""
+
 import requests
 import pandas as pd
 import numpy as np
@@ -155,7 +165,52 @@ def match_cultural_experience_by_year(book_title, author_name, limit=5, year_buf
         "music": music[:limit]
     }
 
-# Test
+def flatten_and_export(result, output_csv='output/cultural_experience_items.csv'):
+    os.makedirs(os.path.dirname(output_csv), exist_ok=True)
+    rows = []
+    book = result.get('book', {})
+    artworks = result.get('artworks', [])
+    music = result.get('music', [])
+    match_type = result.get('step', None)
+    ingest_ts = book.get('ingest_ts')  # or use datetime.utcnow().isoformat() for all
+
+    # Ensure at least one row, use max length of artworks/music or 1 if both empty
+    max_len = max(len(artworks), len(music), 1)
+    for i in range(max_len):
+        art = artworks[i] if i < len(artworks) else {}
+        mus = music[i] if i < len(music) else {}
+
+        row = {
+            "book_id": book.get("book_id"),
+            "book_title": book.get("title"),
+            "book_author": book.get("author_name"),
+            "book_first_publish_year": book.get("first_publish_year"),
+            "book_language": book.get("language"),
+            "book_url": book.get("book_url"),
+            "object_id": art.get("object_id"),
+            "artwork_title": art.get("title"),
+            "artwork_artist": art.get("artist_name"),
+            "artwork_medium": art.get("medium"),
+            "artwork_date": art.get("object_date"),
+            "artwork_url": art.get("object_url"),
+            "artwork_image_url": art.get("image_url"),
+            "track_id": mus.get("track_id"),
+            "track_title": mus.get("title"),
+            "track_artist": mus.get("artist"),
+            "album_title": mus.get("album"),
+            "track_release_date": mus.get("release_date"),
+            "track_preview_url": mus.get("preview_url"),
+            "match_type": match_type,
+            "ingest_ts": ingest_ts
+        }
+        rows.append(row)
+    df = pd.DataFrame(rows)
+    df.to_csv(output_csv, index=False)
+    print(f"Exported {len(rows)} rows to {output_csv}")
+
 
 result = match_cultural_experience_by_year("Normal People", "Sally Rooney")
 pprint.pprint(result)
+
+# Export to CSV for BigQuery
+flatten_and_export(result)
