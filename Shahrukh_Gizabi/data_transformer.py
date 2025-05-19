@@ -273,5 +273,9 @@ def transform_match_events_odds_to_df(api_response_data):
                     })
         record['markets'] = _to_json_string(markets_list) if markets_list else None
         processed_events_records.append(record)
-        
-    return pd.DataFrame(processed_events_records)
+
+df = pd.DataFrame(processed_events_records)
+if not df.empty:
+    df['ingested_at'] = pd.Timestamp.now(tz='UTC').isoformat() # Use .isoformat() for BQ TIMESTAMP
+return df
+    
