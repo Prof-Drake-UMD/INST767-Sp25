@@ -12,7 +12,6 @@ The primary goal is to study firearm-related trends across city and state levels
 
 Below are the three public APIs selected for this project. These APIs offer incident-level gun violence data and are updated regularly.
 
----
 
 ### 1. **Washington, D.C. Gun Violence Data**
 - **API Type:** ArcGIS REST (GeoJSON)
@@ -27,7 +26,7 @@ Below are the three public APIs selected for this project. These APIs offer inci
   - `latitude`, `longitude`
 
 
-### 2. **CDC Firearm Mortality by State **
+### 2. **CDC Firearm Mortality by State**
 
 - **Endpoint:**  
   [`https://data.cdc.gov/resource/fpsi-y8tj.json`](https://data.cdc.gov/resource/fpsi-y8tj.json)
@@ -81,8 +80,8 @@ Below are the three public APIs selected for this project. These APIs offer inci
 
 ---
 ## Architecture Overview
+<img src="screenshots/architecture.png" alt="ETL Diagram" width="378">
 
-![ETL Pipeline Architecture](screenshots/architecture.png)
 
 --- 
 ## Tool Stack
@@ -125,17 +124,20 @@ Below are the three public APIs selected for this project. These APIs offer inci
 ---
 ## Sample Analytical Query
 **Monthly firearm incident trend per city (2020-2024)**
-
-SELECT city, location, total_incidents FROM (
-  SELECT city, location, COUNT(*) AS total_incidents,
-  ROW_NUMBER() OVER (PARTITION BY city ORDER BY COUNT(*) DESC) AS rn
-  FROM `gv-etl-spring.gun_violence_dataset.firearm_incidents`
-  WHERE city IS NOT NULL AND location IS NOT NULL
-  GROUP BY city, location
-)
-WHERE rn <= 5;
-
-- This query helps identify trends and spikes in gun violence patterns, useful for policy planning and community outreach.
+ 
+```sql
+SELECT
+  city,
+  FORMAT_DATE('%Y-%m', incident_date) AS month,
+  COUNT(*) AS incident_count
+FROM `gv-etl-spring.gun_violence_dataset.firearm_incidents`
+WHERE 
+  city IS NOT NULL
+  AND incident_date BETWEEN '2020-01-01' AND '2024-12-31'
+GROUP BY city, month
+ORDER BY city, month;
+```
+This query helps identify trends and spikes in gun violence patterns, useful for policy planning and community outreach.
 
 ---
 
@@ -171,7 +173,7 @@ Having lat/long now avoids restructuring the pipeline later.
 
 ---
 
-## IAM Roles Used in the Project
+## IAM Roles used in cloud
 
 To ensure security and grant the least privilege required for each component to function, we assigned the following IAM roles:
 
@@ -185,6 +187,6 @@ To ensure security and grant the least privilege required for each component to 
 All service accounts were limited to specific permissions necessary for the ingest, transform, and load phases of the pipeline.
 
 ---
-Developed by **Twinkle Rathod**
-University of Maryland
-INST767 Big Data - Spring 2025
+- Developed by **Twinkle Rathod**  
+University of Maryland  
+INST767 Big Data - Spring 2025  
