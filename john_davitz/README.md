@@ -28,6 +28,17 @@ CloudRun Jobs run inside of a Docker container were used to handle this API.
 The Weather data from the Open-Metro dataset was highly customizable and through the parameters sent to the API the exact data needed was able to be requested and only the formatting for the data had to be adjusted to transform it to a tabular structure for import into BigQuery
 A CloudRun Function was used for this API.
 
+### Pipline Process
+````
+                /    fetch-traffic-api (Cloud Function)  \
+               /                                          \
+Initial ______/      fetch-weather-api (Cloud Function)    \  ⭆    Output to    ⭆   Pubsub  ⭆  transform-api-output  ⭆  PubSub ⭆  bigquery-insert   ⭆  BigQuery 
+Trigger       \                                            /     Bucket Storage      Trigger       (Cloud Function)        Event     (Cloud Function)       Table
+               \     cloud-metro1 (Cloud Run Job)         /  
+                \    cloud-metro2 (Cloud Run Job)        /
+````
+
+
 ### Database schema
 #### Weather Table
  - Date
