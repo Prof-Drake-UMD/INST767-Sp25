@@ -14,11 +14,15 @@ PROJECT_ID = os.environ.get("GCP_PROJECT") or os.environ.get("GOOGLE_CLOUD_PROJE
 
 @app.route("/", methods=["POST"])
 def ingest():
+    """
+    Accepts POST requests with 'book_title' and 'author_name'.
+    Calls API logic, then publishes the data to Pub/Sub for transformation.
+    """
     data = request.get_json()
     if not data or not data.get("book_title") or not data.get("author_name"):
         return jsonify({"error": "Missing book_title or author_name"}), 400
+
     try:
-        # Call your API aggregation function
         result = match_cultural_experience_by_year(data["book_title"], data["author_name"])
     except Exception as e:
         return jsonify({"error": "Failed to fetch API data", "details": str(e)}), 500
