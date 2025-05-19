@@ -41,6 +41,7 @@ Trigger       \                                            /     Bucket Storage 
 
 ### Database schema
 ![BigQuery Screenshot](BigQuery_Screenshot.png)
+
 [BigQuery Commands to create Tables](create_tables.md)
 #### Weather Table
  - date - DATE
