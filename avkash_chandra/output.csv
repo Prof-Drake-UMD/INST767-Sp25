@@ -1,3 +1,9 @@
-song_title,artist,lyrics_url,lastfm_listeners,lastfm_playcount,temperature_F,weather_main,weather_description,city
-Love Me Again,V,N/A,317113,N/A,74.32,Clear,clear sky,College Park
-tf
+output.csv will be in this folder what is below is what is expected there are many recrods that were ingested many times some with null or even duplicates but thats where big query came in when i made the sql ,
+
+| song_title         | artist            | city          | weather_main | temperature | ingested_at               | lyrics_preview                                
+|--------------------|-------------------|---------------|--------------|-------------|--------------------------|-----------------------------------------------|
+| Ribs               | Lorde             | Los Angeles   | Clear        | 62.1        | 2025-05-19 03:13:07 UTC | The drink you spilt all over me               
+| BIRDS OF A FEATHER  | Billie Eilish     | Los Angeles   | Clear        | 62.1        | 2025-05-19 03:12:14 UTC | (But I wanna stay) I want you to stay         
+| Blinding Lights    | The Weeknd        | Los Angeles   | Clear        | 75.0        | 2025-05-18 20:44:31 UTC | Yeah I've been tryna call I've been on my own 
+| Pink + White       | Frank Ocean       | San Francisco | Clear        | 59.52       | 2025-05-19 03:13:00 UTC | Yeah, yeah, oh (Woo) Yeah, yeah, yeah         
+| espresso           | Sabrina Carpenter | San Francisco | Clear        | 59.52       | 2025-05-19 03:12:26 UTC | Now he's thinkin' 'bout me every night, oh    
