@@ -1,0 +1,24 @@
+# Core HTTP requests
+requests>=2.25.1
+
+# Flask - required for HTTP-triggered functions
+flask
+
+# Google Cloud Function dependencies
+functions-framework
+
+# Google Cloud services
+google-cloud-logging
+google-cloud-pubsub
+google-cloud-bigquery
+google-cloud-storage
+google-cloud-functions
+urllib3
+
+# For CSV export
+pandas
+
+# For setup.py
+setuptools
+dotenv
+pytest

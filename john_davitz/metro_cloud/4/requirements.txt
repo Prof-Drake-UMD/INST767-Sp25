@@ -1,0 +1,4 @@
+requests
+pandas
+google-cloud-storage
+pyspark==3.5.1

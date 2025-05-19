@@ -1,21 +1,42 @@
 import requests
 import logging
-from airflow.decorators import dag, task, task_group
+from airflow.decorators import dag, task
 from airflow.hooks.base import BaseHook
 from airflow.sensors.base import PokeReturnValue
-from airflow.exceptions import AirflowSkipException
 from datetime import datetime
 
-from include.openFDA_events.ProcessEventsChunk import ProcessEventsChunk
+from include.helpers.LoadBigQuery import LoadBigQuery
+from include.helpers.StorageClients import GCSClient
+from include.openfdaAdverseEvents.extract_raw_events_chunk import ExtractEventChunk
+from include.openfdaAdverseEvents.transform_events import transform_drug_events
+
+from include.helpers.PubSubHandler import PubSubHandler
 
 # Define a global logger
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+project_id = 'inst767-openfda-pg'
+topic_id = 'open-fda-event-chunks'
+bucket_name = 'openfda-drug-events'
+raw_prefix = 'drugs-adverse-events/raw'
+transformed_prefix = 'drugs-adverse-events/transformed'
+
+project="inst767-openfda-pg"
+dataset_id="openfda"
+table_id = "drug-adverse-events"
+
+GCSClient = GCSClient()
+pubsub_handler = PubSubHandler(project_id)
+
+api = BaseHook.get_connection('openfda_events_api')
+api_key = api.extra_dejson["api_key"]
+
+
 @dag(
     start_date = datetime(2024, 1, 1), 
     schedule = '@daily',
-    catchup = False,
+    catchup = True,
     tags = ['openFDA', 'drug_events', 'extraction']
 )
 
@@ -38,7 +59,6 @@ def open_fda_drug_events():
         PokeReturnValue: Contains a flag indicating data availability and metadata if available.
         """
 
-        api = BaseHook.get_connection('openfda_events_api')
         # Construct the base URL
         base_url = f"{api.conn_type}://{api.host}/{api.schema}"
         logger.info(f"Checking API availability at: {base_url}")
@@ -60,6 +80,7 @@ def open_fda_drug_events():
         except KeyError as e:
             logger.error(f"No records found for {execution_date_str}")
             poke_results['total_records'] = 0
+            #raise AirflowFailException(f"No records found for {execution_date_str}")
             return PokeReturnValue(is_done=False, xcom_value=poke_results)
 
     @task
@@ -112,110 +133,95 @@ def open_fda_drug_events():
         event_date = poke_result["event_date"]
         return list({"chunk_id": chunk_id, "base_url": base_url, "event_date": event_date} for chunk_id in chunk_list)
     
-    @task_group
-    def process_single_chunk(chunk_params: dict):
+    
+
+    @task
+    def fetch_event_chunk_and_store(chunk_params):
         """
         Description:
-        Task group to fetch and store event data for a single chunk.
+        Fetch event data for a specific chunk from OpenFDA API.
         
         Input Parameters:
-        params (dict): Chunk-specific parameters including chunk_id, base_url, and event_date.
+        chunk_params (dict): Contains chunk_id, base_url, and event_date.
         
         Output Parameters:
-        dict: Chunk processing summary containing event date, chunk ID, records count, and storage path.
+        dict: Fetched json data from api.
         """
-
-        @task
-        def fetch_event_chunk(chunk_params):
-            """
-            Description:
-            Fetch event data for a specific chunk from OpenFDA API.
-            
-            Input Parameters:
-            chunk_params (dict): Contains chunk_id, base_url, and event_date.
-            
-            Output Parameters:
-            dict: Fetched json data from api.
-            """
-            chunk_id = chunk_params["chunk_id"]
-            url = chunk_params["base_url"]
-            event_date = chunk_params["event_date"]
-            chunk = ProcessEventsChunk(chunk_id, event_date)
-            
-            logger.info(f"Fetching chunk {chunk_id} for {event_date}")
-
-            fetch_result = chunk.fetch_event_chunk(url=url, record_limit=1000)
-            logger.info(f'Complete data fetching for chunk {chunk_id}. Got {len(fetch_result)} events')
-            return fetch_result
+        chunk_id = chunk_params["chunk_id"]
+        url = chunk_params["base_url"]
+        event_date = chunk_params["event_date"]
+        chunk = ExtractEventChunk(chunk_id, event_date)
         
-        
+        logger.info(f"Fetching chunk {chunk_id} for {event_date}")
 
-        @task
-        def store_event_chunk(chunk_params, fetch_result):
-            """
-            Description:
-            Store fetched event data into a predefined storage location.
-            
-            Input Parameters:
-            fetch_result (dict): Contains chunk_id, event_date, and event_data.
-            
-            Output Parameters:
-            str: Path where data was stored.
-            """
+        events_data = chunk.fetch_event_chunk(url=url, api_key=api_key, record_limit=1000)
+        record_count = len(events_data)
+        logger.info(f'Complete data fetching for chunk {chunk_id}.')
 
-            chunk_id = chunk_params["chunk_id"]
-            event_date = chunk_params["event_date"]
-            chunk = ProcessEventsChunk(chunk_id, event_date)
+        date_partition = event_date.replace('-', '/')
+        object_name=f'{raw_prefix}/{date_partition}/events-chunk-{chunk_id}.json'
+        storage_path = GCSClient.store_data(data=events_data, bucket_name=bucket_name, object_name=object_name)
 
-            events_data = fetch_result["events_data"]
-            records_count = fetch_result['records_count']
+        logger.info(f'Stored chunk-{chunk_id} at {storage_path} ')
 
-            storage_path=chunk.store_event_chunk(storage_client='minio', events_data=events_data)
-            logger.info(f'Stored chunk {chunk_id} with {records_count} records at {storage_path} ')
-
-            return storage_path
-        
-        @task
-        def final_chunk_results(chunk_params, fetched_data, storage_path):
-            return {
-                    "event_date": chunk_params["event_date"],
-                    "chunk_id": chunk_params["chunk_id"],
-                    "storage_path": storage_path,
-                    "record_count": fetched_data['records_count']
+        return {
+                "event_date": event_date,
+                "chunk_id": chunk_id,
+                "storage_path": storage_path
             }
         
-
-        #fetched_data = fetch_event_chunk(chunk_id, url, event_date)
-        fetched_data = fetch_event_chunk(chunk_params)
-
-        # Execute store operation
-        storage_path = store_event_chunk(chunk_params, fetched_data)
-
-        return final_chunk_results(chunk_params, fetched_data, storage_path)
         
-        
-        
-       
 
-        
     @task
-    def combine_results(chunk_results):
+    def transform_load_drug_events(raw_file_metadata):
         """Combine results from all chunks"""
-        return chunk_results
+
+        #read raw data to df
+        event_date = raw_file_metadata[0]['event_date']
+        raw_date_prefix = f"{raw_prefix}/{event_date.replace('-', '/')}"
+        raw_df = GCSClient.read_raw_json_to_df(bucket_name, raw_date_prefix)
+
+        #transform_data
+        transformed_data = transform_drug_events(raw_df)
+        transformed_file_name = event_date.replace('-', '')
+        transformed_blob_path = f"{transformed_prefix}/{transformed_file_name}.json"
+
+    #   Upload to GCS
+        GCSClient.store_data(transformed_data, bucket_name, transformed_blob_path)
+        # transformed_blob.upload_from_file(json_buffer, content_type='application/json')
+
+        logger.info(f'Loaded transformed events to {transformed_blob_path}') 
+
+        return transformed_blob_path
+
+    
+    @task
+    def load_to_bq(transformed_blob_path):
+
+        bq_table = f"{project}.{dataset_id}.{table_id}"
+
+        #getting partition name from file name i.e 20240101.json
+        partion_date = transformed_blob_path.split('/')[-1].replace('.json', '')
+
+        BQClinet = LoadBigQuery(bucket_name, transformed_blob_path, bq_table)
+        BQClinet.load_into_bq(partion_date)
+
+        return bq_table
 
     # Define the workflow
     poke_api_result = poke_api()
-    chunks_count = calculate_chunks(poke_api_result)
+    chunks_count = calculate_chunks(poke_api_result, 1000)
     chunk_list = generate_chunk_ids(chunks_count)
     params = prepare_chunk_params(poke_api_result, chunk_list)
 
     logger.info(f"Chunk_param: {params}")
     
     # Process each chunk using dynamic task mapping with task groups
-    chunk_results = process_single_chunk.expand(chunk_params=params)
-    
-    # Combine results from all chunks
-    combine_results = combine_results(chunk_results)
+    raw_file_metadata = fetch_event_chunk_and_store.expand(chunk_params=params)
+
+    transformed_path = transform_load_drug_events(raw_file_metadata)
+
+    load_to_bq(transformed_path)
 
 open_fda_drug_events()
 

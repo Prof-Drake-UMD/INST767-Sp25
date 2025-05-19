@@ -1,0 +1,2 @@
+city,timestamp,temperature,humidity,wind_speed,weather_description,temperature_category,high_humidity_flag
+New York,1747621431,19.39,59,10.8,broken clouds,Moderate,0

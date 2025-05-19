@@ -1,0 +1,2 @@
+city,timestamp,aqi,pm25,pm10,no2,so2,co,o3,aqi_category
+New York,2025-05-18 20:00:00,30,30,,,,,,Good

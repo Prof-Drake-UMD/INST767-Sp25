@@ -1,0 +1,1 @@
+# Subscribers package for book_pipeline_consumer_func 

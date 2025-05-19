@@ -1,5 +1,8 @@
 # Climate & Economic Data Pipeline (GCP | Airflow | BigQuery | Pub/Sub)
 
+![image](https://github.com/user-attachments/assets/c7725acd-9106-4904-a486-132b1a2be945)
+
+
 ## Project Overview
 This project builds a robust, cloud-native data pipeline that ingests, transforms, and analyzes environmental and economic data using public APIs. It focuses on integrating weather, air quality, and GDP metrics for major global cities to uncover insights related to climate patterns and their economic implications.
  
