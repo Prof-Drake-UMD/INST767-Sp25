@@ -1,8 +1,25 @@
-# api_helpers.py
+# google_cloud/modified_api_helpers.py
+"""
+# ISSUE #5: MODIFIED API HELPERS WITH PUB/SUB INTEGRATION
+Modified version of api_helpers that integrates with Pub/Sub messaging.
+This enables asynchronous communication between ingest and transform steps.
+"""
 import requests
 import json
 import logging
-from config import MBTA_API, WMATA_API, CTA_API
+import os
+from datetime import datetime
+from google.cloud import storage
+
+# Import original helpers
+from api_helpers import (
+    fetch_mbta_data, fetch_wmata_data, fetch_cta_data, 
+    get_mbta_routes, get_mbta_predictions, get_wmata_rail_predictions, 
+    get_cta_train_positions
+)
+
+# ISSUE #5: Import messaging module for Pub/Sub integration
+from google_cloud.pubsub_messaging import publish_transit_data_event
 
 # Configure logging
 logging.basicConfig(
@@ -11,173 +28,144 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def fetch_mbta_data(endpoint, params=None):
-    """
-    Fetch data from MBTA API
-    
-    Args:
-        endpoint (str): API endpoint to call
-        params (dict, optional): Additional parameters for the request
-        
-    Returns:
-        dict: JSON response data
-    """
-    url = f"{MBTA_API['base_url']}{endpoint}"
-    headers = {"x-api-key": MBTA_API['api_key']} if MBTA_API['api_key'] else {}
-    
+# Get environment variables
+project_id = os.environ.get('GCP_PROJECT', 'lithe-camp-458100-s5')
+bucket_name = os.environ.get('GCS_BUCKET', 'transit-data-bucket-767projt0-512xsics3-3x9289-03usbc')
+
+# ISSUE #5: Save data to GCS before publishing to Pub/Sub
+def save_to_gcs(data, source, data_type):
+    """Save data to Google Cloud Storage - ISSUE #5: Store data for async processing"""
     try:
-        logger.info(f"Fetching data from MBTA API: {url}")
-        response = requests.get(url, headers=headers, params=params)
-        response.raise_for_status()
-        return response.json()
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Error fetching MBTA data: {e}")
+        # Create a GCS client
+        storage_client = storage.Client(project=project_id)
+        bucket = storage_client.bucket(bucket_name)
+        
+        # Generate a timestamp for the filename
+        timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
+        blob_name = f"raw/{source}/{data_type}_{timestamp}.json"
+        blob = bucket.blob(blob_name)
+        
+        # Convert data to JSON string
+        json_data = json.dumps(data)
+        
+        # Upload to GCS
+        blob.upload_from_string(json_data, content_type='application/json')
+        
+        # Log success
+        gcs_uri = f"gs://{bucket_name}/{blob_name}"
+        logger.info(f"Saved {source} {data_type} data to {gcs_uri}")
+        
+        return gcs_uri
+    
+    except Exception as e:
+        logger.error(f"Error saving data to GCS: {e}")
         raise
 
-def fetch_wmata_data(endpoint, params=None):
+# ISSUE #5: Functions that fetch data and publish events to Pub/Sub
+def fetch_and_publish_mbta_routes():
     """
-    Fetch data from WMATA API
-    
-    Args:
-        endpoint (str): API endpoint to call
-        params (dict, optional): Additional parameters for the request
-        
-    Returns:
-        dict: JSON response data
+    Fetch MBTA routes data and publish to Pub/Sub - ISSUE #5: Asynchronous pattern
+    This demonstrates the async pattern: Fetch -> Store -> Publish -> (Transform later)
     """
-    url = f"{WMATA_API['base_url']}{endpoint}"
-    headers = {"api_key": WMATA_API['api_key']}
-    
     try:
-        logger.info(f"Fetching data from WMATA API: {url}")
-        response = requests.get(url, headers=headers, params=params)
-        response.raise_for_status()
-        return response.json()
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Error fetching WMATA data: {e}")
+        # Fetch data
+        data = get_mbta_routes()
+        
+        # Save to GCS
+        gcs_uri = save_to_gcs(data, 'mbta', 'routes')
+        
+        # ISSUE #5: Publish event instead of processing inline
+        publish_transit_data_event('mbta', 'routes', gcs_uri)
+        
+        return gcs_uri
+    
+    except Exception as e:
+        logger.error(f"Error in fetch_and_publish_mbta_routes: {e}")
         raise
 
-def fetch_cta_data(endpoint, params=None):
-    """
-    Fetch data from CTA API
-    
-    Args:
-        endpoint (str): API endpoint to call
-        params (dict, optional): Additional parameters for the request
-        
-    Returns:
-        dict: JSON or XML response data (converted to dict if XML)
-    """
-    url = f"{CTA_API['base_url']}{endpoint}"
-    
-    # Add API key to parameters
-    if params is None:
-        params = {}
-    
-    if CTA_API['api_key'] != "YOUR_CTA_API_KEY":
-        params['key'] = CTA_API['api_key']
-    
-    # Add outputType=JSON to get JSON response if applicable
-    params['outputType'] = 'JSON'
-    
+def fetch_and_publish_mbta_predictions(route_ids):
+    """Fetch MBTA predictions data and publish to Pub/Sub - ISSUE #5: Asynchronous pattern"""
     try:
-        logger.info(f"Fetching data from CTA API: {url}")
-        response = requests.get(url, params=params)
-        response.raise_for_status()
+        # Fetch data
+        data = get_mbta_predictions(route_ids=route_ids)
         
-        # Try to parse as JSON first
-        try:
-            return response.json()
-        except json.JSONDecodeError:
-            logger.warning("Response is not JSON, returning text content")
-            return response.text
-            
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Error fetching CTA data: {e}")
+        # Save to GCS
+        gcs_uri = save_to_gcs(data, 'mbta', 'predictions')
+        
+        # ISSUE #5: Publish event instead of processing inline
+        publish_transit_data_event('mbta', 'predictions', gcs_uri)
+        
+        return gcs_uri
+    
+    except Exception as e:
+        logger.error(f"Error in fetch_and_publish_mbta_predictions: {e}")
         raise
 
-# Specific functions for fetching different types of transit data
-
-def get_mbta_routes():
-    """Get all MBTA routes"""
-    return fetch_mbta_data(MBTA_API['endpoints']['routes'])
-
-def get_mbta_predictions(route_ids=None):
-    """
-    Get current MBTA predictions for specific routes.
-
-    Args:
-        route_ids (list or str, optional): A list or comma-separated string of route IDs.
-                                          Example: ['Red', 'Green-B'] or "Red,Green-B". Defaults to None.
-
-    Returns:
-        dict: JSON response data for predictions.
-
-    Raises:
-        ValueError: If route_ids is not provided, as the endpoint requires filters.
-    """
-    params = {}
-    if route_ids:
-        route_filter_value = ','.join(route_ids) if isinstance(route_ids, list) else route_ids
-        params['filter[route]'] = route_filter_value
-        logger.info(f"Requesting MBTA predictions for routes: {route_filter_value}")
-    else:
-        logger.error("MBTA /predictions endpoint requires filters (e.g., filter[route]).")
-        raise ValueError("MBTA /predictions requires route filters.")
-
-    endpoint = MBTA_API['endpoints']['predictions']
-    return fetch_mbta_data(endpoint, params=params)
-
-def get_mbta_vehicles():
-    """Get current MBTA vehicle positions"""
-    return fetch_mbta_data(MBTA_API['endpoints']['vehicles'])
-
-def get_wmata_rail_stations():
-    """Get all WMATA rail stations"""
-    return fetch_wmata_data(WMATA_API['endpoints']['rail_stations'])
-
-def get_wmata_rail_predictions():
-    """Get current WMATA rail predictions"""
-    return fetch_wmata_data(WMATA_API['endpoints']['rail_predictions'])
-
-def get_cta_train_arrivals(station_id=None):
-    """
-    Get CTA train arrival predictions
-    
-    Args:
-        station_id (str, optional): The station ID to get predictions for
+def fetch_and_publish_wmata_rail_predictions():
+    """Fetch WMATA rail predictions data and publish to Pub/Sub - ISSUE #5: Asynchronous pattern"""
+    try:
+        # Fetch data
+        data = get_wmata_rail_predictions()
         
-    Returns:
-        dict: Train arrival predictions
-    """
-    params = {}
-    if station_id:
-        params['mapid'] = station_id
+        # Save to GCS
+        gcs_uri = save_to_gcs(data, 'wmata', 'rail_predictions')
+        
+        # ISSUE #5: Publish event instead of processing inline
+        publish_transit_data_event('wmata', 'rail_predictions', gcs_uri)
+        
+        return gcs_uri
     
-    return fetch_cta_data(CTA_API['endpoints']['train_arrivals'], params)
+    except Exception as e:
+        logger.error(f"Error in fetch_and_publish_wmata_rail_predictions: {e}")
+        raise
 
-def get_cta_train_positions(route_ids): # Route(s) are required
+def fetch_and_publish_cta_train_positions(route_ids):
+    """Fetch CTA train positions data and publish to Pub/Sub - ISSUE #5: Asynchronous pattern"""
+    try:
+        # Fetch data
+        data = get_cta_train_positions(route_ids=route_ids)
+        
+        # Save to GCS
+        gcs_uri = save_to_gcs(data, 'cta', 'train_positions')
+        
+        # ISSUE #5: Publish event instead of processing inline
+        publish_transit_data_event('cta', 'train_positions', gcs_uri)
+        
+        return gcs_uri
+    
+    except Exception as e:
+        logger.error(f"Error in fetch_and_publish_cta_train_positions: {e}")
+        raise
+
+def fetch_all_transit_data():
     """
-    Get CTA train positions for specified routes using the ttpositions.aspx endpoint.
-
-    Args:
-        route_ids (list or str): A list or comma-separated string of route IDs (e.g., ['Red','Blue'] or "Red,Blue").
-
-    Returns:
-        dict: JSON response data for train positions.
-
-    Raises:
-        ValueError: If route_ids is not provided.
+    Fetch all transit data from all sources and publish to Pub/Sub
+    ISSUE #5: This is the main entry point for the asynchronous data ingest process
     """
-    if not route_ids:
-        logger.error("CTA /positions endpoint requires route filters (rt).")
-        raise ValueError("CTA /positions endpoint requires route filters (rt).")
-
-    # API expects 'rt' param with comma-separated values
-    route_param_value = ','.join(route_ids) if isinstance(route_ids, list) else route_ids
-    params = {'rt': route_param_value}
-
-    logger.info(f"Requesting CTA positions for routes: {route_param_value}")
-    endpoint = CTA_API['endpoints']['train_positions']
-    # Assuming fetch_cta_data handles the request and JSON parsing/error checking
-    return fetch_cta_data(endpoint, params=params)
+    results = {}
+    
+    try:
+        # Fetch MBTA data
+        logger.info("Fetching MBTA data...")
+        results['mbta_routes'] = fetch_and_publish_mbta_routes()
+        
+        # Fetch MBTA predictions for specific routes
+        target_routes = ['Red', 'Green-B', 'Green-C', 'Green-D', 'Green-E']
+        logger.info(f"Fetching MBTA predictions for routes: {target_routes}")
+        results['mbta_predictions'] = fetch_and_publish_mbta_predictions(target_routes)
+        
+        # Fetch WMATA data
+        logger.info("Fetching WMATA rail predictions...")
+        results['wmata_rail_predictions'] = fetch_and_publish_wmata_rail_predictions()
+        
+        # Fetch CTA data
+        target_routes = ['Red', 'Blue', 'Brn', 'G', 'Org', 'P', 'Pink', 'Y']
+        logger.info(f"Fetching CTA train positions for routes: {target_routes}")
+        results['cta_train_positions'] = fetch_and_publish_cta_train_positions(target_routes)
+        
+        logger.info("Successfully fetched and published all transit data")
+        return results
+    
+    except Exception as e:
+        logger.error(f"Error in fetch_all_transit_data: {e}")
+        return results

@@ -42,9 +42,18 @@ echo "📌 PROJECT_ID = $PROJECT_ID"
 echo "📌 REGION = $REGION"
 echo "📌 BUCKET_NAME = $BUCKET_NAME"
 
+
+# --- CREATE BIGQUERY TABLES ---
+echo "🛠️  Creating BigQuery tables if not exist..."
+python3 google_cloud/transform/create_bigquery_tables.py || {
+  echo "❌ Failed to create BigQuery tables"
+  exit 1
+}
+
 # --- CREATE PUBSUB TOPIC & SUBSCRIPTION ---
 gcloud pubsub topics create "$TOPIC_NAME" --quiet || echo "✅ Topic already exists"
 gcloud pubsub subscriptions create "$SUB_NAME" --topic="$TOPIC_NAME" --quiet || echo "✅ Subscription already exists"
+
 
 # --- CREATE BUCKET (if not exists) ---
 if ! gsutil ls -b "gs://$BUCKET_NAME" > /dev/null 2>&1; then
@@ -83,7 +92,7 @@ gcloud functions deploy "$TRANSFORM_FUNCTION_NAME" \
   --memory=256MB \
   --timeout=540s \
   --set-env-vars="$ENV_VARS,GCS_BUCKET=$BUCKET_NAME"\
-  --gen2
+  --no-gen2
 
 echo "✅ All functions deployed successfully!"
 echo "🪣 GCS Bucket: gs://$BUCKET_NAME"
@@ -98,6 +107,8 @@ if [ -f "$LAST_SUCCESS_PATH" ]; then
 else
   echo "❌ $LAST_SUCCESS_PATH not found"
 fi
+
+
 
 echo "✅ Deployment complete!"
 echo "🚀 You can now trigger the ingest function via HTTP or set up a schedule in Cloud Scheduler."

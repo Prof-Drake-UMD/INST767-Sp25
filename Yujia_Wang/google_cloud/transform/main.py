@@ -4,19 +4,34 @@ import os
 from datetime import datetime
 from google.cloud import storage
 from clean_transform_movies import clean_movies_list
+from load_now_playing import load_json_to_bigquery
+from schema import NOW_PLAYING_SCHEMA
 
 def upload_to_gcs(data, bucket_name, prefix="cleaned"):
     client = storage.Client()
-    bucket = bucket = client.bucket(bucket_name)
+    bucket = client.bucket(bucket_name)
 
     timestamp = datetime.utcnow().strftime("%Y%m%d-%H%M%S")
-    blob = bucket.blob(f"{prefix}/movies_{timestamp}.json")
+    blob_path = f"{prefix}/movie_{timestamp}.json"
+    blob = bucket.blob(blob_path)
+
+    ndjson_string = "\n".join([json.dumps(row) for row in data])
 
     blob.upload_from_string(
-        data=json.dumps(data, indent=2),
+        data=ndjson_string,
         content_type="application/json"
     )
-    print(f"✅ Uploaded cleaned movie list to GCS: {blob.name}")
+
+    print(f"✅ Uploaded cleaned NDJSON to GCS: {blob.name}")
+    
+    # ✅ Immediately load into BigQuery
+    load_json_to_bigquery(
+      bucket_name=bucket_name,
+      blob_path=blob_path,
+      dataset_id="movies_dataset",
+      table_id="now_playing_movies"
+    )
+
 
 def main_entry(event, context):
     try:

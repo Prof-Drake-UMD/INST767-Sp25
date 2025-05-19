@@ -1,0 +1,385 @@
+position,query,search_volume,percentage_increase,location,categories,start_date,end_date,time_active_minutes,keywords,timestamp
+1,james comey,200000,1000,US,"['politics', 'law_and_government']",2025-05-15T21:10:00Z,,,"['james comey', '8647', '8647 meaning', '86 meaning', 'comey', 'what does 8647 mean', '86 47', '86', 'james comey 8647', 'comey and trump', 'what is 8647', 'james comey tweet', 'comey 86 47', 'dailymail', 'fox news today']",2025-05-16 13:11:42.295850+00:00
+2,kubrick,100000,1000,US,['entertainment'],2025-05-16T04:00:00Z,,,"['kubrick', 'stanley kubrick']",2025-05-16 13:11:42.295850+00:00
+3,cruz azul - américa,200000,1000,US,['sports'],2025-05-16T01:10:00Z,,,"['cruz azul - américa', 'cruz azul vs club américa', 'cruz azul vs america', 'america vs', 'cruz azul vs. américa', 'liga mx', 'where to watch cruz azul vs club américa', 'club américa', 'america cruz azul', 'futbol mexicano', 'ignacio rivero', 'cruz azul vs', 'cruz azul hoy', 'cruz azul vs américa', 'america vs hoy']",2025-05-16 13:11:42.295850+00:00
+4,rcd espanyol - barcelona,500000,1000,US,['sports'],2025-05-15T18:30:00Z,,,"['rcd espanyol - barcelona', 'espanyol vs barcelona', 'barcelona', 'espanyol vs fc barcelona timeline', 'la liga', 'espanyol vs fc barcelona', 'barca', 'espanyol', 'laliga', 'barcelona standings', 'lamine yamal', 'espanyol vs fc barcelona stats', 'fcb', 'barcelona schedule', 'la.liga', 'barca vs espanyol']",2025-05-16 13:11:42.295850+00:00
+5,nottoway plantation,50000,1000,US,['law_and_government'],2025-05-15T20:00:00Z,,,"['nottoway plantation', 'nottoway plantation louisiana', 'nottoway']",2025-05-16 13:11:42.295850+00:00
+6,consumers energy outage map,1000000,1000,US,['climate'],2025-05-15T13:10:00Z,,,"['consumers energy outage map', 'severe thunderstorm warning', 'consumers outage map', 'dte outage map', 'consumers energy', 'tornado michigan', 'power outage map', 'michigan tornado', 'wood tv 8', 'tornado warning', 'tornado warning michigan', 'weather storms tornadoes', 'consumers power outage map', 'weather radar', 'mlive', 'dte', 'radar', 'consumers power outage', 'tornadoes in michigan', 'wwmt', 'power outage', 'power outage near me', 'tornado grand rapids', 'tornado tracker', 'outage map', 'grand rapids weather', 'wood tv 8 weather', 'michigan weather', 'michigan', 'tornado watch michigan', 'consumers energy outage', 'dte power outage', 'tornado lansing mi', 'wlns', 'lansing tornado', 'doppler radar', 'wnem', 'was there a tornado in michigan today', 'detroit weather', 'radar weather', 'tornado radar', 'dte power outage map', 'weather grand rapids', 'power', 'woodtv 8', 'woodtv', 'weather detroit', 'michigan weather radar', 'wwmt weather', 'radar michigan', 'wzzm weather', 'tornado in michigan', 'michigan tornado warning', 'grand rapids tornado', 'wxyz', 'local weather', 'lansing weather', 'storm damage michigan', 'michigan radar', 'tornadoes in michigan today', 'live weather radar', 'tornado lansing', 'tornado saginaw mi', 'tornado holland mi', 'dte energy', 'tornado tracker michigan', 'consumers energy power outage', 'is there a tornado in michigan right now', 'consumer energy', 'wilx weather', 'michigan tornado today', 'wdiv weather', 'wnem tv5', 'tornado touchdown michigan', 'abc12 weather', 'oakland county tornado warning', 'michigan storm', 'tornado midland mi', 'tornado muskegon', 'weather lansing mi', 'tornado warning saginaw mi', 'tornado tracker live', 'tornado michigan today', 'live tornado tracker', 'news 8 weather', 'storm team 8', 'channel 3 news', 'woodtv weather', 'weather saginaw mi', 'tornado radar michigan', 'live radar', 'tornado warning oakland county', 'wood tv', 'grand rapids tornado today', 'weather radar grand rapids', 'ann arbor weather', 'tornado warning midland mi', 'tornado warning holland mi', 'muskegon weather', 'saginaw weather', 'weather map', 'wood tv 8 radar', 'wood tv8', 'tornado detroit', 'lansing news', 'tornado watch near me', 'tornado warning lansing', 'grand rapids weather radar']",2025-05-16 13:11:42.295850+00:00
+7,chris brown in jail,20000,500,US,"['entertainment', 'law_and_government']",2025-05-15T17:20:00Z,,,['chris brown in jail'],2025-05-16 13:11:42.295850+00:00
+8,julian strawther,200000,1000,US,['sports'],2025-05-16T02:20:00Z,,,"['julian strawther', 'thunder vs nuggets', 'nuggets', 'oklahoma city thunder vs denver nuggets match player stats', 'jamal murray', 'denver nuggets', 'thunder game', 'nuggets game', 'denver nuggets games', 'okc thunder', 'nuggets score', 'thunder - nuggets', 'denver vs okc', 'nikola jokić', 'jokic', 'nikola jokic', 'strawther', 'nuggets game 7', 'denver nuggets vs oklahoma city thunder match player stats', 'nuggets vs okc', 'strawther nba', 'oklahoma city thunder vs denver nuggets timeline', 'nuggets thunder', 'game 7 nuggets', 'okc nuggets', 'thunder vs nuggets game 7', 'nba game today', 'nuggets vs', 'denver nuggets vs oklahoma city thunder timeline', 'julian strawther stats', 'is jamal murray playing tonight', 'nba games tomorrow', 'denver nuggets score', 'strawther nuggets', 'nuggets next game']",2025-05-16 13:11:42.295850+00:00
+9,astros vs rangers,20000,1000,US,['sports'],2025-05-15T23:10:00Z,,,"['astros vs rangers', 'rangers', 'astros', 'astros - rangers', 'houston astros', 'texas rangers games', 'astros vs rangers prediction', 'rangers vs astros']",2025-05-16 13:11:42.295850+00:00
+10,caleb williams,20000,400,US,['sports'],2025-05-15T16:50:00Z,,,['caleb williams'],2025-05-16 13:11:42.295850+00:00
+11,rafael furcal,20000,500,US,"['sports', 'law_and_government']",2025-05-15T18:10:00Z,,,['rafael furcal'],2025-05-16 13:11:42.295850+00:00
+12,jhonattan vegas,50000,600,US,['sports'],2025-05-15T23:10:00Z,,,"['jhonattan vegas', 'ryan gerard', 'cameron davis', 'pga scores', 'cam davis']",2025-05-16 13:11:42.295850+00:00
+13,brian burkheiser,50000,600,US,['entertainment'],2025-05-15T16:00:00Z,,,"['brian burkheiser', 'i prevail', 'brian burkheiser band', 'i prevail brian burkheiser', 'iprevail', 'i prevail brian', 'brian i prevail']",2025-05-16 13:11:42.295850+00:00
+14,ryan kiera armstrong,20000,400,US,['entertainment'],2025-05-15T17:50:00Z,,,"['ryan kiera armstrong', 'buffy the vampire slayer']",2025-05-16 13:11:42.295850+00:00
+15,new richmond wi,50000,300,US,['climate'],2025-05-15T21:20:00Z,,,"['new richmond wi', 'mayville wi', 'wisconsin tornado', 'juneau wi', 'tornado wisconsin', 'tornado warning chicago', 'channel 3000', 'new richmond', 'juneau wisconsin', 'wisconsin', 'new richmond wisconsin', 'dodge county wi', 'mayville tornado', 'weau', 'dodge county', 'wbay', 'wsaw', 'waow', 'wisconsin radar']",2025-05-16 13:11:42.295850+00:00
+16,tornado,200000,500,US,['climate'],2025-05-15T19:20:00Z,,,"['tornado', 'tornado watch', 'storm prediction center', 'weather channel', 'tornado near me', 'tornado watch wisconsin', 'weather louisville ky', 'friday', 'tornado warning minneapolis', 'spc', 'nws', 'tornado warning near me', 'tornado minneapolis', 'severe weather outlook', 'cleveland weather', 'tornado warning wisconsin', 'weather minneapolis', 'hail', 'wcco weather', 'minneapolis tornado', 'tornado warning mn', 'wkyt', 'the weather', 'minneapolis tornado warning', 'weather near me', 'kstp weather', 'tornado minnesota', 'minneapolis', 'weather cincinnati', 'minnesota tornado', 'tornado warning st paul', 'tornado mn', 'tmj4 weather', 'tornado watch mn', 'mn weather', 'mn tornado', 'weather milwaukee', 'what is a tornado watch', 'fox 9 news', 'weather radar minneapolis', 'tornado warning minnesota', 'tornado warning minneapolis today', 'radar wisconsin', 'minnesota weather']",2025-05-16 13:11:42.295850+00:00
+17,supreme court birthright citizenship,100000,100,US,['law_and_government'],2025-05-15T14:30:00Z,,,"['supreme court birthright citizenship', 'federal judge', 'chief justice roberts', 'amy coney barrett', 'supreme court', 'birthright citizenship supreme court', 'america', 'jeremy feigenbaum', 'scotusblog', 'scotus', 'john sauer', 'what is birthright citizenship', 'd john sauer', 'supreme court oral arguments', 'd. john sauer', 'supreme court oral arguments today', 'elena kagan', 'us supreme court']",2025-05-16 13:11:42.295850+00:00
+18,tiffany trump,20000,200,US,['entertainment'],2025-05-15T17:30:00Z,,,"['tiffany trump', 'tiffany trump baby', 'michael boulos', 'marla maples']",2025-05-16 13:11:42.295850+00:00
+19,aubrey o'day,20000,100,US,['other'],2025-05-15T20:30:00Z,,,"[""aubrey o'day"", 'dawn richard', ""aubrey o'day diddy""]",2025-05-16 13:11:42.295850+00:00
+20,lorde,20000,200,US,['entertainment'],2025-05-15T17:20:00Z,,,['lorde'],2025-05-16 13:11:42.295850+00:00
+21,kid rock,5000,200,US,['law_and_government'],2025-05-16T00:10:00Z,,,['kid rock'],2025-05-16 13:11:42.295850+00:00
+22,the chi,20000,100,US,['entertainment'],2025-05-15T23:20:00Z,,,"['the chi', 'the chi season 7', 'showtime']",2025-05-16 13:11:42.295850+00:00
+23,nba youngboy,20000,300,US,"['entertainment', 'sports']",2025-05-15T14:20:00Z,,,['nba youngboy'],2025-05-16 13:11:42.295850+00:00
+24,nj transit strike update,20000,100,US,"['travel_and_transportation', 'business_and_finance']",2025-05-15T19:40:00Z,,,"['nj transit strike update', 'new jersey transit strike', 'njt strike', 'njtransit', 'nj transit strike 2025', 'new jersey transit', 'path train', 'nj strike', 'transit strike', 'shakira metlife', 'nj transit strike update today', 'nj transit news', 'shakira concert']",2025-05-16 13:11:42.295850+00:00
+25,cox communications,5000,400,US,['business_and_finance'],2025-05-16T11:10:00Z,,,"['cox communications', 'charter communications', 'charter cox', 'charter', 'cox', 'charter cox merger', 'cox internet', 'charter stock', 'cable tv']",2025-05-16 13:11:42.295850+00:00
+26,beyonce concert chicago,20000,300,US,['entertainment'],2025-05-15T21:00:00Z,,,"['beyonce concert chicago', 'soldier field', 'cowboy carter chicago', 'beyonce concert', 'beyonce setlist']",2025-05-16 13:11:42.295850+00:00
+27,sony xm6,50000,200,US,['technology'],2025-05-15T16:10:00Z,,,"['sony xm6', 'sony wh-1000xm6', 'sony headphones', 'sony noise cancelling headphones', 'xm6', 'wh-1000xm6']",2025-05-16 13:11:42.295850+00:00
+28,pedro moreno,10000,100,US,['law_and_government'],2025-05-15T19:40:00Z,,,['pedro moreno'],2025-05-16 13:11:42.295850+00:00
+29,wall street,2000,400,US,['business_and_finance'],2025-05-16T05:40:00Z,,,['wall street'],2025-05-16 13:11:42.295850+00:00
+30,osasuna - atlético madrid,50000,1000,US,['sports'],2025-05-15T16:10:00Z,,,"['osasuna - atlético madrid', 'osasuna vs atlético madrid']",2025-05-16 13:11:42.295850+00:00
+31,greys anatomy season finales,10000,500,US,['entertainment'],2025-05-16T06:20:00Z,,,"['greys anatomy season finales', ""grey's anatomy"", ""grey's anatomy season finale"", 'greys anatomy']",2025-05-16 13:11:42.295850+00:00
+32,morgan wallen,10000,300,US,['entertainment'],2025-05-16T04:10:00Z,,,"['morgan wallen', 'morgan wallen tour']",2025-05-16 13:11:42.295850+00:00
+33,student loan forgiveness update,2000,1000,US,['business_and_finance'],2025-05-16T12:00:00Z,,,['student loan forgiveness update'],2025-05-16 13:11:42.295850+00:00
+34,michael jordan,5000,500,US,['sports'],2025-05-16T08:50:00Z,,,['michael jordan'],2025-05-16 13:11:42.295850+00:00
+35,taurine,2000,200,US,"['health', 'food_and_drink']",2025-05-16T02:40:00Z,,,['taurine'],2025-05-16 13:11:42.295850+00:00
+36,logan rozos,10000,100,US,['other'],2025-05-15T18:50:00Z,,,"['logan rozos', 'nyu']",2025-05-16 13:11:42.295850+00:00
+37,tommy lee,5000,100,US,['entertainment'],2025-05-16T01:10:00Z,,,"['tommy lee', 'brittany furlan']",2025-05-16 13:11:42.295850+00:00
+38,annabelle doll,5000,75,US,['entertainment'],2025-05-15T19:50:00Z,,,"['annabelle doll', 'annabelle']",2025-05-16 13:11:42.295850+00:00
+39,lauren london diddy,10000,75,US,['entertainment'],2025-05-15T17:40:00Z,,,"['lauren london diddy', 'diddy lauren london', 'britney spears', 'alex fine cassie', 'pdiddy', 'diddy trial podcast', 'diddy trial updates cnn', 'yung miami', 'puff daddy']",2025-05-16 13:11:42.295850+00:00
+40,bahama breeze,5000,100,US,['other'],2025-05-15T18:50:00Z,,,['bahama breeze'],2025-05-16 13:11:42.295850+00:00
+41,strands nyt,5000,75,US,['other'],2025-05-16T10:00:00Z,,,['strands nyt'],2025-05-16 13:11:42.295850+00:00
+42,zidane,1000,200,US,['sports'],2025-05-16T09:50:00Z,,,['zidane'],2025-05-16 13:11:42.295850+00:00
+43,factor,5000,100,US,['sports'],2025-05-15T22:40:00Z,,,['factor'],2025-05-16 13:11:42.295850+00:00
+44,who won the amazing race 2025,10000,100,US,['entertainment'],2025-05-16T02:10:00Z,,,"['who won the amazing race 2025', 'amazing race finale', 'the amazing race', 'who won amazing race 2025', 'amazing race season 37', 'who won the amazing race', 'amazing race winners', 'amazing race winners 2025']",2025-05-16 13:11:42.295850+00:00
+45,glen rogers,5000,100,US,['law_and_government'],2025-05-15T13:10:00Z,,,"['glen rogers', 'casanova killer']",2025-05-16 13:11:42.295850+00:00
+46,pga leaderboard 2025,20000,100,US,['sports'],2025-05-15T15:30:00Z,,,"['pga leaderboard 2025', 'pga leaderboard today', 'golf', 'ryan gerard golf', 'pga champ']",2025-05-16 13:11:42.295850+00:00
+47,sec baseball standings,5000,300,US,['sports'],2025-05-16T02:40:00Z,,,"['sec baseball standings', 'tennessee baseball', 'arkansas baseball', 'tony vitello', 'razorback baseball']",2025-05-16 13:11:42.295850+00:00
+48,tiktok down outage,100000,1000,US,"['entertainment', 'technology']",2025-05-16T01:30:00Z,2025-05-16T12:50:00Z,680.0,"['tiktok down outage', 'is tiktok down', 'tiktok down', 'tiktok downdetector', 'tiktok not working', 'is tiktok down right now', 'why is tiktok not working', 'tik tok down', 'is tik tok down', 'tik tok not working', 'tiktok outage', 'tiktok not loading', 'downdetector', 'is tiktok not working', 'why tiktok is not working today', 'is tiktok down?', 'tiktok is down', 'tiktok down?', 'tiktok not working today']",2025-05-16 13:11:42.295850+00:00
+49,novo nordisk,1000,200,US,['business_and_finance'],2025-05-16T11:30:00Z,,,"['novo nordisk', 'novo nordisk stock']",2025-05-16 13:11:42.295850+00:00
+50,josh holloway,2000,75,US,['entertainment'],2025-05-16T01:20:00Z,,,['josh holloway'],2025-05-16 13:11:42.295850+00:00
+51,stanley tucci,500,300,US,['entertainment'],2025-05-16T12:30:00Z,,,['stanley tucci'],2025-05-16 13:11:42.295850+00:00
+52,cava stock,2000,100,US,['business_and_finance'],2025-05-15T20:00:00Z,,,"['cava stock', 'cava earnings']",2025-05-16 13:11:42.295850+00:00
+53,mr beast,5000,50,US,['entertainment'],2025-05-15T22:10:00Z,,,"['mr beast', 'mrbeast']",2025-05-16 13:11:42.295850+00:00
+54,devon hurst,2000,75,US,['entertainment'],2025-05-16T02:10:00Z,,,['devon hurst'],2025-05-16 13:11:42.295850+00:00
+55,high wind warning,1000,100,US,['climate'],2025-05-16T09:50:00Z,,,['high wind warning'],2025-05-16 13:11:42.295850+00:00
+56,jarred shaw,2000,100,US,['law_and_government'],2025-05-16T05:10:00Z,,,"['jarred shaw', 'jarred dwayne shaw', 'indonesia']",2025-05-16 13:11:42.295850+00:00
+57,stars vs jets,50000,1000,US,['sports'],2025-05-16T01:20:00Z,2025-05-16T12:20:00Z,660.0,"['stars vs jets', 'dallas stars games', 'stars', 'stars game', 'stars game tonight', 'dallas stars score', 'dallas stars', 'stars score', 'dallas stars game tonight', 'hockey tonight', 'jets stars', 'stars hockey', 'dallas stars schedule', 'dallas stars game']",2025-05-16 13:11:42.295850+00:00
+58,hurricanes vs capitals,100000,1000,US,['sports'],2025-05-15T22:40:00Z,2025-05-16T10:30:00Z,710.0,"['hurricanes vs capitals', 'capitals', 'carolina hurricanes', 'hurricanes', 'caps', 'caps game', 'washington capitals', 'capitals game', 'caps score', 'hurricanes hockey', 'canes game', 'canes hockey', 'nhl schedule', 'caps game tonight', 'andrei svechnikov', 'capitals score', 'nhl standings', 'svechnikov', 'canes vs caps', 'nhl tonight', 'jakob chychrun']",2025-05-16 13:11:42.295850+00:00
+59,janet jackson,1000,100,US,['entertainment'],2025-05-16T06:30:00Z,,,['janet jackson'],2025-05-16 13:11:42.295850+00:00
+60,college board,10000,75,US,['jobs_and_education'],2025-05-15T23:10:00Z,,,['college board'],2025-05-16 13:11:42.295850+00:00
+61,bueckers,500,100,US,['sports'],2025-05-16T10:50:00Z,,,['bueckers'],2025-05-16 13:11:42.295850+00:00
+62,5280 denver,20000,1000,US,['sports'],2025-05-16T00:40:00Z,2025-05-16T12:30:00Z,710.0,['5280 denver'],2025-05-16 13:11:42.295850+00:00
+63,dodgers,50000,200,US,['sports'],2025-05-16T03:30:00Z,2025-05-16T06:10:00Z,160.0,"['dodgers', 'shohei ohtani', 'max muncy', 'dodgers games', 'ohtani', 'dodgers game today', 'dodgers schedule', 'andy pages', 'athletics', 'mlb home run leaders', 'dodger', 'major league', 'dodger score', 'los angeles dodgers', 'dodgers standings']",2025-05-16 13:11:42.295850+00:00
+64,kesha,1000,100,US,['entertainment'],2025-05-16T05:40:00Z,,,['kesha'],2025-05-16 13:11:42.295850+00:00
+65,jack walworth,20000,1000,US,['entertainment'],2025-05-16T02:20:00Z,2025-05-16T10:50:00Z,510.0,"['jack walworth', 'jonathan and ana amazing race', 'amazing race jonathan and ana', 'amazing race jack walworth']",2025-05-16 13:11:42.295850+00:00
+66,espn+,1000,300,US,['entertainment'],2025-05-16T12:40:00Z,,,['espn+'],2025-05-16 13:11:42.295850+00:00
+67,tornado watch vs warning,20000,700,US,['climate'],2025-05-15T18:20:00Z,2025-05-16T06:50:00Z,750.0,"['tornado watch vs warning', 'click on detroit weather', 'livingston county', 'tornado oakland county']",2025-05-16 13:11:42.295850+00:00
+68,el chapo guzman,500,200,US,['law_and_government'],2025-05-16T12:40:00Z,,,['el chapo guzman'],2025-05-16 13:11:42.295850+00:00
+69,nvo stock,500,100,US,['business_and_finance'],2025-05-16T11:40:00Z,,,['nvo stock'],2025-05-16 13:11:42.295850+00:00
+70,mission impossible final reckoning,1000,100,US,['entertainment'],2025-05-16T09:20:00Z,,,"['mission impossible final reckoning', 'angela bassett']",2025-05-16 13:11:42.295850+00:00
+71,haley jones wnba,2000,50,US,['sports'],2025-05-15T13:30:00Z,,,['haley jones wnba'],2025-05-16 13:11:42.295850+00:00
+72,jim ross,10000,200,US,['sports'],2025-05-15T18:20:00Z,2025-05-16T13:00:00Z,1120.0,['jim ross'],2025-05-16 13:11:42.295850+00:00
+73,okc vs nuggets,100000,900,US,['sports'],2025-05-16T02:10:00Z,2025-05-16T04:30:00Z,140.0,"['okc vs nuggets', 'okc', 'where to watch denver nuggets vs oklahoma city thunder', 'thunder game tonight', 'where to watch oklahoma city thunder vs denver nuggets', 'thunder', 'okc vs denver', 'nikola jokic stats', 'oklahoma city thunder', 'denver nuggets vs oklahoma city thunder', 'oklahoma city thunder vs denver nuggets', 'thunder score', 'nuggets game tonight', 'okc game', 'luguentz dort', 'okc thunder games', 'lu dort', 'nuggets schedule', 'thunder nuggets', 'okc denver', 'denver okc', 'okc score', 'nba tonight', 'nuggets vs thunder prediction', 'nuggets okc', 'den vs okc', 'thunder vs nuggets prediction', 'nba game tonight', 'thunder okc', 'what channel is the nuggets game on tonight', 'okc roster', 'caruso', 'denver nuggets game tonight']",2025-05-16 13:11:42.295850+00:00
+74,school closings,5000,600,US,['other'],2025-05-16T08:40:00Z,2025-05-16T12:50:00Z,250.0,"['school closings', 'wzzm13', 'wzzm', 'power outage grand rapids', 'wzzm 13']",2025-05-16 13:11:42.295850+00:00
+75,disneyplus,500,75,US,['entertainment'],2025-05-16T12:10:00Z,,,['disneyplus'],2025-05-16 13:11:42.295850+00:00
+76,aston martin,20000,75,US,['technology'],2025-05-15T15:30:00Z,2025-05-16T12:00:00Z,1230.0,"['aston martin', 'aston martin apple carplay ultra', 'aston martin carplay ultra', 'carplay ultra aston martin']",2025-05-16 13:11:42.295850+00:00
+77,xcel energy,1000,75,US,['business_and_finance'],2025-05-16T11:20:00Z,,,['xcel energy'],2025-05-16 13:11:42.295850+00:00
+78,consumers,1000,75,US,['business_and_finance'],2025-05-16T03:20:00Z,,,['consumers'],2025-05-16 13:11:42.295850+00:00
+79,ben wang,10000,400,US,['entertainment'],2025-05-15T18:30:00Z,2025-05-16T08:10:00Z,820.0,"['ben wang', 'wyatt callow hunger games']",2025-05-16 13:11:42.295850+00:00
+80,nikki bella,1000,50,US,['other'],2025-05-16T03:50:00Z,,,['nikki bella'],2025-05-16 13:11:42.295850+00:00
+81,nyt crossword answers,1000,100,US,['games'],2025-05-16T09:00:00Z,,,"['nyt crossword answers', 'mini crossword hint', 'nyt mini answers', 'mini crossword answers']",2025-05-16 13:11:42.295850+00:00
+82,wembanyama,500,75,US,['sports'],2025-05-16T11:10:00Z,,,['wembanyama'],2025-05-16 13:11:42.295850+00:00
+83,hollywood,500,75,US,['entertainment'],2025-05-16T11:00:00Z,,,['hollywood'],2025-05-16 13:11:42.295850+00:00
+84,dead island 2,5000,75,US,['games'],2025-05-15T15:30:00Z,2025-05-16T10:50:00Z,1160.0,['dead island 2'],2025-05-16 13:11:42.295850+00:00
+85,river plate - independiente del valle,10000,300,US,['sports'],2025-05-15T23:40:00Z,2025-05-16T11:20:00Z,700.0,"['river plate - independiente del valle', 'river plate vs independiente del valle', 'river plate', 'independiente del valle']",2025-05-16 13:11:42.295850+00:00
+86,pfas,500,50,US,['law_and_government'],2025-05-16T09:10:00Z,,,['pfas'],2025-05-16 13:11:42.295850+00:00
+87,gma deals and steals today,500,50,US,['beauty_and_fashion'],2025-05-16T12:30:00Z,,,"['gma deals and steals today', 'deals and steals']",2025-05-16 13:11:42.295850+00:00
+88,chicago weather,20000,100,US,['climate'],2025-05-15T20:00:00Z,2025-05-16T03:10:00Z,430.0,"['chicago weather', 'weather chicago', 'chicago radar', 'chicago news', 'chicago tornado', 'weather radar chicago', 'tornado watch chicago']",2025-05-16 13:11:42.295850+00:00
+89,wordle may 16,1000,50,US,['games'],2025-05-16T10:50:00Z,,,"['wordle may 16', 'wordle.', 'wordle hint may 15']",2025-05-16 13:11:42.295850+00:00
+90,getafe vs athletic club,20000,300,US,['sports'],2025-05-15T18:40:00Z,2025-05-16T09:40:00Z,900.0,"['getafe vs athletic club', 'getafe - athletic']",2025-05-16 13:11:42.295850+00:00
+91,club america,20000,800,US,['sports'],2025-05-16T01:40:00Z,2025-05-16T05:10:00Z,210.0,"['club america', 'cruz azul', 'cruz azul vs club américa lineups', 'america vs cruz azul today']",2025-05-16 13:11:42.295850+00:00
+92,christian braun,10000,1000,US,['sports'],2025-05-16T01:40:00Z,2025-05-16T05:00:00Z,200.0,['christian braun'],2025-05-16 13:11:42.295850+00:00
+93,acc baseball standings,2000,100,US,['sports'],2025-05-16T01:00:00Z,2025-05-16T13:00:00Z,720.0,['acc baseball standings'],2025-05-16 13:11:42.295850+00:00
+94,kids choice awards 2025,2000,50,US,['entertainment'],2025-05-15T22:20:00Z,2025-05-16T12:50:00Z,870.0,['kids choice awards 2025'],2025-05-16 13:11:42.295850+00:00
+95,jacob degrom,5000,100,US,['sports'],2025-05-16T00:00:00Z,2025-05-16T12:40:00Z,760.0,"['jacob degrom', 'hunter brown', 'jake burger']",2025-05-16 13:11:42.295850+00:00
+96,epic games store,200,50,US,['games'],2025-05-16T12:30:00Z,,,['epic games store'],2025-05-16 13:11:42.295850+00:00
+97,social security retirement age,20000,600,US,['business_and_finance'],2025-05-15T13:10:00Z,2025-05-15T22:00:00Z,530.0,['social security retirement age'],2025-05-16 13:11:42.295850+00:00
+98,kane brown,1000,50,US,['entertainment'],2025-05-15T23:50:00Z,,,['kane brown'],2025-05-16 13:11:42.295850+00:00
+99,valeria marquez asesinada,5000,100,US,['law_and_government'],2025-05-15T17:00:00Z,2025-05-16T11:40:00Z,1120.0,"['valeria marquez asesinada', 'el doble r']",2025-05-16 13:11:42.295850+00:00
+100,blake lively,2000,75,US,['entertainment'],2025-05-16T11:00:00Z,2025-05-16T12:30:00Z,90.0,"['blake lively', 'taylor swift blake lively', 'friendship']",2025-05-16 13:11:42.295850+00:00
+101,liquid death,1000,75,US,['entertainment'],2025-05-16T01:50:00Z,,,['liquid death'],2025-05-16 13:11:42.295850+00:00
+102,the wire,500,200,US,['entertainment'],2025-05-16T11:30:00Z,2025-05-16T13:00:00Z,90.0,['the wire'],2025-05-16 13:11:42.295850+00:00
+103,coco gauff,20000,500,US,['sports'],2025-05-15T19:10:00Z,2025-05-15T23:30:00Z,260.0,"['coco gauff', 'gauff', 'paolini', 'gauff vs zheng', 'zheng']",2025-05-16 13:11:42.295850+00:00
+104,luke donald,10000,100,US,['sports'],2025-05-15T13:40:00Z,2025-05-16T12:10:00Z,1350.0,"['luke donald', 'keegan bradley']",2025-05-16 13:11:42.295850+00:00
+105,bet netflix,2000,100,US,['entertainment'],2025-05-15T22:40:00Z,2025-05-16T10:40:00Z,720.0,"['bet netflix', 'bet netflix cast']",2025-05-16 13:11:42.295850+00:00
+106,shrinking,2000,100,US,['entertainment'],2025-05-16T04:00:00Z,,,"['shrinking', 'michael j fox']",2025-05-16 13:11:42.295850+00:00
+107,fc barcelona,20000,600,US,['sports'],2025-05-15T20:00:00Z,2025-05-15T22:20:00Z,140.0,"['fc barcelona', 'barcelona fc', 'cómo va el barcelona', 'cómo quedó el barcelona', 'barca hoy', 'barca fc']",2025-05-16 13:11:42.295850+00:00
+108,rayo vallecano vs real betis,10000,500,US,['sports'],2025-05-15T16:10:00Z,2025-05-15T22:50:00Z,400.0,['rayo vallecano vs real betis'],2025-05-16 13:11:42.295850+00:00
+109,secrets we keep,5000,100,US,['entertainment'],2025-05-15T21:50:00Z,2025-05-16T07:40:00Z,590.0,"['secrets we keep', 'secrets we keep netflix']",2025-05-16 13:11:42.295850+00:00
+110,raising kanan,5000,50,US,['entertainment'],2025-05-16T05:10:00Z,2025-05-16T10:30:00Z,320.0,"['raising kanan', 'raising kanan season 5', 'raising kanan season 4', 'starz']",2025-05-16 13:11:42.295850+00:00
+111,adam dimarco,2000,100,US,['entertainment'],2025-05-16T02:40:00Z,2025-05-16T09:10:00Z,390.0,"['adam dimarco', 'wally baram', 'benito skinner overcompensating']",2025-05-16 13:11:42.295850+00:00
+112,final destination: bloodlines,5000,75,US,['entertainment'],2025-05-15T23:20:00Z,2025-05-16T10:00:00Z,640.0,"['final destination: bloodlines', 'final destination bloodlines post credit scene', 'final.destination']",2025-05-16 13:11:42.295850+00:00
+113,rayo vallecano - betis,10000,600,US,['sports'],2025-05-15T16:10:00Z,2025-05-15T22:30:00Z,380.0,['rayo vallecano - betis'],2025-05-16 13:11:42.295850+00:00
+114,the weeknd,5000,100,US,['entertainment'],2025-05-16T03:40:00Z,2025-05-16T09:10:00Z,330.0,"['the weeknd', 'the weekend', 'jenna ortega']",2025-05-16 13:11:42.295850+00:00
+115,alejandro sanz,1000,50,US,['entertainment'],2025-05-16T03:00:00Z,2025-05-16T12:30:00Z,570.0,['alejandro sanz'],2025-05-16 13:11:42.295850+00:00
+116,preakness,2000,100,US,"['sports', 'games', 'hobbies_and_leisure']",2025-05-16T11:50:00Z,2025-05-16T13:00:00Z,70.0,"['preakness', 'bet']",2025-05-16 13:11:42.295850+00:00
+117,fortnite server status,1000,500,US,['games'],2025-05-16T09:20:00Z,2025-05-16T11:40:00Z,140.0,"['fortnite server status', 'fortnite update']",2025-05-16 13:11:42.295850+00:00
+118,taylor frankie paul,2000,75,US,['entertainment'],2025-05-16T00:20:00Z,2025-05-16T12:40:00Z,740.0,['taylor frankie paul'],2025-05-16 13:11:42.295850+00:00
+119,jhonny pereda,1000,100,US,['sports'],2025-05-16T04:30:00Z,2025-05-16T12:20:00Z,470.0,['jhonny pereda'],2025-05-16 13:11:42.295850+00:00
+120,kim hye-seong,2000,200,US,['sports'],2025-05-16T03:20:00Z,2025-05-16T10:00:00Z,400.0,"['kim hye-seong', 'hyeseong kim']",2025-05-16 13:11:42.295850+00:00
+121,megan fox,1000,75,US,"['entertainment', 'hobbies_and_leisure']",2025-05-16T09:40:00Z,2025-05-16T13:00:00Z,200.0,['megan fox'],2025-05-16 13:11:42.295850+00:00
+122,gaza,1000,100,US,['politics'],2025-05-16T06:50:00Z,2025-05-16T12:20:00Z,330.0,['gaza'],2025-05-16 13:11:42.295850+00:00
+123,next level chef,2000,75,US,"['entertainment', 'food_and_drink']",2025-05-16T00:00:00Z,2025-05-16T11:20:00Z,680.0,['next level chef'],2025-05-16 13:11:42.295850+00:00
+124,jaylin williams,5000,800,US,['sports'],2025-05-16T01:20:00Z,2025-05-16T04:20:00Z,180.0,['jaylin williams'],2025-05-16 13:11:42.295850+00:00
+125,rcd espanyol vs. barcelona,20000,500,US,['sports'],2025-05-15T18:50:00Z,2025-05-15T22:40:00Z,230.0,"['rcd espanyol vs. barcelona', 'barcelona vs']",2025-05-16 13:11:42.295850+00:00
+126,tiktok,20000,100,US,['entertainment'],2025-05-15T20:40:00Z,2025-05-15T22:50:00Z,130.0,"['tiktok', 'tik tok']",2025-05-16 13:11:42.295850+00:00
+127,shai gilgeous-alexander stats,20000,300,US,['sports'],2025-05-15T22:40:00Z,2025-05-16T01:20:00Z,160.0,"['shai gilgeous-alexander stats', 'chet holmgren', 'shai gilgeous-alexander', 'shai gilgeous alexander stats']",2025-05-16 13:11:42.295850+00:00
+128,aep,500,75,US,['business_and_finance'],2025-05-16T08:20:00Z,2025-05-16T13:00:00Z,280.0,['aep'],2025-05-16 13:11:42.295850+00:00
+129,athletics - dodgers,2000,100,US,['sports'],2025-05-16T02:10:00Z,2025-05-16T10:10:00Z,480.0,"['athletics - dodgers', 'dodgers game']",2025-05-16 13:11:42.295850+00:00
+130,david frost,500,200,US,['other'],2025-05-16T11:30:00Z,2025-05-16T12:40:00Z,70.0,['david frost'],2025-05-16 13:11:42.295850+00:00
+131,jen affleck,2000,75,US,['entertainment'],2025-05-16T00:50:00Z,2025-05-16T12:10:00Z,680.0,['jen affleck'],2025-05-16 13:11:42.295850+00:00
+132,eurovision song contest semi final,5000,100,US,['entertainment'],2025-05-16T00:20:00Z,2025-05-16T07:40:00Z,440.0,"['eurovision song contest semi final', '2025', 'eurovision semi final 2', 'eurovision 2025 semi final 2']",2025-05-16 13:11:42.295850+00:00
+133,texas lottery,1000,50,US,['other'],2025-05-16T09:20:00Z,2025-05-16T12:30:00Z,190.0,['texas lottery'],2025-05-16 13:11:42.295850+00:00
+134,justin thomas,5000,200,US,['sports'],2025-05-15T17:10:00Z,2025-05-16T00:00:00Z,410.0,['justin thomas'],2025-05-16 13:11:42.295850+00:00
+135,duster show,2000,100,US,['entertainment'],2025-05-16T01:10:00Z,2025-05-16T09:30:00Z,500.0,['duster show'],2025-05-16 13:11:42.295850+00:00
+136,capcom fighting collection 2,1000,100,US,['games'],2025-05-16T04:40:00Z,2025-05-16T11:40:00Z,420.0,['capcom fighting collection 2'],2025-05-16 13:11:42.295850+00:00
+137,jalen williams,10000,1000,US,['sports'],2025-05-16T03:00:00Z,2025-05-16T04:20:00Z,80.0,['jalen williams'],2025-05-16 13:11:42.295850+00:00
+138,kendrick perkins,5000,500,US,['sports'],2025-05-16T00:20:00Z,2025-05-16T04:40:00Z,260.0,['kendrick perkins'],2025-05-16 13:11:42.295850+00:00
+139,hilary duff,1000,50,US,['entertainment'],2025-05-16T02:20:00Z,2025-05-16T11:40:00Z,560.0,['hilary duff'],2025-05-16 13:11:42.295850+00:00
+140,cason wallace,5000,400,US,['sports'],2025-05-16T01:20:00Z,2025-05-16T04:20:00Z,180.0,"['cason wallace', 'alex caruso']",2025-05-16 13:11:42.295850+00:00
+141,michael block,5000,75,US,['sports'],2025-05-15T16:40:00Z,2025-05-16T02:40:00Z,600.0,['michael block'],2025-05-16 13:11:42.295850+00:00
+142,hacks season 4,2000,75,US,['entertainment'],2025-05-16T01:30:00Z,2025-05-16T07:50:00Z,380.0,['hacks season 4'],2025-05-16 13:11:42.295850+00:00
+143,barca vs,10000,900,US,['sports'],2025-05-15T20:10:00Z,2025-05-15T22:10:00Z,120.0,"['barca vs', 'espanyol – barcelone', 'espanyol vs fc barcelona lineups', 'where to watch espanyol vs fc barcelona']",2025-05-16 13:11:42.295850+00:00
+144,solar flare,2000,75,US,['science'],2025-05-15T23:50:00Z,2025-05-16T11:40:00Z,710.0,"['solar flare', 'solar eruption']",2025-05-16 13:11:42.295850+00:00
+145,amber alert georgia,2000,50,US,['law_and_government'],2025-05-16T00:40:00Z,,,"['amber alert georgia', 'amber alert', 'amber alert savannah', 'savannah ga']",2025-05-16 13:11:42.295850+00:00
+146,dodger game today,5000,300,US,['sports'],2025-05-16T03:50:00Z,2025-05-16T06:10:00Z,140.0,"['dodger game today', 'la dodgers']",2025-05-16 13:11:42.295850+00:00
+147,lakeville police department,10000,400,US,['law_and_government'],2025-05-15T21:10:00Z,2025-05-16T01:00:00Z,230.0,"['lakeville police department', 'lakeville shelter in place', 'wcco', 'lakeville', 'shelter in place', 'lakeville mn', 'lakeville police', 'shelter in place alert', 'lakeville police shelter in place']",2025-05-16 13:11:42.295850+00:00
+148,nathaniel radimak,500,100,US,['other'],2025-05-16T05:30:00Z,2025-05-16T11:00:00Z,330.0,['nathaniel radimak'],2025-05-16 13:11:42.295850+00:00
+149,tiffany slaton,2000,50,US,['law_and_government'],2025-05-16T06:00:00Z,2025-05-16T12:40:00Z,400.0,"['tiffany slaton', 'found']",2025-05-16 13:11:42.295850+00:00
+150,astana,1000,100,US,['entertainment'],2025-05-16T05:10:00Z,2025-05-16T10:40:00Z,330.0,['astana'],2025-05-16 13:11:42.295850+00:00
+151,rochester weather,500,50,US,['climate'],2025-05-16T10:00:00Z,2025-05-16T12:20:00Z,140.0,"['rochester weather', 'buffalo weather']",2025-05-16 13:11:42.295850+00:00
+152,interstate obscenity act,1000,50,US,"['law_and_government', 'politics']",2025-05-16T03:00:00Z,2025-05-16T12:10:00Z,550.0,['interstate obscenity act'],2025-05-16 13:11:42.295850+00:00
+153,matt sauer,2000,100,US,['sports'],2025-05-16T02:10:00Z,2025-05-16T07:00:00Z,290.0,['matt sauer'],2025-05-16 13:11:42.295850+00:00
+154,law and order svu,2000,50,US,['entertainment'],2025-05-16T09:30:00Z,2025-05-16T12:30:00Z,180.0,"['law and order svu', 'law and order']",2025-05-16 13:11:42.295850+00:00
+155,denver,5000,500,US,['other'],2025-05-16T02:40:00Z,2025-05-16T04:30:00Z,110.0,"['denver', 'denver airport']",2025-05-16 13:11:42.295850+00:00
+156,coinbase,10000,75,US,['business_and_finance'],2025-05-15T15:20:00Z,2025-05-15T20:50:00Z,330.0,['coinbase'],2025-05-16 13:11:42.295850+00:00
+157,emily compagno,5000,200,US,['entertainment'],2025-05-16T02:30:00Z,2025-05-16T04:50:00Z,140.0,['emily compagno'],2025-05-16 13:11:42.295850+00:00
+158,bernie sanders,2000,400,US,"['politics', 'law_and_government', 'health']",2025-05-16T03:50:00Z,2025-05-16T08:00:00Z,250.0,['bernie sanders'],2025-05-16 13:11:42.295850+00:00
+159,50 cent,1000,50,US,['entertainment'],2025-05-16T02:00:00Z,2025-05-16T12:10:00Z,610.0,['50 cent'],2025-05-16 13:11:42.295850+00:00
+160,russell westbrook,5000,1000,US,['sports'],2025-05-16T03:00:00Z,2025-05-16T04:10:00Z,70.0,"['russell westbrook', 'westbrook']",2025-05-16 13:11:42.295850+00:00
+161,northeastern university,2000,75,US,['jobs_and_education'],2025-05-15T22:30:00Z,2025-05-16T05:00:00Z,390.0,['northeastern university'],2025-05-16 13:11:42.295850+00:00
+162,yvonne rorrer,1000,100,US,['politics'],2025-05-16T03:40:00Z,2025-05-16T12:30:00Z,530.0,['yvonne rorrer'],2025-05-16 13:11:42.295850+00:00
+163,911 nashville,2000,100,US,['entertainment'],2025-05-16T00:10:00Z,2025-05-16T07:50:00Z,460.0,"['911 nashville', 'tv guide']",2025-05-16 13:11:42.295850+00:00
+164,dodgers score,2000,400,US,['sports'],2025-05-16T03:50:00Z,2025-05-16T06:20:00Z,150.0,['dodgers score'],2025-05-16 13:11:42.295850+00:00
+165,jose castillo,2000,100,US,['sports'],2025-05-16T01:50:00Z,2025-05-16T12:00:00Z,610.0,['jose castillo'],2025-05-16 13:11:42.295850+00:00
+166,wnba schedule,200,100,US,['sports'],2025-05-16T11:30:00Z,2025-05-16T12:30:00Z,60.0,['wnba schedule'],2025-05-16 13:11:42.295850+00:00
+167,isaiah hartenstein,5000,800,US,['sports'],2025-05-16T02:10:00Z,2025-05-16T03:50:00Z,100.0,['isaiah hartenstein'],2025-05-16 13:11:42.295850+00:00
+168,local news,1000,50,US,['other'],2025-05-16T04:10:00Z,2025-05-16T12:40:00Z,510.0,['local news'],2025-05-16 13:11:42.295850+00:00
+169,alex ovechkin,2000,200,US,['sports'],2025-05-16T00:10:00Z,2025-05-16T04:50:00Z,280.0,"['alex ovechkin', 'alexander ovechkin']",2025-05-16 13:11:42.295850+00:00
+170,achr stock,200,50,US,['business_and_finance'],2025-05-16T10:10:00Z,2025-05-16T12:30:00Z,140.0,['achr stock'],2025-05-16 13:11:42.295850+00:00
+171,sga,5000,500,US,['sports'],2025-05-16T01:40:00Z,2025-05-16T03:40:00Z,120.0,"['sga', 'nba mvp', 'nba mvp 2025', '2025 nba mvp']",2025-05-16 13:11:42.295850+00:00
+172,蓝天立,500,200,US,"['law_and_government', 'politics']",2025-05-16T09:40:00Z,2025-05-16T11:40:00Z,120.0,['蓝天立'],2025-05-16 13:11:42.295850+00:00
+173,idris elba,2000,300,US,['entertainment'],2025-05-15T23:00:00Z,2025-05-16T03:40:00Z,280.0,['idris elba'],2025-05-16 13:11:42.295850+00:00
+174,jannik sinner,10000,200,US,['sports'],2025-05-15T17:30:00Z,2025-05-15T19:50:00Z,140.0,"['jannik sinner', 'rome tennis', 'tennis', 'sinner']",2025-05-16 13:11:42.295850+00:00
+175,jalen suggs,2000,50,US,['sports'],2025-05-16T01:10:00Z,2025-05-16T10:00:00Z,530.0,['jalen suggs'],2025-05-16 13:11:42.295850+00:00
+176,cellcom outages,5000,100,US,['technology'],2025-05-15T17:30:00Z,2025-05-15T22:50:00Z,320.0,['cellcom outages'],2025-05-16 13:11:42.295850+00:00
+177,wvu baseball,1000,50,US,['sports'],2025-05-16T01:00:00Z,2025-05-16T12:00:00Z,660.0,['wvu baseball'],2025-05-16 13:11:42.295850+00:00
+178,flamengo,2000,200,US,['sports'],2025-05-16T00:10:00Z,2025-05-16T03:20:00Z,190.0,"['flamengo', 'flamengo x ldu quito']",2025-05-16 13:11:42.295850+00:00
+179,dailymotion,500,50,US,"['entertainment', 'technology']",2025-05-16T10:40:00Z,2025-05-16T12:00:00Z,80.0,['dailymotion'],2025-05-16 13:11:42.295850+00:00
+180,detroit news,500,50,US,['entertainment'],2025-05-16T04:50:00Z,2025-05-16T12:30:00Z,460.0,['detroit news'],2025-05-16 13:11:42.295850+00:00
+181,nhl playoffs,10000,50,US,['sports'],2025-05-16T02:10:00Z,2025-05-16T11:10:00Z,540.0,"['nhl playoffs', 'stanley cup playoffs', 'nhl bracket', 'hockey playoffs']",2025-05-16 13:11:42.295850+00:00
+182,lollapalooza 2025,5000,100,US,['entertainment'],2025-05-15T15:10:00Z,2025-05-16T10:00:00Z,1130.0,"['lollapalooza 2025', 'lollapalooza']",2025-05-16 13:11:42.295850+00:00
+183,jokic stats,2000,400,US,['sports'],2025-05-16T00:10:00Z,2025-05-16T04:10:00Z,240.0,['jokic stats'],2025-05-16 13:11:42.295850+00:00
+184,kevin harvick,1000,200,US,['sports'],2025-05-16T05:10:00Z,2025-05-16T08:10:00Z,180.0,['kevin harvick'],2025-05-16 13:11:42.295850+00:00
+185,kmov,200,50,US,['law_and_government'],2025-05-16T11:10:00Z,2025-05-16T12:30:00Z,80.0,['kmov'],2025-05-16 13:11:42.295850+00:00
+186,kellyanne conway,2000,100,US,['politics'],2025-05-15T21:20:00Z,2025-05-16T05:40:00Z,500.0,['kellyanne conway'],2025-05-16 13:11:42.295850+00:00
+187,dodgers vs athletics,1000,100,US,['sports'],2025-05-16T02:40:00Z,2025-05-16T06:40:00Z,240.0,['dodgers vs athletics'],2025-05-16 13:11:42.295850+00:00
+188,james outman,1000,100,US,['sports'],2025-05-16T04:00:00Z,2025-05-16T08:20:00Z,260.0,"['james outman', 'chris taylor']",2025-05-16 13:11:42.295850+00:00
+189,ben and jerry arrested,2000,50,US,['other'],2025-05-16T00:00:00Z,2025-05-16T12:50:00Z,770.0,['ben and jerry arrested'],2025-05-16 13:11:42.295850+00:00
+190,alianza lima,5000,200,US,['sports'],2025-05-15T22:20:00Z,2025-05-16T01:00:00Z,160.0,"['alianza lima', 'talleres córdoba vs alianza lima']",2025-05-16 13:11:42.295850+00:00
+191,jamie benn,1000,100,US,['sports'],2025-05-16T04:10:00Z,2025-05-16T12:10:00Z,480.0,"['jamie benn', 'mark scheifele']",2025-05-16 13:11:42.295850+00:00
+192,david adelman,2000,500,US,['sports'],2025-05-16T02:40:00Z,2025-05-16T04:00:00Z,80.0,"['david adelman', 'nuggets coach', 'denver nuggets coach', 'aaron gordon injury']",2025-05-16 13:11:42.295850+00:00
+193,delta air lines,200,200,US,['travel_and_transportation'],2025-05-16T10:40:00Z,2025-05-16T11:50:00Z,70.0,['delta air lines'],2025-05-16 13:11:42.295850+00:00
+194,sat,200,100,US,['jobs_and_education'],2025-05-16T11:30:00Z,2025-05-16T12:20:00Z,50.0,['sat'],2025-05-16 13:11:42.295850+00:00
+195,telemundo,2000,50,US,['entertainment'],2025-05-16T02:00:00Z,2025-05-16T05:20:00Z,200.0,['telemundo'],2025-05-16 13:11:42.295850+00:00
+196,kaitlyn chen valkyries,200,100,US,['sports'],2025-05-16T11:50:00Z,2025-05-16T12:30:00Z,40.0,['kaitlyn chen valkyries'],2025-05-16 13:11:42.295850+00:00
+197,colts schedule release video,5000,100,US,['sports'],2025-05-15T15:00:00Z,2025-05-15T21:30:00Z,390.0,['colts schedule release video'],2025-05-16 13:11:42.295850+00:00
+198,alcaraz,200,100,US,['sports'],2025-05-16T11:40:00Z,2025-05-16T12:20:00Z,40.0,['alcaraz'],2025-05-16 13:11:42.295850+00:00
+199,whiplash,500,50,US,['business_and_finance'],2025-05-16T04:40:00Z,2025-05-16T09:50:00Z,310.0,['whiplash'],2025-05-16 13:11:42.295850+00:00
+200,james bond,5000,100,US,['entertainment'],2025-05-15T22:30:00Z,2025-05-16T06:40:00Z,490.0,"['james bond', 'james bond actor died', 'james bond actors', 'joe don baker walking tall']",2025-05-16 13:11:42.295850+00:00
+201,welcome to wrexham,2000,50,US,['sports'],2025-05-16T00:00:00Z,2025-05-16T05:20:00Z,320.0,['welcome to wrexham'],2025-05-16 13:11:42.295850+00:00
+202,hacks cast,1000,75,US,['entertainment'],2025-05-16T02:00:00Z,2025-05-16T05:50:00Z,230.0,['hacks cast'],2025-05-16 13:11:42.295850+00:00
+203,mgk,1000,50,US,['entertainment'],2025-05-16T00:40:00Z,2025-05-16T10:50:00Z,610.0,['mgk'],2025-05-16 13:11:42.295850+00:00
+204,unh stock price,200,75,US,['business_and_finance'],2025-05-16T10:30:00Z,2025-05-16T12:00:00Z,90.0,['unh stock price'],2025-05-16 13:11:42.295850+00:00
+205,uhc,5000,50,US,['other'],2025-05-15T13:30:00Z,2025-05-15T21:10:00Z,460.0,['uhc'],2025-05-16 13:11:42.295850+00:00
+206,barcelona hoy,5000,700,US,['sports'],2025-05-15T20:20:00Z,2025-05-15T22:00:00Z,100.0,['barcelona hoy'],2025-05-16 13:11:42.295850+00:00
+207,flags half staff,5000,500,US,['law_and_government'],2025-05-15T19:50:00Z,2025-05-15T22:00:00Z,130.0,"['flags half staff', 'flags half mast today', 'flag at half mast today']",2025-05-16 13:11:42.295850+00:00
+208,jasmine paolini,5000,300,US,['sports'],2025-05-15T13:30:00Z,2025-05-15T16:20:00Z,170.0,"['jasmine paolini', 'peyton stearns']",2025-05-16 13:11:42.295850+00:00
+209,nintendo store san francisco,500,75,US,"['games', 'technology']",2025-05-16T04:10:00Z,2025-05-16T08:10:00Z,240.0,['nintendo store san francisco'],2025-05-16 13:11:42.295850+00:00
+210,happy gilmore 2,2000,500,US,['entertainment'],2025-05-16T02:20:00Z,2025-05-16T03:30:00Z,70.0,"['happy gilmore 2', 'happy gilmore']",2025-05-16 13:11:42.295850+00:00
+211,taylor frankie paul mom,1000,50,US,['entertainment'],2025-05-16T01:00:00Z,2025-05-16T06:30:00Z,330.0,['taylor frankie paul mom'],2025-05-16 13:11:42.295850+00:00
+212,henrik lundqvist,2000,100,US,['sports'],2025-05-15T23:50:00Z,2025-05-16T04:40:00Z,290.0,['henrik lundqvist'],2025-05-16 13:11:42.295850+00:00
+213,flamengo vs ldu quito,2000,100,US,['sports'],2025-05-15T23:40:00Z,2025-05-16T03:20:00Z,220.0,['flamengo vs ldu quito'],2025-05-16 13:11:42.295850+00:00
+214,jordan staal,2000,100,US,['sports'],2025-05-15T23:20:00Z,2025-05-16T02:50:00Z,210.0,['jordan staal'],2025-05-16 13:11:42.295850+00:00
+215,first energy,200,75,US,['business_and_finance'],2025-05-16T09:40:00Z,2025-05-16T12:10:00Z,150.0,['first energy'],2025-05-16 13:11:42.295850+00:00
+216,mookie betts,1000,200,US,['sports'],2025-05-16T03:40:00Z,2025-05-16T05:50:00Z,130.0,['mookie betts'],2025-05-16 13:11:42.295850+00:00
+217,kare 11 weather,5000,200,US,['climate'],2025-05-15T18:50:00Z,2025-05-15T21:10:00Z,140.0,"['kare 11 weather', 'kare11 weather', 'tmj4']",2025-05-16 13:11:42.295850+00:00
+218,dodger game,1000,100,US,['sports'],2025-05-16T03:40:00Z,2025-05-16T05:50:00Z,130.0,['dodger game'],2025-05-16 13:11:42.295850+00:00
+219,st louis weather,200,50,US,['climate'],2025-05-16T11:30:00Z,2025-05-16T12:20:00Z,50.0,['st louis weather'],2025-05-16 13:11:42.295850+00:00
+220,danny trejo,200,50,US,['entertainment'],2025-05-16T12:00:00Z,2025-05-16T12:30:00Z,30.0,['danny trejo'],2025-05-16 13:11:42.295850+00:00
+221,cynthia cooper,200,50,US,['sports'],2025-05-16T05:10:00Z,2025-05-16T11:10:00Z,360.0,['cynthia cooper'],2025-05-16 13:11:42.295850+00:00
+222,once caldas - gualberto villarroel san josé,2000,50,US,['sports'],2025-05-16T01:40:00Z,2025-05-16T10:20:00Z,520.0,"['once caldas - gualberto villarroel san josé', 'copa sudamericana', 'once caldas']",2025-05-16 13:11:42.295850+00:00
+223,al-raed vs al-ittihad,2000,75,US,['sports'],2025-05-15T17:40:00Z,2025-05-15T21:10:00Z,210.0,"['al-raed vs al-ittihad', 'al raed - al ittihad']",2025-05-16 13:11:42.295850+00:00
+224,wendy williams,200,50,US,['entertainment'],2025-05-16T04:20:00Z,2025-05-16T11:30:00Z,430.0,['wendy williams'],2025-05-16 13:11:42.295850+00:00
+225,freep,200,50,US,['sports'],2025-05-16T10:20:00Z,2025-05-16T11:50:00Z,90.0,['freep'],2025-05-16 13:11:42.295850+00:00
+226,911 cast,2000,75,US,['entertainment'],2025-05-16T00:40:00Z,2025-05-16T04:10:00Z,210.0,"['911 cast', 'what happened to bobby on 911']",2025-05-16 13:11:42.295850+00:00
+227,dr odyssey,1000,75,US,['entertainment'],2025-05-16T01:20:00Z,2025-05-16T05:30:00Z,250.0,['dr odyssey'],2025-05-16 13:11:42.295850+00:00
+228,archer aviation,500,100,US,['travel_and_transportation'],2025-05-16T04:20:00Z,2025-05-16T11:40:00Z,440.0,['archer aviation'],2025-05-16 13:11:42.295850+00:00
+229,south africans,2000,50,US,['other'],2025-05-15T13:50:00Z,2025-05-16T04:20:00Z,870.0,['south africans'],2025-05-16 13:11:42.295850+00:00
+230,michael porter jr.,1000,700,US,['sports'],2025-05-16T03:10:00Z,2025-05-16T04:20:00Z,70.0,['michael porter jr.'],2025-05-16 13:11:42.295850+00:00
+231,star trek strange new worlds season 3,1000,200,US,['entertainment'],2025-05-16T00:10:00Z,2025-05-16T02:20:00Z,130.0,['star trek strange new worlds season 3'],2025-05-16 13:11:42.295850+00:00
+232,dow jones stock markets,2000,400,US,['business_and_finance'],2025-05-15T17:10:00Z,2025-05-16T00:30:00Z,440.0,['dow jones stock markets'],2025-05-16 13:11:42.295850+00:00
+233,blackstone,200,50,US,['business_and_finance'],2025-05-16T11:10:00Z,2025-05-16T12:00:00Z,50.0,['blackstone'],2025-05-16 13:11:42.295850+00:00
+234,yankees schedule,500,75,US,['sports'],2025-05-16T11:40:00Z,2025-05-16T12:10:00Z,30.0,"['yankees schedule', 'juan soto mets']",2025-05-16 13:11:42.295850+00:00
+235,fox 17 news,1000,100,US,['climate'],2025-05-16T02:10:00Z,2025-05-16T10:50:00Z,520.0,['fox 17 news'],2025-05-16 13:11:42.295850+00:00
+236,jade raymond,1000,75,US,"['games', 'technology']",2025-05-15T21:40:00Z,2025-05-16T10:00:00Z,740.0,['jade raymond'],2025-05-16 13:11:42.295850+00:00
+237,lsu baseball,2000,400,US,['sports'],2025-05-16T02:20:00Z,2025-05-16T03:30:00Z,70.0,"['lsu baseball', 'lsu baseball score', 'paul mainieri']",2025-05-16 13:11:42.295850+00:00
+238,jennifer garner,1000,100,US,"['jobs_and_education', 'entertainment']",2025-05-16T02:00:00Z,2025-05-16T04:00:00Z,120.0,['jennifer garner'],2025-05-16 13:11:42.295850+00:00
+239,kalamazoo weather,2000,100,US,['climate'],2025-05-16T02:50:00Z,2025-05-16T04:30:00Z,100.0,"['kalamazoo weather', 'tornado kalamazoo', 'weather kalamazoo']",2025-05-16 13:11:42.295850+00:00
+240,nancy mace,100,100,US,['law_and_government'],2025-05-16T10:30:00Z,2025-05-16T11:30:00Z,60.0,['nancy mace'],2025-05-16 13:11:42.295850+00:00
+241,sean duffy,1000,100,US,['other'],2025-05-16T03:30:00Z,2025-05-16T12:10:00Z,520.0,['sean duffy'],2025-05-16 13:11:42.295850+00:00
+242,atmos energy,100,50,US,['business_and_finance'],2025-05-16T10:40:00Z,2025-05-16T11:50:00Z,70.0,['atmos energy'],2025-05-16 13:11:42.295850+00:00
+243,blue jays,2000,100,US,['sports'],2025-05-15T19:30:00Z,2025-05-15T22:20:00Z,170.0,"['blue jays', 'rays']",2025-05-16 13:11:42.295850+00:00
+244,bruce springsteen trump,500,50,US,"['entertainment', 'politics']",2025-05-16T03:00:00Z,2025-05-16T12:40:00Z,580.0,['bruce springsteen trump'],2025-05-16 13:11:42.295850+00:00
+245,ny jets,100,100,US,['sports'],2025-05-16T10:20:00Z,2025-05-16T11:30:00Z,70.0,['ny jets'],2025-05-16 13:11:42.295850+00:00
+246,iowa baseball,1000,50,US,['sports'],2025-05-15T23:40:00Z,2025-05-16T02:30:00Z,170.0,['iowa baseball'],2025-05-16 13:11:42.295850+00:00
+247,dustin johnson,2000,50,US,"['sports', 'shopping']",2025-05-15T17:40:00Z,2025-05-16T00:20:00Z,400.0,['dustin johnson'],2025-05-16 13:11:42.295850+00:00
+248,tony kemp,2000,50,US,['sports'],2025-05-15T16:20:00Z,2025-05-16T02:30:00Z,610.0,['tony kemp'],2025-05-16 13:11:42.295850+00:00
+249,gop tax bill,1000,50,US,"['politics', 'law_and_government']",2025-05-16T11:40:00Z,2025-05-16T12:10:00Z,30.0,"['gop tax bill', 'wbay weather', 'big beautiful bill']",2025-05-16 13:11:42.295850+00:00
+250,phoenix news,1000,75,US,['climate'],2025-05-15T21:50:00Z,2025-05-16T00:30:00Z,160.0,['phoenix news'],2025-05-16 13:11:42.295850+00:00
+251,starbucks dress code,100,50,US,['food_and_drink'],2025-05-16T10:30:00Z,2025-05-16T11:40:00Z,70.0,['starbucks dress code'],2025-05-16 13:11:42.295850+00:00
+252,fa cup final,200,50,US,['sports'],2025-05-16T11:30:00Z,2025-05-16T12:00:00Z,30.0,['fa cup final'],2025-05-16 13:11:42.295850+00:00
+253,cameron brink,1000,100,US,['beauty_and_fashion'],2025-05-16T01:50:00Z,2025-05-16T04:00:00Z,130.0,['cameron brink'],2025-05-16 13:11:42.295850+00:00
+254,bobby flay,1000,50,US,['entertainment'],2025-05-16T00:40:00Z,2025-05-16T04:50:00Z,250.0,['bobby flay'],2025-05-16 13:11:42.295850+00:00
+255,kare 11,2000,200,US,['law_and_government'],2025-05-15T19:20:00Z,2025-05-15T21:00:00Z,100.0,['kare 11'],2025-05-16 13:11:42.295850+00:00
+256,justin wrobleski,500,100,US,['sports'],2025-05-16T04:40:00Z,2025-05-16T06:30:00Z,110.0,['justin wrobleski'],2025-05-16 13:11:42.295850+00:00
+257,rick adelman,500,200,US,['sports'],2025-05-16T02:50:00Z,2025-05-16T04:00:00Z,70.0,['rick adelman'],2025-05-16 13:11:42.295850+00:00
+258,don johnson,1000,100,US,['entertainment'],2025-05-16T01:30:00Z,2025-05-16T03:00:00Z,90.0,['don johnson'],2025-05-16 13:11:42.295850+00:00
+259,all american season 8,200,50,US,['entertainment'],2025-05-16T05:00:00Z,2025-05-16T10:00:00Z,300.0,['all american season 8'],2025-05-16 13:11:42.295850+00:00
+260,john brown,200,50,US,['sports'],2025-05-16T06:20:00Z,2025-05-16T09:30:00Z,190.0,['john brown'],2025-05-16 13:11:42.295850+00:00
+261,news 8,1000,75,US,['climate'],2025-05-16T02:10:00Z,2025-05-16T03:50:00Z,100.0,['news 8'],2025-05-16 13:11:42.295850+00:00
+262,theo james,500,100,US,"['beauty_and_fashion', 'entertainment']",2025-05-16T05:50:00Z,2025-05-16T07:30:00Z,100.0,['theo james'],2025-05-16 13:11:42.295850+00:00
+263,nick jonas,2000,200,US,['entertainment'],2025-05-15T13:20:00Z,2025-05-15T15:30:00Z,130.0,['nick jonas'],2025-05-16 13:11:42.295850+00:00
+264,sean connery,1000,100,US,['entertainment'],2025-05-15T22:50:00Z,2025-05-16T00:10:00Z,80.0,['sean connery'],2025-05-16 13:11:42.295850+00:00
+265,tornado siren,500,200,US,['other'],2025-05-16T04:10:00Z,2025-05-16T05:20:00Z,70.0,['tornado siren'],2025-05-16 13:11:42.295850+00:00
+266,kelsey grammer,2000,1000,US,['entertainment'],2025-05-15T15:40:00Z,2025-05-15T16:40:00Z,60.0,['kelsey grammer'],2025-05-16 13:11:42.295850+00:00
+267,howard lutnick,1000,200,US,['business_and_finance'],2025-05-16T01:30:00Z,2025-05-16T02:40:00Z,70.0,['howard lutnick'],2025-05-16 13:11:42.295850+00:00
+268,cspan,2000,75,US,"['entertainment', 'politics']",2025-05-15T14:00:00Z,2025-05-15T17:00:00Z,180.0,['cspan'],2025-05-16 13:11:42.295850+00:00
+269,long beach fire,1000,100,US,['other'],2025-05-16T00:50:00Z,2025-05-16T02:00:00Z,70.0,"['long beach fire', 'fire long beach', 'fire in long beach']",2025-05-16 13:11:42.295850+00:00
+270,alexander nikishin,1000,100,US,['sports'],2025-05-15T22:50:00Z,2025-05-16T01:00:00Z,130.0,"['alexander nikishin', 'nikishin']",2025-05-16 13:11:42.295850+00:00
+271,madison weather,2000,75,US,['climate'],2025-05-15T20:20:00Z,2025-05-15T22:30:00Z,130.0,"['madison weather', 'weather madison wi']",2025-05-16 13:11:42.295850+00:00
+272,matteo lane,2000,100,US,['entertainment'],2025-05-15T15:40:00Z,2025-05-15T18:50:00Z,190.0,['matteo lane'],2025-05-16 13:11:42.295850+00:00
+273,stanley mcchrystal,1000,400,US,['other'],2025-05-15T22:20:00Z,2025-05-15T23:30:00Z,70.0,['stanley mcchrystal'],2025-05-16 13:11:42.295850+00:00
+274,immunizations,1000,100,US,"['health', 'law_and_government']",2025-05-16T02:30:00Z,2025-05-16T03:30:00Z,60.0,['immunizations'],2025-05-16 13:11:42.295850+00:00
+275,vaccinations,1000,100,US,"['health', 'law_and_government']",2025-05-16T02:30:00Z,2025-05-16T03:30:00Z,60.0,['vaccinations'],2025-05-16 13:11:42.295850+00:00
+276,montana jordan,1000,50,US,['entertainment'],2025-05-16T00:00:00Z,2025-05-16T01:40:00Z,100.0,"['montana jordan', 'christopher gorham']",2025-05-16 13:11:42.295850+00:00
+277,corinthians,1000,75,US,['sports'],2025-05-15T22:50:00Z,2025-05-16T00:50:00Z,120.0,['corinthians'],2025-05-16 13:11:42.295850+00:00
+278,rod brind'amour,1000,100,US,['sports'],2025-05-16T00:10:00Z,2025-05-16T02:50:00Z,160.0,"[""rod brind'amour""]",2025-05-16 13:11:42.295850+00:00
+279,sarah snook,500,100,US,['entertainment'],2025-05-16T05:00:00Z,2025-05-16T06:20:00Z,80.0,['sarah snook'],2025-05-16 13:11:42.295850+00:00
+280,fox 2 news,500,75,US,['other'],2025-05-16T04:20:00Z,2025-05-16T06:00:00Z,100.0,['fox 2 news'],2025-05-16 13:11:42.295850+00:00
+281,kenta maeda,500,50,US,['sports'],2025-05-16T03:00:00Z,2025-05-16T04:30:00Z,90.0,['kenta maeda'],2025-05-16 13:11:42.295850+00:00
+282,vaccines,1000,75,US,"['law_and_government', 'health']",2025-05-16T02:30:00Z,2025-05-16T03:30:00Z,60.0,['vaccines'],2025-05-16 13:11:42.295850+00:00
+283,eurovision song contest live,500,75,US,['entertainment'],2025-05-16T02:20:00Z,2025-05-16T03:40:00Z,80.0,['eurovision song contest live'],2025-05-16 13:11:42.295850+00:00
+284,channel 7 news,200,50,US,['law_and_government'],2025-05-16T04:40:00Z,2025-05-16T11:10:00Z,390.0,['channel 7 news'],2025-05-16 13:11:42.295850+00:00
+285,bob myers,500,50,US,"['sports', 'jobs_and_education']",2025-05-16T00:20:00Z,2025-05-16T03:00:00Z,160.0,['bob myers'],2025-05-16 13:11:42.295850+00:00
+286,pick 3,100,50,US,['games'],2025-05-16T10:10:00Z,2025-05-16T11:00:00Z,50.0,['pick 3'],2025-05-16 13:11:42.295850+00:00
+287,baxter fire,1000,75,US,['law_and_government'],2025-05-15T23:10:00Z,2025-05-16T01:00:00Z,110.0,['baxter fire'],2025-05-16 13:11:42.295850+00:00
+288,va overpayment,2000,200,US,"['law_and_government', 'business_and_finance']",2025-05-15T13:10:00Z,2025-05-15T15:00:00Z,110.0,['va overpayment'],2025-05-16 13:11:42.295850+00:00
+289,aaron rai,1000,75,US,['sports'],2025-05-15T19:40:00Z,2025-05-15T23:30:00Z,230.0,['aaron rai'],2025-05-16 13:11:42.295850+00:00
+290,stanley cup bracket,1000,100,US,['sports'],2025-05-16T01:40:00Z,2025-05-16T02:50:00Z,70.0,"['stanley cup bracket', 'nhl bracket 2025']",2025-05-16 13:11:42.295850+00:00
+291,折腰,200,50,US,['entertainment'],2025-05-16T05:20:00Z,2025-05-16T09:10:00Z,230.0,['折腰'],2025-05-16 13:11:42.295850+00:00
+292,jon m chu,500,100,US,['entertainment'],2025-05-16T03:20:00Z,2025-05-16T04:30:00Z,70.0,"['jon m chu', 'john m chu']",2025-05-16 13:11:42.295850+00:00
+293,conmebol sudamericana,500,50,US,['sports'],2025-05-16T03:00:00Z,2025-05-16T04:50:00Z,110.0,['conmebol sudamericana'],2025-05-16 13:11:42.295850+00:00
+294,tudn,1000,200,US,['sports'],2025-05-16T02:30:00Z,2025-05-16T03:10:00Z,40.0,['tudn'],2025-05-16 13:11:42.295850+00:00
+295,oakland a's,500,50,US,['sports'],2025-05-16T04:00:00Z,2025-05-16T05:40:00Z,100.0,"[""oakland a's""]",2025-05-16 13:11:42.295850+00:00
+296,carson and jack amazing race,500,50,US,['entertainment'],2025-05-16T02:20:00Z,2025-05-16T03:40:00Z,80.0,['carson and jack amazing race'],2025-05-16 13:11:42.295850+00:00
+297,tim curry,100,75,US,"['entertainment', 'health']",2025-05-16T09:40:00Z,2025-05-16T10:50:00Z,70.0,['tim curry'],2025-05-16 13:11:42.295850+00:00
+298,byron buxton,2000,75,US,['sports'],2025-05-15T17:40:00Z,2025-05-15T19:20:00Z,100.0,"['byron buxton', 'carlos correa']",2025-05-16 13:11:42.295850+00:00
+299,bryson dechambeau tee time,2000,50,US,['sports'],2025-05-15T16:40:00Z,2025-05-15T18:20:00Z,100.0,"['bryson dechambeau tee time', 'collin morikawa', 'stream pga championship']",2025-05-16 13:11:42.295850+00:00
+300,brent burns,500,100,US,['sports'],2025-05-16T01:30:00Z,2025-05-16T02:40:00Z,70.0,['brent burns'],2025-05-16 13:11:42.295850+00:00
+301,tom wilson,500,100,US,"['sports', 'shopping']",2025-05-16T00:40:00Z,2025-05-16T01:50:00Z,70.0,['tom wilson'],2025-05-16 13:11:42.295850+00:00
+302,palmeiras,500,50,US,['sports'],2025-05-15T22:20:00Z,2025-05-16T00:10:00Z,110.0,['palmeiras'],2025-05-16 13:11:42.295850+00:00
+303,luke bryan atwater,200,50,US,['entertainment'],2025-05-16T03:50:00Z,2025-05-16T07:20:00Z,210.0,['luke bryan atwater'],2025-05-16 13:11:42.295850+00:00
+304,cricket,2000,100,US,['sports'],2025-05-15T19:20:00Z,2025-05-15T20:20:00Z,60.0,['cricket'],2025-05-16 13:11:42.295850+00:00
+305,corona,1000,200,US,"['politics', 'law_and_government']",2025-05-15T19:10:00Z,2025-05-15T20:20:00Z,70.0,['corona'],2025-05-16 13:11:42.295850+00:00
+306,morgan ortagus,1000,200,US,"['law_and_government', 'politics']",2025-05-15T20:30:00Z,2025-05-15T21:40:00Z,70.0,['morgan ortagus'],2025-05-16 13:11:42.295850+00:00
+307,serbia,500,100,US,['law_and_government'],2025-05-16T03:10:00Z,2025-05-16T04:20:00Z,70.0,['serbia'],2025-05-16 13:11:42.295850+00:00
+308,ben affleck,1000,50,US,['entertainment'],2025-05-16T02:50:00Z,2025-05-16T05:00:00Z,130.0,['ben affleck'],2025-05-16 13:11:42.295850+00:00
+309,willem dafoe,500,75,US,['entertainment'],2025-05-16T02:50:00Z,2025-05-16T04:00:00Z,70.0,['willem dafoe'],2025-05-16 13:11:42.295850+00:00
+310,hartenstein,500,100,US,['sports'],2025-05-16T02:30:00Z,2025-05-16T03:20:00Z,50.0,['hartenstein'],2025-05-16 13:11:42.295850+00:00
+311,freddie freeman,1000,300,US,['sports'],2025-05-16T03:10:00Z,2025-05-16T04:00:00Z,50.0,['freddie freeman'],2025-05-16 13:11:42.295850+00:00
+312,andre agassi,500,100,US,['sports'],2025-05-15T22:30:00Z,2025-05-15T23:40:00Z,70.0,['andre agassi'],2025-05-16 13:11:42.295850+00:00
+313,law and order cast,500,50,US,['entertainment'],2025-05-16T00:40:00Z,2025-05-16T02:00:00Z,80.0,['law and order cast'],2025-05-16 13:11:42.295850+00:00
+314,channel 3000 weather,1000,50,US,['other'],2025-05-15T20:20:00Z,2025-05-15T22:10:00Z,110.0,['channel 3000 weather'],2025-05-16 13:11:42.295850+00:00
+315,edison,200,50,US,['other'],2025-05-16T07:10:00Z,2025-05-16T08:50:00Z,100.0,['edison'],2025-05-16 13:11:42.295850+00:00
+316,oliver widger,500,100,US,['other'],2025-05-16T00:50:00Z,2025-05-16T02:00:00Z,70.0,['oliver widger'],2025-05-16 13:11:42.295850+00:00
+317,caruso nba,500,100,US,['sports'],2025-05-16T03:00:00Z,2025-05-16T04:00:00Z,60.0,['caruso nba'],2025-05-16 13:11:42.295850+00:00
+318,fordham university,200,75,US,['sports'],2025-05-16T03:40:00Z,2025-05-16T04:50:00Z,70.0,['fordham university'],2025-05-16 13:11:42.295850+00:00
+319,palmeiras vs bolívar,500,50,US,['sports'],2025-05-15T21:50:00Z,2025-05-15T23:20:00Z,90.0,['palmeiras vs bolívar'],2025-05-16 13:11:42.295850+00:00
+320,scholar,200,75,US,['law_and_government'],2025-05-16T07:00:00Z,2025-05-16T08:20:00Z,80.0,['scholar'],2025-05-16 13:11:42.295850+00:00
+321,eau claire weather,1000,50,US,['climate'],2025-05-15T20:40:00Z,2025-05-15T22:10:00Z,90.0,['eau claire weather'],2025-05-16 13:11:42.295850+00:00
+322,america game,200,75,US,['sports'],2025-05-16T03:40:00Z,2025-05-16T04:50:00Z,70.0,['america game'],2025-05-16 13:11:42.295850+00:00
+323,michael conforto,200,75,US,['sports'],2025-05-16T03:50:00Z,2025-05-16T05:00:00Z,70.0,['michael conforto'],2025-05-16 13:11:42.295850+00:00
+324,amas,1000,100,US,['entertainment'],2025-05-15T19:10:00Z,2025-05-15T20:20:00Z,70.0,['amas'],2025-05-16 13:11:42.295850+00:00
+325,steve nash,200,100,US,['sports'],2025-05-16T04:10:00Z,2025-05-16T05:20:00Z,70.0,['steve nash'],2025-05-16 13:11:42.295850+00:00
+326,found tv show,200,75,US,['entertainment'],2025-05-16T02:50:00Z,2025-05-16T04:00:00Z,70.0,['found tv show'],2025-05-16 13:11:42.295850+00:00
+327,erin andrews,1000,100,US,['entertainment'],2025-05-15T14:10:00Z,2025-05-15T15:40:00Z,90.0,['erin andrews'],2025-05-16 13:11:42.295850+00:00
+328,kare11,500,100,US,['climate'],2025-05-15T19:30:00Z,2025-05-15T20:40:00Z,70.0,['kare11'],2025-05-16 13:11:42.295850+00:00
+329,shameless,200,50,US,['entertainment'],2025-05-16T06:00:00Z,2025-05-16T06:50:00Z,50.0,['shameless'],2025-05-16 13:11:42.295850+00:00
+330,sc lottery,100,50,US,['games'],2025-05-16T10:00:00Z,2025-05-16T10:50:00Z,50.0,['sc lottery'],2025-05-16 13:11:42.295850+00:00
+331,john chu,200,75,US,['entertainment'],2025-05-16T03:30:00Z,2025-05-16T04:30:00Z,60.0,['john chu'],2025-05-16 13:11:42.295850+00:00
+332,josé ignacio rivero,200,100,US,['sports'],2025-05-16T03:50:00Z,2025-05-16T04:40:00Z,50.0,['josé ignacio rivero'],2025-05-16 13:11:42.295850+00:00
+333,allegan county,200,75,US,['law_and_government'],2025-05-16T02:50:00Z,2025-05-16T03:50:00Z,60.0,['allegan county'],2025-05-16 13:11:42.295850+00:00
+334,dani jarque,500,100,US,['sports'],2025-05-15T19:50:00Z,2025-05-15T21:00:00Z,70.0,['dani jarque'],2025-05-16 13:11:42.295850+00:00
+335,skip bayless,500,75,US,['sports'],2025-05-16T03:20:00Z,2025-05-16T04:10:00Z,50.0,['skip bayless'],2025-05-16 13:11:42.295850+00:00
+336,hillsboro air show,1000,50,US,['entertainment'],2025-05-15T17:40:00Z,2025-05-15T19:00:00Z,80.0,['hillsboro air show'],2025-05-16 13:11:42.295850+00:00
+337,missouri,500,50,US,['politics'],2025-05-16T02:30:00Z,2025-05-16T03:30:00Z,60.0,"['missouri', 'mo']",2025-05-16 13:11:42.295850+00:00
+338,greg gutfeld,500,75,US,['entertainment'],2025-05-16T02:20:00Z,2025-05-16T03:10:00Z,50.0,['greg gutfeld'],2025-05-16 13:11:42.295850+00:00
+339,brent rooker,200,50,US,['sports'],2025-05-16T03:40:00Z,2025-05-16T04:40:00Z,60.0,['brent rooker'],2025-05-16 13:11:42.295850+00:00
+340,beyond the gates,500,100,US,['entertainment'],2025-05-15T18:10:00Z,2025-05-15T19:20:00Z,70.0,['beyond the gates'],2025-05-16 13:11:42.295850+00:00
+341,alex g,1000,50,US,['entertainment'],2025-05-15T17:20:00Z,2025-05-15T18:50:00Z,90.0,['alex g'],2025-05-16 13:11:42.295850+00:00
+342,texas longhorns baseball,200,50,US,['sports'],2025-05-16T03:20:00Z,2025-05-16T04:30:00Z,70.0,['texas longhorns baseball'],2025-05-16 13:11:42.295850+00:00
+343,ted cruz,500,50,US,['politics'],2025-05-16T01:50:00Z,2025-05-16T02:50:00Z,60.0,['ted cruz'],2025-05-16 13:11:42.295850+00:00
+344,sarah silverman,200,50,US,['entertainment'],2025-05-16T05:40:00Z,2025-05-16T06:40:00Z,60.0,['sarah silverman'],2025-05-16 13:11:42.295850+00:00
+345,western conference finals schedule,200,50,US,['sports'],2025-05-16T03:20:00Z,2025-05-16T04:20:00Z,60.0,['western conference finals schedule'],2025-05-16 13:11:42.295850+00:00
+346,tiger woods,1000,50,US,['sports'],2025-05-15T17:30:00Z,2025-05-15T22:00:00Z,270.0,['tiger woods'],2025-05-16 13:11:42.295850+00:00
+347,athletics (baseball) vs dodgers match player stats,200,50,US,['sports'],2025-05-16T04:30:00Z,2025-05-16T05:30:00Z,60.0,['athletics (baseball) vs dodgers match player stats'],2025-05-16 13:11:42.295850+00:00
+348,clayton kershaw,200,75,US,['sports'],2025-05-16T05:00:00Z,2025-05-16T05:50:00Z,50.0,['clayton kershaw'],2025-05-16 13:11:42.295850+00:00
+349,charlton vs wycombe,1000,50,US,['sports'],2025-05-15T19:00:00Z,2025-05-15T22:10:00Z,190.0,['charlton vs wycombe'],2025-05-16 13:11:42.295850+00:00
+350,gary player,500,75,US,['sports'],2025-05-16T02:00:00Z,2025-05-16T02:40:00Z,40.0,['gary player'],2025-05-16 13:11:42.295850+00:00
+351,rangers game today,200,50,US,['sports'],2025-05-16T02:10:00Z,2025-05-16T03:10:00Z,60.0,['rangers game today'],2025-05-16 13:11:42.295850+00:00
+352,rather be giveon,200,50,US,['entertainment'],2025-05-16T04:40:00Z,2025-05-16T05:30:00Z,50.0,['rather be giveon'],2025-05-16 13:11:42.295850+00:00
+353,adam scott,500,75,US,['sports'],2025-05-15T21:30:00Z,2025-05-15T22:30:00Z,60.0,['adam scott'],2025-05-16 13:11:42.295850+00:00
+354,anthony beauvillier,500,75,US,['sports'],2025-05-15T23:50:00Z,2025-05-16T00:40:00Z,50.0,['anthony beauvillier'],2025-05-16 13:11:42.295850+00:00
+355,a knight of the seven kingdoms,500,75,US,['entertainment'],2025-05-15T21:30:00Z,2025-05-15T22:30:00Z,60.0,['a knight of the seven kingdoms'],2025-05-16 13:11:42.295850+00:00
+356,amat stock price,500,75,US,['business_and_finance'],2025-05-15T20:20:00Z,2025-05-15T21:20:00Z,60.0,['amat stock price'],2025-05-16 13:11:42.295850+00:00
+357,gorka,200,50,US,"['politics', 'law_and_government']",2025-05-16T00:20:00Z,2025-05-16T01:20:00Z,60.0,['gorka'],2025-05-16 13:11:42.295850+00:00
+358,kalen deboer,500,100,US,['sports'],2025-05-15T15:30:00Z,2025-05-15T16:40:00Z,70.0,['kalen deboer'],2025-05-16 13:11:42.295850+00:00
+359,rob zombie,200,50,US,['entertainment'],2025-05-16T01:40:00Z,2025-05-16T02:30:00Z,50.0,['rob zombie'],2025-05-16 13:11:42.295850+00:00
+360,video,500,50,US,['entertainment'],2025-05-16T09:00:00Z,2025-05-16T09:40:00Z,40.0,"['video', 'party 4 u music video']",2025-05-16 13:11:42.295850+00:00
+361,billy strings,200,50,US,['entertainment'],2025-05-16T01:30:00Z,2025-05-16T02:20:00Z,50.0,['billy strings'],2025-05-16 13:11:42.295850+00:00
+362,john daly,500,75,US,['sports'],2025-05-15T15:40:00Z,2025-05-15T16:50:00Z,70.0,['john daly'],2025-05-16 13:11:42.295850+00:00
+363,fox 2 news detroit,200,50,US,['law_and_government'],2025-05-16T04:50:00Z,2025-05-16T05:30:00Z,40.0,['fox 2 news detroit'],2025-05-16 13:11:42.295850+00:00
+364,ro,100,50,US,['politics'],2025-05-16T09:10:00Z,2025-05-16T09:50:00Z,40.0,['ro'],2025-05-16 13:11:42.295850+00:00
+365,hofstra university,500,75,US,['sports'],2025-05-15T17:40:00Z,2025-05-15T18:40:00Z,60.0,['hofstra university'],2025-05-16 13:11:42.295850+00:00
+366,constellation brands,500,50,US,['business_and_finance'],2025-05-15T21:10:00Z,2025-05-15T22:10:00Z,60.0,['constellation brands'],2025-05-16 13:11:42.295850+00:00
+367,max schuemann,200,50,US,['other'],2025-05-16T03:10:00Z,2025-05-16T03:50:00Z,40.0,['max schuemann'],2025-05-16 13:11:42.295850+00:00
+368,david frum,500,50,US,['politics'],2025-05-15T21:30:00Z,2025-05-15T22:30:00Z,60.0,['david frum'],2025-05-16 13:11:42.295850+00:00
+369,dallas,200,75,US,['law_and_government'],2025-05-16T04:00:00Z,2025-05-16T04:30:00Z,30.0,['dallas'],2025-05-16 13:11:42.295850+00:00
+370,leandro cabrera,500,50,US,['sports'],2025-05-15T21:20:00Z,2025-05-15T22:10:00Z,50.0,['leandro cabrera'],2025-05-16 13:11:42.295850+00:00
+371,nacional vs internacional,200,50,US,['sports'],2025-05-16T00:20:00Z,2025-05-16T01:00:00Z,40.0,['nacional vs internacional'],2025-05-16 13:11:42.295850+00:00
+372,tornado sirens,200,50,US,['climate'],2025-05-16T04:50:00Z,2025-05-16T05:20:00Z,30.0,['tornado sirens'],2025-05-16 13:11:42.295850+00:00
+373,joe rogan,500,75,US,['other'],2025-05-16T04:10:00Z,2025-05-16T04:30:00Z,20.0,['joe rogan'],2025-05-16 13:11:42.295850+00:00
+374,gary woodland,200,50,US,['sports'],2025-05-15T23:10:00Z,2025-05-15T23:50:00Z,40.0,['gary woodland'],2025-05-16 13:11:42.295850+00:00
+375,el chapo,100,50,US,['law_and_government'],2025-05-16T06:50:00Z,2025-05-16T07:20:00Z,30.0,['el chapo'],2025-05-16 13:11:42.295850+00:00
+376,ben mendelsohn,100,50,US,['entertainment'],2025-05-16T07:00:00Z,2025-05-16T07:30:00Z,30.0,['ben mendelsohn'],2025-05-16 13:11:42.295850+00:00
+377,new zealand,500,50,US,['politics'],2025-05-16T02:50:00Z,2025-05-16T03:10:00Z,20.0,['new zealand'],2025-05-16 13:11:42.295850+00:00
+378,riot fest,500,50,US,['entertainment'],2025-05-15T15:30:00Z,2025-05-15T16:20:00Z,50.0,['riot fest'],2025-05-16 13:11:42.295850+00:00
+379,tim robinson,200,50,US,['entertainment'],2025-05-16T04:50:00Z,2025-05-16T05:10:00Z,20.0,['tim robinson'],2025-05-16 13:11:42.295850+00:00
+380,docs stock,500,50,US,['business_and_finance'],2025-05-15T20:40:00Z,2025-05-15T21:10:00Z,30.0,['docs stock'],2025-05-16 13:11:42.295850+00:00
+381,josh lowe,500,50,US,['sports'],2025-05-15T20:50:00Z,2025-05-15T21:20:00Z,30.0,['josh lowe'],2025-05-16 13:11:42.295850+00:00
+382,jose altuve,200,50,US,['sports'],2025-05-16T01:50:00Z,2025-05-16T02:10:00Z,20.0,['jose altuve'],2025-05-16 13:11:42.295850+00:00
+383,us,100,50,US,['politics'],2025-05-16T06:30:00Z,2025-05-16T06:50:00Z,20.0,['us'],2025-05-16 13:11:42.295850+00:00
+384,lake tahoe,100,50,US,['entertainment'],2025-05-16T05:40:00Z,2025-05-16T06:00:00Z,20.0,['lake tahoe'],2025-05-16 13:11:42.295850+00:00
