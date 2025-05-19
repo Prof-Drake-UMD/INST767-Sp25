@@ -18,6 +18,7 @@ def ingest():
     if not data or not data.get("book_title") or not data.get("author_name"):
         return jsonify({"error": "Missing book_title or author_name"}), 400
     try:
+        # Call your API aggregation function
         result = match_cultural_experience_by_year(data["book_title"], data["author_name"])
     except Exception as e:
         return jsonify({"error": "Failed to fetch API data", "details": str(e)}), 500
