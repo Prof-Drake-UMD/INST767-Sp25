@@ -14,8 +14,6 @@ def get_spotify_token():
     else:
         raise Exception("Failed to get Spotify token: " + response.text)
 
-spotify_token = get_spotify_token()
-
 def get_book_by_keyword(book_title, author_name):
     url = "https://openlibrary.org/search.json"
     params = {"title": book_title, "author": author_name}
@@ -70,9 +68,11 @@ def get_met_artworks_by_year_range(year, buffer=10, limit=10):
             })
     return results
 
-def get_spotify_tracks_by_year(year, token, limit=10):
+def get_spotify_tracks_by_year(year, token=None, limit=10):
     if not year:
         return []
+    if token is None:
+        token = get_spotify_token()
     search_url = "https://api.spotify.com/v1/search"
     headers = {"Authorization": f"Bearer {token}"}
     params = {
@@ -113,7 +113,7 @@ def match_cultural_experience_by_year(book_title, author_name, limit=5, year_buf
         return {"error": "Book not found."}
     year = book.get("first_publish_year")
     artworks = get_met_artworks_by_year_range(year, buffer=year_buffer, limit=limit)
-    music = get_spotify_tracks_by_year(year, spotify_token, limit=limit * 2)
+    music = get_spotify_tracks_by_year(year, limit=limit * 2)  # token will be fetched as needed
     return {
         "step": "year_only",
         "book": book,
