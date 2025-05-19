@@ -43,30 +43,43 @@ The data pipeline follows these main stages:
 
 ## 📁 Project Structure
 
+Ingestion Functions
+
+Transformation Functions
+
+BigQuery Setup
+
+Integration & Orchestration Scripts
+
+Data Output & Analysis
+
 avkash_chandra/
 │
-├── ingest_function/ # Cloud Function for ingestion
-│ ├── Genius.py
-│ ├── Lastfm.py
-│ ├── Openweather.py
-│ ├── ingest_pub.py
-│ ├── main.py
-│ ├── inspect_json.py
-│ ├── test_genius.py
-│ ├── weather_data.json
-│ └── requirements.txt
+├── ingest_function/                    # Cloud Function (HTTP triggered) - Ingests API data
+│   ├── main.py                         # Entry point for GCP deployment
+│   ├── ingest_pub.py                   # Publishes enriched API data to Pub/Sub
+│   ├── Genius.py                       # Genius API call and response handler
+│   ├── Lastfm.py                       # Last.fm API call and response handler
+│   ├── Openweather.py                  # OpenWeatherMap API call and response handler
+│   ├── inspect_json.py                 # Tool for exploring raw API responses
+│   ├── test_genius.py                  # Local test script for Genius ingestion
+│   ├── weather_data.json               # Sample API response for testing
+│   └── requirements.txt                # Dependencies for ingestion function
 │
-├── transform_function_cloud/ # Cloud Function for transformation & BigQuery load
-│ ├── main.py
-│ └── requirements.txt
+├── transform_function_cloud/           # Cloud Function (Pub/Sub triggered) - Transforms & loads data
+│   ├── main.py                         # Entry point for subscriber/transformer
+│   └── requirements.txt                # Dependencies for transformation function
 │
-├── create_tables.sql # SQL schemas for BigQuery tables
-├── create_tables.py # Python script to create tables programmatically
-├── build_dataset.py # Populates BigQuery tables using local scripts
-├── merged.py # Local testing of merged data
-├── run_all.py # Master script to run ingestion and transformation
-├── output.csv # Sample output
-├── queries.sql # Analytical queries
-├── example_queries.py # Sample query executor
-├── export_csv.py # Exports BigQuery data to CSV
-└── script.py # Utility script for orchestrated runs
+├── create_tables.sql                   # BigQuery table definitions (DDL)
+├── create_tables.py                    # Script to create BigQuery tables programmatically
+├── build_dataset.py                    # Inserts example/test data into BigQuery
+│
+├── merged.py                           # Locally merges all data sources for testing
+├── run_all.py                          # Orchestrates ingestion and transformation locally
+├── export_csv.py                       # Exports BigQuery tables to CSV
+├── output.csv                          # Sample output file
+│
+├── queries.sql                         # SQL queries for analysis
+├── example_queries.py                  # Runs queries on BigQuery
+└── script.py                           # Utility runner for quick tests
+
