@@ -29,6 +29,7 @@ The Weather data from the Open-Metro dataset was highly customizable and through
 A CloudRun Function was used for this API.
 
 ### Pipline Process
+Note - Initial Trigger is run as a Cloud Function and will return timeout errors. It still will run the other functions & jobs
 ````
                 /    fetch-traffic-api (Cloud Function)  \
                /                                          \
