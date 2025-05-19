@@ -138,9 +138,9 @@ def transform_matches_to_df(api_response_data):
         processed_matches.append(record)
         
     df = pd.DataFrame(processed_matches)
-    # If adding ingested_at to all rows of this df after creation:
-    if not df.empty and 'ingested_at' in df.columns: # Check if your DDL for Matches has ingested_at
-         df['ingested_at'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+    if not df.empty:
+         df['ingested_at'] = pd.Timestamp.now(tz='UTC').isoformat()
     return df
 
 # --- Transformation Function for MatchEventsAndOdds ---
