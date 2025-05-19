@@ -1,0 +1,37 @@
+code_maps:
+  qualification:
+    "1": "Physician"
+    "2": "Pharmacist"
+    "3": "Other Health Professional"
+    "4": "Lawyer"
+    "5": "Consumer or Non-Health Professional"
+    "6": "Unknown"
+
+  patientsex:
+    "1": "Male"
+    "2": "Female"
+    "0": "Unknown"
+
+  reactionoutcome:
+    "1": "Recovered/resolved"
+    "2": "Recovering/resolving"
+    "3": "Not recovered/not resolved"
+    "4": "Recovered/resolved with sequelae"
+    "5": "Fatal"
+    "6": "Unknown"
+
+  agegroup:
+    "1": "Neonate"
+    "2": "Infant"
+    "3": "Child"
+    "4": "Adolescent"
+    "5": "Adult"
+    "6": "Elderly"
+    "0": "Unknown"
+
+
+  drugcharacterization:
+    "1": "Suspect"
+    "2": "Concomitant"
+    "3": "Interacting"
+    "0": "Unknown"
