@@ -15,12 +15,13 @@ def transform_weather(raw):
     df["longitude"] = raw["longitude"]
     df.to_csv("/tmp/weather_data.csv", index=False)
     print("✅ Weather data saved.")
+    return df.to_dict(orient="records")  # 🔥 Add this line
 
 def transform_air_quality(raw):
     hourly = raw.get("hourly", {})
     if not hourly:
         print("❌ No hourly data found in air quality response.")
-        return
+        return []
 
     df = pd.DataFrame(hourly)
     df["timestamp"] = pd.to_datetime(df["time"])
@@ -29,12 +30,13 @@ def transform_air_quality(raw):
     df = df[cols]
     df.to_csv("/tmp/air_quality.csv", index=False)
     print("✅ Air quality data saved.")
+    return df.to_dict(orient="records")  # 🔥 Add this line
 
 def transform_water(raw):
     ts_list = raw.get("value", {}).get("timeSeries", [])
     if not ts_list:
         print("⚠️ No water data returned.")
-        return
+        return []
 
     ts_data = ts_list[0]
     site_info = ts_data["sourceInfo"]
@@ -50,3 +52,5 @@ def transform_water(raw):
     df = df[["timestamp", "site_id", "site_name", "streamflow_cfs", "latitude", "longitude"]]
     df.to_csv("/tmp/water_conditions.csv", index=False)
     print("✅ Water data saved.")
+    return df.to_dict(orient="records")  # 🔥 Add this line
+
