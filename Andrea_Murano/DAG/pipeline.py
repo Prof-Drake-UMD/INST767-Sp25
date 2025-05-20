@@ -26,9 +26,9 @@ def main():
         return
 
     # 2. Artworks
-    artworks = fetch_artworks(year)
-    if artworks:
-        write_to_bigquery("artworks", artworks)
+    artwork = fetch_artwork(year)
+    if artwork:
+        write_to_bigquery("artwork", artworks)
 
     # 3. Music
     spotify_id = os.environ.get("SPOTIFY_CLIENT_ID")
