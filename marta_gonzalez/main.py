@@ -49,6 +49,7 @@ def ingest_data(request):
     return "✅ Ingest function completed"
 
 def run_transform(event, context):
+    print("📦 Raw event received:", event)
     """Triggered from a message on a Cloud Pub/Sub topic."""
     try:
         if "data" not in event:
