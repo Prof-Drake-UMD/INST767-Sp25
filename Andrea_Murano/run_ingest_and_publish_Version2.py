@@ -5,7 +5,7 @@ from transform_function.ingest.get_books import get_book_data
 from transform_function.ingest.get_art import get_artworks_near_year
 from transform_function.ingest.get_music import get_spotify_token, get_spotify_tracks_by_year
 
-project_id = '[YOUR_PROJECT_ID]'
+project_id = 'inst767-murano'
 topic_id = 'ingest-to-transform'
 
 def run_pipeline(book_title, author_name):
