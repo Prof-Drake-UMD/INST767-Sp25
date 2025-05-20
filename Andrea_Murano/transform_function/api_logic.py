@@ -1,6 +1,7 @@
 import os
 import requests
 import time
+from bq_insert import insert_to_bigquery  
 
 SPOTIFY_CLIENT_ID = os.environ.get("SPOTIFY_CLIENT_ID")
 SPOTIFY_CLIENT_SECRET = os.environ.get("SPOTIFY_CLIENT_SECRET")
@@ -120,3 +121,6 @@ def match_cultural_experience_by_year(book_title, author_name, limit=5, year_buf
         "artworks": artworks[:limit],
         "music": music[:limit]
     }
+
+def flatten_and_export(result):
+    insert_to_bigquery(result)
