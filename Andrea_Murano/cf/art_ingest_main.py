@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 from google.cloud import bigquery
 
-PROJECT_ID = "inst767-murano"
+PROJECT_ID = "inst767-murano-cultural-lens"
 DATASET = "cultural_lens"
 TABLE = "artworks"
 
