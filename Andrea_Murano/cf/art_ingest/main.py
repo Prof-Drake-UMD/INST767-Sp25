@@ -39,7 +39,7 @@ def write_to_bigquery(rows):
         print("BigQuery error:", errors)
 
 def main(event, context):
-    year = 2018  # could be parameterized from Pub/Sub or event trigger
+    year = 2018  
     artwork = get_met_artwork(year)
     if artwork:
         write_to_bigquery(artwork)
