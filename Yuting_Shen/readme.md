@@ -58,3 +58,15 @@ The data model enables complex analytical queries including:
 SQL files for both table definitions and analytical queries can be found in the `sql/` directory.
 
 ![Queries](Queries.png)
+
+
+
+## Integration Flow
+
+![IntegrationFlow](IntegrationFlow.png)
+
+
+
+## System Architecture
+
+![SystemStructure](SystemStructure.png)
