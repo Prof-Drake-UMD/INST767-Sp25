@@ -56,3 +56,5 @@ The data model enables complex analytical queries including:
 5. Audience sentiment analysis through comments
 
 SQL files for both table definitions and analytical queries can be found in the `sql/` directory.
+
+![Queries](Queries.png)
