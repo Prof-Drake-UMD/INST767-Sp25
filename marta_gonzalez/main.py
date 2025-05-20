@@ -1,6 +1,7 @@
 # main.py
 from ingest import fetch_weather_forecast, fetch_air_quality, fetch_usgs_water
 from transform import transform_weather, transform_air_quality, transform_water
+from google.cloud import pubsub_v1
 
 def run_pipeline(request):
     try:
