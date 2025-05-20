@@ -50,23 +50,3 @@ def transform_water(raw):
     df = df[["timestamp", "site_id", "site_name", "streamflow_cfs", "latitude", "longitude"]]
     df.to_csv("/tmp/water_conditions.csv", index=False)
     print("✅ Water data saved.")
-
-# --- Cloud Function Entry Point ---
-def run_transform(event, context):
-    """Triggered from a message on a Cloud Pub/Sub topic."""
-    try:
-        if "data" not in event:
-            raise ValueError("No data in Pub/Sub message.")
-
-        message_data = base64.b64decode(event["data"]).decode("utf-8")
-        data = json.loads(message_data)
-
-        print("🔁 Starting transformations...")
-        transform_weather(data["weather"])
-        transform_air_quality(data["air_quality"])
-        transform_water(data["water"])
-        print("✅ All transformations completed.")
-
-    except Exception as e:
-        print(f"❌ Error in transformation: {e}")
-        raise
