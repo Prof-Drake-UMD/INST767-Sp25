@@ -52,6 +52,15 @@ def run_transform(event, context):
     
     print("📦 Raw event received:", event)
 
+    raw_data = event.get("data", "")
+    print(f"🔹 Raw base64 data: {raw_data}")
+
+    decoded_bytes = base64.b64decode(raw_data)
+    print(f"🔹 Decoded bytes: {decoded_bytes}")
+
+    decoded_str = decoded_bytes.decode("utf-8")
+    print(f"🔹 Decoded string:\n{decoded_str}")
+
     """Triggered from a message on a Cloud Pub/Sub topic."""
     try:
         if "data" not in event:
