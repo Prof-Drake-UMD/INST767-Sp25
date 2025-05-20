@@ -1,6 +1,6 @@
 import os
 from google.cloud import bigquery
-from api_calls import fetch_books, fetch_artworks, get_spotify_token, fetch_music
+from DAG.api_calls import fetch_books, fetch_artwork, get_spotify_token, fetch_music
 
 PROJECT_ID = "inst767-murano-cultural-lens"
 DATASET = "cultural_lens"
@@ -19,16 +19,15 @@ def main():
     books = fetch_books()
     if books:
         write_to_bigquery("books", books)
-        # Use first book's year for downstream pulls
         year = books[0]['first_publish_year']
     else:
         print("No books found.")
         return
 
-    # 2. Artworks
+    # 2. Artwork
     artwork = fetch_artwork(year)
     if artwork:
-        write_to_bigquery("artwork", artworks)
+        write_to_bigquery("artwork", artwork)
 
     # 3. Music
     spotify_id = os.environ.get("SPOTIFY_CLIENT_ID")
