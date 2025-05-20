@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 
 import functions_framework
 from google.cloud import storage
+from google.cloud import pubsub_v1
 
 # Load environment variables
 load_dotenv()
@@ -384,7 +385,7 @@ if __name__ == "__main__":
             print(f"View count: {details['statistics'].get('viewCount', 'unknown')}")
             print(f"Like count: {details['statistics'].get('likeCount', 'unknown')}")
 
-# Add this function after the class definition
+
 @functions_framework.http
 def search_sports_videos(request):
     """
@@ -426,6 +427,11 @@ def search_sports_videos(request):
     if not api_key:
         return {"error": "YouTube API key not configured"}, 500
 
+    # Get project ID
+    project_id = os.environ.get('GOOGLE_CLOUD_PROJECT')
+    if not project_id:
+        return {"error": "No project ID available"}, 500
+
     # Initialize API and search videos
     api = YouTubeAPI(api_key)
     videos = api.search_sports_videos(query, max_results, published_after, published_before)
@@ -436,35 +442,67 @@ def search_sports_videos(request):
 
     # Get details for each video
     video_ids = [video['id']['videoId'] for video in videos]
-    video_details = api.fetch_video_details(video_ids)
+    video_details = []
+
+    for video_id in video_ids:
+        detail = api.get_video_details(video_id)
+        if detail:
+            video_details.append(detail)
 
     # Combine results
     result = {
         "search_results": videos,
-        "video_details": video_details,
+        "video_details": {"items": video_details},
         "count": len(videos)
     }
 
-    # Save to Cloud Storage if GCP project is available
+    # Save to Cloud Storage and publish message
     try:
-        project_id = os.environ.get('GOOGLE_CLOUD_PROJECT')
-        if project_id:
-            # Create a timestamp for the filename
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            bucket_name = f"{project_id}-raw-data"
-            blob_name = f"youtube/videos_{timestamp}.json"
+        # Create a timestamp for the filename
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        bucket_name = f"{project_id}-raw-data"
+        blob_name = f"youtube/videos_{timestamp}.json"
+        gcs_uri = f"gs://{bucket_name}/{blob_name}"
 
-            # Initialize storage client
-            storage_client = storage.Client()
-            bucket = storage_client.bucket(bucket_name)
-            blob = bucket.blob(blob_name)
+        # Initialize storage client
+        storage_client = storage.Client()
+        bucket = storage_client.bucket(bucket_name)
+        blob = bucket.blob(blob_name)
 
-            # Upload data to GCS
-            blob.upload_from_string(
-                json.dumps(result),
-                content_type='application/json'
-            )
+        # Upload data to GCS
+        blob.upload_from_string(
+            json.dumps(result),
+            content_type='application/json'
+        )
+
+        # Publish message to Pub/Sub
+        publisher = pubsub_v1.PublisherClient()
+        topic_path = publisher.topic_path(project_id, "youtube-data-ingest")
+
+        message_data = {
+            'source': 'youtube',
+            'data_type': 'videos',
+            'timestamp': timestamp,
+            'file_path': gcs_uri,
+            'record_count': len(videos),
+            'parameters': {
+                'query': query,
+                'max_results': max_results,
+                'published_after': published_after,
+                'published_before': published_before
+            }
+        }
+
+        # Convert dictionary to bytes
+        message_bytes = json.dumps(message_data).encode('utf-8')
+
+        # Publish message
+        publish_future = publisher.publish(topic_path, data=message_bytes)
+        publish_future.result()  # Wait for message to be published
+
+        print(f"Published message to {topic_path}")
+
     except Exception as e:
-        print(f"Error saving to Cloud Storage: {str(e)}")
+        print(f"Error saving to Cloud Storage or publishing message: {str(e)}")
 
     return result

@@ -10,6 +10,7 @@ from datetime import datetime
 import logging
 import functions_framework
 from google.cloud import storage
+from google.cloud import pubsub_v1
 
 # Configure logging
 logging.basicConfig(
@@ -284,21 +285,26 @@ def get_past_events(request):
         start_date = request_args.get('start_date')
         end_date = request_args.get('end_date')
 
+    # Get project ID
+    project_id = os.environ.get('GOOGLE_CLOUD_PROJECT')
+    if not project_id:
+        return {"error": "No project ID available"}, 500
+
     # Initialize API and get events
     api = SportsAPI()
     events_data = api.get_past_events(league_id, start_date, end_date, limit)
 
-    # Save to Cloud Storage if GCP project is available
-    try:
-        project_id = os.environ.get('GOOGLE_CLOUD_PROJECT')
-        if project_id:
-            # Create a timestamp for the filename
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            bucket_name = f"{project_id}-raw-data"
-            blob_name = f"sportsdb/events_{league_id}_{timestamp}.json"
+    # Save to Cloud Storage
+    if project_id:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        bucket_name = f"{project_id}-raw-data"
+        blob_name = f"sportsdb/events_{league_id}_{timestamp}.json"
+        gcs_uri = f"gs://{bucket_name}/{blob_name}"
 
-            # Initialize storage client
-            storage_client = storage.Client()
+        # Initialize storage client
+        storage_client = storage.Client()
+
+        try:
             bucket = storage_client.bucket(bucket_name)
             blob = bucket.blob(blob_name)
 
@@ -307,7 +313,35 @@ def get_past_events(request):
                 json.dumps(events_data),
                 content_type='application/json'
             )
-    except Exception as e:
-        print(f"Error saving to Cloud Storage: {str(e)}")
+
+            # Now publish a message to Pub/Sub
+            publisher = pubsub_v1.PublisherClient()
+            topic_path = publisher.topic_path(project_id, "sports-data-ingest")
+
+            message_data = {
+                'source': 'sportsdb',
+                'data_type': 'events',
+                'timestamp': timestamp,
+                'file_path': gcs_uri,
+                'record_count': len(events_data.get('events', [])),
+                'parameters': {
+                    'league_id': league_id,
+                    'start_date': start_date,
+                    'end_date': end_date,
+                    'limit': limit
+                }
+            }
+
+            # Convert dictionary to bytes
+            message_bytes = json.dumps(message_data).encode('utf-8')
+
+            # Publish message
+            publish_future = publisher.publish(topic_path, data=message_bytes)
+            publish_future.result()  # Wait for message to be published
+
+            print(f"Published message to {topic_path}")
+
+        except Exception as e:
+            print(f"Error processing data: {e}")
 
     return events_data

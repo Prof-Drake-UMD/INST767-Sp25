@@ -36,6 +36,8 @@ The project uses a BigQuery-optimized data model with the following key tables:
 8. **related_queries** - Related search terms from Google Trends
 9. **integrated_events_analysis** - Denormalized table combining events with engagement metrics
 
+![Tables](Tables.png)
+
 ### Schema Design Principles
 
 * Tables are partitioned by date for efficient time-based queries
