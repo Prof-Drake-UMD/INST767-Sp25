@@ -1,5 +1,5 @@
 -- Books Table
-CREATE TABLE `inst767-murano.cultural_lens.books` (
+CREATE TABLE `inst767-murano-cultural-lens.cultural_lens.books` (
   book_id STRING,
   title STRING,
   author_name STRING,
@@ -9,8 +9,8 @@ CREATE TABLE `inst767-murano.cultural_lens.books` (
   ingest_ts TIMESTAMP
 );
 
--- artwork Table
-CREATE TABLE `inst767-murano.cultural_lens.artwork` (
+-- Artwork Table
+CREATE TABLE `inst767-murano-cultural-lens.cultural_lens.artwork` (
   object_id INT64,
   title STRING,
   artist_name STRING,
@@ -22,7 +22,7 @@ CREATE TABLE `inst767-murano.cultural_lens.artwork` (
 );
 
 -- Music Table
-CREATE TABLE `inst767-murano.cultural_lens.music` (
+CREATE TABLE `inst767-murano-cultural-lens.cultural_lens.music` (
   track_id STRING,
   title STRING,
   artist STRING,
