@@ -3,7 +3,15 @@ import os
 import json
 from google.cloud import pubsub_v1
 from api_logic import match_cultural_experience_by_year
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
+GCP_PROJECT = os.getenv("GCP_PROJECT")
+GOOGLE_CLOUD_PROJECT = os.getenv("GOOGLE_CLOUD_PROJECT")
 PUBSUB_TOPIC = os.environ.get("PUBSUB_TOPIC", "ingest-to-transform")
 PROJECT_ID = os.environ.get("GCP_PROJECT") or os.environ.get("GOOGLE_CLOUD_PROJECT")
 
