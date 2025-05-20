@@ -1,7 +1,7 @@
 import requests
 
 # --- Open-Meteo Weather API ---
-def fetch_weather_forecast(lat=40.7128, lon=-74.0060):
+def fetch_weather_forecast(lat=38.9072, lon=-77.0369):
     url = "https://api.open-meteo.com/v1/forecast"
     params = {
         "latitude": lat,
@@ -21,7 +21,7 @@ def fetch_air_quality():
     return response.json()
 
 # --- USGS Water Services API ---
-def fetch_usgs_water(site="01323500"):
+def fetch_usgs_water(site="01646500"):
     """
     Fetch streamflow data from USGS.
     Example site: 01323500 (Bronx River at NY Botanical Garden)

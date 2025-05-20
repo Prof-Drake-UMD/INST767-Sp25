@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project explores how weather conditions influence environmental factors such as air quality and water levels. I integrate three publicly accessible datasets to analyze patterns and correlations across New York City.
+This project explores how weather conditions influence environmental factors such as air quality and water levels. We integrate three publicly accessible datasets to analyze patterns and correlations across Washington, D.C.
 
 ---
 
