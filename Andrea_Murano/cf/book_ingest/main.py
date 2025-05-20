@@ -1,7 +1,7 @@
 import os
 import requests
 import logging
-import urllib.parse 
+import urllib.parse
 from datetime import datetime
 from google.cloud import bigquery
 
@@ -11,11 +11,11 @@ PROJECT_ID = "inst767-murano-cultural-lens"
 DATASET = "cultural_lens"
 TABLE = "books"
 
-def get_book_data(title="Normal People", author="Sally Rooney", limit=5):  # Added limit
+def get_book_data(title="Normal People", author="Sally Rooney"):
     """Retrieves book data from the Open Library API."""
     base_url = "https://openlibrary.org/search.json"
 
-    # Encode the title and author for URL safety
+    
     title_encoded = urllib.parse.quote_plus(title)
     author_encoded = urllib.parse.quote_plus(author)
 
@@ -25,10 +25,10 @@ def get_book_data(title="Normal People", author="Sally Rooney", limit=5):  # Add
 
     try:
         response = requests.get(url, timeout=10)
-        response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
+        response.raise_for_status()  
         data = response.json()
         docs = data.get("docs", [])
-        results = []  # Accumulate the results
+        results = []  
 
         for book in docs:
             if (
@@ -45,17 +45,14 @@ def get_book_data(title="Normal People", author="Sally Rooney", limit=5):  # Add
                     "ingest_ts": datetime.utcnow().isoformat(),
                 }
                 results.append(book_data)
-                if len(results) >= limit:
-                    break
-
 
         logging.info(f"Found {len(results)} books matching the criteria.")
         return results
 
     except requests.exceptions.RequestException as e:
         logging.error(f"Error fetching data from Open Library API: {e}")
-        return []  # Return empty list on error
-
+        return []  
+        
 def write_to_bigquery(rows):
     """Writes book data to BigQuery."""
     client = bigquery.Client(project=PROJECT_ID)
@@ -67,7 +64,7 @@ def write_to_bigquery(rows):
         errors = client.insert_rows_json(table_id, rows)
         if errors:
             logging.error(f"BigQuery insert errors: {errors}")
-            raise Exception(f"BigQuery insert errors: {errors}")  # Signal function failure
+            raise Exception(f"BigQuery insert errors: {errors}")  
         logging.info("Successfully wrote data to BigQuery.")
 
     except Exception as e:
@@ -88,5 +85,4 @@ def main(event, context):
 
     except Exception as e:
         logging.error(f"An error occurred during book ingest: {e}")
-        raise  
-
+        raise
