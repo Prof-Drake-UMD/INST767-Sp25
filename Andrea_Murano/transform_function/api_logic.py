@@ -123,4 +123,58 @@ def match_cultural_experience_by_year(book_title, author_name, limit=5, year_buf
     }
 
 def flatten_and_export(result):
-    insert_to_bigquery(result)
+
+    book = result.get("book", {})
+    ingest_ts = int(time.time())
+
+    for artwork in result.get("artworks", []):
+        row = {
+            "book_id": book.get("book_id"),
+            "book_title": book.get("title"),
+            "book_author": book.get("author_name"),
+            "book_first_publish_year": book.get("first_publish_year"),
+            "book_language": book.get("language"),
+            "book_url": book.get("book_url"),
+            "object_id": artwork.get("object_id"),
+            "artwork_title": artwork.get("title"),
+            "artwork_artist": artwork.get("artist_name"),
+            "artwork_medium": artwork.get("medium"),
+            "artwork_date": artwork.get("object_date"),
+            "artwork_url": artwork.get("object_url"),
+            "artwork_image_url": artwork.get("image_url"),
+            "track_id": None,
+            "track_title": None,
+            "track_artist": None,
+            "album_title": None,
+            "track_release_date": None,
+            "track_preview_url": None,
+            "match_type": result.get("step"),
+            "ingest_ts": ingest_ts
+        }
+        insert_to_bigquery(row)
+
+    for track in result.get("music", []):
+        row = {
+            "book_id": book.get("book_id"),
+            "book_title": book.get("title"),
+            "book_author": book.get("author_name"),
+            "book_first_publish_year": book.get("first_publish_year"),
+            "book_language": book.get("language"),
+            "book_url": book.get("book_url"),
+            "object_id": None,
+            "artwork_title": None,
+            "artwork_artist": None,
+            "artwork_medium": None,
+            "artwork_date": None,
+            "artwork_url": None,
+            "artwork_image_url": None,
+            "track_id": track.get("track_id"),
+            "track_title": track.get("title"),
+            "track_artist": track.get("artist"),
+            "album_title": track.get("album"),
+            "track_release_date": track.get("release_date"),
+            "track_preview_url": track.get("preview_url"),
+            "match_type": result.get("step"),
+            "ingest_ts": ingest_ts
+        }
+        insert_to_bigquery(row)
