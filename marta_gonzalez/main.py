@@ -67,6 +67,12 @@ def run_transform(event, context):
             raise ValueError("Decoded message is empty or whitespace.")
 
         data = json.loads(message_data)
+        print("📊 Parsed JSON object:", data)
+
+        # Debug prints for each expected field
+        print("🌤️ Weather data:", data.get("weather"))
+        print("💨 Air quality data:", data.get("air_quality"))
+        print("💧 Water data:", data.get("water"))
 
         print("🔁 Starting transformations...")
         transform_weather(data["weather"])
