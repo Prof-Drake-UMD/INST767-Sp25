@@ -1,0 +1,5 @@
+{
+  "weather": { "temperature": 72, "condition": "sunny" },
+  "air_quality": { "pm25": 12.3, "ozone": 0.03 },
+  "water": { "ph": 7.2, "turbidity": 4.5 }
+}
