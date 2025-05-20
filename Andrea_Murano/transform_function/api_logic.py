@@ -1,7 +1,7 @@
 import os
 import requests
 import time
-from bq_insert import insert_to_bigquery  
+from bq_insert import insert_to_bigquery  # <-- Import BigQuery insert logic
 
 SPOTIFY_CLIENT_ID = os.environ.get("SPOTIFY_CLIENT_ID")
 SPOTIFY_CLIENT_SECRET = os.environ.get("SPOTIFY_CLIENT_SECRET")
@@ -114,7 +114,7 @@ def match_cultural_experience_by_year(book_title, author_name, limit=5, year_buf
         return {"error": "Book not found."}
     year = book.get("first_publish_year")
     artworks = get_met_artworks_by_year_range(year, buffer=year_buffer, limit=limit)
-    music = get_spotify_tracks_by_year(year, limit=limit * 2)  
+    music = get_spotify_tracks_by_year(year, limit=limit * 2)  # token will be fetched as needed
     return {
         "step": "year_only",
         "book": book,
