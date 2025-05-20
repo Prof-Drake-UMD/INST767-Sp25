@@ -11,7 +11,7 @@ def transform_weather(raw):
     })
     df["latitude"] = raw["latitude"]
     df["longitude"] = raw["longitude"]
-    df.to_csv("data/weather_data.csv", index=False)
+    df.to_csv("/tmp/weather_data.csv", index=False)
 
 def transform_air_quality(raw):
     """
@@ -36,7 +36,7 @@ def transform_air_quality(raw):
     df = df[cols]
 
     # Save to CSV
-    df.to_csv("data/air_quality.csv", index=False)
+    df.to_csv("/tmp/air_quality.csv", index=False)
     print(f"✅ Air quality data saved with {len(df)} records.")
 
 def transform_water(raw):
@@ -58,4 +58,4 @@ def transform_water(raw):
     df["longitude"] = site_info["geoLocation"]["geogLocation"]["longitude"]
 
     df = df[["timestamp", "site_id", "site_name", "streamflow_cfs", "latitude", "longitude"]]
-    df.to_csv("data/water_conditions.csv", index=False)
+    df.to_csv("/tmp/water_conditions.csv", index=False)
