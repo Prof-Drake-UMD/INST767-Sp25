@@ -2,3 +2,4 @@ flask
 google-cloud-pubsub
 requests
 pandas
+dotenv
