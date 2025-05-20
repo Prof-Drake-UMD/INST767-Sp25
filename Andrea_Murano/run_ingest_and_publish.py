@@ -8,6 +8,16 @@ from transform_function.ingest.get_music import get_spotify_token, get_spotify_t
 project_id = 'inst767-murano'
 topic_id = 'ingest-to-transform'
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
+SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
+GCP_PROJECT = os.getenv("GCP_PROJECT")
+GOOGLE_CLOUD_PROJECT = os.getenv("GOOGLE_CLOUD_PROJECT")
+PUBSUB_TOPIC = os.getenv("PUBSUB_TOPIC")
+
 def run_pipeline(book_title, author_name):
     book = get_book_data(book_title, author_name)
     if not book:
