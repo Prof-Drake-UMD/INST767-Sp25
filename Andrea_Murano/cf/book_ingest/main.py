@@ -1,11 +1,10 @@
 import os
 import requests
 import logging
-import urllib.parse  # For URL encoding
+import urllib.parse 
 from datetime import datetime
 from google.cloud import bigquery
 
-# Configure logging (critical for Cloud Functions)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 PROJECT_ID = "inst767-murano-cultural-lens"
