@@ -77,6 +77,7 @@ def run_transform(event, context):
             "air_quality": transformed_air,
             "water": transformed_water
         }.items():
+            print(f"🧪 {table_name} rows to insert: {rows}")
             insert_into_bigquery("dc_env_data", table_name, rows)
 
     except Exception as e:
@@ -86,14 +87,17 @@ def run_transform(event, context):
 
 bq_client = bigquery.Client()
 
+
 def insert_into_bigquery(dataset_id, table_name, rows_to_insert):
     table_id = f"dc-env-project-460403.{dataset_id}.{table_name}"
-    print(f"📤 Inserting {len(rows_to_insert)} rows into {table_name}...")
+    if not rows_to_insert:
+        print(f"⚠️ No rows to insert into {table_name}.")
+        return
     errors = bq_client.insert_rows_json(table_id, rows_to_insert)
     if errors:
         print(f"❌ Errors inserting into {table_name}: {errors}")
     else:
-        print(f"✅ Inserted {len(rows_to_insert)} rows into {table_name}.")
+        print(f"✅ Inserted data into {table_name}.")
 
 
 # Optional: for one-time setup
