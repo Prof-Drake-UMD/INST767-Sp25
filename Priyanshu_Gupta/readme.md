@@ -1,14 +1,8 @@
 # Open FDA Drugs Adverse Events Data Pipeline on GCP
 
-## APIs Overview
+### 🌐 APIs Overview
 
 This project integrates multiple API data sources to retrieve and analyze drug-related information from OpenFDA apis. The APIs used in this project include:
-
-OpenFDA Drug Events API
-
-NDC Directory API
-
-Recall Enforcement API
 
 ### API Data Sources and Expected Data
 
@@ -55,6 +49,8 @@ limit (number of records to return)
 #### -- Expected Output:
 Enforcement reports about drug product recalls including recall classification, reason for recall, recall status, and recall intitiation date, termination date.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Technologies Used
 
 In this project we are using google following cloud services:
@@ -63,9 +59,65 @@ In this project we are using google following cloud services:
 3. Cloud Functions (Triggered by PubSub for transformation and loading into Big Query)
 4. Google Big Query (For Data Warehousing and Analytical Queries)
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Project Structure
+
+<details>
+<summary><strong>📁 Project Structure</strong></summary>
+
+<br>
+
+```plaintext
+├── cloudFunctionTransform/
+│   ├── load_to_bq.py
+│   ├── main.py
+│   ├── read_from_uri.py
+│   ├── requirements.txt
+│   └── transform.py
+│
+├── dags/
+│   ├── extract_ndc_directory.py
+│   ├── extract_recall_enforcement.py
+│   └── open_fda_drug_events.py
+│
+├── include/
+│   └── extract_from_apis/
+│       ├── ExtractNdcChunk.py
+│       └── ExtractRecallEnforcements.py
+│
+|   └── helpers/
+│     ├── LoadBigQuery.py
+│     ├── parse_gcs_uri.py
+│     ├── PubSubHandler.py
+│     └── StorageClients.py
+│
+|   └── openfdaAdverseEvents/
+│     ├── code_maps.yml
+│     ├── extract_raw_events_chunk.py
+│     └── transform_events.py
+│
+|    └── sql/
+|     ├── analytical_queries.sql
+|     ├── combined_view.sql
+|     ├── events_table.py
+|     ├── ndc_createTable.sql
+|     └── recall_enforcement_createTable.sql
+|
+└── deploy.sh
+└── docker-compose.yml
+└── Dockerfile
+└── requirements.txt
+
+ ```
+
+</details>
+
+  
 ## Workflow
 ### 1. Drug Adverse Events Pipeline
 ![SS1. Drug Adverse Events DAG](screenshots/1.%20DAGS_Adverse_Events_DAG.png)
+
+### Tasks
 
 1. Check for api availability and number of records for a particular date
 2. Calculate number chunks for pagination
@@ -74,14 +126,48 @@ In this project we are using google following cloud services:
 5. Run the transform function and load into GCP transformed folder
 6. Load the data for particular date into date-partitioned big query table
 
-### 2. NDC Directory and Recall Enforcement Events Table
+### 2. NDC Directory and Recall Enforcements Pipeleine
 ![SS2. NDC Directory ETL DAG](screenshots/2.%20DAGS_NDC_Directory.png)
 ![SS3. Recall Enforcement ETL DAG](screenshots/3.%20DAGS_Recall_Enforcements_ETL.png)
 
+### Tasks
 1. Check for api availability and number of records for a particular date
 2. Calculate number chunks for pagination
 3. Prepare chunk parameters
 4. For each chunk fetch the data from api,  store raw json in GCP Bucket, send a pub-sub message containing info about location of raw json file.
 5. Pubsub triggers Cloud Function which transfroms the data and load it into staging table.
 6. A merge query is implemented to insert non matching reords in Big Query table.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### GCP Buckets
+
+![SS4. Drugs Adverse Events](screenshots/4.%20Buckets_Drug_Eventst.png)
+![SS5. NDC Directory](screenshots/5.%20Buckets_NDC_Directory.png)
+![SS6. Recall Enforcements](screenshots/6.%20Buckets_Recall_Enforcement.png)
+
+
+### Pub-Sub Topic Cloud Function Subscription
+![SS7. Pub-sub Topic Subscription](screenshots/7.%20PubSub_Topic_Subscription.png)
+
+
+### Cloud Function triggered when message is sent to Pub-Sub topic via subscription with Logs
+![SS8. Cloud Function](screenshots/8.%20Cloud_Run_Func_Trigg_By_Pubsub.png)
+LOGS
+![SS9. Cloud Function Logs](screenshots/9.%20CloudRunFunc__Logs.png)
+
+
+### Big Query Tables
+
+You can find all the SQL `CREATE TABLE` statements in the [`include/sql/`](https://github.com/Prof-Drake-UMD/INST767-Sp25/tree/main/Priyanshu_Gupta/include/sql) folder.
+
+![SS9. Cloud Function Logs](screenshots/10.%20BQ_Drug_Adverse_Events.png)
+
+
+
+
+
+
+
+
 
