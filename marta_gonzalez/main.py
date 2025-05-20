@@ -43,6 +43,8 @@ def ingest_data(request):
     publisher = pubsub_v1.PublisherClient()
     topic_path = publisher.topic_path("dc-env-project-460403", "data-ingested")
 
+    print("🔍 Final message to publish:", message)
+
     future = publisher.publish(topic_path, json.dumps(message).encode("utf-8"))
     print(f"✅ Published message to Pub/Sub: {future.result()}")
 
