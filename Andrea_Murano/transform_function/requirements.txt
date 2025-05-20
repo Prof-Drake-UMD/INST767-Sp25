@@ -1,5 +1,3 @@
 google-cloud-pubsub
 requests
-flask
 pandas
-python-dotenv
