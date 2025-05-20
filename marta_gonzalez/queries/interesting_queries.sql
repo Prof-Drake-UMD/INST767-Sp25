@@ -1,102 +1,97 @@
-/*How does rainfall impact air quality (PM2.5) in different boroughs?*/
-SELECT
-  aq.borough,
-  DATE(w.timestamp) AS date,
-  AVG(w.precipitation_mm) AS avg_precipitation,
-  AVG(aq.pm25) AS avg_pm25
-FROM
-  air_quality_data aq
-JOIN
-  weather_data w
-ON
-  DATE(w.timestamp) = aq.date
-GROUP BY
-  borough, date
-ORDER BY
-  date, borough;
-
-
-/*Identify days with highest wind speed and their impact on AQI*/
+/*Correlation Between Precipitation and Streamflow (lagged)*/
 SELECT
   w.timestamp,
-  w.wind_speed_mps,
-  aq.borough,
-  aq.aqi
+  w.precipitation_mm,
+  wd.streamflow_cfs,
+  LAG(wd.streamflow_cfs, 1) OVER (ORDER BY w.timestamp) AS previous_streamflow
 FROM
-  weather_data w
+  `your_dataset.weather_data` w
 JOIN
-  air_quality_data aq
+  `your_dataset.water_data` wd
 ON
-  DATE(w.timestamp) = aq.date
+  w.timestamp = wd.timestamp
 WHERE
-  w.wind_speed_mps > 10
+  w.precipitation_mm IS NOT NULL AND wd.streamflow_cfs IS NOT NULL
 ORDER BY
-  w.wind_speed_mps DESC
-LIMIT 50;
+  w.timestamp;
 
 
-/*Compare average streamflow levels before and after rainy days*/
-WITH rain_days AS (
-  SELECT DATE(timestamp) AS rain_date
-  FROM weather_data
-  WHERE precipitation_mm > 5.0
-),
-streamflow_lagged AS (
+
+/*When is Air Quality the Worst (hour of day)?*/
+SELECT
+  EXTRACT(HOUR FROM timestamp) AS hour,
+  AVG(pm2_5) AS avg_pm2_5,
+  AVG(ozone) AS avg_ozone
+FROM
+  `your_dataset.air_quality_data`
+WHERE
+  pm2_5 IS NOT NULL
+GROUP BY
+  hour
+ORDER BY
+  avg_pm2_5 DESC
+LIMIT 5;
+
+
+
+/*Top 5 Days with Worst Air Quality and Associated Weather*/
+SELECT
+  DATE(a.timestamp) AS date,
+  AVG(a.pm2_5) AS avg_pm2_5,
+  AVG(w.temperature_2m) AS avg_temp,
+  AVG(w.wind_speed_10m) AS avg_wind
+FROM
+  `your_dataset.air_quality_data` a
+JOIN
+  `your_dataset.weather_data` w
+ON
+  a.timestamp = w.timestamp
+GROUP BY
+  date
+ORDER BY
+  avg_pm2_5 DESC
+LIMIT 5;
+
+
+
+/*Percent Change in Streamflow after Rain Events*/
+WITH flow_diff AS (
   SELECT
-    wc.timestamp,
-    DATE(wc.timestamp) AS date,
-    wc.streamflow_cfs,
-    LAG(wc.streamflow_cfs) OVER (PARTITION BY site_id ORDER BY wc.timestamp) AS prev_streamflow,
-    wc.site_id
-  FROM water_conditions wc
+    timestamp,
+    streamflow_cfs,
+    LAG(streamflow_cfs) OVER (ORDER BY timestamp) AS previous_flow
+  FROM `your_dataset.water_data`
 )
 SELECT
-  site_id,
-  date,
-  streamflow_cfs,
-  prev_streamflow,
-  streamflow_cfs - prev_streamflow AS change
-FROM
-  streamflow_lagged
-WHERE
-  date IN (SELECT rain_date FROM rain_days)
-ORDER BY
-  change DESC;
+  timestamp,
+  ((streamflow_cfs - previous_flow) / previous_flow) * 100 AS percent_change
+FROM flow_diff
+WHERE previous_flow IS NOT NULL
+ORDER BY percent_change DESC
+LIMIT 10;
 
 
-/*Find boroughs with consistently high AQI and no rain over a 7-day period*/
+
+/*Multivariate Environmental Condition Snapshot*/
 SELECT
-  borough,
-  COUNT(*) AS high_aqi_days
+  w.timestamp,
+  w.temperature_2m,
+  w.precipitation_mm,
+  a.pm2_5,
+  a.ozone,
+  wd.streamflow_cfs
 FROM
-  air_quality_data aq
+  `your_dataset.weather_data` w
 JOIN
-  weather_data w
+  `your_dataset.air_quality_data` a
 ON
-  DATE(w.timestamp) = aq.date
-WHERE
-  aq.aqi > 100 AND w.precipitation_mm < 1
-GROUP BY
-  borough
-HAVING
-  high_aqi_days >= 7
-ORDER BY
-  high_aqi_days DESC;
-
-
-/*Window function: 7-day rolling average temperature and AQI*/
-SELECT
-  borough,
-  date,
-  AVG(pm25) OVER (PARTITION BY borough ORDER BY date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS rolling_avg_pm25,
-  AVG(temperature_c) OVER (ORDER BY date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS rolling_avg_temp
-FROM
-  air_quality_data aq
+  w.timestamp = a.timestamp
 JOIN
-  weather_data w
+  `your_dataset.water_data` wd
 ON
-  aq.date = DATE(w.timestamp)
+  w.timestamp = wd.timestamp
 WHERE
-  borough = 'Manhattan'
+  w.precipitation_mm > 2
+  AND a.pm2_5 > 25
 ORDER BY
-  date;
+  w.timestamp;

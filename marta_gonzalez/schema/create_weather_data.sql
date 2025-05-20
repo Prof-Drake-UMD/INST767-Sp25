@@ -1,8 +1,6 @@
-CREATE TABLE IF NOT EXISTS weather_data (
+CREATE TABLE `your_dataset.weather_data` (
   timestamp TIMESTAMP,
-  latitude FLOAT64,
-  longitude FLOAT64,
-  temperature_c FLOAT64,
+  temperature_2m FLOAT64,
   precipitation_mm FLOAT64,
-  wind_speed_mps FLOAT64
+  wind_speed_10m FLOAT64
 );

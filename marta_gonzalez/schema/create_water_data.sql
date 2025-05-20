@@ -1,8 +1,5 @@
-CREATE TABLE IF NOT EXISTS water_conditions (
+CREATE TABLE `your_dataset.water_data` (
   timestamp TIMESTAMP,
   site_id STRING,
-  site_name STRING,
-  streamflow_cfs FLOAT64,
-  latitude FLOAT64,
-  longitude FLOAT64
+  streamflow_cfs FLOAT64
 );
