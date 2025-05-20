@@ -1,37 +1,52 @@
 # Contextual Lens: Literature & Culture Explorer
 
-This project is an cultural recommendation tool that takes a book title and author as input and returns a set of artworks and music tracks released the same, or close to the same, year. It is designed as an immersive discovery engine for artistic content from 1950 to the present.
+This repository contains a cross-media cultural recommendation tool that takes a book title and author as input and returns a set of artworks and music tracks released in the same, or close to the same, year. The project integrates data engineering, SQL analytics, and API usage.
 
 ## Project Purpose
 
-This tool is intended for analysts, educators, and cultural explorers seeking cross-medium context. One can gain a much greater understanding of literature by considering the context in which it was released.
+This tool is designed for analysts, educators, and cultural explorers seeking cross-medium context. By considering contemporary artworks and music, users can gain a richer understanding of the culture surrounding a given text.
 
-## APIs Used
+## Repository Structure
 
-### 1. Open Library API
-- **Input:** Book title and author name
-- **Output:** Metadata including title, author, first publication year, language, and Open Library URL
+- **README.md**: This file. Project overview and instructions.
+- **create_tables.sql**: SQL DDL scripts for creating tables for books, artworks, and music in BigQuery.
+- **queries.sql**: Example and dynamic queries to explore and join the cultural data.
+- **requirements.txt**: Python dependencies for API integration and BigQuery access.
+- **DAG/**: Placeholder for workflow/orchestration scripts (e.g., Airflow DAGs).
+- **cf/**: Placeholder for Cloud Functions or configuration files.
+- **screenshots/**: Screenshots of the application or workflow in use.
 
-### 2. The Met Museum Collection API
-- **Input:** Target year (+/- buffer range)
-- **Output:** Artworks created within the specified year range, including title, artist, date, medium, and image URL
+## Data Model
 
-### 3. Spotify API
-- **Input:** Target year
-- **Output:** Music tracks released in that year, including title, artist, album, release date, and preview URL (when available)
+The system uses three main tables:
+
+1. **Books Table**
+   - Fields: book_id, title, author_name, first_publish_year, language, book_url, ingest_ts
+
+2. **Artwork Table**
+   - Fields: object_id, title, artist_name, medium, object_date, object_url, image_url, ingest_ts
+
+3. **Music Table**
+   - Fields: track_id, title, artist, album, release_date, preview_url, ingest_ts
+
+## API Integrations
+
+- **Open Library API**: Fetches book metadata
+- **The Met Museum Collection API**: Retrieves artworks by year
+- **Spotify API**: Gets music tracks by release year
 
 ## Inputs and Filters
 
 - Book title and author name (required)
 - English-language books only (`"eng"` language code)
-- Artworks and tracks are selected from within ±10 years of the book’s first publication year
+- Artworks and tracks are selected from within ±10 years (or configurable) of the book’s first publication year
 
 ## Outputs
 
-- A dictionary containing:
-  - Book metadata
-  - Up to three pieces of artwork
-  - A playlist of matched music tracks
+A result dictionary or joined table containing:
+- Book metadata
+- Up to three artworks
+- A playlist of matched music tracks
 
 ## Example Output
 
@@ -45,3 +60,21 @@ This tool is intended for analysts, educators, and cultural explorers seeking cr
   "artworks": [...],
   "music": [...]
 }
+```
+
+## Setup
+
+1. Install requirements:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Configure environment variables for API keys as needed.
+3. Create tables in BigQuery using `create_tables.sql`.
+4. Use or adapt queries from `queries.sql` for exploration.
+
+## Screenshots
+
+See the `screenshots/` folder for example outputs and UI.
+
+---
+- Music with previews within N years of a book (`@book_title`, `@buffer_years`)
