@@ -39,6 +39,7 @@ def ingest_data(request):
         "water": water
     }
 
+
     # Publish to Pub/Sub
     publisher = pubsub_v1.PublisherClient()
     topic_path = publisher.topic_path("dc-env-project-460403", "data-ingested")
