@@ -115,7 +115,7 @@ In this project we are using google following cloud services:
   
 ## Workflow
 ### 1. Drug Adverse Events Pipeline
-![SS1. Drug Adverse Events DAG](screenshots/1.%20DAGS_Adverse_Events_DAG.png)
+![SS1. Drug Adverse Events DAG](screenshots/DAGS/1.%20DAGS_Adverse_Events_DAG.png)
 
 ### Tasks
 
@@ -127,8 +127,8 @@ In this project we are using google following cloud services:
 6. Load the data for particular date into date-partitioned big query table
 
 ### 2. NDC Directory and Recall Enforcements Pipeleine
-![SS2. NDC Directory ETL DAG](screenshots/2.%20DAGS_NDC_Directory.png)
-![SS3. Recall Enforcement ETL DAG](screenshots/3.%20DAGS_Recall_Enforcements_ETL.png)
+![SS2. NDC Directory ETL DAG](screenshots/DAGS/2.%20DAGS_NDC_Directory.png)
+![SS3. Recall Enforcement ETL DAG](screenshots/DAGS/3.%20DAGS_Recall_Enforcements_ETL.png)
 
 ### Tasks
 1. Check for api availability and number of records for a particular date
@@ -142,19 +142,17 @@ In this project we are using google following cloud services:
 
 ### GCP Buckets
 
-![SS4. Drugs Adverse Events](screenshots/4.%20Buckets_Drug_Eventst.png)
-![SS5. NDC Directory](screenshots/5.%20Buckets_NDC_Directory.png)
-![SS6. Recall Enforcements](screenshots/6.%20Buckets_Recall_Enforcement.png)
+![SS4. Drugs Adverse Events](screenshots/GCS_Buckets/4.%20Buckets_Drug_Eventst.png)
+
+Check other screenshots at [`screenshots/GCS_Buckets`](https://github.com/Prof-Drake-UMD/INST767-Sp25/tree/main/Priyanshu_Gupta/screenshots/GCS_Buckets)
 
 
 ### Pub-Sub Topic Cloud Function Subscription
-![SS7. Pub-sub Topic Subscription](screenshots/7.%20PubSub_Topic_Subscription.png)
+![SS7. Pub-sub Topic Subscription](screenshots/Cloud_Function_and_Pubsub/7.%20PubSub_Topic_Subscription.png)
 
-
-### Cloud Function triggered when message is sent to Pub-Sub topic via subscription with Logs
-![SS8. Cloud Function](screenshots/8.%20Cloud_Run_Func_Trigg_By_Pubsub.png)
-LOGS
-![SS9. Cloud Function Logs](screenshots/9.%20CloudRunFunc__Logs.png)
+### Cloud Function Definition
+![SS8. Cloud Function](screenshots/Cloud_Function_and_Pubsub/8.%20Cloud_Run_Func_Trigg_By_Pubsub.png)
+Check out logs of completed triggered function LOGS [`screenshots/Cloud_Funtion_and_Pubsub`](https://github.com/Prof-Drake-UMD/INST767-Sp25/tree/main/Priyanshu_Gupta/screenshots/Cloud_Function_and_Pubsub)
 
 
 ### Big Query Tables
