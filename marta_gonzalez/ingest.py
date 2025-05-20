@@ -1,4 +1,6 @@
 import requests
+import json
+from google.cloud import pubsub_v1
 
 # --- Open-Meteo Weather API ---
 def fetch_weather_forecast(lat=38.9072, lon=-77.0369):
@@ -17,23 +19,17 @@ def fetch_weather_forecast(lat=38.9072, lon=-77.0369):
 def fetch_air_quality():
     url = "https://air-quality-api.open-meteo.com/v1/air-quality"
     params = {
-        "latitude": 38.9072,       # Washington, DC
+        "latitude": 38.9072,
         "longitude": -77.0369,
         "hourly": "pm10,pm2_5,carbon_monoxide,nitrogen_dioxide,ozone,sulphur_dioxide",
         "timezone": "America/New_York"
     }
-
     response = requests.get(url, params=params)
     response.raise_for_status()
     return response.json()
 
 # --- USGS Water Services API ---
 def fetch_usgs_water(site="01646500"):
-    """
-    Fetch streamflow data from USGS.
-    Example site: 01323500 (Bronx River at NY Botanical Garden)
-    ParameterCd 00060 = streamflow (cubic feet per second)
-    """
     url = "https://waterservices.usgs.gov/nwis/iv/"
     params = {
         "sites": site,
@@ -44,16 +40,25 @@ def fetch_usgs_water(site="01646500"):
     response.raise_for_status()
     return response.json()
 
-# --- Example Execution ---
-if __name__ == "__main__":
-    print("Fetching weather forecast...")
+# --- Cloud Function Entry Point ---
+def ingest_data(request):
+    # Call your existing functions
     weather = fetch_weather_forecast()
-    print(weather)
-
-    print("\nFetching Washington D.C. air quality data...")
     air_quality = fetch_air_quality()
-    print(air_quality[:3])  # print just a few entries
+    water = fetch_usgs_water()
 
-    print("\nFetching USGS water data...")
-    usgs_water = fetch_usgs_water()
-    print(usgs_water)
+    # Combine results into one message
+    message = {
+        "weather": weather,
+        "air_quality": air_quality,
+        "water": water
+    }
+
+    # Publish to Pub/Sub
+    publisher = pubsub_v1.PublisherClient()
+    topic_path = publisher.topic_path("dc-env-project-460403", "data-ingested")
+
+    future = publisher.publish(topic_path, json.dumps(message).encode("utf-8"))
+    print(f"✅ Published message to Pub/Sub: {future.result()}")
+
+    return "✅ Ingest function completed"

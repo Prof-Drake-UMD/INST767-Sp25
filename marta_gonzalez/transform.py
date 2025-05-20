@@ -1,3 +1,5 @@
+import base64
+import json
 import pandas as pd
 from datetime import datetime
 
@@ -12,38 +14,27 @@ def transform_weather(raw):
     df["latitude"] = raw["latitude"]
     df["longitude"] = raw["longitude"]
     df.to_csv("/tmp/weather_data.csv", index=False)
+    print("✅ Weather data saved.")
 
 def transform_air_quality(raw):
-    """
-    Transforms raw JSON from Open-Meteo Air Quality API
-    into a flat table and writes CSV.
-    """
-    # Extract hourly data dictionary
     hourly = raw.get("hourly", {})
     if not hourly:
         print("❌ No hourly data found in air quality response.")
         return
 
-    # Convert to DataFrame
     df = pd.DataFrame(hourly)
-
-    # Convert time strings to datetime objects
     df["timestamp"] = pd.to_datetime(df["time"])
     df.drop(columns=["time"], inplace=True)
-
-    # Optional: reorder columns
     cols = ["timestamp"] + [col for col in df.columns if col != "timestamp"]
     df = df[cols]
-
-    # Save to CSV
     df.to_csv("/tmp/air_quality.csv", index=False)
-    print(f"✅ Air quality data saved with {len(df)} records.")
+    print("✅ Air quality data saved.")
 
 def transform_water(raw):
     ts_list = raw.get("value", {}).get("timeSeries", [])
     if not ts_list:
-        print("⚠️ No water data returned. Check the site ID or parameters.")
-        return  # Exit gracefully
+        print("⚠️ No water data returned.")
+        return
 
     ts_data = ts_list[0]
     site_info = ts_data["sourceInfo"]
@@ -56,6 +47,26 @@ def transform_water(raw):
     df["site_name"] = site_info["siteName"]
     df["latitude"] = site_info["geoLocation"]["geogLocation"]["latitude"]
     df["longitude"] = site_info["geoLocation"]["geogLocation"]["longitude"]
-
     df = df[["timestamp", "site_id", "site_name", "streamflow_cfs", "latitude", "longitude"]]
     df.to_csv("/tmp/water_conditions.csv", index=False)
+    print("✅ Water data saved.")
+
+# --- Cloud Function Entry Point ---
+def run_transform(event, context):
+    """Triggered from a message on a Cloud Pub/Sub topic."""
+    try:
+        if "data" not in event:
+            raise ValueError("No data in Pub/Sub message.")
+
+        message_data = base64.b64decode(event["data"]).decode("utf-8")
+        data = json.loads(message_data)
+
+        print("🔁 Starting transformations...")
+        transform_weather(data["weather"])
+        transform_air_quality(data["air_quality"])
+        transform_water(data["water"])
+        print("✅ All transformations completed.")
+
+    except Exception as e:
+        print(f"❌ Error in transformation: {e}")
+        raise
