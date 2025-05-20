@@ -5,9 +5,9 @@ from google.cloud import bigquery
 
 PROJECT_ID = "inst767-murano-cultural-lens"
 DATASET = "cultural_lens"
-TABLE = "artworks"
+TABLE = "artwork"
 
-def get_met_artworks(year, buffer=10):
+def get_met_artwork(year, buffer=10):
     search_url = "https://collectionapi.metmuseum.org/public/collection/v1/search"
     object_url = "https://collectionapi.metmuseum.org/public/collection/v1/objects/"
     results = []
@@ -40,6 +40,6 @@ def write_to_bigquery(rows):
 
 def main(event, context):
     year = 2018  # could be parameterized from Pub/Sub or event trigger
-    artworks = get_met_artworks(year)
-    if artworks:
-        write_to_bigquery(artworks)
+    artwork = get_met_artwork(year)
+    if artwork:
+        write_to_bigquery(artwork)
