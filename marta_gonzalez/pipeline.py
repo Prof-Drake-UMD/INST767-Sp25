@@ -1,19 +1,16 @@
-from issue3_ingest import fetch_weather_forecast, fetch_air_quality, fetch_usgs_water
-from transform import transform_weather, transform_air_quality, transform_water
-import os
+from ingest import fetch_air_quality, fetch_weather_forecast, fetch_usgs_water
+from transform import transform_air_quality, transform_weather, transform_water
 
 def main():
-    os.makedirs("data", exist_ok=True)
+    print("📡 Fetching data...")
+    air_quality_raw = fetch_air_quality()
+    weather_raw = fetch_weather_forecast()
+    water_raw = fetch_usgs_water()
 
-    print("Fetching data...")
-    weather = fetch_weather_forecast()
-    air_quality = fetch_air_quality()
-    water = fetch_usgs_water()
-
-    print("Transforming and writing CSVs...")
-    transform_weather(weather)
-    transform_air_quality(air_quality)
-    transform_water(water)
+    print("🔄 Transforming and writing CSVs...")
+    transform_air_quality(air_quality_raw)
+    transform_weather(weather_raw)
+    transform_water(water_raw)
 
     print("✅ Pipeline complete. CSVs are in /data")
 

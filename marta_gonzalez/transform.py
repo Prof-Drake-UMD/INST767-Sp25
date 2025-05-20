@@ -14,29 +14,30 @@ def transform_weather(raw):
     df.to_csv("data/weather_data.csv", index=False)
 
 def transform_air_quality(raw):
-    df = pd.DataFrame(raw)
-    # Select relevant columns
-    df = df[[
-        "start_date",
-        "geo_place_name",
-        "name",
-        "measure",
-        "measure_info",
-        "data_value"
-    ]]
-    # Rename columns for clarity
-    df.rename(columns={
-        "start_date": "date",
-        "geo_place_name": "location",
-        "name": "pollutant",
-        "measure": "unit",
-        "measure_info": "unit_description",
-        "data_value": "value"
-    }, inplace=True)
-    # Convert date to datetime format
-    df["date"] = pd.to_datetime(df["date"])
+    """
+    Transforms raw JSON from Open-Meteo Air Quality API
+    into a flat table and writes CSV.
+    """
+    # Extract hourly data dictionary
+    hourly = raw.get("hourly", {})
+    if not hourly:
+        print("❌ No hourly data found in air quality response.")
+        return
+
+    # Convert to DataFrame
+    df = pd.DataFrame(hourly)
+
+    # Convert time strings to datetime objects
+    df["timestamp"] = pd.to_datetime(df["time"])
+    df.drop(columns=["time"], inplace=True)
+
+    # Optional: reorder columns
+    cols = ["timestamp"] + [col for col in df.columns if col != "timestamp"]
+    df = df[cols]
+
     # Save to CSV
-    df.to_csv("data/air_quality_data.csv", index=False)
+    df.to_csv("data/air_quality.csv", index=False)
+    print(f"✅ Air quality data saved with {len(df)} records.")
 
 def transform_water(raw):
     ts_list = raw.get("value", {}).get("timeSeries", [])
