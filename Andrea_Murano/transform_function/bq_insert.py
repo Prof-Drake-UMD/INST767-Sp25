@@ -3,7 +3,7 @@ import os
 
 def insert_to_bigquery(data):
     project_id = os.environ.get("GCP_PROJECT") or os.environ.get("GOOGLE_CLOUD_PROJECT")
-    dataset_id = "cultural_data"  
+    dataset_id = "cultural_data"
 
     bq_client = bigquery.Client(project=project_id)
 
@@ -11,13 +11,13 @@ def insert_to_bigquery(data):
     if book:
         books_table = f"{project_id}.{dataset_id}.books"
         book_row = {
-            "ingest_ts": book.get("ingest_ts"),
             "book_id": book.get("book_id"),
             "title": book.get("title"),
             "author_name": book.get("author_name"),
             "first_publish_year": book.get("first_publish_year"),
             "language": book.get("language"),
-            "book_url": book.get("book_url"),
+            "ingest_ts": book.get("ingest_ts"),
+            "book_url": book.get("book_url"),  
         }
         errors = bq_client.insert_rows_json(books_table, [book_row])
         if errors:
