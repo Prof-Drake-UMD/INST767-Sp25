@@ -2,6 +2,8 @@ import os
 from datetime import datetime
 import pandas as pd
 from ingest_function.api_logic import match_cultural_experience_by_year
+from dotenv import load_dotenv
+load_dotenv()
 
 def main():
     output_dir = "output"
