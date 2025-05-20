@@ -1,4 +1,4 @@
--- Table: books
+-- Books table
 CREATE TABLE books (
   ingest_ts TIMESTAMP,
   book_id STRING,
@@ -9,7 +9,7 @@ CREATE TABLE books (
   book_url STRING
 );
 
--- Table: artworks
+-- Artworks table
 CREATE TABLE artworks (
   ingest_ts TIMESTAMP,
   book_id STRING,
@@ -22,7 +22,7 @@ CREATE TABLE artworks (
   image_url STRING
 );
 
--- Table: music_tracks
+-- Music Tracks table
 CREATE TABLE music_tracks (
   ingest_ts TIMESTAMP,
   book_id STRING,
