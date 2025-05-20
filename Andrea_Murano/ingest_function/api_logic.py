@@ -5,10 +5,15 @@ import random
 import re
 from datetime import datetime
 from dotenv import load_dotenv
+
 load_dotenv()
 
-SPOTIFY_CLIENT_ID = os.environ.get("SPOTIFY_CLIENT_ID")
-SPOTIFY_CLIENT_SECRET = os.environ.get("SPOTIFY_CLIENT_SECRET")
+SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
+GCP_PROJECT = os.getenv("GCP_PROJECT")
+GOOGLE_CLOUD_PROJECT = os.getenv("GOOGLE_CLOUD_PROJECT")
+PUBSUB_TOPIC = os.getenv("PUBSUB_TOPIC")
+
 
 def get_spotify_token():
     auth_url = "https://accounts.spotify.com/api/token"
