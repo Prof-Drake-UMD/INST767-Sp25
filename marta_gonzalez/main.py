@@ -5,6 +5,7 @@ from google.cloud import pubsub_v1
 import json
 from google.cloud import pubsub_v1
 from flask import Request
+import base64
 
 
 def run_pipeline(request):
