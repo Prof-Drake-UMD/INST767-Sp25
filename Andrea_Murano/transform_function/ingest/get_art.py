@@ -20,7 +20,8 @@ def get_artworks_near_year(year, buffer=10, max_results=5):
                     continue
                 obj_url = f"https://collectionapi.metmuseum.org/public/collection/v1/objects/{object_id}"
                 data = requests.get(obj_url, timeout=10).json()
-                if data:
+                obj_year = data.get("objectBeginDate", 0)
+                if data and 1950 <= obj_year <= 2025 and abs(obj_year - year) <= buffer:
                     all_results.append({
                         "object_id": data.get("objectID"),
                         "title": data.get("title"),
