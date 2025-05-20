@@ -9,8 +9,8 @@ CREATE TABLE `inst767-murano.cultural_lens.books` (
   ingest_ts TIMESTAMP
 );
 
--- Artworks Table
-CREATE TABLE `inst767-murano.cultural_lens.artworks` (
+-- artwork Table
+CREATE TABLE `inst767-murano.cultural_lens.artwork` (
   object_id INT64,
   title STRING,
   artist_name STRING,
