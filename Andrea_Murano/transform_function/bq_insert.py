@@ -1,5 +1,14 @@
 from google.cloud import bigquery
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
+GCP_PROJECT = os.getenv("GCP_PROJECT")
+GOOGLE_CLOUD_PROJECT = os.getenv("GOOGLE_CLOUD_PROJECT")
+PUBSUB_TOPIC = os.getenv("PUBSUB_TOPIC")
 
 def insert_to_bigquery(data):
     project_id = os.environ.get("GCP_PROJECT") or os.environ.get("GOOGLE_CLOUD_PROJECT")
