@@ -1,16 +1,15 @@
-from flask import Flask, request, jsonify
+from flask import Request, jsonify
 import os
 import json
 from google.cloud import pubsub_v1
 from api_logic import match_cultural_experience_by_year
 
-app = Flask(__name__)
-
 PUBSUB_TOPIC = os.environ.get("PUBSUB_TOPIC", "ingest-to-transform")
 PROJECT_ID = os.environ.get("GCP_PROJECT") or os.environ.get("GOOGLE_CLOUD_PROJECT")
 
-@app.route("/", methods=["POST"])
-def ingest():
+def ingest(request: Request):
+    if request.method != "POST":
+        return jsonify({"error": "Only POST allowed"}), 405
     data = request.get_json()
     if not data or not data.get("book_title") or not data.get("author_name"):
         return jsonify({"error": "Missing book_title or author_name"}), 400
