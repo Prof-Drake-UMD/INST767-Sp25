@@ -146,21 +146,49 @@ In this project we are using google following cloud services:
 
 Check other screenshots at [`screenshots/GCS_Buckets`](https://github.com/Prof-Drake-UMD/INST767-Sp25/tree/main/Priyanshu_Gupta/screenshots/GCS_Buckets)
 
+<br>
 
 ### Pub-Sub Topic Cloud Function Subscription
 ![SS7. Pub-sub Topic Subscription](screenshots/Cloud_Function_and_Pubsub/7.%20PubSub_Topic_Subscription.png)
+
+<br>
 
 ### Cloud Function Definition
 ![SS8. Cloud Function](screenshots/Cloud_Function_and_Pubsub/8.%20Cloud_Run_Func_Trigg_By_Pubsub.png)
 Check out logs of completed triggered function LOGS [`screenshots/Cloud_Funtion_and_Pubsub`](https://github.com/Prof-Drake-UMD/INST767-Sp25/tree/main/Priyanshu_Gupta/screenshots/Cloud_Function_and_Pubsub)
 
+<br>
 
 ### Big Query Tables
 
+Drug Adverse Events Table in BQ
+![SS10. Drug Adverse Events](screenshots/BigQuery/10.%20BQ_Drug_Adverse_Events.png)
+
+Apart from 3 tables from different apis, a combined view is created in BigQuery to join all the three tables based on <b>product_ndc </b>(unique identifier for drugs). Sql query for join defined [here](https://github.com/Prof-Drake-UMD/INST767-Sp25/tree/main/Priyanshu_Gupta/include/sql/combined_view.sql) 
+
+Check out other big query screen shots at [`screenshots/BigQuery`](https://github.com/Prof-Drake-UMD/INST767-Sp25/tree/main/Priyanshu_Gupta/screenshots/BigQuery)
+
 You can find all the SQL `CREATE TABLE` statements in the [`include/sql/`](https://github.com/Prof-Drake-UMD/INST767-Sp25/tree/main/Priyanshu_Gupta/include/sql) folder.
 
-![SS9. Cloud Function Logs](screenshots/10.%20BQ_Drug_Adverse_Events.png)
+<br>
 
+### Analytical Questions
+
+You can find all the SQL queries [`here`](https://github.com/Prof-Drake-UMD/INST767-Sp25/tree/main/Priyanshu_Gupta/include/sql/analytical_queries.sql) file.
+
+Check out results of the queries at [`screenshots/Queries`](https://github.com/Prof-Drake-UMD/INST767-Sp25/tree/main/Priyanshu_Gupta/screenshots/Queries)
+
+
+## Challenges and Solution Approcach
+1. <b>Large Amount of Drug Adeverse Events</b>: The api has around 19 million events with deeply nested structure which makes it difficult to extract all the events. So, I decided to extract from 2024 to the present only. Created a dag that extracts only the events from a particular date and stores in partitioned bucket and big query table
+   
+2. <b>Cloud Function Deployment</b>: Faced difficulty in deploying cloud function that can be asynchronously triggered by pubsub whenever extract dag is run. Had to creat a seperate folder for cloud function with all helper utilities to deploy usin shell scripting.
+   
+3. <b>Idempotent Pipeline for large Table </b>: To prevent duplicate records in BigQuery when the Events DAG is run multiple times for the same date, I implemented a partitioned BigQuery table using receivedate as the partition key. By applying the WRITE_TRUNCATE write disposition to the specific partition, the pipeline now safely replaces only the relevant date’s data during each run, ensuring idempotency and preventing duplication.
+   
+4. <b>Idempotent Pipeline for smaller table </b>: For smaller datasets such as the NDC directory and recall events, I adopted a staging-based approach. New data is first loaded into a staging table, and then a MERGE statement is used to insert only the new records into the target table.
+   
+5. <b> Data Model Decisison </b>: The Drug Adverse Event Table had multiple reations and drugs associated, so I decided to keep these fields as repeated records in Big Query which is like a Struct and unnest it later for create a combined view.
 
 
 
