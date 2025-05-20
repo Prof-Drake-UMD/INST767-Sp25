@@ -148,3 +148,10 @@ def create_dataset_and_tables():
         table = bigquery.Table(table_id, schema=schema)
         bq_client.create_table(table, exists_ok=True)
         print(f"📦 Table {table_name} created or already exists.")
+
+if __name__ == "__main__":
+    class DummyRequest:
+        def __init__(self):
+            self.method = "GET"
+
+    ingest_data(DummyRequest())  # or just call ingest_data(None)
