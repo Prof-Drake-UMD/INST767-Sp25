@@ -1,0 +1,128 @@
+{
+  "message": "success",
+  "hasNextPage": true,
+  "page": 1,
+  "limit": 10,
+  "result": [
+    {
+      "event_type": "Misc",
+      "event_name": "Freeze Warning in Vilas; Oneida; Forest; Florence; Lincoln; Langlade",
+      "date": "2025-05-19 08:00:00",
+      "lat": 45.67586004986461,
+      "continent": "nar",
+      "created_time": "2025-05-19 08:50:44",
+      "lng": -89.23429862847308,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.cb11d8125d92e599c59bd36e4eceb983c316b93f.001.1",
+      "event_id": "68299f9f6f85e4b933483201",
+      "estimated_end_date": null
+    },
+    {
+      "event_type": "ET",
+      "event_name": "Red Flag Warning in Southern Gila County/Tonto National Forest Foothills",
+      "date": "2025-05-19 07:00:00",
+      "lat": 33.519908988800665,
+      "continent": "nar",
+      "created_time": "2025-05-19 08:50:44",
+      "lng": -110.84622649025115,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.d49dc5b56fd6c8ef8c36892d0b07003e3a5f4388.001.1",
+      "event_id": "6808a960a205ad35a5de2126",
+      "estimated_end_date": null
+    },
+    {
+      "event_type": "ET",
+      "event_name": "Red Flag Warning in Little Colorado River Valley in Coconino County; Little Colorado River Valley in Navajo County; Little Colorado River Valley in Apache County; Northeast Plateaus and Mesas South of Hwy 264",
+      "date": "2025-05-19 07:00:00",
+      "lat": 35.163211891225,
+      "continent": "nar",
+      "created_time": "2025-05-19 08:50:44",
+      "lng": -110.30150147558888,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.d99619d85e9d817d4af0b56cd4d4b1c168b0463a.002.1",
+      "event_id": "6808b3e5a205ad35a526d9d3",
+      "estimated_end_date": null
+    },
+    {
+      "event_type": "ET",
+      "event_name": "Red Flag Warning in Sacramento Foothills and Guadalupe Mountains; Chaves County Plains; Eddy Plains; Lea; Loving; Guadalupe Mountains Above 7000 Feet; Guadalupe and Delaware Mountains; Van Horn and Highway 54 Corridor; Eastern Culberson County; Reeves County Plains; Chinati Mountains; Marfa Plateau; Davis Mountains; Davis Mountains Foothills",
+      "date": "2025-05-19 07:00:00",
+      "lat": 31.76625897315718,
+      "continent": "nar",
+      "created_time": "2025-05-19 08:50:44",
+      "lng": -104.12204374168023,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.434005a15c1c39f4c9b93a175b0e68fb2bf92c80.001.2",
+      "event_id": "6808b3eba205ad35a526fec8",
+      "estimated_end_date": null
+    },
+    {
+      "event_type": "ET",
+      "event_name": "Red Flag Warning in White Mountains",
+      "date": "2025-05-19 07:00:00",
+      "lat": 33.937461641077206,
+      "continent": "nar",
+      "created_time": "2025-05-19 08:50:44",
+      "lng": -109.52369480446004,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.d99619d85e9d817d4af0b56cd4d4b1c168b0463a.001.1",
+      "event_id": "6827c2016f85e4b93303beba",
+      "estimated_end_date": null
+    },
+    {
+      "event_type": "FL",
+      "event_name": "Flood Warning in Jewell, KS; Smith, KS; Clay, NE; Fillmore, NE; Nuckolls, NE; Thayer, NE; Webster, NE",
+      "date": "2025-05-19 07:00:00",
+      "lat": 40.15401301434007,
+      "continent": "nar",
+      "created_time": "2025-05-19 08:50:44",
+      "lng": -98.04741894721614,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.322c1b67863c2ef5f5b4576f8201edc234ee77f9.001.1",
+      "event_id": "682af0ff6f85e4b933765b91",
+      "estimated_end_date": "2025-06-03T08:50:44.000Z"
+    },
+    {
+      "event_type": "ET",
+      "event_name": "Red Flag Warning in Gaines; Dawson; Andrews; Martin; Winkler; Ector; Midland; Ward; Crane; Upton; Pecos; Central Brewster County; Chisos Basin; Presidio Valley; Lower Brewster County",
+      "date": "2025-05-19 07:00:00",
+      "lat": 30.96491821895711,
+      "continent": "nar",
+      "created_time": "2025-05-19 08:50:44",
+      "lng": -102.67728997127395,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.434005a15c1c39f4c9b93a175b0e68fb2bf92c80.002.1",
+      "event_id": "682af1016f85e4b93376603b",
+      "estimated_end_date": null
+    },
+    {
+      "event_type": "SW",
+      "event_name": "High Wind Warning in Guadalupe Mountains of Eddy County; Eddy County Plains; Guadalupe Mountains Above 7000 Feet; Guadalupe and Delaware Mountains; Eastern Culberson County; Davis Mountains",
+      "date": "2025-05-19 06:00:00",
+      "lat": 32.09636056437017,
+      "continent": "nar",
+      "created_time": "2025-05-19 08:50:44",
+      "lng": -104.2852463589702,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.056d5eeb0ac7867c4feeb0aae7d021b2c5e3789c.001.1",
+      "event_id": "680897afa205ad35a5642a97",
+      "estimated_end_date": "2025-06-03T08:50:44.000Z"
+    },
+    {
+      "lat": 40.16827414846776,
+      "date": "2025-05-19 05:21:45",
+      "event_name": "MAIN",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-19 12:06:34",
+      "lng": -122.22822549209107,
+      "source_event_id": "2025-CATGU-005508",
+      "event_id": "68089085a205ad35a52d43ee",
+      "estimated_end_date": "2025-06-18T12:06:34.000Z"
+    },
+    {
+      "lat": 37.28790704206977,
+      "date": "2025-05-19 05:20:46",
+      "event_name": "E CHILDS AV / BRANTLEY ST",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-19 12:06:34",
+      "lng": -120.46298985857356,
+      "source_event_id": "2025-CAMMU-011063",
+      "event_id": "6808905fa205ad35a52b952e",
+      "estimated_end_date": "2025-06-18T12:06:34.000Z"
+    }
+  ]
+}

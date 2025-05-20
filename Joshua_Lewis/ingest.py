@@ -1,8 +1,12 @@
 import requests
 import pandas as pd
 from datetime import datetime
+from ambee_disater import get_disaster_cord
+import os 
+import json
+import glob
 
-def get_weather_data(latitude=52.52, longitude=13.41):
+def get_weather_data(latitude, longitude, date):
     """
     Fetch detailed weather data from Open-Meteo API
     Args:
@@ -11,10 +15,18 @@ def get_weather_data(latitude=52.52, longitude=13.41):
     Returns:
         tuple: (current_conditions DataFrame, hourly_forecast DataFrame)
     """
-    base_url = "https://api.open-meteo.com/v1/forecast"
+    base_url = "https://archive-api.open-meteo.com/v1/archive"
+
+    date= date = datetime.strptime(date, "%Y-%m-%d %H:%M:%S").date()
+
+    start_date = date.strftime("%Y-%m-%d")
+    end_date = date.strftime("%Y-%m-%d") + datetime.timedelta(days=1)
+    
     params = {
         "latitude": latitude,
-        "longitude": longitude,
+        "longitude": longitude, 
+        "start_date": start_date,
+        "end_date": end_date,
         "hourly": [
             "temperature_2m",
             "relative_humidity_2m",
@@ -67,12 +79,30 @@ def get_weather_data(latitude=52.52, longitude=13.41):
         return None, None
 
 if __name__ == "__main__":
-    current_weather, hourly_forecast = get_weather_data()
+    # Replace '*.json' with the actual filename or handle the wildcard properly
+    filename = os.path.join(os.path.dirname(__file__), 'disaster_data.json')
+    # Handle wildcard to find the correct file
+    disaster_files = glob.glob(os.path.join(os.path.dirname(__file__), '*.json'))
+    if disaster_files:
+        filename = disaster_files[0]  # Use the first matching file
+    else:
+        raise FileNotFoundError("No JSON files found in the directory.")
+   
+
+    print(f"Using disaster data from: {filename}")
+
+    for i in range(10): 
+        lat,lng, date = get_disaster_cord(filename, i).values()
+        print(date)
+        current_weather, hourly_forecast = get_weather_data(lat, lng, date)
     
-    if current_weather is not None:
-        print("\nCurrent Weather Conditions:")
-        print(current_weather)
+        if current_weather is not None:
+            print("\nCurrent Weather Conditions:")
+            print(current_weather)
+        # print(current_weather.columns)
         
-    if hourly_forecast is not None:
-        print("\nHourly Forecast (first 5 entries):")
-        print(hourly_forecast.head())
+        if hourly_forecast is not None:
+            print("\nHourly Forecast (first 5 entries):")
+            print(hourly_forecast.head())
+            #print(hourly_forecast.columns)
+        

@@ -1,0 +1,128 @@
+{
+  "message": "success",
+  "hasNextPage": true,
+  "page": 1,
+  "limit": 10,
+  "result": [
+    {
+      "lat": 36.986934040763494,
+      "date": "2025-05-09 02:13:13",
+      "event_name": "ELLIS ST / CARDWELL ST",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-09 03:06:20",
+      "lng": -120.08053176480229,
+      "source_event_id": "2025-CAMMU-010207",
+      "event_id": "6808905fa205ad35a52b952e",
+      "estimated_end_date": "2025-06-08T03:06:20.000Z"
+    },
+    {
+      "event_type": "SW",
+      "event_name": "Severe Thunderstorm Warning in Chesterfield, VA; Goochland, VA; Hanover, VA; Henrico, VA; Powhatan, VA; City of Richmond, VA",
+      "date": "2025-05-09 02:00:00",
+      "lat": 37.612364789307165,
+      "continent": "nar",
+      "created_time": "2025-05-09 02:53:21",
+      "lng": -77.61334757752951,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.aa83a3d26333b8f888833735beb6d380e1e7386d.001.1",
+      "event_id": "6808b0b6a205ad35a50e81f2",
+      "estimated_end_date": "2025-05-24T02:53:21.000Z"
+    },
+    {
+      "event_type": "SW",
+      "event_name": "Severe Thunderstorm Warning in Chatham, NC; Cumberland, NC; Harnett, NC; Johnston, NC; Lee, NC; Wake, NC",
+      "date": "2025-05-09 02:00:00",
+      "lat": 35.45589475333427,
+      "continent": "nar",
+      "created_time": "2025-05-09 02:53:21",
+      "lng": -78.74025825994158,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.bab03b9ea5191abb5ae0df70aa6377d6cd4bc9cb.002.1",
+      "event_id": "6808c36ba205ad35a59262fc",
+      "estimated_end_date": "2025-05-24T02:53:21.000Z"
+    },
+    {
+      "event_type": "SW",
+      "event_name": "Severe Thunderstorm Warning in Brooks, TX; Jim Hogg, TX; Starr, TX; Zapata, TX",
+      "date": "2025-05-09 02:00:00",
+      "lat": 26.80216422168579,
+      "continent": "nar",
+      "created_time": "2025-05-09 02:53:21",
+      "lng": -98.61896598728462,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.2d619864fa7450f961215edaf780491c78aea669.001.1",
+      "event_id": "6808c4c6a205ad35a59977ce",
+      "estimated_end_date": "2025-05-24T02:53:21.000Z"
+    },
+    {
+      "event_type": "Misc",
+      "event_name": "Special Marine Warning in Baffin Bay and Upper Laguna Madre; Corpus Christi and Nueces Bays; Coastal waters from Baffin Bay to Port Aransas out 20 NM; Waters from Baffin Bay to Port Aransas from 20 to 60 NM",
+      "date": "2025-05-09 02:00:00",
+      "lat": 27.481258069857944,
+      "continent": "nar",
+      "created_time": "2025-05-09 02:53:21",
+      "lng": -96.79744792142225,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.861b45225917813b785f73b29e0e4482b5d5668b.001.1",
+      "event_id": "6808fec7a205ad35a5ab764b",
+      "estimated_end_date": null
+    },
+    {
+      "event_type": "Misc",
+      "event_name": "Freeze Warning in Mason; Lake; Osceola; Clare; Oceana; Newaygo; Mecosta; Isabella",
+      "date": "2025-05-09 02:00:00",
+      "lat": 43.737678582116416,
+      "continent": "nar",
+      "created_time": "2025-05-09 02:53:21",
+      "lng": -85.5383787072253,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.b1c229a74c235b2ef4a10c15c815976532f185f8.001.1",
+      "event_id": "6811589617f0bd82ae71d39c",
+      "estimated_end_date": null
+    },
+    {
+      "event_type": "SW",
+      "event_name": "Severe Thunderstorm Warning in Jim Wells, TX; Kleberg, TX; Live Oak, TX; Nueces, TX; San Patricio, TX",
+      "date": "2025-05-09 02:00:00",
+      "lat": 27.992162473461136,
+      "continent": "nar",
+      "created_time": "2025-05-09 02:53:21",
+      "lng": -97.71770129825022,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.f39b4a21a54d73a8b7015242c7fcc93047f706ce.001.1",
+      "event_id": "681d6e326f85e4b93383d90a",
+      "estimated_end_date": "2025-05-24T02:53:21.000Z"
+    },
+    {
+      "event_type": "SW",
+      "event_name": "Severe Thunderstorm Warning in Bartow, GA; Cherokee, GA",
+      "date": "2025-05-09 02:00:00",
+      "lat": 34.24601640980006,
+      "continent": "nar",
+      "created_time": "2025-05-09 02:53:21",
+      "lng": -84.64168684078211,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.0f7e444829623dd82ecc14fc0030b467efaf7efe.001.1",
+      "event_id": "681d6e336f85e4b93383d917",
+      "estimated_end_date": "2025-05-24T02:53:21.000Z"
+    },
+    {
+      "lat": 37.036171970277685,
+      "date": "2025-05-09 01:30:13",
+      "event_name": "DINOSAUR",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-09 03:06:20",
+      "lng": -121.16317994103369,
+      "source_event_id": "2025-CAMMU-010200",
+      "event_id": "680890e6a205ad35a531bffb",
+      "estimated_end_date": "2025-06-08T03:06:20.000Z"
+    },
+    {
+      "event_type": "FL",
+      "event_name": "Flood Warning in Dallas, TX",
+      "date": "2025-05-09 01:00:00",
+      "lat": 32.76496483990217,
+      "continent": "nar",
+      "created_time": "2025-05-09 02:53:21",
+      "lng": -96.77740850080838,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.051f6c11f3f86c22dd298197147a45705c20e0a9.001.1",
+      "event_id": "6808946fa205ad35a5596d84",
+      "estimated_end_date": "2025-05-24T02:53:21.000Z"
+    }
+  ]
+}

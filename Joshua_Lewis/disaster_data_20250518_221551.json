@@ -1,0 +1,128 @@
+{
+  "message": "success",
+  "hasNextPage": true,
+  "page": 1,
+  "limit": 10,
+  "result": [
+    {
+      "lat": 37.06455494085268,
+      "date": "2025-05-19 00:56:25",
+      "event_name": "FRAZIER",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-19 02:06:00",
+      "lng": -121.62126301471223,
+      "source_event_id": "2025-CASCU-003948",
+      "event_id": "680890e6a205ad35a531bffb",
+      "estimated_end_date": "2025-06-18T02:06:00.000Z"
+    },
+    {
+      "lat": 38.91040901817509,
+      "date": "2025-05-19 00:27:40",
+      "event_name": "LAKEVIEW",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-19 02:06:00",
+      "lng": -122.64612938699601,
+      "source_event_id": "2025-CALNU-008863",
+      "event_id": "68114d7c17f0bd82ae6e4d7b",
+      "estimated_end_date": "2025-06-18T02:06:00.000Z"
+    },
+    {
+      "lat": 40.18132812112787,
+      "date": "2025-05-19 00:25:49",
+      "event_name": "GUNSMOKE",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-19 02:06:00",
+      "lng": -122.57144154581701,
+      "source_event_id": "2025-CATGU-005495",
+      "event_id": "682a83f56f85e4b93365750a",
+      "estimated_end_date": "2025-06-18T02:06:00.000Z"
+    },
+    {
+      "lat": 36.1587834081738,
+      "date": "2025-05-18 22:41:17",
+      "event_name": "Nazlini Wash",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-19 02:06:00",
+      "lng": -109.57601074092526,
+      "source_event_id": "2025-AZNAA-000066",
+      "event_id": "680dbb4217f0bd82aeeffee3",
+      "estimated_end_date": "2025-06-18T02:06:00.000Z"
+    },
+    {
+      "lat": 39.899254130435274,
+      "date": "2025-05-18 22:35:53",
+      "event_name": "VIOLA",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-19 02:06:00",
+      "lng": -122.19751245014118,
+      "source_event_id": "2025-CATGU-005493",
+      "event_id": "68089085a205ad35a52d43ee",
+      "estimated_end_date": "2025-06-18T02:06:00.000Z"
+    },
+    {
+      "lat": 41.18583822933525,
+      "date": "2025-05-18 22:31:21",
+      "event_name": "GRIZZLY",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-19 02:06:00",
+      "lng": -122.16804663103677,
+      "source_event_id": "2025-CASKU-003459",
+      "event_id": "68089190a205ad35a5398825",
+      "estimated_end_date": "2025-06-18T02:06:00.000Z"
+    },
+    {
+      "lat": 34.71880515995193,
+      "date": "2025-05-18 22:25:31",
+      "event_name": "Franconia",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-19 02:06:00",
+      "lng": -114.30001154444749,
+      "source_event_id": "2025-AZCRD-000409",
+      "event_id": "6808905fa205ad35a52b93e2",
+      "estimated_end_date": "2025-06-18T02:06:00.000Z"
+    },
+    {
+      "lat": 43.34353705254278,
+      "date": "2025-05-18 22:17:00",
+      "event_name": "Strike",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-19 02:06:00",
+      "lng": -102.40950439108727,
+      "source_event_id": "2025-SDPRA-000036",
+      "event_id": "68089441a205ad35a5581ee0",
+      "estimated_end_date": "2025-06-18T02:06:00.000Z"
+    },
+    {
+      "lat": 43.182232666180525,
+      "date": "2025-05-18 22:16:15",
+      "event_name": "FA - 2513",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-19 02:06:00",
+      "lng": -118.96664043280576,
+      "source_event_id": "2025-ORMAR-002513",
+      "event_id": "682a83f56f85e4b93365778e",
+      "estimated_end_date": "2025-06-18T02:06:00.000Z"
+    },
+    {
+      "event_type": "SW",
+      "event_name": "Severe Thunderstorm Warning in Callahan, TX; Jones, TX; Shackelford, TX",
+      "date": "2025-05-18 22:00:00",
+      "lat": 32.51836178508491,
+      "continent": "nar",
+      "created_time": "2025-05-18 22:51:36",
+      "lng": -99.36286048401718,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.be597ebeadb1141a0944ebc9c0f4f4d6682ea97a.001.1",
+      "event_id": "680895aaa205ad35a55b917d",
+      "estimated_end_date": "2025-06-02T22:51:36.000Z"
+    }
+  ]
+}

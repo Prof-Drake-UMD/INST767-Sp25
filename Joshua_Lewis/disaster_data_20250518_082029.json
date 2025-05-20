@@ -1,0 +1,128 @@
+{
+  "message": "success",
+  "hasNextPage": true,
+  "page": 1,
+  "limit": 10,
+  "result": [
+    {
+      "event_type": "SW",
+      "event_name": "Severe Thunderstorm Warning in Hughes, OK",
+      "date": "2025-05-18 08:00:00",
+      "lat": 35.03518304721007,
+      "continent": "nar",
+      "created_time": "2025-05-18 08:51:21",
+      "lng": -96.28968710540657,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.bd7b9d7896b731c7898bc697bd7cbe00a4131366.001.1",
+      "event_id": "680895cda205ad35a55bb48c",
+      "estimated_end_date": "2025-06-02T08:51:21.000Z"
+    },
+    {
+      "event_type": "SW",
+      "event_name": "Tornado Warning in Carroll, MS; Montgomery, MS",
+      "date": "2025-05-18 08:00:00",
+      "lat": 33.44635877901071,
+      "continent": "nar",
+      "created_time": "2025-05-18 08:51:21",
+      "lng": -89.77373267796587,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.c01c4b2e8b91b6a6758f2b8071e7e7da0ef24f66.002.1",
+      "event_id": "68089d54a205ad35a59133ce",
+      "estimated_end_date": "2025-06-02T08:51:21.000Z"
+    },
+    {
+      "event_type": "SW",
+      "event_name": "Severe Thunderstorm Warning in Adair, OK; Cherokee, OK; Haskell, OK; Le Flore, OK; McIntosh, OK; Muskogee, OK; Sequoyah, OK",
+      "date": "2025-05-18 08:00:00",
+      "lat": 35.33300869814349,
+      "continent": "nar",
+      "created_time": "2025-05-18 08:51:21",
+      "lng": -95.20737390189467,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.5c3fd7423b9879673bdff8943146b562c53a1acb.001.1",
+      "event_id": "681c1cac6f85e4b93353fe84",
+      "estimated_end_date": "2025-06-02T08:51:21.000Z"
+    },
+    {
+      "event_type": "SW",
+      "event_name": "Severe Thunderstorm Warning in McIntosh, OK; Okfuskee, OK; Okmulgee, OK; Pittsburg, OK",
+      "date": "2025-05-18 08:00:00",
+      "lat": 35.22451282772455,
+      "continent": "nar",
+      "created_time": "2025-05-18 08:51:21",
+      "lng": -95.71607931237513,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.024d1b94d53fc1a279d75c76044e93fd76e212ed.001.1",
+      "event_id": "68294b4f6f85e4b9333b2d3f",
+      "estimated_end_date": "2025-06-02T08:51:21.000Z"
+    },
+    {
+      "event_type": "Misc",
+      "event_name": "Freeze Warning in Vilas; Oneida; Forest; Florence",
+      "date": "2025-05-18 08:00:00",
+      "lat": 45.8383747353107,
+      "continent": "nar",
+      "created_time": "2025-05-18 08:51:21",
+      "lng": -89.0787177082905,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.aa782f44f84267f1ba07c8206a705e7c988e2ba1.001.1",
+      "event_id": "68299f9f6f85e4b933483201",
+      "estimated_end_date": null
+    },
+    {
+      "lat": 36.97173504133315,
+      "date": "2025-05-18 07:30:46",
+      "event_name": "TULARE ST /E LINCOLN AV",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-18 12:06:26",
+      "lng": -120.05151175851451,
+      "source_event_id": "2025-CAMMU-010980",
+      "event_id": "6808905fa205ad35a52b952e",
+      "estimated_end_date": "2025-06-17T12:06:26.000Z"
+    },
+    {
+      "event_type": "ET",
+      "event_name": "Red Flag Warning in Sacramento Foothills and Guadalupe Mountains; Chaves County Plains; Eddy Plains; Lea; Loving; Guadalupe Mountains Above 7000 Feet; Guadalupe and Delaware Mountains; Van Horn and Highway 54 Corridor; Eastern Culberson County; Reeves County Plains; Chinati Mountains; Marfa Plateau; Davis Mountains; Davis Mountains Foothills",
+      "date": "2025-05-18 07:00:00",
+      "lat": 31.76625897315718,
+      "continent": "nar",
+      "created_time": "2025-05-18 08:51:21",
+      "lng": -104.12204374168023,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.1f61f15c5213506f36727dc59719fb4cbf791344.001.1",
+      "event_id": "6808b3eba205ad35a526fec8",
+      "estimated_end_date": null
+    },
+    {
+      "event_type": "FL",
+      "event_name": "Flood Warning in Tompkins, NY",
+      "date": "2025-05-18 07:00:00",
+      "lat": 42.44275562269123,
+      "continent": "nar",
+      "created_time": "2025-05-18 08:51:21",
+      "lng": -76.4725984742254,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.c17500ef8f72020d3bd3da330d52b097dde81221.001.1",
+      "event_id": "681a93c16f85e4b93319e4fb",
+      "estimated_end_date": "2025-06-02T08:51:21.000Z"
+    },
+    {
+      "event_type": "SW",
+      "event_name": "Severe Thunderstorm Warning in Carroll, MS; Grenada, MS; Leflore, MS; Montgomery, MS; Sunflower, MS",
+      "date": "2025-05-18 07:00:00",
+      "lat": 33.606262184170156,
+      "continent": "nar",
+      "created_time": "2025-05-18 08:51:21",
+      "lng": -90.13510084957633,
+      "source_event_id": "urn:oid:2.49.0.1.840.0.1da203f884c9a405e9c937bfa3644f5c37759b9b.001.1",
+      "event_id": "682913306f85e4b93332c5cd",
+      "estimated_end_date": "2025-06-02T08:51:21.000Z"
+    },
+    {
+      "lat": 36.631830058592335,
+      "date": "2025-05-18 06:42:15",
+      "event_name": "ADAMS",
+      "event_type": "WF",
+      "continent": "nar",
+      "created_time": "2025-05-18 12:06:26",
+      "lng": -119.31771060361814,
+      "source_event_id": "2025-CAFKU-010144",
+      "event_id": "6808946fa205ad35a559650c",
+      "estimated_end_date": "2025-06-17T12:06:26.000Z"
+    }
+  ]
+}

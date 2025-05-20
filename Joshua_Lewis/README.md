@@ -1,17 +1,55 @@
 # Joshua_Lewis_README
 
-### Project Introduction 
+## Purpose 
+The data used in this project comes from three specific APIs, each contributing a unique layer of detail. The project is designed to ingest and combine this data to generate meaningful insights about natural disasters. My primary focus is to examine the conditions at a location prior to a disaster event. I used Ambee’s free-tier natural disaster API to identify recent disaster occurrences. To enrich this data, I incorporated weather information from the Open-Meteo API to better understand the environmental conditions leading up to each event. Finally, I used the OpenStreetMap Nominatim API for reverse geocoding, translating raw latitude and longitude coordinates into human-readable locations—an essential step for truly understanding where these events occur.
 
-For my DAG I wanted to see is there an inherent connection between the overall movie watching or TV ratings throughout the season based on the wheather and Finances. I know that for my self I have often felt down during certian seasons especially when the weather is less than agreeable. In those seasons often time all I want to do is watch a good film but does the data support that conlcusion. 
 
-The API's that I have selected should all yeild information on their specific fields in turn utilizing the skills I have acquired throughout this course I will utilize BigQuery to query the data to make meaningful infrences on the data. My Hypothesis is that during seasons or years with more severe weather or more finicial dificulty that movie ratings are likely to increase as people are more likely to reach out for a distraction.
 
-### API's 
-Weather API- Features: Offers free access to weather forecasts and historical data without requiring an API key. Ideal for non-commercial use. I am going to use the local weather and add classifiers for good weather versus bad weather. 
+## 🔌 Integrated APIs
 
-Finaces API- Using finaces I will utilize stock market reports to determine weather the market is doing well or not. What a good market day is or a bad market day is will need to be later classified as I progress to the Querying stage. 
+### 1. **Open-Meteo API (Weather Data)**
+- **Base URL:** `https://api.open-meteo.com/v1/forecast`
+- **Inputs:**
+  - `latitude` (float)
+  - `longitude` (float)
+- **Outputs:**
+  - `current`: Real-time weather conditions (temperature, humidity, wind speed, etc.)
+  - `hourly`: Hour-by-hour forecast including precipitation, temperature, and wind data
+- **Format:** JSON, parsed into pandas DataFrames
 
-TMDB API- The Movie Database API This is where you will find the definitive list of currently available methods for our movie, tv, actor and image API.
+---
+
+### 2. **OpenStreetMap Nominatim API (Geocoding & Reverse Geocoding)**
+- **Base URL:** 
+  - Geocoding: `https://nominatim.openstreetmap.org/search`
+  - Reverse Geocoding: `https://nominatim.openstreetmap.org/reverse`
+- **Inputs:**
+  - For geocoding: address string (`q`)
+  - For reverse geocoding: `latitude`, `longitude`
+- **Outputs:**
+  - Latitude & longitude (geocoding)
+  - Human-readable address (reverse geocoding)
+- **Notes:** Requires a `User-Agent` header per API usage policy
+
+---
+
+### 3.Ambee Natural Disasters API
+- **Base URL:** 
+Base URL: https://api.ambeedata.com/disasters/latest/by-country-code
+
+Inputs:
+countryCode (e.g., "US")
+
+Outputs:
+List of disaster events with type, title, description, severity, coordinates, and timestamp
+
+Authorization: Requires API key in the header
+
+Format: JSON
+
+
+
+---
 
 
 
