@@ -53,8 +53,7 @@ def ingest_data(request):
 
 
 def run_transform(event, context):
-    print("📦 Raw event received:", event)
-
+    print("🏁 run_transform started")
     try:
         if "data" not in event:
             raise ValueError("No 'data' field in Pub/Sub message.")
@@ -72,32 +71,38 @@ def run_transform(event, context):
         transformed_water = transform_water(data["water"])
         print("✅ All transformations completed.")
 
+        print("About to insert data into BigQuery...")
+
         for table_name, rows in {
             "weather": transformed_weather,
             "air_quality": transformed_air,
             "water": transformed_water
         }.items():
-            print(f"🧪 {table_name} rows to insert: {rows}")
+            print(f"🧪 {table_name} rows to insert: {len(rows)}")
             insert_into_bigquery("dc_env_data", table_name, rows)
 
-    except Exception as e:
-        print(f"❌ Error in transformation: {e}")
-        raise
+        print("🏁 run_transform completed")
 
+    except Exception as e:
+        print(f"❌ Error in transformation or insertion: {e}")
+        raise
 
 bq_client = bigquery.Client()
 
-
 def insert_into_bigquery(dataset_id, table_name, rows_to_insert):
-    table_id = f"dc-env-project-460403.{dataset_id}.{table_name}"
-    if not rows_to_insert:
-        print(f"⚠️ No rows to insert into {table_name}.")
-        return
-    errors = bq_client.insert_rows_json(table_id, rows_to_insert)
-    if errors:
-        print(f"❌ Errors inserting into {table_name}: {errors}")
-    else:
-        print(f"✅ Inserted data into {table_name}.")
+    try:
+        table_id = f"dc-env-project-460403.{dataset_id}.{table_name}"
+        if not rows_to_insert:
+            print(f"⚠️ No rows to insert into {table_name}.")
+            return
+        errors = bq_client.insert_rows_json(table_id, rows_to_insert)
+        if errors:
+            print(f"❌ Errors inserting into {table_name}: {errors}")
+        else:
+            print(f"✅ Inserted data into {table_name}.")
+    except Exception as e:
+        print(f"❌ Exception during insertion into {table_name}: {e}")
+
 
 
 # Optional: for one-time setup
