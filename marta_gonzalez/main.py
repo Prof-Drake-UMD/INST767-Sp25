@@ -2,6 +2,10 @@
 from ingest import fetch_weather_forecast, fetch_air_quality, fetch_usgs_water
 from transform import transform_weather, transform_air_quality, transform_water
 from google.cloud import pubsub_v1
+import json
+from google.cloud import pubsub_v1
+from flask import Request
+
 
 def run_pipeline(request):
     try:
