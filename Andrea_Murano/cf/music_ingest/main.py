@@ -47,7 +47,7 @@ def write_to_bigquery(rows):
         print("BigQuery error:", errors)
 
 def main(event, context):
-    year = 2018  # could be parameterized
+    year = 2018  
     token = get_spotify_token()
     music = get_spotify_tracks(year, token)
     if music:
