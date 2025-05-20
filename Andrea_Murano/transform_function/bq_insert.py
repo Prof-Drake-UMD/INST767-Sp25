@@ -3,7 +3,7 @@ import os
 
 def insert_to_bigquery(data):
     project_id = os.environ.get("GCP_PROJECT") or os.environ.get("GOOGLE_CLOUD_PROJECT")
-    dataset_id = "inst767-murano.cultural_data"  
+    dataset_id = "cultural_data"  
 
     bq_client = bigquery.Client(project=project_id)
 
@@ -19,10 +19,12 @@ def insert_to_bigquery(data):
             "language": book.get("language"),
             "book_url": book.get("book_url"),
         }
-        bq_client.insert_rows_json(books_table, [book_row])
+        errors = bq_client.insert_rows_json(books_table, [book_row])
+        if errors:
+            print(f"BigQuery book insert errors: {errors}")
 
     artworks = data.get("artworks", [])
-    if artworks:
+    if book and artworks:
         artworks_table = f"{project_id}.{dataset_id}.artworks"
         artwork_rows = []
         for art in artworks:
@@ -37,10 +39,12 @@ def insert_to_bigquery(data):
                 "object_url": art.get("object_url"),
                 "image_url": art.get("image_url"),
             })
-        bq_client.insert_rows_json(artworks_table, artwork_rows)
+        errors = bq_client.insert_rows_json(artworks_table, artwork_rows)
+        if errors:
+            print(f"BigQuery artworks insert errors: {errors}")
 
     music = data.get("music", [])
-    if music:
+    if book and music:
         music_table = f"{project_id}.{dataset_id}.music_tracks"
         music_rows = []
         for track in music:
@@ -54,4 +58,6 @@ def insert_to_bigquery(data):
                 "release_date": track.get("release_date"),
                 "preview_url": track.get("preview_url"),
             })
-        bq_client.insert_rows_json(music_table, music_rows)
+        errors = bq_client.insert_rows_json(music_table, music_rows)
+        if errors:
+            print(f"BigQuery music insert errors: {errors}")
