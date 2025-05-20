@@ -144,3 +144,7 @@ def create_dataset_and_tables():
         table = bigquery.Table(table_id, schema=schema)
         bq_client.create_table(table, exists_ok=True)
         print(f"📦 Table {table_name} created or already exists.")
+
+
+if __name__ == "__main__":
+    create_dataset_and_tables()
