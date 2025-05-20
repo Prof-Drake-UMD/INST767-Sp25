@@ -1,5 +1,0 @@
-google-cloud-pubsub
-requests
-pandas
-google-cloud-bigquery
-python-dotenv
