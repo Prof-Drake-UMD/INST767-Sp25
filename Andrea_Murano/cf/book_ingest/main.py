@@ -52,7 +52,7 @@ def get_book_data(title="Normal People", author="Sally Rooney"):
     except requests.exceptions.RequestException as e:
         logging.error(f"Error fetching data from Open Library API: {e}")
         return []  
-        
+
 def write_to_bigquery(rows):
     """Writes book data to BigQuery."""
     client = bigquery.Client(project=PROJECT_ID)
