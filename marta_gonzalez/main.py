@@ -49,38 +49,5 @@ def ingest_data(request):
     return "✅ Ingest function completed"
 
 def run_transform(event, context):
+    
     print("📦 Raw event received:", event)
-    """Triggered from a message on a Cloud Pub/Sub topic."""
-    try:
-        if "data" not in event:
-            raise ValueError("No 'data' field in Pub/Sub message.")
-
-        # Base64 decode
-        raw_data = event["data"]
-        if not raw_data:
-            raise ValueError("Pub/Sub 'data' field is empty.")
-
-        message_data = base64.b64decode(raw_data).decode("utf-8")
-        print(f"🔍 Decoded message: {message_data}")
-
-        # JSON parse
-        if not message_data.strip():
-            raise ValueError("Decoded message is empty or whitespace.")
-
-        data = json.loads(message_data)
-        print("📊 Parsed JSON object:", data)
-
-        # Debug prints for each expected field
-        print("🌤️ Weather data:", data.get("weather"))
-        print("💨 Air quality data:", data.get("air_quality"))
-        print("💧 Water data:", data.get("water"))
-
-        print("🔁 Starting transformations...")
-        transform_weather(data["weather"])
-        transform_air_quality(data["air_quality"])
-        transform_water(data["water"])
-        print("✅ All transformations completed.")
-
-    except Exception as e:
-        print(f"❌ Error in transformation: {e}")
-        raise
