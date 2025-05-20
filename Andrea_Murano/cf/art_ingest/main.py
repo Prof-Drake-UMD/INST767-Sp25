@@ -17,7 +17,6 @@ def get_met_artwork(year, buffer=10):
     search_url = "https://collectionapi.metmuseum.org/public/collection/v1/search"
     object_url = "https://collectionapi.metmuseum.org/public/collection/v1/objects/"
     results = []
-    artwork_count = 0 
     MET_API_DELAY = 0.5 
 
     for y in range(year - buffer, year + buffer + 1):
@@ -29,18 +28,14 @@ def get_met_artwork(year, buffer=10):
             ids = resp.json().get("objectIDs", []) or []
             logging.info(f"Found {len(ids)} object IDs for year {y}.")
 
-            for object_id in ids[:3]:  
-                if artwork_count >= 10: 
-                    logging.info("Reached maximum artwork limit. Stopping.")
-                    return results
-                
+            for object_id in ids:  
                 try:
-                    time.sleep(MET_API_DELAY) # Respecting rate limits
+                    time.sleep(MET_API_DELAY) 
                     obj_data_resp = requests.get(object_url + str(object_id), timeout=10)
-                    obj_data_resp.raise_for_status() # Raise HTTPError for bad responses (4xx or 5xx)
+                    obj_data_resp.raise_for_status()
                     obj_data = obj_data_resp.json()
 
-                    if obj_data and obj_data.get("objectID"): # Ensure data and objectID exist
+                    if obj_data and obj_data.get("objectID"): 
                         try:
                             artwork_data = {
                                 "object_id": int(obj_data.get("objectID")), # Convert after retrieving data
@@ -53,7 +48,6 @@ def get_met_artwork(year, buffer=10):
                                 "ingest_ts": datetime.utcnow().isoformat()
                             }
                             results.append(artwork_data)
-                            artwork_count += 1
                             logging.info(f"Successfully processed artwork with ID {object_id}.")
                         except (TypeError, ValueError) as e:
                             logging.warning(f"Skipping artwork {object_id} due to data conversion issue: {e}")
@@ -82,7 +76,7 @@ def write_to_bigquery(rows):
         errors = client.insert_rows_json(table_id, rows)
         if errors:
             logging.error(f"BigQuery insert errors: {errors}")
-            raise Exception(f"BigQuery insert errors: {errors}")  # Signal function failure
+            raise Exception(f"BigQuery insert errors: {errors}")  
 
         logging.info("Successfully wrote data to BigQuery.")
 
@@ -105,5 +99,4 @@ def main(event, context):
 
     except Exception as e:
         logging.error(f"An error occurred during artwork ingest: {e}")
-        raise  # Crucial: Re-raise the exception to signal function failure to Google Cloud
-
+        raise 
