@@ -3,7 +3,7 @@ import os
 
 def insert_to_bigquery(data):
     project_id = os.environ.get("GCP_PROJECT") or os.environ.get("GOOGLE_CLOUD_PROJECT")
-    dataset_id = "inst767-murano.cultural_data" 
+    dataset_id = "inst767-murano.cultural_data"  
 
     bq_client = bigquery.Client(project=project_id)
 
