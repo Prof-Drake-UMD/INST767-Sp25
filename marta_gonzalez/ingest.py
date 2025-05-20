@@ -13,10 +13,17 @@ def fetch_weather_forecast(lat=38.9072, lon=-77.0369):
     response.raise_for_status()
     return response.json()
 
-# --- NYC Open Data: Air Quality ---
+# --- Open-Meteo Air Quality API ---
 def fetch_air_quality():
-    url = "https://data.cityofnewyork.us/resource/c3uy-2p5r.json"
-    response = requests.get(url)
+    url = "https://air-quality-api.open-meteo.com/v1/air-quality"
+    params = {
+        "latitude": 38.9072,       # Washington, DC
+        "longitude": -77.0369,
+        "hourly": "pm10,pm2_5,carbon_monoxide,nitrogen_dioxide,ozone,sulphur_dioxide",
+        "timezone": "America/New_York"
+    }
+
+    response = requests.get(url, params=params)
     response.raise_for_status()
     return response.json()
 
@@ -43,7 +50,7 @@ if __name__ == "__main__":
     weather = fetch_weather_forecast()
     print(weather)
 
-    print("\nFetching NYC air quality data...")
+    print("\nFetching Washington D.C. air quality data...")
     air_quality = fetch_air_quality()
     print(air_quality[:3])  # print just a few entries
 
