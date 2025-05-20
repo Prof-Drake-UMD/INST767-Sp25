@@ -1,26 +1,35 @@
-CREATE TABLE cultural_experience_items (
+-- Table: books
+CREATE TABLE books (
+  ingest_ts TIMESTAMP,
   book_id STRING,
-  book_title STRING,
-  book_author STRING,
-  book_first_publish_year INT64,
-  book_language STRING,
-  book_url STRING,
+  title STRING,
+  author_name STRING,
+  first_publish_year INT64,
+  language STRING,
+  book_url STRING
+);
 
+-- Table: artworks
+CREATE TABLE artworks (
+  ingest_ts TIMESTAMP,
+  book_id STRING,
   object_id STRING,
-  artwork_title STRING,
-  artwork_artist STRING,
-  artwork_medium STRING,
-  artwork_date STRING,
-  artwork_url STRING,
-  artwork_image_url STRING,
+  title STRING,
+  artist_name STRING,
+  medium STRING,
+  object_date STRING,
+  object_url STRING,
+  image_url STRING
+);
 
+-- Table: music_tracks
+CREATE TABLE music_tracks (
+  ingest_ts TIMESTAMP,
+  book_id STRING,
   track_id STRING,
-  track_title STRING,
-  track_artist STRING,
-  album_title STRING,
-  track_release_date STRING,
-  track_preview_url STRING,
-
-  match_type STRING,
-  ingest_ts TIMESTAMP
+  title STRING,
+  artist STRING,
+  album STRING,
+  release_date STRING,
+  preview_url STRING
 );
