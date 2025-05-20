@@ -21,7 +21,7 @@ def fetch_books(title="Normal People", author="Sally Rooney"):
                 })
     return books
 
-# artwork: The Met
+# ARTWORK: The Met
 def fetch_artwork(year, buffer=10):
     search_url = "https://collectionapi.metmuseum.org/public/collection/v1/search"
     object_url = "https://collectionapi.metmuseum.org/public/collection/v1/objects/"
