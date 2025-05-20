@@ -1,5 +1,0 @@
-flask
-google-cloud-pubsub
-requests
-pandas
-python-dotenv
