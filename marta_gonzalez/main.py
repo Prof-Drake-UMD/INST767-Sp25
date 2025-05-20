@@ -48,14 +48,24 @@ def ingest_data(request):
 
     return "✅ Ingest function completed"
 
-# --- Cloud Function Entry Point ---
 def run_transform(event, context):
     """Triggered from a message on a Cloud Pub/Sub topic."""
     try:
         if "data" not in event:
-            raise ValueError("No data in Pub/Sub message.")
+            raise ValueError("No 'data' field in Pub/Sub message.")
 
-        message_data = base64.b64decode(event["data"]).decode("utf-8")
+        # Base64 decode
+        raw_data = event["data"]
+        if not raw_data:
+            raise ValueError("Pub/Sub 'data' field is empty.")
+
+        message_data = base64.b64decode(raw_data).decode("utf-8")
+        print(f"🔍 Decoded message: {message_data}")
+
+        # JSON parse
+        if not message_data.strip():
+            raise ValueError("Decoded message is empty or whitespace.")
+
         data = json.loads(message_data)
 
         print("🔁 Starting transformations...")
