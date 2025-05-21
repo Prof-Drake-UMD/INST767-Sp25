@@ -27,7 +27,6 @@ def fetch_artwork():
     search_url = "https://collectionapi.metmuseum.org/public/collection/v1/search"
     object_url = "https://collectionapi.metmuseum.org/public/collection/v1/objects/"
     results = []
-    # Get all object IDs
     resp = requests.get(search_url, params={"q": "", "hasImages": True}, timeout=10)
     if resp.status_code == 200:
         ids = resp.json().get("objectIDs", []) or []
@@ -61,7 +60,7 @@ def get_spotify_token(client_id, client_secret):
     resp.raise_for_status()
     return resp.json()["access_token"]
 
-def fetch_music(year, token):
+def fetch_music(token):
     search_url = "https://api.spotify.com/v1/search"
     headers = {"Authorization": f"Bearer {token}"}
     results = []
@@ -69,7 +68,7 @@ def fetch_music(year, token):
     limit = 50
     while True:
         params = {
-            "q": f"year:{year}",
+            "q": "year:>=1950",
             "type": "track",
             "limit": limit,
             "offset": offset
