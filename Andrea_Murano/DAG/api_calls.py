@@ -2,48 +2,55 @@ import requests
 from datetime import datetime
 
 # BOOKS: OpenLibrary
-def fetch_books(title="Normal People", author="Sally Rooney"):
-    url = f"https://openlibrary.org/search.json?q={title} {author}"
+def fetch_books():
+    url = "https://openlibrary.org/search.json?q="
     resp = requests.get(url)
     books = []
     if resp.status_code == 200:
         docs = resp.json().get("docs", [])
         for book in docs:
-            if "eng" in book.get("language", []) and book.get("first_publish_year", 0) >= 1950:
+            year = book.get("first_publish_year", 0)
+            if year and year >= 1950:
                 books.append({
                     "book_id": book.get("key"),
                     "title": book.get("title"),
                     "author_name": book.get("author_name", [""])[0],
-                    "first_publish_year": book.get("first_publish_year"),
-                    "language": "eng",
+                    "first_publish_year": year,
+                    "language": book.get("language", [""])[0] if book.get("language") else "",
                     "book_url": f"https://openlibrary.org{book.get('key')}",
                     "ingest_ts": datetime.utcnow().isoformat()
                 })
     return books
 
 # ARTWORK: The Met
-def fetch_artwork(year, buffer=10):
+def fetch_artwork():
     search_url = "https://collectionapi.metmuseum.org/public/collection/v1/search"
     object_url = "https://collectionapi.metmuseum.org/public/collection/v1/objects/"
     results = []
-    for y in range(year - buffer, year + buffer + 1):
-        resp = requests.get(search_url, params={"q": str(y), "hasImages": True}, timeout=10)
-        if resp.status_code != 200:
-            continue
+    # Get all object IDs
+    resp = requests.get(search_url, params={"q": "", "hasImages": True}, timeout=10)
+    if resp.status_code == 200:
         ids = resp.json().get("objectIDs", []) or []
-        for object_id in ids[:3]:
+        for object_id in ids:
             obj_data = requests.get(object_url + str(object_id), timeout=10).json()
             if obj_data:
-                results.append({
-                    "object_id": int(obj_data.get("objectID")),
-                    "title": obj_data.get("title"),
-                    "artist_name": obj_data.get("artistDisplayName"),
-                    "medium": obj_data.get("medium"),
-                    "object_date": obj_data.get("objectDate"),
-                    "object_url": obj_data.get("objectURL"),
-                    "image_url": obj_data.get("primaryImageSmall"),
-                    "ingest_ts": datetime.utcnow().isoformat()
-                })
+                end_date = obj_data.get("objectEndDate")
+                try:
+                    end_date_int = int(float(end_date))
+                except (TypeError, ValueError):
+                    end_date_int = None
+                if end_date_int is not None and end_date_int >= 1950:
+                    results.append({
+                        "object_id": int(obj_data.get("objectID")),
+                        "title": obj_data.get("title"),
+                        "artist_name": obj_data.get("artistDisplayName"),
+                        "medium": obj_data.get("medium"),
+                        "object_date": obj_data.get("objectDate"),
+                        "object_url": obj_data.get("objectURL"),
+                        "image_url": obj_data.get("primaryImageSmall"),
+                        "objectEndDate": end_date_int,
+                        "ingest_ts": datetime.utcnow().isoformat()
+                    })
     return results
 
 # MUSIC: Spotify
@@ -54,25 +61,42 @@ def get_spotify_token(client_id, client_secret):
     resp.raise_for_status()
     return resp.json()["access_token"]
 
-def fetch_music(year, token, limit=5):
+def fetch_music(year, token):
     search_url = "https://api.spotify.com/v1/search"
     headers = {"Authorization": f"Bearer {token}"}
     results = []
-    params = {
-        "q": f"year:{year}",
-        "type": "track",
-        "limit": 20
-    }
-    resp = requests.get(search_url, headers=headers, params=params, timeout=10)
-    if resp.status_code == 200:
-        for track in resp.json().get("tracks", {}).get("items", []):
-            results.append({
-                "track_id": track.get("id"),
-                "title": track.get("name"),
-                "artist": track.get("artists", [{}])[0].get("name", ""),
-                "album": track.get("album", {}).get("name", ""),
-                "release_date": track.get("album", {}).get("release_date", None),
-                "preview_url": track.get("preview_url"),
-                "ingest_ts": datetime.utcnow().isoformat()
-            })
-    return results[:limit]
+    offset = 0
+    limit = 50
+    while True:
+        params = {
+            "q": f"year:{year}",
+            "type": "track",
+            "limit": limit,
+            "offset": offset
+        }
+        resp = requests.get(search_url, headers=headers, params=params, timeout=10)
+        if resp.status_code != 200:
+            break
+        items = resp.json().get("tracks", {}).get("items", [])
+        if not items:
+            break
+        for track in items:
+            release_date = track.get("album", {}).get("release_date", None)
+            try:
+                release_year = int(str(release_date)[:4])
+            except (TypeError, ValueError):
+                release_year = None
+            if release_year is not None and release_year >= 1950:
+                results.append({
+                    "track_id": track.get("id"),
+                    "title": track.get("name"),
+                    "artist": track.get("artists", [{}])[0].get("name", ""),
+                    "album": track.get("album", {}).get("name", ""),
+                    "release_date": release_date,
+                    "preview_url": track.get("preview_url"),
+                    "ingest_ts": datetime.utcnow().isoformat()
+                })
+        if len(items) < limit:
+            break
+        offset += limit
+    return results
