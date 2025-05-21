@@ -48,14 +48,15 @@ def transform_water(raw):
     values = ts_data["values"][0]["value"]
 
     df = pd.DataFrame(values)
-    df["timestamp"] = pd.to_datetime(df["time"]).dt.to_pydatetime()
+    df["timestamp"] = pd.to_datetime(df["dateTime"]).dt.to_pydatetime()
     df["streamflow_cfs"] = df["value"].astype(float)
     df["site_id"] = site_info["siteCode"][0]["value"]
     df["site_name"] = site_info["siteName"]
     df["latitude"] = site_info["geoLocation"]["geogLocation"]["latitude"]
     df["longitude"] = site_info["geoLocation"]["geogLocation"]["longitude"]
+    df.drop(columns=["dateTime", "value"], inplace=True)
     df = df[["timestamp", "site_id", "site_name", "streamflow_cfs", "latitude", "longitude"]]
     df.to_csv("/tmp/water_conditions.csv", index=False)
     print("✅ Water data saved.")
-    return df.to_dict(orient="records")  # 🔥 Add this line
+    return df.to_dict(orient="records")
 
