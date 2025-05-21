@@ -1,2 +1,7 @@
 requests
+pandas
+python-dotenv
+numpy
 google-cloud-bigquery
+google-cloud-pubsub
+flask
