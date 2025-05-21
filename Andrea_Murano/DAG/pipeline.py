@@ -15,7 +15,6 @@ def write_to_bigquery(table, rows):
         print(f"Wrote {len(rows)} rows to {table}")
 
 def main():
-    # 1. Books
     books = fetch_books()
     if books:
         write_to_bigquery("books", books)
@@ -24,19 +23,17 @@ def main():
         print("No books found.")
         return
 
-    # 2. Artwork
-    artwork = fetch_artwork(year)
+    artwork = fetch_artwork()
     if artwork:
         write_to_bigquery("artwork", artwork)
 
-    # 3. Music
     spotify_id = os.environ.get("SPOTIFY_CLIENT_ID")
     spotify_secret = os.environ.get("SPOTIFY_CLIENT_SECRET")
     if not spotify_id or not spotify_secret:
         print("Spotify credentials not set.")
         return
     token = get_spotify_token(spotify_id, spotify_secret)
-    music = fetch_music(year, token)
+    music = fetch_music(token)
     if music:
         write_to_bigquery("music", music)
 
