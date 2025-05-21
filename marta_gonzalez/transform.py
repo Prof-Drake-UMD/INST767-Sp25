@@ -24,13 +24,13 @@ def transform_air_quality(raw):
         return []
 
     df = pd.DataFrame(hourly)
-    df["timestamp"] = pd.to_datetime(df["time"])
+    df["timestamp"] = pd.to_datetime(df["time"]).dt.to_pydatetime()
     df.drop(columns=["time"], inplace=True)
     cols = ["timestamp"] + [col for col in df.columns if col != "timestamp"]
     df = df[cols]
     df.to_csv("/tmp/air_quality.csv", index=False)
     print("✅ Air quality data saved.")
-    return df.to_dict(orient="records")  # 🔥 Add this line
+    return df.to_dict(orient="records")
 
 def transform_water(raw):
     ts_list = raw.get("value", {}).get("timeSeries", [])
@@ -43,7 +43,7 @@ def transform_water(raw):
     values = ts_data["values"][0]["value"]
 
     df = pd.DataFrame(values)
-    df["timestamp"] = pd.to_datetime(df["dateTime"])
+    df["timestamp"] = pd.to_datetime(df["time"]).dt.to_pydatetime()
     df["streamflow_cfs"] = df["value"].astype(float)
     df["site_id"] = site_info["siteCode"][0]["value"]
     df["site_name"] = site_info["siteName"]
