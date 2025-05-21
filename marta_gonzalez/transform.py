@@ -23,6 +23,10 @@ def transform_air_quality(raw):
         print("❌ No hourly data found in air quality response.")
         return []
 
+    if "time" not in hourly:
+        print("❌ 'time' key missing in air quality hourly data.")
+        return []
+
     df = pd.DataFrame(hourly)
     df["timestamp"] = pd.to_datetime(df["time"]).dt.to_pydatetime()
     df.drop(columns=["time"], inplace=True)
@@ -31,6 +35,7 @@ def transform_air_quality(raw):
     df.to_csv("/tmp/air_quality.csv", index=False)
     print("✅ Air quality data saved.")
     return df.to_dict(orient="records")
+
 
 def transform_water(raw):
     ts_list = raw.get("value", {}).get("timeSeries", [])
