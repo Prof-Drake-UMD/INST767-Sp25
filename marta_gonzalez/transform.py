@@ -23,12 +23,8 @@ def transform_air_quality(raw):
         print("❌ No hourly data found in air quality response.")
         return []
 
-    if "time" not in hourly:
-        print("❌ 'time' key missing in air quality hourly data.")
-        return []
-
     df = pd.DataFrame(hourly)
-    df["timestamp"] = pd.to_datetime(df["time"]).dt.to_pydatetime()
+    df["timestamp"] = pd.to_datetime(df["time"]).dt.strftime("%Y-%m-%dT%H:%M:%SZ")
     df.drop(columns=["time"], inplace=True)
     cols = ["timestamp"] + [col for col in df.columns if col != "timestamp"]
     df = df[cols]
@@ -48,13 +44,12 @@ def transform_water(raw):
     values = ts_data["values"][0]["value"]
 
     df = pd.DataFrame(values)
-    df["timestamp"] = pd.to_datetime(df["dateTime"]).dt.to_pydatetime()
+    df["timestamp"] = pd.to_datetime(df["dateTime"]).dt.strftime("%Y-%m-%dT%H:%M:%SZ")
     df["streamflow_cfs"] = df["value"].astype(float)
     df["site_id"] = site_info["siteCode"][0]["value"]
     df["site_name"] = site_info["siteName"]
     df["latitude"] = site_info["geoLocation"]["geogLocation"]["latitude"]
     df["longitude"] = site_info["geoLocation"]["geogLocation"]["longitude"]
-    df.drop(columns=["dateTime", "value"], inplace=True)
     df = df[["timestamp", "site_id", "site_name", "streamflow_cfs", "latitude", "longitude"]]
     df.to_csv("/tmp/water_conditions.csv", index=False)
     print("✅ Water data saved.")
