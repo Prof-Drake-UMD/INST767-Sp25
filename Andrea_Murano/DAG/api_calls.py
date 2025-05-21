@@ -27,7 +27,7 @@ def fetch_artwork():
     search_url = "https://collectionapi.metmuseum.org/public/collection/v1/search"
     object_url = "https://collectionapi.metmuseum.org/public/collection/v1/objects/"
     results = []
-    resp = requests.get(search_url, params={"q": "", "hasImages": True}, timeout=10)
+    resp = requests.get(search_url, params={"q": ""}, timeout=10)
     if resp.status_code == 200:
         ids = resp.json().get("objectIDs", []) or []
         for object_id in ids:
@@ -99,3 +99,4 @@ def fetch_music(token):
             break
         offset += limit
     return results
+
